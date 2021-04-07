@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "TAILWIND_JIT=true next dev",
-    "build": "next build",
+    "build": "TAILWIND_JIT=true next build",
     "start": "next start"
   },
   "dependencies": {
