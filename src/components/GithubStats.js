@@ -45,7 +45,7 @@ export function GithubStats() {
     });
   }, []);
   return (
-    <div className="flex items-center">
+    <div className="inline-flex items-center">
       <GithubIcon className="inline-block" height="20" />
       {[
         [data.stars, 'stars'],

@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
 import { Footer } from '../components/Footer';
@@ -16,7 +15,10 @@ export default function Home() {
   const Section = (props) => {
     const { className, children, ...attrs } = props;
     return (
-      <Container className={`my-48 ${className || ''}`} {...attrs}>
+      <Container
+        className={`my-24 md:my-32 lg:my-48 ${className || ''}`}
+        {...attrs}
+      >
         {children}
       </Container>
     );
@@ -26,7 +28,7 @@ export default function Home() {
     const { className, children, ...attrs } = props;
     return (
       <h2
-        className={`text-primary font-bold text-6xl text-center mb-8 ${
+        className={`text-primary font-bold text-4xl sm:text-5xl md:text-6xl text-center mb-8 ${
           className || ''
         }`}
         {...attrs}
@@ -40,7 +42,7 @@ export default function Home() {
     const { className, children, ...attrs } = props;
     return (
       <p
-        className={`font-medium text-2xl text-center leading-normal mb-8 mx-auto max-w-screen-lg ${
+        className={`font-medium text-lg sm:text-xl md:text-2xl text-center leading-normal mb-8 mx-auto max-w-screen-lg ${
           className || ''
         }`}
         {...attrs}
@@ -50,13 +52,30 @@ export default function Home() {
     );
   };
 
+  const SectionLogos = (props) => {
+    const { className, logos = [], children, ...attrs } = props;
+    return (
+      <div
+        className={`flex flex-wrap items-center content-center justify-center ${
+          className || ''
+        }`}
+        {...attrs}
+      >
+        {logos.map((logo) => (
+          <img
+            className="w-24 h-24 md:w-32 md:h-32 mx-6 mt-6 md:mx-12 md:mt-8"
+            key={logo.src}
+            src={logo.src}
+            alt={logo.alt}
+          />
+        ))}
+        {children}
+      </div>
+    );
+  };
+
   return (
     <>
-      <Head>
-        <title>
-          Tailwind Mobile - Mobile UI components built with Tailwind CSS
-        </title>
-      </Head>
       {/* Nav */}
       <div className="bg-white top-0 border-b-[0.5px] border-black border-opacity-10">
         <Container className="flex items-center justify-between h-16">
@@ -92,24 +111,24 @@ export default function Home() {
       </div>
 
       {/* Header */}
-      <Container className="flex items-start mt-16 mb-16">
-        <div className="flex-shrink-0 mr-4">
-          <Logo className="w-48 h-48 home-logo-animated" />
+      <Container className="flex-col flex lg:flex-row items-center text-center lg:text-left lg:items-start mt-16 mb-16">
+        <div className="flex-shrink-0 lg:mr-4">
+          <Logo className="w-32 h-32 md:w-48 md:h-48 home-logo-animated" />
         </div>
         <div className="flex-shrink w-full my-4">
-          <div className="text-primary text-8xl font-bold leading-none">
+          <div className="text-primary text-4xl sm:text-6xl lg:text-8xl font-bold leading-none">
             Tailwind Mobile
           </div>
-          <div className="text-black text-6xl font-bold leading-tight my-4">
+          <div className="text-black text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight my-4">
             Pixel perfect mobile UI components built with Tailwind CSS
           </div>
-          <div className="text-2xl font-semibold my-4">
+          <div className="text-xl lg:text-2xl font-semibold my-4">
             With iOS and Material Design components for React, Vue, Svelte &
             Angular
           </div>
-          <div className="flex items-center space-x-4 my-8">
+          <div className="flex flex-col sm:flex-row items-center space-x-4 my-8 justify-center lg:justify-start">
             <Button>Get started</Button>
-            <div className="bg-primary bg-opacity-10 font-mono text-black text-lg h-12 border border-primary rounded-xl flex items-center px-8">
+            <div className="bg-primary bg-opacity-10 font-mono text-black text-lg h-12 border border-primary rounded-xl items-center px-8 hidden sm:flex">
               <span className="select-none opacity-50 mr-4">$</span>
               <span>npm i tailwind-mobile</span>
               <span
@@ -145,7 +164,21 @@ export default function Home() {
       {/* Sections */}
       <Section className="mt-16">
         <SectionTitle>See it in action</SectionTitle>
-        <div className="w-[375px] h-[736px] home-app-shadow my-16 mx-auto rounded-xl overflow-hidden">
+        <div className="text-center">
+          <Button inline href="/kitchen-sink/react/index.html" target="_blank">
+            <span>Open in new tab</span>
+            <svg
+              className="w-6 h-6 ml-2 relative -top-px"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+            </svg>
+          </Button>
+        </div>
+        <div className="hidden md:block w-[375px] h-[736px] home-app-shadow my-16 mx-auto rounded-xl overflow-hidden">
           <iframe
             title="demo"
             className="w-full h-full rounded-xl overflow-hidden"
@@ -161,18 +194,18 @@ export default function Home() {
           and Material Design themes created using official design guidelines.
           Everything you need for your iOS and Android apps!
         </SectionText>
-        <div className="flex flex-wrap items-center content-center justify-center">
-          <img
-            className="mx-12 mt-8"
-            src="/images/home-logos/google.svg"
-            alt="google"
-          />
-          <img
-            className="mx-12 mt-8"
-            src="/images/home-logos/apple.svg"
-            alt="apple"
-          />
-        </div>
+        <SectionLogos
+          logos={[
+            {
+              src: '/images/home-logos/google.svg',
+              alt: 'google',
+            },
+            {
+              src: '/images/home-logos/apple.svg',
+              alt: 'apple',
+            },
+          ]}
+        />
       </Section>
 
       <Section>
@@ -208,28 +241,26 @@ export default function Home() {
           Tailwind Mobile components are currently available for React, and
           coming soon for Vue, Svelte and Angular.
         </SectionText>
-        <div className="flex flex-wrap items-center content-center justify-center">
-          <img
-            className="mx-12 mt-8"
-            src="/images/home-logos/react.svg"
-            alt="react"
-          />
-          <img
-            className="mx-12 mt-8"
-            src="/images/home-logos/vue.svg"
-            alt="vue"
-          />
-          <img
-            className="mx-12 mt-8"
-            src="/images/home-logos/svelte.svg"
-            alt="svelte"
-          />
-          <img
-            className="mx-12 mt-8"
-            src="/images/home-logos/angular.svg"
-            alt="angular"
-          />
-        </div>
+        <SectionLogos
+          logos={[
+            {
+              src: '/images/home-logos/react.svg',
+              alt: 'react',
+            },
+            {
+              src: '/images/home-logos/vue.svg',
+              alt: 'vue',
+            },
+            {
+              src: '/images/home-logos/svelte.svg',
+              alt: 'svelte',
+            },
+            {
+              src: '/images/home-logos/angular.svg',
+              alt: 'angular',
+            },
+          ]}
+        />
       </Section>
 
       <Section>
@@ -256,10 +287,23 @@ export default function Home() {
           navigation, state management, native APIs, etc.) and Tailwind Mobile
           components for inner pages/views UIs.
         </SectionText>
-        <div className="flex items-stretch justify-between mx-auto max-w-screen-lg mt-16">
-          <div className="border-8 border-r-0 border-[#3880FF] w-full flex-shrink mr-8 ml-24 rounded-l-2xl">
+        <SectionLogos
+          className="md:hidden"
+          logos={[
+            {
+              src: '/images/home-logos/framework7.svg',
+              alt: 'framework7',
+            },
+            {
+              src: '/images/home-logos/ionic.svg',
+              alt: 'ionic',
+            },
+          ]}
+        />
+        <div className="hidden md:flex items-stretch justify-between mx-auto max-w-screen-lg mt-16">
+          <div className="border-8 border-r-0 border-[#3880FF] w-full flex-shrink mr-8 ml-20 lg:ml-24 rounded-l-2xl">
             <div className="border-8 border-r-0 border-[#EE350F] h-full relative rounded-l-lg">
-              <div className="flex absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 space-x-4 -ml-2">
+              <div className="flex absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 space-x-4 -ml-2 w-52">
                 <img
                   className="w-24 h-24"
                   src="/images/home-logos/ionic.svg"
@@ -271,7 +315,7 @@ export default function Home() {
                   alt="framework7"
                 />
               </div>
-              <div className="top-[4.7%] bottom-[4.7%] w-1/2 left-1/2 absolute border-8 border-r-0 border-primary rounded-l-lg">
+              <div className="top-[4.7%] bottom-[4.7%] w-1/4 lg:w-1/2 left-3/4 lg:left-1/2 absolute border-8 border-r-0 border-primary rounded-l-lg">
                 <Logo className="w-24 h-24 absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2" />
               </div>
             </div>
@@ -306,18 +350,18 @@ export default function Home() {
           you can easily create real native apps with native look and feel.
         </SectionText>
 
-        <div className="flex flex-wrap items-center content-center justify-center">
-          <img
-            className="mx-12 mt-8"
-            src="/images/home-logos/capacitorjs.svg"
-            alt="capacitorjs"
-          />
-          <img
-            className="mx-12 mt-8"
-            src="/images/home-logos/cordova.svg"
-            alt="cordova"
-          />
-        </div>
+        <SectionLogos
+          logos={[
+            {
+              src: '/images/home-logos/capacitorjs.svg',
+              alt: 'capacitorjs',
+            },
+            {
+              src: '/images/home-logos/cordova.svg',
+              alt: 'cordova',
+            },
+          ]}
+        />
       </Section>
 
       {/* Footer */}
