@@ -162,10 +162,15 @@ export default function Home() {
       </Container>
 
       {/* Sections */}
-      <Section className="mt-16">
+      <Section className="!mt-16">
         <SectionTitle>See it in action</SectionTitle>
         <div className="text-center">
-          <Button inline href="/kitchen-sink/react/index.html" target="_blank">
+          <Button
+            className="md:hidden"
+            inline
+            href="/kitchen-sink/react/index.html"
+            target="_blank"
+          >
             <span>Open in new tab</span>
             <svg
               className="w-6 h-6 ml-2 relative -top-px"
