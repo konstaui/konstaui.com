@@ -307,7 +307,7 @@ export default function Home() {
         />
         <div className="hidden md:flex items-stretch justify-between mx-auto max-w-screen-lg mt-16">
           <div className="border-8 border-r-0 border-[#3880FF] w-full flex-shrink mr-8 ml-20 lg:ml-24 rounded-l-2xl">
-            <div className="border-8 border-r-0 border-[#EE350F] h-full relative rounded-l-lg">
+            <div className="border-8 border-r-0 border-[#b540ab] h-full relative rounded-l-lg">
               <div className="flex absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 space-x-4 -ml-2 w-52">
                 <img
                   className="w-24 h-24"
