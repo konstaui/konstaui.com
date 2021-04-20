@@ -6,7 +6,7 @@ module.exports = {
     './src/components/*.{js,ts,jsx,tsx}',
   ],
   darkMode: false, // or 'media' or 'class'
-  mode: process.env.TAILWIND_JIT ? 'jit' : undefined,
+  mode: 'jit',
   theme: {
     fontFamily: {
       sans:
