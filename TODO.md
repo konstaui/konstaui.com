@@ -3,3 +3,4 @@
   - Dark
 - Footer
 - Release notes
+- solid share banner
