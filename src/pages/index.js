@@ -1,4 +1,3 @@
-import { Header } from '../components/Header';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
 import { Footer } from '../components/Footer';
@@ -15,10 +14,7 @@ export default function Home() {
   const Section = (props) => {
     const { className, children, ...attrs } = props;
     return (
-      <Container
-        className={`my-24 md:my-32 lg:my-48 ${className || ''}`}
-        {...attrs}
-      >
+      <Container className={`my-24 md:my-32 ${className || ''}`} {...attrs}>
         {children}
       </Container>
     );
@@ -28,7 +24,7 @@ export default function Home() {
     const { className, children, ...attrs } = props;
     return (
       <h2
-        className={`text-primary font-bold text-4xl sm:text-5xl md:text-6xl text-center mb-8 ${
+        className={`text-primary font-bold text-4xl sm:text-5xl text-center mb-8 ${
           className || ''
         }`}
         {...attrs}
@@ -42,7 +38,7 @@ export default function Home() {
     const { className, children, ...attrs } = props;
     return (
       <p
-        className={`font-medium text-lg sm:text-xl md:text-2xl text-center leading-normal mb-8 mx-auto max-w-screen-lg ${
+        className={`font-medium text-lg sm:text-xl md:text-2xl text-center md:leading-relaxed mb-8 mx-auto max-w-screen-lg ${
           className || ''
         }`}
         {...attrs}
@@ -76,62 +72,73 @@ export default function Home() {
 
   return (
     <>
-      {/* Nav */}
-      <Header />
-
       {/* Content */}
-      <Container className="flex-col flex lg:flex-row items-center text-center lg:text-left lg:items-start mt-16 mb-16">
-        <div className="flex-shrink-0 lg:mr-4">
-          <Logo className="w-32 h-32 md:w-48 md:h-48 home-logo-animated" />
-        </div>
-        <div className="flex-shrink w-full my-4">
-          <div className="text-primary text-4xl sm:text-6xl lg:text-8xl font-bold leading-none">
-            Tailwind Mobile
+      <Container className="flex-col flex lg:flex-row items-center text-center lg:text-left mt-16 mb-16">
+        <div className="max-w-2xl">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Logo className="w-32 h-32 md:w-48 md:h-48 home-logo-animated mx-auto lg:ml-auto lg:mr-0" />
           </div>
-          <div className="text-black text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight my-4">
-            Pixel perfect mobile UI components built with Tailwind CSS
-          </div>
-          <div className="text-xl lg:text-2xl font-semibold my-4">
-            With iOS and Material Design components for React, Vue, Svelte &
-            Angular
-          </div>
-          <div className="flex flex-col sm:flex-row items-center space-x-4 my-8 justify-center lg:justify-start">
-            <Button>Get started</Button>
-            <div className="bg-primary bg-opacity-10 font-mono text-black text-lg h-12 border border-primary rounded-xl items-center px-8 hidden sm:flex">
-              <span className="select-none opacity-50 mr-4">$</span>
-              <span>npm i tailwind-mobile</span>
-              <span
-                className="ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 transform-gpu"
-                onClick={copyInstallCommand}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
+          {/* Content */}
+          <div className="flex-shrink w-full lg:text-right">
+            <div className="text-primary text-4xl sm:text-6xl font-bold leading-none mt-12">
+              Tailwind Mobile
+            </div>
+            <div className="text-black text-3xl sm:text-4xl font-bold sm:leading-snug my-8">
+              Pixel perfect mobile UI components built with Tailwind CSS
+            </div>
+            <div className="text-xl lg:text-2xl font-semibold my-8 lg:leading-normal">
+              With iOS and Material Design components for
+              <br /> React, Vue & Svelte
+            </div>
+            <div className="flex flex-col sm:flex-row items-center space-x-4 my-8 justify-center lg:justify-end">
+              <Button className="lg:px-6 xl:px-8">Get started</Button>
+              <div className="bg-primary bg-opacity-10 font-mono text-black text-lg h-12 border border-primary rounded-xl items-center px-8 lg:px-6 xl:px-8 hidden sm:flex">
+                <span className="select-none opacity-50 mr-4">$</span>
+                <span>npm i tailwind-mobile</span>
+                <span
+                  className="ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 transform-gpu"
+                  onClick={copyInstallCommand}
                 >
-                  <path
-                    fill="none"
-                    stroke="#000"
-                    strokeWidth="1.5"
-                    d="M4,12 C4,13.886 4,14.828 4.586,15.414 C5.172,16 6.114,16 8,16 L12,16 C13.886,16 14.828,16 15.414,15.414 C16,14.828 16,13.886 16,12 L16,8 C16,6.114 16,5.172 15.414,4.586 C14.828,4 13.886,4 12,4 M4,12 L8,12 C9.886,12 10.828,12 11.414,11.414 C12,10.828 12,9.886 12,8 L12,4 M4,12 C2.114,12 1.172,12 0.586,11.414 C0,10.828 0,9.886 0,8 L0,4 C0,2.114 0,1.172 0.586,0.586 C1.172,0 2.114,0 4,0 L8,0 C9.886,0 10.828,0 11.414,0.586 C12,1.172 12,2.114 12,4"
-                    transform="translate(1 1)"
-                  />
-                </svg>
-              </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                  >
+                    <path
+                      fill="none"
+                      stroke="#000"
+                      strokeWidth="1.5"
+                      d="M4,12 C4,13.886 4,14.828 4.586,15.414 C5.172,16 6.114,16 8,16 L12,16 C13.886,16 14.828,16 15.414,15.414 C16,14.828 16,13.886 16,12 L16,8 C16,6.114 16,5.172 15.414,4.586 C14.828,4 13.886,4 12,4 M4,12 L8,12 C9.886,12 10.828,12 11.414,11.414 C12,10.828 12,9.886 12,8 L12,4 M4,12 C2.114,12 1.172,12 0.586,11.414 C0,10.828 0,9.886 0,8 L0,4 C0,2.114 0,1.172 0.586,0.586 C1.172,0 2.114,0 4,0 L8,0 C9.886,0 10.828,0 11.414,0.586 C12,1.172 12,2.114 12,4"
+                      transform="translate(1 1)"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div className="my-4">
+              MIT Licensed, v{process.env.tailwindMobileVersion} released on{' '}
+              {process.env.tailwindMobileReleaseDate}
+            </div>
+            <div className="mt-4">
+              <GithubStats />
             </div>
           </div>
-          <div className="my-4">
-            MIT Licensed, v0.0.1 released on February 5, 2021
-          </div>
-          <div className="my-4">
-            <GithubStats />
-          </div>
+        </div>
+        {/* Phone */}
+        <div className="hidden ml-16 lg:block w-[375px] h-[736px] flex-shrink-0 overflow-hidden bg-black rounded-3xl box-content p-2 border-2 border-gray-400">
+          <iframe
+            title="demo"
+            className="w-full h-full rounded-2xl overflow-hidden"
+            src="/kitchen-sink/react/index.html"
+            loading="lazy"
+          />
         </div>
       </Container>
 
       {/* Sections */}
-      <Section className="!mt-16">
+      <Section className="!mt-16 lg:hidden">
         <SectionTitle>See it in action</SectionTitle>
         <div className="text-center">
           <Button
@@ -152,11 +159,12 @@ export default function Home() {
             </svg>
           </Button>
         </div>
-        <div className="hidden md:block w-[375px] h-[736px] home-app-shadow my-16 mx-auto rounded-xl overflow-hidden">
+        <div className="hidden md:block w-[375px] h-[736px] my-16 mx-auto overflow-hidden rounded-3xl box-content p-2 border-2 border-gray-400 bg-black">
           <iframe
             title="demo"
             className="w-full h-full rounded-xl overflow-hidden"
             src="/kitchen-sink/react/index.html"
+            loading="lazy"
           />
         </div>
       </Section>
@@ -229,10 +237,10 @@ export default function Home() {
               src: '/images/home-logos/svelte.svg',
               alt: 'svelte',
             },
-            {
-              src: '/images/home-logos/angular.svg',
-              alt: 'angular',
-            },
+            // {
+            //   src: '/images/home-logos/angular.svg',
+            //   alt: 'angular',
+            // },
           ]}
         />
       </Section>

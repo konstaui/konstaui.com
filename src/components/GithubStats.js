@@ -34,7 +34,8 @@ async function fetchGitStats(local) {
   return getLocalStats();
 }
 
-export function GithubStats() {
+export function GithubStats(props) {
+  const { showVersion } = props;
   const [data, setData] = useState([]);
   useEffect(() => {
     const gitStatsDate = localStorage.getItem('twm-git-stats-date');
@@ -45,23 +46,29 @@ export function GithubStats() {
     });
   }, []);
   return (
-    <div className="inline-flex items-center">
-      <GithubIcon className="inline-block" height="20" />
-      {[
-        [data.stars, 'stars'],
-        [data.forks, 'forks'],
-      ].map(([value, label]) => (
-        <a
-          key={label}
-          className="mx-1 text-xs text-gray-700 hover:text-primary hover:no-underline"
-          href="https://github.com/tailwind-mobile/tailwind-mobile"
-          rel="noopener"
-          target="_blank"
-        >
-          <span className="text-base font-medium">{value}</span>{' '}
-          <span>{label}</span>
-        </a>
-      ))}
+    <div className="">
+      <a
+        className="text-black hover:text-primary hover:no-underline inline-flex items-center"
+        href="https://github.com/tailwind-mobile/tailwind-mobile"
+        rel="noopener"
+        target="_blank"
+      >
+        {showVersion && (
+          <span className="font-semibold mr-2">
+            v{process.env.tailwindMobileVersion}
+          </span>
+        )}
+        <GithubIcon className="inline-block" height="24" />
+        {[
+          [data.stars, 'stars'],
+          [data.forks, 'forks'],
+        ].map(([value, label]) => (
+          <span className="ml-2 text-xs" key={label}>
+            <span className="text-base font-medium">{value}</span>{' '}
+            <span>{label}</span>
+          </span>
+        ))}
+      </a>
     </div>
   );
 }

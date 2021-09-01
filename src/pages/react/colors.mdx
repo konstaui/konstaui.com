@@ -1,0 +1,63 @@
+---
+title: 'Colors | Tailwind Mobile React'
+section: 'react'
+---
+
+import { DocsColorLabel } from '../../components/DocsColorLabel';
+import { ColorsGenerator } from '../../components/ColorsGenerator';
+
+# Colors
+
+Tailwind Mobile extends Tailwind config with the following colors:
+
+| Name                  | Value                                       |
+| --------------------- | ------------------------------------------- |
+| `page-ios-light`      | <DocsColorLabel color="#efeff4" />`#efeff4` |
+| `page-ios-dark`       | <DocsColorLabel color="#000" />`#000`       |
+| `page-material-light` | <DocsColorLabel color="#fff" />`#fff`       |
+| `page-material-dark`  | <DocsColorLabel color="#121212" />`#121212` |
+| `block-strong-light`  | <DocsColorLabel color="#fff" />`#fff`       |
+| `block-strong-dark`   | <DocsColorLabel color="#1c1c1d" />`#1c1c1d` |
+| `list-divider-light`  | <DocsColorLabel color="#f4f4f4" />`#f4f4f4` |
+| `list-divider-dark`   | <DocsColorLabel color="#232323" />`#232323` |
+| `bars-ios-light`      | <DocsColorLabel color="#f7f7f8" />`#f7f7f8` |
+| `bars-ios-dark`       | <DocsColorLabel color="#121212" />`#121212` |
+| `bars-material-light` | <DocsColorLabel color="#fff" />`#fff`       |
+| `bars-material-dark`  | <DocsColorLabel color="#202020" />`#202020` |
+| `toast-ios`           | <DocsColorLabel color="#000000" />`#000000` |
+| `toast-material`      | <DocsColorLabel color="#323232" />`#323232` |
+| `popover-light`       | <DocsColorLabel color="#ffffff" />`#ffffff` |
+| `popover-dark`        | <DocsColorLabel color="#1c1c1d" />`#1c1c1d` |
+| `primary`             | <DocsColorLabel color="#007aff" />`#007aff` |
+| `primary-light`       | <DocsColorLabel color="#298fff" />`#298fff` |
+| `primary-dark`        | <DocsColorLabel color="#0066d6" />`#0066d6` |
+
+Most of these colors are configurable on per component basis. And to overwrite them globally with custom ones, you need to extend them in `tailwind.config.js`:
+
+```js
+const tailwindMobileConfig = require('tailwind-mobile/config');
+
+module.exports = tailwindMobileConfig({
+  // extend Tailwind Mobile colors in config's `theme.extend.colors`
+  theme: {
+    extend: {
+      colors: {
+        'page-ios-light': '#fff';
+        'primary': {
+          light: '#ff5676',
+          DEFAULT: '#ff2d55',
+          dark: '#ff0434',
+        }
+      }
+    }
+  }
+})
+```
+
+## Theme Color
+
+Main theme color is defined by `primary` colors (`primary`, `primary.dark` and `primary.light`).
+
+Below you can find color generator to help you with "light" and "dark" shades:
+
+<ColorsGenerator />

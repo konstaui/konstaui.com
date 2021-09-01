@@ -15,7 +15,7 @@ const sideBar = [
   {
     title: 'Tailwind Extensions',
     links: [
-      'Colors & Sizes',
+      'Colors',
       'Theme Variants',
       'Hairlines',
       'Safe Areas',
@@ -62,7 +62,7 @@ export const SidebarReact = () => {
                       className={` block py-1 px-2 rounded font-medium duration-100 ${
                         isActive(getLinkHref(link))
                           ? `text-primary bg-primary-light bg-opacity-10`
-                          : 'text-gray-600 hover:text-primary hover:bg-primary-light hover:bg-opacity-10'
+                          : 'text-gray-500 hover:text-primary hover:bg-primary-light hover:bg-opacity-10'
                       }`}
                     >
                       {getLinkTitle(link)}

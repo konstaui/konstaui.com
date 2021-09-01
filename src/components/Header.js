@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Container } from './Container';
-import { GithubIcon } from './GithubIcon';
+import { GithubStats } from './GithubStats';
 import { Logo } from './Logo';
 
 export const Header = () => (
@@ -27,14 +27,7 @@ export const Header = () => (
             </a> */}
       </div>
       <div className="flex items-center space-x-4">
-        <a
-          href="https://github.com/tailwind-mobile/tailwind-mobile"
-          target="_blank"
-          className="text-black hover:text-primary transition-colors duration-100 flex items-center space-x-2"
-        >
-          <span className="font-semibold">v.0.0.1</span>
-          <GithubIcon />
-        </a>
+        <GithubStats showVersion />
       </div>
     </Container>
   </header>
