@@ -1,0 +1,47 @@
+.home-app-shadow {
+  box-shadow: 20px 20px 60px 0 rgba(243, 0, 255, 0.2),
+    -20px -20px 60px 0 rgba(255, 99, 0, 0.2);
+}
+.home-logo-animated {
+  path:nth-child(2) {
+    transform-origin: center;
+    animation: home-logo-rotation 10s ease-in-out infinite;
+    animation-timing-function: cubic-bezier(0.98, 0.02, 0.56, 1.41);
+    animation-delay: 2.5s;
+  }
+  path:nth-child(3) {
+    position: relative;
+    z-index: 10;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes home-logo-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  12.5% {
+    transform: rotate(90deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  37.5% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  62.5% {
+    transform: rotate(270deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  87.5% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,7 +1,7 @@
+import { Header } from '../components/Header';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
 import { Footer } from '../components/Footer';
-import { GithubIcon } from '../components/GithubIcon';
 import { GithubStats } from '../components/GithubStats';
 import { Logo } from '../components/Logo';
 import copyToClipboard from '../shared/copy-to-clipboard';
@@ -77,40 +77,9 @@ export default function Home() {
   return (
     <>
       {/* Nav */}
-      <div className="bg-white top-0 border-b-[0.5px] border-black border-opacity-10">
-        <Container className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-4">
-            <a href="/">
-              <Logo className="w-12 h-12" />
-            </a>
-            <span>Coming soon</span>
-            {/* <a
-              className="text-black hover:text-primary font-semibold transition-colors duration-100"
-              href="#"
-            >
-              Get started
-            </a>
-            <a
-              className="text-black hover:text-primary font-semibold transition-colors duration-100"
-              href="#"
-            >
-              Documentation
-            </a> */}
-          </div>
-          <div className="flex items-center space-x-4">
-            <a
-              href="https://github.com/tailwind-mobile/tailwind-mobile"
-              target="_blank"
-              className="text-black hover:text-primary transition-colors duration-100 flex items-center space-x-2"
-            >
-              <span className="font-semibold">v.0.0.1</span>
-              <GithubIcon />
-            </a>
-          </div>
-        </Container>
-      </div>
+      <Header />
 
-      {/* Header */}
+      {/* Content */}
       <Container className="flex-col flex lg:flex-row items-center text-center lg:text-left lg:items-start mt-16 mb-16">
         <div className="flex-shrink-0 lg:mr-4">
           <Logo className="w-32 h-32 md:w-48 md:h-48 home-logo-animated" />

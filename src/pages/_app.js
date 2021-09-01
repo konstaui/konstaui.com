@@ -5,8 +5,11 @@ import { useGA } from '../shared/use-ga';
 
 function MyApp({ Component, pageProps, router }) {
   useGA(router);
+  const meta = Component.layoutProps?.meta || {};
   const title =
+    meta.title ||
     'Tailwind Mobile - Mobile UI components built with Tailwind CSS';
+
   return (
     <>
       <Head>

@@ -1,5 +1,7 @@
 module.exports = {
   purge: [
+    './src/layouts/**/*.{js,ts,jsx,tsx}',
+    './src/layouts/*.{js,ts,jsx,tsx}',
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/pages/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
@@ -21,6 +23,9 @@ module.exports = {
           DEFAULT: '#FF6300',
           dark: '#d65300',
         },
+      },
+      maxWidth: {
+        '8xl': '90rem',
       },
     },
   },

@@ -5,9 +5,11 @@ module.exports = {
     node: true,
   },
   extends: [
+    'next',
+    'next/core-web-vitals',
     'plugin:react/recommended',
     'airbnb',
-    'plugin:prettier/recommended',
+    'prettier',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -36,6 +38,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['off'],
     'import/extensions': ['off'],
     'react/react-in-jsx-scope': ['off'],
+    'react/no-array-index-key': ['off'],
     'react/prop-types': ['off'],
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-wrap-multilines': 'off',

@@ -1,0 +1,105 @@
+---
+title: 'Usage | Tailwind Mobile React'
+section: 'react'
+---
+
+# Usage
+
+After [installation](/react/installation) process is done we can start using Tailwind Mobile components in our React application.
+
+## Components
+
+The process is pretty straightforward and we need to import Tailwind Mobile React components from `tailwind-mobile/react`:
+
+`App.jsx`
+
+```jsx
+import React from 'react';
+import { Block, Button } from 'tailwind-mobile/react';
+
+export function MyApp() {
+  // ...
+
+  return (
+    <>
+      <Block>
+        <p>This is block with text</p>
+      </Block>
+      <Block className="space-y-4">
+        <p>Here comes the button</p>
+        <Button>Action</Button>
+      </Block>
+    </>
+  );
+}
+```
+
+## App Component
+
+We suppose you use Tailwind Mobile components with some other framework (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)).
+
+But if you use only Tailwind Mobile then we need to wrap all our components with Tailwind Mobile's **[App](/react/app)** component.
+
+In **[App](/react/app)** component we can define global theme (iOS or Material) and other useful globals:
+
+`App.jsx`
+
+```jsx
+import React from 'react';
+import { App, Page, Navbar, Block } from 'tailwind-mobile/react';
+
+export default function MyApp() {
+  return (
+    <App theme="ios">
+      <Page>
+        <Navbar title="My App" />
+        <Block>
+          <p>Here comes my app</p>
+        </Block>
+      </Page>
+    </App>
+  );
+}
+```
+
+## Tailwind Mobile Provider
+
+And if you do use Tailwind Mobile with other frameworks, we still can (and should) specify Tailwind Mobile's globals (like theme). For this case we need to use **[TailwindMobileProvider](/react/tailwind-mobile-provider)**.
+
+We also need to add `twm-ios` or `twm-material` class to the app's root element.
+
+`App.jsx`
+
+```jsx
+import React from 'react';
+// we use main App and Router components from Framework7
+import { App, View, Page, Navbar } from 'framework7/react';
+// we use TailwindMobileProvider instead
+import { TailwindMobileProvider, Block, Button } from 'tailwind-mobile/react';
+
+export default function MyApp() {
+  return (
+    <>
+      {/* Wrap our app with TailwindMobileProvider */}
+      <TailwindMobileProvider theme="ios">
+        {/* We add extra `twm-ios` class to the app root element */}
+        <App theme="ios" className="twm-ios">
+          <View>
+            <Page>
+              <Navbar title="My App" />
+              {/*  Tailwind Mobile components */}
+              <Block>
+                <p>Here comes my app</p>
+              </Block>
+              <Block className="space-y-4">
+                <p>Here comes the button</p>
+                <Button>Action</Button>
+              </Block>
+            </Page>
+          </View>
+        </App>
+      </TailwindMobileProvider>
+    </>
+  );
+}
+```
