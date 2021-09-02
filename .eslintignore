@@ -2,5 +2,6 @@
 .next
 public
 node_modules
+src/components/examples
 src/components/api
 src/components/api/react

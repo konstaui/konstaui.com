@@ -129,7 +129,7 @@ export default function Home() {
         </div>
         {/* Phone */}
         <Device
-          src="/kitchen-sink/react/index.html"
+          url="/kitchen-sink/react/dist/index.html"
           className="hidden ml-16 lg:block "
         />
       </Container>
@@ -141,7 +141,7 @@ export default function Home() {
           <Button
             className="md:hidden"
             inline
-            href="/kitchen-sink/react/index.html"
+            href="/kitchen-sink/react/dist/index.html"
             target="_blank"
           >
             <span>Open in new tab</span>

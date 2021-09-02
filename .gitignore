@@ -30,7 +30,7 @@ yarn-error.log*
 # vercel
 .vercel
 
-src/components/api/*.js
-src/components/api/react/*.js
+src/components/examples/
+src/components/api/
 src/types.json
 public/types

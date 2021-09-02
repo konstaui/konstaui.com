@@ -2,10 +2,13 @@
   "name": "tailwind-mobile.com",
   "private": true,
   "scripts": {
-    "dev": "node build/build-api && TAILWIND_JIT=true next dev",
-    "build": "node build/build-api && TAILWIND_JIT=true next build",
+    "dev": "npm run build-api && npm run build-examples && TAILWIND_JIT=true next dev",
+    "build": "npm run build-api && npm run build-examples && TAILWIND_JIT=true next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-api": "node build/build-api",
+    "build-examples": "node build/build-examples",
+    "copy-ks": "node build/copy-kitchen-sink"
   },
   "dependencies": {
     "@babel/core": "^7.15.0",
