@@ -5,10 +5,10 @@ const Button = (props) => {
   return (
     <button
       type="button"
-      className={`w-20 font-medium text-sm h-7 duration-300 ${
+      className={`w-20 font-medium text-sm h-7 duration-300 text-white ${
         active
-          ? 'bg-primary text-white'
-          : 'border border-opacity-25 bg-white bg-opacity-10'
+          ? 'bg-primary'
+          : 'border border-opacity-25 bg-white bg-opacity-10 text-opacity-50 hover:bg-opacity-20'
       } ${left ? 'rounded-l' : 'rounded-r'}`}
       {...rest}
     >
@@ -51,11 +51,28 @@ export const ExamplePreview = (props) => {
   const iframeUrl = useRef(getIframeUrl());
 
   return (
-    <div className="docs-example">
+    <div className="docs-example my-8">
       <div className="flex bg-black rounded-t-lg py-4 px-4 items-center justify-between">
         <div className="text-white text-opacity-75">{fileName || ''}</div>
         <div className="flex">
-          <div className="flex">
+          <div>
+            <a
+              href={iframeUrl.current}
+              target="_blank"
+              className="bg-white bg-opacity-10 border border-opacity-25 !text-white w-7 h-7 flex justify-center items-center rounded hover:bg-opacity-20 duration-300"
+            >
+              <svg
+                className="w-4 h-4 relative -top-px opacity-50"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+              </svg>
+            </a>
+          </div>
+          <div className="flex ml-4">
             <Button
               active={theme === 'ios'}
               left
@@ -71,7 +88,7 @@ export const ExamplePreview = (props) => {
               Material
             </Button>
           </div>
-          <div className="flex ml-8">
+          <div className="flex ml-4">
             <Button
               active={mode === 'light'}
               left
@@ -90,7 +107,7 @@ export const ExamplePreview = (props) => {
         </div>
       </div>
       <div className="flex border-r-4 border-b-4 border-l-4 border-t-0 border-black">
-        <div className="flex-shrink h-[734px] w-full min-w-0">
+        <div className="flex-shrink h-[734px] w-full min-w-0 border-r-4 border-black">
           <Source />
         </div>
         <div className="flex-shrink-0 w-[375px]">

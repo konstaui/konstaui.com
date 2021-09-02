@@ -9,25 +9,55 @@ const buildExamples = async () => {
   const pages = fs
     .readdirSync(pagesPath)
     .filter((page) => !page.includes('Home') && page.includes('.jsx'));
-  // BadgePage.displayName = 'BadgePage';
+
   pages.forEach((page) => {
     const name = page.split('.jsx')[0];
-    const content = fs
+    const url = name
+      .split('')
+      .map((char, index) =>
+        char.match(/[A-Z]/) && index !== 0 ? `-${char}` : char
+      )
+      .join('')
+      .toLowerCase();
+    let content = fs
       .readFileSync(path.resolve(pagesPath, page), 'utf-8')
       .replace(/\$\{/g, '\\${')
       .replace(/={`/g, '={\\`')
       .replace(/`}/g, '\\`}')
       .replace(/([a-zA-Z]*)\.displayName = '([a-zA-Z]*)';/g, '')
-      .trim();
+      .replace(
+        `const isPreview = document.location.href.includes('examplePreview');\n  `,
+        ''
+      )
+      .replace(
+        `left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}\n        `,
+        ''
+      );
+
+    content = content.trim();
 
     const demoContent = `
 import { Pre } from '@/components/Pre.js';
+import { ExamplePreview } from '@/components/ExamplePreview';
 
-export default function ${name}() {
+function ExampleContent() {
   return (
     <Pre lang="jsx">{\`${content}\`}</Pre>
   )
 }
+
+export default function Example() {
+  return (
+    <ExamplePreview
+      react
+      fileName="${name}.jsx"
+      source={ExampleContent}
+      url="#/${url}"
+    />
+  )
+}
+
+
     `.trim();
     fs.writeFileSync(
       path.resolve(

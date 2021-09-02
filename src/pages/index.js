@@ -157,7 +157,7 @@ export default function Home() {
           </Button>
         </div>
         <Device
-          src="/kitchen-sink/react/index.html"
+          url="/kitchen-sink/react/dist/index.html"
           className="hidden md:block my-16 mx-auto"
         />
       </Section>

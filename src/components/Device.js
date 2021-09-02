@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-export const Device = ({ src, float, className }) => {
+export const Device = ({ url, float, className }) => {
   return (
     <div
       className={`w-[375px] h-[734px] overflow-hidden rounded-3xl box-content p-2 border-2 border-gray-400 bg-black ${
@@ -8,7 +8,7 @@ export const Device = ({ src, float, className }) => {
     >
       <iframe
         title="demo"
-        src={src}
+        src={url}
         loading="lazy"
         className="w-full h-full rounded-xl overflow-hidden"
       />

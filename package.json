@@ -29,7 +29,7 @@
     "sass": "^1.38.2",
     "simple-functional-loader": "^1.2.1",
     "strip-indent": "^4.0.0",
-    "tailwind-mobile": "^0.3.5",
+    "tailwind-mobile": "^0.3.6",
     "tailwindcss": "^2.2.9",
     "typedoc": "^0.21.9",
     "typescript": "^4.4.2",
