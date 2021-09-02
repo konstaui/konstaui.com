@@ -32,6 +32,10 @@ const buildExamples = async () => {
       .replace(
         `left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}\n        `,
         ''
+      )
+      .replace(
+        `left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}\n      `,
+        ''
       );
 
     content = content.trim();
