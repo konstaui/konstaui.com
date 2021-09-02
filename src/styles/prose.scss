@@ -4,6 +4,9 @@
   &:hover {
     @apply hover:underline;
   }
+  code {
+    color: inherit;
+  }
 }
 .prose {
   @apply text-gray-500;

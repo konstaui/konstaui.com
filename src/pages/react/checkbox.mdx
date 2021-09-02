@@ -7,4 +7,36 @@ import { CheckboxProps } from '../../components/api/CheckboxProps';
 
 # Checkbox React Component
 
+## Checkbox Props
+
 <CheckboxProps />
+
+## Checkboxes List
+
+Checkboxes List is not a separate component, but just a particular case of using [`<List>`](/react/list) and [`<ListItem>`](/react/list-item) components.
+
+```jsx
+<List>
+  {/* Additional "label" prop on ListItem */}
+  <ListItem
+    label
+    title="Books"
+    media={
+      <>
+        {/* Pass Checkbox to list item media */}
+        <Checkbox component="div" name="my-checkbox" />
+      </>
+    }
+  />
+  <ListItem
+    label
+    title="Movies"
+    media={
+      <>
+        {/* Pass Checkbox to list item media */}
+        <Checkbox component="div" name="my-checkbox" />
+      </>
+    }
+  />
+</List>
+```

@@ -7,4 +7,36 @@ import { RadioProps } from '../../components/api/RadioProps';
 
 # Radio React Component
 
+## Radio Props
+
 <RadioProps />
+
+## Radios List
+
+Radios List is not a separate component, but just a particular case of using [`<List>`](/react/list) and [`<ListItem>`](/react/list-item) components.
+
+```jsx
+<List>
+  {/* Additional "label" prop on ListItem */}
+  <ListItem
+    label
+    title="Books"
+    media={
+      <>
+        {/* Pass Radio to list item media */}
+        <Radio component="div" name="my-checkbox" />
+      </>
+    }
+  />
+  <ListItem
+    label
+    title="Movies"
+    media={
+      <>
+        {/* Pass Radio to list item media */}
+        <Radio component="div" name="my-checkbox" />
+      </>
+    }
+  />
+</List>
+```

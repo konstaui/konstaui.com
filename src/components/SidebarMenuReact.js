@@ -26,6 +26,10 @@ const links = [
   {
     title: 'Components',
     links: [
+      {
+        title: 'TailwindMobileProvider',
+        href: '/react/tailwind-mobile-provider',
+      },
       'App',
       'Badge',
       'Block',
