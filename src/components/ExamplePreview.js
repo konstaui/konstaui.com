@@ -72,7 +72,7 @@ export const ExamplePreview = (props) => {
               </svg>
             </a>
           </div>
-          <div className="flex ml-4">
+          <div className="ml-4 hidden md:flex">
             <Button
               active={theme === 'ios'}
               left
@@ -88,7 +88,7 @@ export const ExamplePreview = (props) => {
               Material
             </Button>
           </div>
-          <div className="flex ml-4">
+          <div className="ml-4 hidden md:flex">
             <Button
               active={mode === 'light'}
               left
@@ -107,10 +107,10 @@ export const ExamplePreview = (props) => {
         </div>
       </div>
       <div className="flex border-r-4 border-b-4 border-l-4 border-t-0 border-black">
-        <div className="flex-shrink h-[734px] w-full min-w-0 border-r-4 border-black">
+        <div className="flex-shrink md:h-[734px] w-full min-w-0 md:border-r-4 border-black">
           <Source />
         </div>
-        <div className="flex-shrink-0 w-[375px]">
+        <div className="hidden md:block flex-shrink-0 w-[320px] xl:w-[375px]">
           <iframe
             ref={iframeEl}
             title="demo"
