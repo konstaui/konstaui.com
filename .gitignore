@@ -31,4 +31,5 @@ yarn-error.log*
 .vercel
 
 src/components/api/*.js
+src/types.json
 public/types

@@ -28,6 +28,7 @@
     "out": "./public/types"
   },
   "include": [
+    "node_modules/@types/react",
     "node_modules/tailwind-mobile/react/*.d.ts",
     "node_modules/tailwind-mobile/react/**/*.d.ts"
   ]

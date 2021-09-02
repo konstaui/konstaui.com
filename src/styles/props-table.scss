@@ -1,0 +1,39 @@
+.props-table {
+  @apply table-fixed;
+  tbody tr {
+    @apply border-t;
+  }
+  tbody td:nth-child(1) {
+    @apply w-1/6 text-primary-dark font-mono;
+    a {
+      color: inherit;
+    }
+    span {
+      font-size: 0.875em;
+    }
+  }
+  tbody td:nth-child(2) {
+    @apply w-1/6 text-green-700 font-mono;
+    span {
+      font-size: 0.875em;
+    }
+  }
+  tbody td:nth-child(3) {
+    @apply w-1/6 text-blue-900 font-mono;
+    span {
+      font-size: 0.875em;
+    }
+  }
+  tbody td:nth-child(4) {
+    @apply w-3/6 space-y-2;
+    p,
+    ul {
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

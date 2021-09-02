@@ -33,8 +33,11 @@ const buildProps = async (componentName, typesData) => {
       }
       return `object`;
     }
-    if (item.name === 'onAny') {
-      return 'function';
+    if (!item.type && item.signatures) {
+      const args = (item.signatures[0].parameters || [])
+        .map((param) => `<span className="text-red-700">${param.name}</span>`)
+        .join(', ');
+      return `function(${args || ''})`;
     }
     return typeObj.name || '';
   };
@@ -46,12 +49,11 @@ const buildProps = async (componentName, typesData) => {
       (bracket) => `{'${bracket}'}`
     );
   };
-  let parentType;
 
   const content = `
 export const ${componentName}Props = () => {
   return (
-    <table className="table-fixed params-table">
+    <table className="props-table">
       <thead>
         <tr>
           <th>Name</th>
@@ -64,23 +66,19 @@ export const ${componentName}Props = () => {
         ${items
           .map(
             (item) => `
-          <tr className="border-t ${
-            parentType ? 'params-table-nested-row' : ''
-          }">
-            <td className="w-1/6 text-red-700 font-mono font-semibold">
-              <a href="#param-${parentType ? `${parentType.name}-` : ''}${
+          <tr>
+            <td>
+              <a href="#param-${item.name}" id="param-${item.name}"><span>${
               item.name
-            }" id="param-${parentType ? `${parentType.name}-` : ''}${
-              item.name
-            }">${item.name}</a>
+            }</span></a>
             </td>
-            <td className="w-1/6 text-green-700 font-mono font-semibold">
-              ${type(item)}
+            <td>
+              <span>${type(item)}</span>
             </td>
-            <td className="w-1/6 text-yellow-700 font-mono font-semibold">
-              ${defaultValue(item)}
+            <td>
+              <span>${defaultValue(item)}</span>
             </td>
-            <td className="w-3/6 space-y-2">${description(item)}</td>
+            <td>${description(item)}</td>
           </tr>
         `
           )
