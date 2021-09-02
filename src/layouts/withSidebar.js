@@ -1,12 +1,12 @@
 import { Container } from '../components/Container';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
-import { SidebarReact } from '../components/SidebarReact';
+import { SidebarMenuReact } from '../components/SidebarMenuReact';
 // import { SidebarSvelte } from '@/components/SidebarSvelte';
 // import { SidebarVue } from '@/components/SidebarVue';
 
 const sidebars = {
-  react: SidebarReact,
+  react: SidebarMenuReact,
   // svelte: SidebarSvelte,
   // vue: SidebarVue,
 };

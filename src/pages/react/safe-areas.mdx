@@ -36,7 +36,7 @@ If your app targets full screen mobile devices, make sure you have `viewport-fit
 To tell our components that our app is a full screen app and we need to consider safe areas, we need to add `safe-areas` class to Tailwind Mobile components parent element, preferably to the root app element.
 
 ```jsx
-// main App.jsx
+/* App.jsx */
 import React from 'react';
 
 export default function MyApp() {
@@ -54,7 +54,7 @@ export default function MyApp() {
 If you use Tailwind Mobile's [App component](/react/app), then it can be enabled with `safeAreas` prop:
 
 ```jsx
-// main App.jsx
+/* App.jsx */
 import React from 'react';
 import { App, ... } from 'tailwind-mobile/react';
 

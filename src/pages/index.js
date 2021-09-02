@@ -1,3 +1,4 @@
+import { Device } from '../components/Device';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
 import { Footer } from '../components/Footer';
@@ -127,14 +128,10 @@ export default function Home() {
           </div>
         </div>
         {/* Phone */}
-        <div className="hidden ml-16 lg:block w-[375px] h-[736px] flex-shrink-0 overflow-hidden bg-black rounded-3xl box-content p-2 border-2 border-gray-400">
-          <iframe
-            title="demo"
-            className="w-full h-full rounded-2xl overflow-hidden"
-            src="/kitchen-sink/react/index.html"
-            loading="lazy"
-          />
-        </div>
+        <Device
+          src="/kitchen-sink/react/index.html"
+          className="hidden ml-16 lg:block "
+        />
       </Container>
 
       {/* Sections */}
@@ -159,14 +156,10 @@ export default function Home() {
             </svg>
           </Button>
         </div>
-        <div className="hidden md:block w-[375px] h-[736px] my-16 mx-auto overflow-hidden rounded-3xl box-content p-2 border-2 border-gray-400 bg-black">
-          <iframe
-            title="demo"
-            className="w-full h-full rounded-xl overflow-hidden"
-            src="/kitchen-sink/react/index.html"
-            loading="lazy"
-          />
-        </div>
+        <Device
+          src="/kitchen-sink/react/index.html"
+          className="hidden md:block my-16 mx-auto"
+        />
       </Section>
 
       <Section>

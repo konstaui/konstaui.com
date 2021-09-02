@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ESNEXT",
+    "module": "ESNEXT",
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "noEmit": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "typedocOptions": {
+    "name": "TailwindMobile",
+    "entryPoints": [],
+    "excludeExternals": false,
+    "includeVersion": true,
+    "out": "./public/types"
+  },
+  "include": [
+    "node_modules/tailwind-mobile/react/*.d.ts",
+    "node_modules/tailwind-mobile/react/**/*.d.ts"
+  ]
+}

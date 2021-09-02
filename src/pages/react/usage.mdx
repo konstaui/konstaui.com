@@ -11,9 +11,8 @@ After [installation](/react/installation) process is done we can start using Tai
 
 The process is pretty straightforward and we need to import Tailwind Mobile React components from `tailwind-mobile/react`:
 
-`App.jsx`
-
 ```jsx
+/* App.jsx */
 import React from 'react';
 import { Block, Button } from 'tailwind-mobile/react';
 
@@ -42,9 +41,8 @@ But if you use only Tailwind Mobile then we need to wrap all our components with
 
 In [App component](/react/app) we can define global theme (iOS or Material) and other useful globals:
 
-`App.jsx`
-
 ```jsx
+/* App.jsx */
 import React from 'react';
 import { App, Page, Navbar, Block } from 'tailwind-mobile/react';
 
@@ -68,9 +66,8 @@ And if you do use Tailwind Mobile with other frameworks, we still can (and shoul
 
 We also need to add `twm-ios` or `twm-material` class to the app's root element.
 
-`App.jsx`
-
 ```jsx
+/* App.jsx */
 import React from 'react';
 // we use main App and Router components from Framework7
 import { App, View, Page, Navbar } from 'framework7/react';

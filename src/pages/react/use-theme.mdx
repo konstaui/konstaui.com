@@ -1,0 +1,46 @@
+---
+title: 'useTheme | Tailwind Mobile React'
+section: 'react'
+---
+
+# useTheme
+
+Tailwind Mobile comes with handy `useTheme` hook to detect currently active theme (`ios` or `material`) set by [App component](/react/app) or [TailwindMobileProvider](/react/tailwind-mobile-provider).
+
+```jsx
+/* App.jsx */
+import { App } from 'tailwind-mobile/react';
+import { HomePage } from './path/to/HomePage.jsx';
+
+export default function MyApp() {
+  return (
+    <>
+      {/* set theme on App component */}
+      <App theme="ios">
+        <HomePage />
+      </App>
+    </>
+  );
+}
+```
+
+```jsx
+/* HomePage.jsx */
+import { useTheme } from 'tailwind-mobile/react';
+import { Page } from './path/to/HomePage.jsx';
+
+export default function MyApp() {
+  // get currently set theme
+  const theme = useTheme();
+
+  console.log(theme); // -> 'ios'
+
+  return (
+    <>
+      <Page>
+        {theme === 'ios' ? <p>Theme is iOS</p> : <p>Theme is Material</p>}
+      </Page>
+    </>
+  );
+}
+```
