@@ -2,7 +2,7 @@
   "name": "tailwind-mobile.com",
   "private": true,
   "scripts": {
-    "dev": "TAILWIND_JIT=true next dev",
+    "dev": "node build/build-api && TAILWIND_JIT=true next dev",
     "build": "node build/build-api && TAILWIND_JIT=true next build",
     "start": "next start",
     "lint": "next lint"

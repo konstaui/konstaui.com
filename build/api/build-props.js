@@ -89,7 +89,10 @@ export const ${componentName}Props = () => {
 }
 `;
   fs.writeFileSync(
-    path.join(__dirname, `../../src/components/api/${componentName}Props.js`),
+    path.join(
+      __dirname,
+      `../../src/components/api/react/${componentName}Props.js`
+    ),
     content
   );
 };

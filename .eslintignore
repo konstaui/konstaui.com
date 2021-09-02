@@ -1,0 +1,6 @@
+.git
+.next
+public
+node_modules
+src/components/api
+src/components/api/react
