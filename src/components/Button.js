@@ -5,7 +5,7 @@ export const Button = (props) => {
     <Component
       className={`bg-primary text-xl font-bold text-white px-8 h-12 ${
         inline ? 'inline-flex' : 'flex'
-      } items-center rounded-xl cursor-pointer hover:bg-primary-light active:bg-primary-dark duration-200 active:ring-4 active:ring-primary active:ring-opacity-50 ${
+      } items-center rounded-full cursor-pointer hover:bg-primary-light active:bg-primary-dark duration-200 active:ring-4 active:ring-primary active:ring-opacity-50 select-none ${
         className || ''
       }`}
       {...attrs}

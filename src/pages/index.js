@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { Device } from '../components/Device';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
@@ -11,6 +13,24 @@ export default function Home() {
     e.preventDefault();
     copyToClipboard('npm i tailwind-mobile');
   };
+
+  const CopyIcon = ({ className }) => (
+    <svg
+      className={className || ''}
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        d="M4,12 C4,13.886 4,14.828 4.586,15.414 C5.172,16 6.114,16 8,16 L12,16 C13.886,16 14.828,16 15.414,15.414 C16,14.828 16,13.886 16,12 L16,8 C16,6.114 16,5.172 15.414,4.586 C14.828,4 13.886,4 12,4 M4,12 L8,12 C9.886,12 10.828,12 11.414,11.414 C12,10.828 12,9.886 12,8 L12,4 M4,12 C2.114,12 1.172,12 0.586,11.414 C0,10.828 0,9.886 0,8 L0,4 C0,2.114 0,1.172 0.586,0.586 C1.172,0 2.114,0 4,0 L8,0 C9.886,0 10.828,0 11.414,0.586 C12,1.172 12,2.114 12,4"
+        transform="translate(1 1)"
+      />
+    </svg>
+  );
 
   const Section = (props) => {
     const { className, children, ...attrs } = props;
@@ -93,28 +113,17 @@ export default function Home() {
               <br /> React, Vue & Svelte
             </div>
             <div className="flex flex-col sm:flex-row items-center space-x-4 my-8 justify-center lg:justify-end">
-              <Button className="lg:px-6 xl:px-8">Get started</Button>
-              <div className="bg-primary bg-opacity-10 font-mono text-black text-lg h-12 border border-primary rounded-xl items-center px-8 lg:px-6 xl:px-8 hidden sm:flex">
+              <Button href="#get-started" className="lg:px-6 xl:px-8">
+                Get started
+              </Button>
+              <div className="bg-primary bg-opacity-10 font-mono text-black text-lg h-12 border border-primary rounded-xl items-center px-4 hidden sm:flex">
                 <span className="select-none opacity-50 mr-4">$</span>
                 <span>npm i tailwind-mobile</span>
                 <span
-                  className="ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 transform-gpu"
+                  className="ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 hover:text-primary transform-gpu"
                   onClick={copyInstallCommand}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                  >
-                    <path
-                      fill="none"
-                      stroke="#000"
-                      strokeWidth="1.5"
-                      d="M4,12 C4,13.886 4,14.828 4.586,15.414 C5.172,16 6.114,16 8,16 L12,16 C13.886,16 14.828,16 15.414,15.414 C16,14.828 16,13.886 16,12 L16,8 C16,6.114 16,5.172 15.414,4.586 C14.828,4 13.886,4 12,4 M4,12 L8,12 C9.886,12 10.828,12 11.414,11.414 C12,10.828 12,9.886 12,8 L12,4 M4,12 C2.114,12 1.172,12 0.586,11.414 C0,10.828 0,9.886 0,8 L0,4 C0,2.114 0,1.172 0.586,0.586 C1.172,0 2.114,0 4,0 L8,0 C9.886,0 10.828,0 11.414,0.586 C12,1.172 12,2.114 12,4"
-                      transform="translate(1 1)"
-                    />
-                  </svg>
+                  <CopyIcon />
                 </span>
               </div>
             </div>
@@ -337,6 +346,63 @@ export default function Home() {
             },
           ]}
         />
+      </Section>
+
+      <Section id="get-started">
+        <SectionTitle>Get Started</SectionTitle>
+        <div className="bg-primary border-primary border bg-opacity-10 font-mono text-black text-lg py-6 rounded-xl items-center px-8 justify-center flex max-w-2xl mx-auto">
+          <span className="select-none opacity-50 mr-4 pointer-events-none">
+            $
+          </span>
+          <span>npm i tailwind-mobile</span>
+          <span
+            className="ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 hover:text-primary transform-gpu"
+            onClick={copyInstallCommand}
+          >
+            <CopyIcon />
+          </span>
+        </div>
+        <div className="flex items-stretch justify-center space-x-4 md:space-x-8 mt-8 max-w-3xl mx-auto text-center">
+          <Link href="/react">
+            <a className="flex flex-col items-center text-black border-primary border rounded-xl px-4 py-6 relative w-full hover:bg-primary-light hover:bg-opacity-10 duration-200">
+              <img
+                className="h-20 mb-4"
+                src="/images/home-logos/react.svg"
+                alt="react"
+              />
+              <span className="mb-2 font-semibold">Tailwind Mobile React</span>
+              <span className="text-sm opacity-75">Documentation</span>
+            </a>
+          </Link>
+          <Link href="/svelte">
+            <a className="flex flex-col items-center text-black border-gray-400 border rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
+              <img
+                className="h-20 mb-4 grayscale"
+                src="/images/home-logos/svelte.svg"
+                alt="svelte"
+              />
+              <span className="mb-2 font-semibold">Tailwind Mobile Svelte</span>
+              <span className="text-sm opacity-75">Documentation</span>
+              <span className="absolute right-2 top-px text-xs font-medium opacity-50">
+                Coming soon
+              </span>
+            </a>
+          </Link>
+          <Link href="/vue">
+            <a className="flex flex-col items-center text-black border-gray-400 border rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
+              <img
+                className="h-20 mb-4 grayscale"
+                src="/images/home-logos/vue.svg"
+                alt="vue"
+              />
+              <span className="mb-2 font-semibold">Tailwind Mobile Vue</span>
+              <span className="text-sm opacity-75">Documentation</span>
+              <span className="absolute right-2 top-px text-xs font-medium opacity-50">
+                Coming soon
+              </span>
+            </a>
+          </Link>
+        </div>
       </Section>
 
       {/* Footer */}
