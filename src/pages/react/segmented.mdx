@@ -1,5 +1,5 @@
 ---
-title: 'Segmented React Component | Tailwind Mobile React'
+title: 'Segmented Control React Component | Tailwind Mobile React'
 section: 'react'
 ---
 
@@ -7,13 +7,24 @@ import { SegmentedProps } from '@/components/api/react/SegmentedProps';
 import { SegmentedButtonProps } from '@/components/api/react/SegmentedButtonProps';
 import SegmentedControlExample from '@/components/examples/react/SegmentedControl';
 
-# Segmented React Component
+# Segmented Control React Component
+
+Segmented control is a linear set of two or more segments (buttons), each of which functions as a mutually exclusive button. Within the control, all buttons are equal in width. Segmented controls are often used to display different views (switch tabs).
+
+## Segmented Components
+
+There are following components included:
+
+- `Segmented` - segmented wrapper for buttons
+- `SegmentedButton` - single segmented button
 
 ## Segmented Props
 
 <SegmentedProps />
 
 ## SegmentedButton Props
+
+`SegmentedButton` component extends [`Button` component](/react/button), it supports all [`Button` props](/react/button#button-props) and the following additional props:
 
 <SegmentedButtonProps />
 

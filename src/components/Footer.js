@@ -12,7 +12,7 @@ export const Footer = (props) => {
     >
       <Container>
         {/* Copy */}
-        <div className="text-sm space-y-2 text-center">
+        <div className="text-sm space-y-4 text-center">
           <div className="">
             Code licensed under{' '}
             <a
@@ -25,13 +25,13 @@ export const Footer = (props) => {
             .
           </div>
           <div>
-            2021 © Tailwind Mobile is brought to you by{' '}
-            <a
-              href="https://github.com/nolimits4web/"
-              target="_blank"
-              className="text-primary hover:underline"
-            >
-              Vladimir Kharlampidi
+            2021 © Tailwind Mobile by{' '}
+            <a href="https://nolimits4web.com" target="_blank">
+              <img
+                className="w-12 h-12 inline-block"
+                src="/images/n4w-logo.svg"
+                alt="nolimits4web"
+              />
             </a>
             .
           </div>

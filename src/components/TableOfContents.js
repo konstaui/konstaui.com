@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 
 export default function TableOfContents({ tableOfContents }) {
   return (
-    <ul className="text-gray-500">
+    <ul className="text-gray-500 !mb-8">
       {tableOfContents.map((section) => (
         <Fragment key={section.slug}>
           <li className="!my-1">

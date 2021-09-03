@@ -4,3 +4,32 @@ section: 'react'
 ---
 
 # Tailwind Mobile React
+
+Tailwind Mobile - is a free and open source mobile UI components framework built with [Tailwind CSS](https://tailwindcss.com).
+
+```jsx
+import React from 'react';
+import { App, Page, Navbar, Block } from 'tailwind-mobile/react';
+
+export default function MyApp() {
+  return (
+    <App theme="ios">
+      <Page>
+        <Navbar title="My App" />
+
+        <Block strong>Hello world!</Block>
+      </Page>
+    </App>
+  );
+}
+```
+
+It is designed to develop hybrid mobile apps, [Web Native](https://webnative.tech) apps or web apps with iOS & Android native look and feel.
+
+It is highly recommended for you to be familiar with basics of both [Tailwind CSS](https://tailwindcss.com) and [React](https://reactjs.org) before getting started.
+
+Current documentation doesn't cover the process of compilation of Tailwind Mobile app to [Cordova](https://cordova.apache.org) or [Capacitor](https://capacitorjs.com) app. It is about Tailwind Mobile and how to use all of its components. To learn more about how to compile your app to hybrid [Cordova](https://cordova.apache.org) or [Capacitor](https://capacitorjs.com) app that can be released at iOS and Google Play store refer to their official documentations.
+
+Tailwind Mobile [Kitchen Sink](/react/kitchen-sink) is also a great place to get started, it has a lot examples for all Tailwind Mobile components and covers most of aspects.
+
+Ok, so first of all we need to learn [how to install](/react/installation) Tailwind Mobile

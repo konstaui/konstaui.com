@@ -7,6 +7,47 @@ import { AppProps } from '@/components/api/react/AppProps';
 
 # TailwindMobileProvider
 
+## Usage
+
+If you use Tailwind Mobile with other frameworks (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)), we still should specify Tailwind Mobile's globals (like theme) with the help of `TailwindMobileProvider`.
+
+We also need to add `twm-ios` or `twm-material` class to the app's root element.
+
+```jsx
+/* App.jsx */
+import React from 'react';
+// we use main App and Router components from Framework7
+import { App, View, Page, Navbar } from 'framework7/react';
+// we use TailwindMobileProvider instead
+import { TailwindMobileProvider, Block, Button } from 'tailwind-mobile/react';
+
+export default function MyApp() {
+  return (
+    <>
+      {/* Wrap our app with TailwindMobileProvider */}
+      <TailwindMobileProvider theme="ios">
+        {/* We add extra `twm-ios` class to the app root element */}
+        <App theme="ios" className="twm-ios">
+          <View>
+            <Page>
+              <Navbar title="My App" />
+              {/*  Tailwind Mobile components */}
+              <Block>
+                <p>Here comes my app</p>
+              </Block>
+              <Block className="space-y-4">
+                <p>Here comes the button</p>
+                <Button>Action</Button>
+              </Block>
+            </Page>
+          </View>
+        </App>
+      </TailwindMobileProvider>
+    </>
+  );
+}
+```
+
 ## TailwindMobileProvider Props
 
 <table className="props-table">

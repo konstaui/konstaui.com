@@ -214,7 +214,7 @@ export default function Home() {
         <SectionTitle>Build with the tech you love!</SectionTitle>
         <SectionText>
           Tailwind Mobile components are currently available for React, and
-          coming soon for Vue, Svelte and Angular.
+          coming soon for Vue and Svelte.
         </SectionText>
         <SectionLogos
           logos={[

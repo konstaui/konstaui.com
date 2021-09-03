@@ -13,7 +13,6 @@ const getLinkTitle = (link) => {
 
 export const SidebarMenu = (props) => {
   const { links, root } = props;
-
   const [documentPath, setDocumentPath] = useState('');
 
   const isActive = (href) => documentPath && documentPath === href;

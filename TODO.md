@@ -1,6 +1,2 @@
-- Docs
-  - Dark
-  - add Roboto font
-- Footer
 - Release notes
 - solid share banner

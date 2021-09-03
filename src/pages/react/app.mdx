@@ -7,6 +7,36 @@ import { AppProps } from '@/components/api/react/AppProps';
 
 # App React Component
 
+App React component is the main app component that allows to define global theme (iOS or Material) and other useful globals.
+
+If you use Tailwind Mobile with other framework (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)), you should use [TailwindMobileProvider](/react/tailwind-mobile-provider) instead.
+
+## App Components
+
+There are following components included:
+
+- `App`
+
 ## App Props
 
 <AppProps />
+
+## Examples
+
+`App` component should be used as main wrapper for all Tailwind Mobile components, and there should be only one `App` component at a time in the app:
+
+```jsx
+import React from 'react';
+import { App } from 'tailwind-mobile/react';
+
+export default function MyApp() {
+  return (
+    <>
+      {/* App component ideally should be the main root component */}
+      <App theme="ios" safeAreas>
+        {/* rest of Tailwind Mobile components */}
+      </App>
+    </>
+  );
+}
+```
