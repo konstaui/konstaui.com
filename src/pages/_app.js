@@ -20,7 +20,6 @@ function MyApp({ Component, pageProps, router }) {
           name="description"
           content="Mobile UI components built with Tailwind CSS"
         />
-        <meta property="og:title" content="Tailwind Mobile" />
         <meta
           property="og:description"
           content="Mobile UI components built with Tailwind CSS"
@@ -33,7 +32,7 @@ function MyApp({ Component, pageProps, router }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@nolimits4web" />
         <meta name="twitter:creator" content="@nolimits4web" />
-        <meta name="twitter:title" content="Tailwind Mobile" />
+        <meta name="twitter:title" content={title} />
         <meta
           name="twitter:description"
           content="Mobile UI components built with Tailwind CSS"

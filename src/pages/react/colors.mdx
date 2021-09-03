@@ -8,10 +8,15 @@ import { ColorsGenerator } from '@/components/ColorsGenerator';
 
 # Colors
 
+## Extended Colors
+
 Tailwind Mobile extends Tailwind config with the following colors:
 
 | Name                  | Value                                       |
 | --------------------- | ------------------------------------------- |
+| `primary`             | <DocsColorLabel color="#007aff" />`#007aff` |
+| `primary-light`       | <DocsColorLabel color="#298fff" />`#298fff` |
+| `primary-dark`        | <DocsColorLabel color="#0066d6" />`#0066d6` |
 | `page-ios-light`      | <DocsColorLabel color="#efeff4" />`#efeff4` |
 | `page-ios-dark`       | <DocsColorLabel color="#000" />`#000`       |
 | `page-material-light` | <DocsColorLabel color="#fff" />`#fff`       |
@@ -28,9 +33,6 @@ Tailwind Mobile extends Tailwind config with the following colors:
 | `toast-material`      | <DocsColorLabel color="#323232" />`#323232` |
 | `popover-light`       | <DocsColorLabel color="#ffffff" />`#ffffff` |
 | `popover-dark`        | <DocsColorLabel color="#1c1c1d" />`#1c1c1d` |
-| `primary`             | <DocsColorLabel color="#007aff" />`#007aff` |
-| `primary-light`       | <DocsColorLabel color="#298fff" />`#298fff` |
-| `primary-dark`        | <DocsColorLabel color="#0066d6" />`#0066d6` |
 
 Most of these colors are configurable on per component basis. And to overwrite them globally with custom ones, you need to extend them in `tailwind.config.js`:
 
@@ -54,7 +56,7 @@ module.exports = tailwindMobileConfig({
 })
 ```
 
-## Theme Color
+## Generate Theme Colors
 
 Main theme color is defined by `primary` colors (`primary`, `primary.dark` and `primary.light`).
 

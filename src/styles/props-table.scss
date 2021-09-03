@@ -36,4 +36,25 @@
       }
     }
   }
+  @media (max-width: 639px) {
+    &,
+    tbody,
+    thead {
+      display: block;
+      width: 100%;
+    }
+    thead {
+      display: none;
+    }
+    tr {
+      display: block;
+      flex-wrap: wrap;
+    }
+    th,
+    td {
+      display: block;
+      width: 100% !important;
+      padding: 4px 0px !important;
+    }
+  }
 }

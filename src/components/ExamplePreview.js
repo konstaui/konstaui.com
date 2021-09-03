@@ -5,7 +5,7 @@ const Button = (props) => {
   return (
     <button
       type="button"
-      className={`w-20 font-medium text-sm h-7 duration-300 text-white ${
+      className={`w-20 font-medium text-sm h-8 duration-300 text-white ${
         active
           ? 'bg-primary'
           : 'border border-opacity-25 bg-white bg-opacity-10 text-opacity-50 hover:bg-opacity-20'
@@ -51,15 +51,15 @@ export const ExamplePreview = (props) => {
   const iframeUrl = useRef(getIframeUrl());
 
   return (
-    <div className="docs-example my-8">
-      <div className="flex bg-black rounded-t-lg py-4 px-4 items-center justify-between">
+    <div className="example-preview my-8">
+      <div className="flex bg-black rounded-t-lg py-2 px-4 items-center justify-between">
         <div className="text-white text-opacity-75">{fileName || ''}</div>
         <div className="flex">
           <div>
             <a
               href={iframeUrl.current}
               target="_blank"
-              className="bg-white bg-opacity-10 border border-opacity-25 !text-white w-7 h-7 flex justify-center items-center rounded hover:bg-opacity-20 duration-300"
+              className="bg-white bg-opacity-10 border border-opacity-25 !text-white w-8 h-8 flex justify-center items-center rounded hover:bg-opacity-20 duration-300"
             >
               <svg
                 className="w-4 h-4 relative -top-px opacity-50"
@@ -106,7 +106,7 @@ export const ExamplePreview = (props) => {
           </div>
         </div>
       </div>
-      <div className="flex border-r-4 border-b-4 border-l-4 border-t-0 border-black">
+      <div className="flex sm:border-r-4 sm:border-b-4 sm:border-l-4 border-black">
         <div className="flex-shrink md:h-[734px] w-full min-w-0 md:border-r-4 border-black">
           <Source />
         </div>

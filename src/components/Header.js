@@ -13,21 +13,9 @@ export const Header = () => (
           </a>
         </Link>
         <span>Coming soon</span>
-        {/* <a
-              className="text-black hover:text-primary font-semibold transition-colors duration-100"
-              href="#"
-            >
-              Get started
-            </a>
-            <a
-              className="text-black hover:text-primary font-semibold transition-colors duration-100"
-              href="#"
-            >
-              Documentation
-            </a> */}
       </div>
       <div className="flex items-center space-x-4">
-        <GithubStats showVersion />
+        <GithubStats showVersion inNavbar />
       </div>
     </Container>
   </header>

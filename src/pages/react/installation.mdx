@@ -39,6 +39,31 @@ module.exports = tailwindMobileConfig({
 
 As Tailwind Mobile comes with a bunch of extra utilities, it is intended to be uses with [JIT (just-in-time)](https://tailwindcss.com/docs/just-in-time-mode) mode enabled
 
+## Roboto Font
+
+Tailwind Mobile uses system font for iOS theme and [Roboto font](https://fonts.google.com/specimen/Roboto) for Material Design theme.
+
+If you develop a web app, you need to [Roboto font](https://fonts.google.com/specimen/Roboto) to your app to display it correctly.
+
+For example, it can be added from [Google Fonts](https://fonts.google.com/specimen/Roboto):
+
+In HTML:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+  rel="stylesheet"
+/>
+```
+
+Or in CSS:
+
+```scss
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+```
+
 ## Usage
 
 After installation process is done let's check [how to use Tailwind Mobile components](/react/usage) in our React application.

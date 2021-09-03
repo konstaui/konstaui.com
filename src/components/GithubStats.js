@@ -35,7 +35,7 @@ async function fetchGitStats(local) {
 }
 
 export function GithubStats(props) {
-  const { showVersion } = props;
+  const { showVersion, inNavbar } = props;
   const [data, setData] = useState([]);
   useEffect(() => {
     const gitStatsDate = localStorage.getItem('twm-git-stats-date');
@@ -59,15 +59,17 @@ export function GithubStats(props) {
           </span>
         )}
         <GithubIcon className="inline-block" height="24" />
-        {[
-          [data.stars, 'stars'],
-          [data.forks, 'forks'],
-        ].map(([value, label]) => (
-          <span className="ml-2 text-xs" key={label}>
-            <span className="text-base font-medium">{value}</span>{' '}
-            <span>{label}</span>
-          </span>
-        ))}
+        <div className={inNavbar ? `hidden sm:flex` : ''}>
+          {[
+            [data.stars, 'stars'],
+            [data.forks, 'forks'],
+          ].map(([value, label]) => (
+            <span className="ml-2 text-xs" key={label}>
+              <span className="text-base font-medium">{value}</span>{' '}
+              <span>{label}</span>
+            </span>
+          ))}
+        </div>
       </a>
     </div>
   );
