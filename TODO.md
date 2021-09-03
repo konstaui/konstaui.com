@@ -1,2 +1,0 @@
-- Release notes
-- solid share banner
