@@ -62,7 +62,7 @@ export default function MyApp() {
   <tbody>
     <tr>
       <td>
-        <a href="#param-dark" id="param-dark">
+        <a href="#prop-dark" id="prop-dark">
           <span>dark</span>
         </a>
       </td>
@@ -80,23 +80,30 @@ export default function MyApp() {
     </tr>
     <tr>
       <td>
-        <a href="#param-theme" id="param-theme">
+        <a href="#prop-theme" id="prop-theme">
           <span>theme</span>
         </a>
       </td>
       <td>
-        <span>'ios'{' | '}'material'</span>
+        <span>
+          'ios'{' | '}'material'{' | '}'parent'
+        </span>
       </td>
       <td>
         <span>'material'</span>
       </td>
       <td>
-        <p>App theme</p>
+        <p>
+          App theme. If set to <code>'parent'</code> it will look for{' '}
+          <code>ios</code> or <code>md</code> class on root{' '}
+          <code>&#x3C;html></code> element, useful to use with parent framework
+          like Framework7 or Ionic
+        </p>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="#param-touchRipple" id="param-touchRipple">
+        <a href="#prop-touchRipple" id="prop-touchRipple">
           <span>touchRipple</span>
         </a>
       </td>

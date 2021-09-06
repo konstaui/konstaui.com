@@ -58,8 +58,8 @@ import { TailwindMobileProvider } from 'tailwind-mobile/react';
 import { IonApp /* ... */ } from '@ionic/react';
 
 const App: React.FC = () => (
-  // Wrap IonApp with TailwindMobileProvider
-  <TailwindMobileProvider theme="material">
+  // Wrap IonApp with TailwindMobileProvider with theme="parent"
+  <TailwindMobileProvider theme="parent">
     <IonApp>
       <IonReactRouter>
         <IonRouterOutlet>
@@ -75,27 +75,6 @@ const App: React.FC = () => (
   </TailwindMobileProvider>
 );
 ```
-
-<div className="important-note">
-  <ul>
-    <li>
-      Make sure you pass the same <code>theme</code> to Tailwind Mobile as
-      Ionic's `mode`
-    </li>
-    <li>
-      Material Design theme is called differenty in Ionic and in Tailwind
-      Mobile.
-      <ul>
-        <li>
-          In Ionic it is called <code>md</code>,
-        </li>
-        <li>
-          In Tailwind Mobile it is called <code>material</code>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div>
 
 ## Usage
 

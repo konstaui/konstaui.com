@@ -68,7 +68,7 @@ export const ${componentName}Props = () => {
             (item) => `
           <tr>
             <td>
-              <a href="#param-${item.name}" id="param-${item.name}"><span>${
+              <a href="#prop-${item.name}" id="prop-${item.name}"><span>${
               item.name
             }</span></a>
             </td>

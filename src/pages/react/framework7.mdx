@@ -69,8 +69,8 @@ const MyApp = () => {
   };
 
   return (
-    // Wrap Framework7's App with TailwindMobileProvider
-    <TailwindMobileProvider theme="ios">
+    // Wrap Framework7's App with TailwindMobileProvider with theme="parent"
+    <TailwindMobileProvider theme="parent">
       <App {...f7params}>
         ...
       </App>
@@ -80,27 +80,6 @@ const MyApp = () => {
 
 export default MyApp;
 ```
-
-<div className="important-note">
-  <ul>
-    <li>
-      Make sure you pass the same <code>theme</code> to Framework7 and Tailwind
-      Mobile.
-    </li>
-    <li>
-      Material Design theme is called differenty in Framework7 and in Tailwind
-      Mobile.
-      <ul>
-        <li>
-          In Framework7 it is called <code>md</code>,
-        </li>
-        <li>
-          In Tailwind Mobile it is called <code>material</code>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div>
 
 ## Usage
 
