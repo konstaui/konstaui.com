@@ -350,19 +350,19 @@ export default function Home() {
 
       <Section id="get-started">
         <SectionTitle>Get Started</SectionTitle>
-        <div className="bg-primary border-primary border bg-opacity-10 font-mono text-black text-lg py-6 rounded-xl items-center px-8 justify-center flex max-w-2xl mx-auto">
-          <span className="select-none opacity-50 mr-4 pointer-events-none">
+        <div className="bg-primary border-primary border bg-opacity-10 font-mono text-black sm:text-lg py-6 rounded-xl items-center px-4 sm:px-8 justify-center flex max-w-2xl mx-auto">
+          <span className="hidden sm:block select-none opacity-50 mr-4 pointer-events-none">
             $
           </span>
           <span>npm i tailwind-mobile</span>
           <span
-            className="ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 hover:text-primary transform-gpu"
+            className="ml-2 sm:ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 hover:text-primary transform-gpu"
             onClick={copyInstallCommand}
           >
             <CopyIcon />
           </span>
         </div>
-        <div className="flex items-stretch justify-center space-x-4 md:space-x-8 mt-8 max-w-3xl mx-auto text-center">
+        <div className="items-stretch justify-center space-y-4 sm:space-y-0 sm:flex sm:space-x-4 md:space-x-8 mt-8 max-w-3xl mx-auto text-center">
           <Link href="/react">
             <a className="flex flex-col items-center text-black border-primary border rounded-xl px-4 py-6 relative w-full hover:bg-primary-light hover:bg-opacity-10 duration-200">
               <img

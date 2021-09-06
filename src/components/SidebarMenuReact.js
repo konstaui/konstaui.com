@@ -47,6 +47,7 @@ const links = [
       'Menu List',
       'Navbar',
       'Page',
+      { title: 'Panel / Side Panels', href: '/react/panel' },
       'Popover',
       'Popup',
       'Preloader',
