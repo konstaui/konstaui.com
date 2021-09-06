@@ -1,0 +1,220 @@
+---
+title: 'Tailwind Mobile & Framework7 | Tailwind Mobile React'
+section: 'react'
+---
+
+# Tailwind Mobile & Framework7
+
+Let's see how to use Tailwind Mobile React components with [Framework7](https://framework7.io) React.
+
+## Create Framework7 Project
+
+First, create a Framework7 React project using [Framework7 CLI](https://framework7.io/cli)
+
+## Install Tailwind CSS & Tailwind Mobile
+
+Now in created Framework7 project, we need to install Tailwind CSS & Tailwind Mobile:
+
+```
+npm i tailwindcss tailwind-mobile
+```
+
+There is a `postcss.config.js` file in the project root, we need to add there `tailwindcss` plugin:
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {}, // <- add this
+    'postcss-preset-env': {},
+  },
+};
+```
+
+Create `tailwind.config.js` file and add it to the project root folder with the folowing content:
+
+```js
+const tailwindMobile = require('tailwind-mobile/config');
+
+module.exports = tailwindMobile({
+  mode: 'jit',
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './src/index.html'],
+  darkMode: 'class',
+});
+```
+
+Include Tailwind CSS to your app's styles. Add the following code in the beginning of your `src/css/app.[css|scss|less]`:
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## TailwindMobileProvider
+
+Now we need to setup [TailwindMobileProvider](/react/tailwind-mobile-provider) so we can set some global parameters (like `theme`).
+
+We need to wrap main Framework7's `App` component with `TailwindMobileProvider` in the `src/components/app.jsx`:
+
+```jsx
+import React from 'react';
+import { TailwindMobileProvider } from 'tailwind-mobile/react';
+import { App, /* ... */ } from 'framework7';
+
+const MyApp = () => {
+  // Framework7 Parameters
+  const f7params = {
+    theme: 'ios',
+    ...
+  };
+
+  return (
+    // Wrap Framework7's App with TailwindMobileProvider
+    <TailwindMobileProvider theme="ios">
+      <App {...f7params}>
+        ...
+      </App>
+    </TailwindMobileProvider>
+  );
+}
+
+export default MyApp;
+```
+
+<div className="important-note">
+  <ul>
+    <li>
+      Make sure you pass the same <code>theme</code> to Framework7 and Tailwind
+      Mobile.
+    </li>
+    <li>
+      Material Design theme is called differenty in Framework7 and in Tailwind
+      Mobile.
+      <ul>
+        <li>
+          In Framework7 it is called <code>md</code>,
+        </li>
+        <li>
+          In Tailwind Mobile it is called <code>material</code>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+## Usage
+
+Framework7 has very powerful and flexible router, and to keep it work correctly we need to use Router-related components from Framework7: `App`, `View`, `Page`, `Navbar`, `Toolbar`.
+
+The rest of components (if there is a Tailwind Mobile alternative) can be taken from Tailwind Mobile (`tailwind-mobile/react`)
+
+## Example Page
+
+Now when everything is set up, we can use Tailwind Mobile React components in Framework7 page components.
+
+For example, let's open `src/pages/home.jsx` and change it to the following:
+
+```jsx
+import React from 'react';
+// Use Page, Navbar, Toolbar from Framework7
+import { Page, Navbar, Toolbar } from 'framework7-react';
+// Tailwind Mobile components
+import {
+  Block,
+  Button,
+  List,
+  ListItem,
+  Link,
+  BlockTitle,
+} from 'tailwind-mobile/react';
+
+const HomePage = () => (
+  // Use Page, Navbar & Toolbar from Framework7
+  <Page name="home">
+    <Navbar title="My App" large />
+    <Toolbar bottom>
+      <Link toolbar>Left Link</Link>
+      <Link toolbar>Right Link</Link>
+    </Toolbar>
+    {/* In page content we can use Tailwind Mobile components  */}
+    <Block strong>
+      <p>
+        Here is your Framework7 & Tailwind Mobile app. Let's see what we have
+        here.
+      </p>
+    </Block>
+    <BlockTitle>Navigation</BlockTitle>
+    <List>
+      <ListItem href="/about/" title="About" />
+      <ListItem href="/form/" title="Form" />
+    </List>
+
+    <Block strong className="flex space-x-4">
+      <Button>Button 1</Button>
+      <Button>Button 2</Button>
+    </Block>
+  </Page>
+);
+export default HomePage;
+```
+
+As a result we should see the following page:
+
+<img
+  className="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
+  src="/images/docs/twm-framework7.png"
+  alt="tailwind-mobile-framework7"
+/>
+
+## Dark Mode
+
+Pay attention that Tailwind CSS requires class `dark` to be added to enable Dark mode, while Framework7 requires class `theme-dark`.
+
+So if you use dark mode, make sure you set/remove both `dark theme-dark` classes on root element (preferably on `<html>` element).
+
+## Color Theme
+
+Framework7 and Tailwind Mobile use different sources for main theme color. While Framework7's theme color is configured via CSS custom properties, Tailwind Mobile theme should be set in `tailwind.config.js`.
+
+| Color         | Framework7 CSS Var       | Tailwind Mobile Prop |
+| ------------- | ------------------------ | -------------------- |
+| primary       | `--f7-theme-color`       | `primary`            |
+| primary dark  | `--f7-theme-color-shade` | `primary-dark`       |
+| primary light | `--f7-theme-color-tint`  | `primary-light`      |
+
+Let's say our theme color is <span className="inline-block h-[1em] w-[1em] bg-[#ff6b22] align-middle" /> `#ff6b22`, we need to set the following:
+
+In `app.css` (to configure Framework7 theme color):
+
+```css
+:root {
+  --f7-theme-color: #ff6b22;
+  --f7-theme-color-rgb: 255, 107, 34;
+  --f7-theme-color-shade: #f85200;
+  --f7-theme-color-tint: #ff864b;
+}
+```
+
+And in `tailwind.config.js` (to configure Tailwind Mobile theme color):
+
+```js
+const tailwindMobile = require('tailwind-mobile/config');
+
+module.exports = tailwindMobile({
+  mode: 'jit',
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './src/index.html'],
+  darkMode: 'class',
+  // extend primary color
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          light: '#ff864b',
+          DEFAULT: '#ff6b22',
+          dark: '#f85200',
+        },
+      },
+    },
+  },
+});
+```

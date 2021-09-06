@@ -84,10 +84,15 @@ export default function WithSidebar(props) {
           </div>
         </div>
         <div className="max-w-none prose min-w-0 flex-auto pt-10 pb-24 lg:pb-16">
+          {opened && (
+            <div
+              className="z-10 fixed left-0 top-0 w-full h-full bg-black bg-opacity-25"
+              onClick={() => setOpened(false)}
+            />
+          )}
+
           <div
-            className={`lg:hidden cursor-pointer flex items-center justify-center z-30 w-12 h-12 rounded-full bg-primary text-white shadow-md ml-2 bottom-4 fixed md:sticky md:top-4 md:!-mt-6 md:mb-4 ${
-              opened ? 'left-64 md:ml-64' : 'left-0 md:ml-0'
-            }`}
+            className="lg:hidden cursor-pointer flex items-center justify-center z-30 w-16 h-16 rounded-full bg-primary text-white shadow-md ml-2 bottom-4 fixed right-4"
             onClick={() => setOpened(!opened)}
           >
             {opened ? (

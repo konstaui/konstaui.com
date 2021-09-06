@@ -364,39 +364,49 @@ export default function Home() {
         </div>
         <div className="items-stretch justify-center space-y-4 sm:space-y-0 sm:flex sm:space-x-4 md:space-x-8 mt-8 max-w-3xl mx-auto text-center">
           <Link href="/react">
-            <a className="flex flex-col items-center text-black border-primary border rounded-xl px-4 py-6 relative w-full hover:bg-primary-light hover:bg-opacity-10 duration-200">
+            <a className="flex sm:flex-col items-center text-black border-primary border rounded-xl px-4 py-6 relative w-full hover:bg-primary-light hover:bg-opacity-10 duration-200">
               <img
-                className="h-20 mb-4"
+                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0"
                 src="/images/home-logos/react.svg"
                 alt="react"
               />
-              <span className="mb-2 font-semibold">Tailwind Mobile React</span>
-              <span className="text-sm opacity-75">Documentation</span>
+              <span className="sm:mb-2 font-semibold">
+                Tailwind Mobile React
+              </span>
+              <span className="hidden sm:block text-sm opacity-75">
+                Documentation
+              </span>
             </a>
           </Link>
           <Link href="/svelte">
-            <a className="flex flex-col items-center text-black border-gray-400 border rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
+            <a className="flex sm:flex-col items-center text-black border-gray-400 border rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
               <img
-                className="h-20 mb-4 grayscale"
+                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0"
                 src="/images/home-logos/svelte.svg"
                 alt="svelte"
               />
-              <span className="mb-2 font-semibold">Tailwind Mobile Svelte</span>
-              <span className="text-sm opacity-75">Documentation</span>
+              <span className="sm:mb-2 font-semibold">
+                Tailwind Mobile Svelte
+              </span>
+              <span className="hidden sm:block text-sm opacity-75">
+                Documentation
+              </span>
               <span className="absolute right-2 top-px text-xs font-medium opacity-50">
                 Coming soon
               </span>
             </a>
           </Link>
           <Link href="/vue">
-            <a className="flex flex-col items-center text-black border-gray-400 border rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
+            <a className="flex sm:flex-col items-center text-black border-gray-400 border rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
               <img
-                className="h-20 mb-4 grayscale"
+                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0"
                 src="/images/home-logos/vue.svg"
                 alt="vue"
               />
-              <span className="mb-2 font-semibold">Tailwind Mobile Vue</span>
-              <span className="text-sm opacity-75">Documentation</span>
+              <span className="sm:mb-2 font-semibold">Tailwind Mobile Vue</span>
+              <span className="hidden sm:block text-sm opacity-75">
+                Documentation
+              </span>
               <span className="absolute right-2 top-px text-xs font-medium opacity-50">
                 Coming soon
               </span>

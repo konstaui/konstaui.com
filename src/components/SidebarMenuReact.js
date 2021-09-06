@@ -8,6 +8,9 @@ const links = [
       'Kitchen Sink',
       'Installation',
       'Usage',
+      { title: 'Usage with Framework7', href: '/react/framework7' },
+      { title: 'Usage with Ionic', href: '/react/ionic' },
+      { title: 'Usage with Next.js', href: '/react/next-js' },
     ],
   },
   {

@@ -1,0 +1,119 @@
+---
+title: 'Tailwind Mobile & Next.js | Tailwind Mobile React'
+section: 'react'
+---
+
+# Tailwind Mobile & Next.js
+
+Let's see how to use Tailwind Mobile React components with [Next.js](https://nextjs.org) React.
+
+## Create Next.js Project
+
+First, create a Next.js project using [`create-next-app`](https://nextjs.org/docs/getting-started#setup)
+
+## Install Tailwind CSS
+
+We can follow official [Tailwind CSS with Next.js Guide](https://tailwindcss.com/docs/guides/nextjs#setting-up-tailwind-css)
+
+## Install Tailwind Mobile
+
+Now in created Next.js project, we need to install Tailwind Mobile:
+
+```
+npm i tailwind-mobile
+```
+
+And in your `tailwind.config.js` file we should extend config with Tailwind Mobile's config:
+
+```js
+// import tailwindMobile config
+const tailwindMobile = require('tailwind-mobile/config');
+
+// wrap config with tailwindMobile config
+module.exports = tailwindMobile({
+  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+});
+```
+
+## App Component
+
+Now we need to setup main [App](/react/app) component so we can set some global parameters (like `theme`).
+
+We need to wrap whole app with `App` in the `pages/_app.js`:
+
+```jsx
+import { App } from 'tailwind-mobile/react';
+import '../styles/globals.css';
+
+function MyApp({ Component, pageProps }) {
+  return (
+    // Wrap our app with App component
+    <App theme="ios">
+      <Component {...pageProps} />
+    </App>
+  );
+}
+
+export default MyApp;
+```
+
+## Example Page
+
+Now when everything is set up, we can use Tailwind Mobile React components in our Next.js pages.
+
+For example, let's open `pages/index.js` and change it to the following:
+
+```jsx
+// Tailwind Mobile components
+import {
+  Page,
+  Navbar,
+  Block,
+  Button,
+  List,
+  ListItem,
+  Link,
+  BlockTitle,
+} from 'tailwind-mobile/react';
+
+export default function Home() {
+  return (
+    <Page>
+      <Navbar title="My App" />
+
+      <Block strong>
+        <p>
+          Here is your Next.js & Tailwind Mobile app. Let's see what we have
+          here.
+        </p>
+      </Block>
+      <BlockTitle>Navigation</BlockTitle>
+      <List>
+        <ListItem href="/about/" title="About" />
+        <ListItem href="/form/" title="Form" />
+      </List>
+
+      <Block strong className="flex space-x-4">
+        <Button>Button 1</Button>
+        <Button>Button 2</Button>
+      </Block>
+    </Page>
+  );
+}
+```
+
+As a result we should see the following page:
+
+<img
+  className="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
+  src="/images/docs/twm-next.png"
+  alt="tailwind-mobile-next"
+/>
