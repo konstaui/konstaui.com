@@ -181,11 +181,11 @@ export default function Home() {
         <SectionLogos
           logos={[
             {
-              src: '/images/home-logos/google.svg',
+              src: '/images/home/home-logos/google.svg',
               alt: 'google',
             },
             {
-              src: '/images/home-logos/apple.svg',
+              src: '/images/home/home-logos/apple.svg',
               alt: 'apple',
             },
           ]}
@@ -198,22 +198,34 @@ export default function Home() {
           Tailwind Mobile comes with an awesome set of ready to use UI elements:
         </SectionText>
         <div className="flex flex-wrap items-center content-center justify-center">
-          <img className="m-2" src="/images/home-ui/button.svg" alt="button" />
-          <img className="m-2" src="/images/home-ui/input.svg" alt="input" />
           <img
             className="m-2"
-            src="/images/home-ui/preloader.svg"
+            src="/images/home/home-ui/button.svg"
+            alt="button"
+          />
+          <img
+            className="m-2"
+            src="/images/home/home-ui/input.svg"
+            alt="input"
+          />
+          <img
+            className="m-2"
+            src="/images/home/home-ui/preloader.svg"
             alt="preloader"
           />
-          <img className="m-2" src="/images/home-ui/range.svg" alt="range" />
           <img
             className="m-2"
-            src="/images/home-ui/toggle-ios.svg"
+            src="/images/home/home-ui/range.svg"
+            alt="range"
+          />
+          <img
+            className="m-2"
+            src="/images/home/home-ui/toggle-ios.svg"
             alt="toggle-ios"
           />
           <img
             className="m-2"
-            src="/images/home-ui/toggle-md.svg"
+            src="/images/home/home-ui/toggle-md.svg"
             alt="toggle-md"
           />
         </div>
@@ -228,19 +240,19 @@ export default function Home() {
         <SectionLogos
           logos={[
             {
-              src: '/images/home-logos/react.svg',
+              src: '/images/home/home-logos/react.svg',
               alt: 'react',
             },
             {
-              src: '/images/home-logos/vue.svg',
+              src: '/images/home/home-logos/vue.svg',
               alt: 'vue',
             },
             {
-              src: '/images/home-logos/svelte.svg',
+              src: '/images/home/home-logos/svelte.svg',
               alt: 'svelte',
             },
             // {
-            //   src: '/images/home-logos/angular.svg',
+            //   src: '/images/home/home-logos/angular.svg',
             //   alt: 'angular',
             // },
           ]}
@@ -275,11 +287,11 @@ export default function Home() {
           className="md:hidden"
           logos={[
             {
-              src: '/images/home-logos/framework7.svg',
+              src: '/images/home/home-logos/framework7.svg',
               alt: 'framework7',
             },
             {
-              src: '/images/home-logos/ionic.svg',
+              src: '/images/home/home-logos/ionic.svg',
               alt: 'ionic',
             },
           ]}
@@ -290,12 +302,12 @@ export default function Home() {
               <div className="flex absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 space-x-4 -ml-2 w-52">
                 <img
                   className="w-24 h-24"
-                  src="/images/home-logos/ionic.svg"
+                  src="/images/home/home-logos/ionic.svg"
                   alt="ionic"
                 />
                 <img
                   className="w-24 h-24"
-                  src="/images/home-logos/framework7.svg"
+                  src="/images/home/home-logos/framework7.svg"
                   alt="framework7"
                 />
               </div>
@@ -337,11 +349,11 @@ export default function Home() {
         <SectionLogos
           logos={[
             {
-              src: '/images/home-logos/capacitorjs.svg',
+              src: '/images/home/home-logos/capacitorjs.svg',
               alt: 'capacitorjs',
             },
             {
-              src: '/images/home-logos/cordova.svg',
+              src: '/images/home/home-logos/cordova.svg',
               alt: 'cordova',
             },
           ]}
@@ -364,10 +376,10 @@ export default function Home() {
         </div>
         <div className="items-stretch justify-center space-y-4 sm:space-y-0 sm:flex sm:space-x-4 md:space-x-8 mt-8 max-w-3xl mx-auto text-center">
           <Link href="/react">
-            <a className="flex sm:flex-col items-center text-black border-primary border rounded-xl px-4 py-6 relative w-full hover:bg-primary-light hover:bg-opacity-10 duration-200">
+            <a className="flex sm:flex-col items-center text-black border-black border-opacity-10 border rounded-xl px-4 py-6 relative w-full hover:border-opacity-0 hover:shadow-lg sm:hover:shadow-2xl duration-200">
               <img
                 className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0"
-                src="/images/home-logos/react.svg"
+                src="/images/home/home-logos/react.svg"
                 alt="react"
               />
               <span className="sm:mb-2 font-semibold">
@@ -379,10 +391,10 @@ export default function Home() {
             </a>
           </Link>
           <Link href="/svelte">
-            <a className="flex sm:flex-col items-center text-black border-gray-400 border rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
+            <a className="flex sm:flex-col items-center text-black border border-black border-opacity-10 rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
               <img
-                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0"
-                src="/images/home-logos/svelte.svg"
+                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0 grayscale"
+                src="/images/home/home-logos/svelte.svg"
                 alt="svelte"
               />
               <span className="sm:mb-2 font-semibold">
@@ -397,10 +409,10 @@ export default function Home() {
             </a>
           </Link>
           <Link href="/vue">
-            <a className="flex sm:flex-col items-center text-black border-gray-400 border rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
+            <a className="flex sm:flex-col items-center text-black border border-black border-opacity-10 rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
               <img
-                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0"
-                src="/images/home-logos/vue.svg"
+                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0 grayscale"
+                src="/images/home/home-logos/vue.svg"
                 alt="vue"
               />
               <span className="sm:mb-2 font-semibold">Tailwind Mobile Vue</span>
@@ -412,6 +424,52 @@ export default function Home() {
               </span>
             </a>
           </Link>
+        </div>
+      </Section>
+
+      <Section id="get-started">
+        <SectionTitle>More Of Our Projects</SectionTitle>
+        <div className="sm:flex items-stretch max-w-3xl mx-auto space-y-4 sm:space-y-0 sm:space-x-8 sm:text-center gr">
+          {[
+            {
+              url: 'https://framework7.io',
+              title: 'Framework7',
+              description:
+                'Full featured framework for building iOS, Android & desktop apps',
+              logo: 'framework7.svg',
+            },
+            {
+              url: 'https://swiperjs.com',
+              title: 'Swiper',
+              description: 'Most modern mobile touch slider',
+              logo: 'swiper.svg',
+            },
+            {
+              url: 'https://atroposjs.com',
+              title: 'Atropos',
+              description: 'Stunning touch-friendly 3D parallax hover effects',
+              logo: 'atropos.svg',
+            },
+          ].map((item) => (
+            <a
+              className="flex sm:flex-col items-center w-full text-black border-black border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg sm:hover:shadow-2xl hover:border-opacity-0"
+              href={item.url}
+              target="_blank"
+              key={item.title}
+            >
+              <img
+                className="w-12 sm:w-32 sm:h-32 mr-4 sm:mr-0"
+                src={`/images/our-projects/${item.logo}`}
+                alt={item.title}
+              />
+              <div>
+                <div className="font-semibold sm:mt-4 sm:mb-2 text-black">
+                  {item.title}
+                </div>
+                <div className="text-sm opacity-75">{item.description}</div>
+              </div>
+            </a>
+          ))}
         </div>
       </Section>
 
