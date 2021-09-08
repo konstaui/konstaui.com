@@ -318,7 +318,7 @@ export default function Home() {
           </div>
           <img
             className="w-[375px] home-app-shadow flex-shrink-0"
-            src="/images/home-appstore-app.png"
+            src="/images/home/home-appstore-app.png"
             alt="mobile app"
           />
         </div>
