@@ -1,0 +1,120 @@
+---
+title: 'Usage | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+# Usage
+
+After [installation](/vue/installation) process is done we can start using Tailwind Mobile components in our Vue application.
+
+## Components
+
+The process is pretty straightforward and we need to import Tailwind Mobile Vue components from `tailwind-mobile/vue`:
+
+```html
+<template>
+  ...
+  <twm-block>
+    <p>This is block with text</p>
+  </twm-block>
+  <twm-block class="space-y-4">
+    <p>Here comes the button</p>
+    <twm-button>Action</twm-button>
+  </twm-block>
+  ...
+</template>
+<script>
+  /* App.vue */
+  import { twmBlock, twmButton } from 'tailwind-mobile/vue';
+
+  export {
+    components: {
+      twmBlock,
+      twmButton,
+    },
+  }
+</script>
+```
+
+## App Component
+
+We suppose you use Tailwind Mobile components with some other framework (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)).
+
+But if you use only Tailwind Mobile then we need to wrap all our components with Tailwind Mobile's [App component](/vue/app).
+
+In [App component](/vue/app) we can define global theme (iOS or Material) and other useful globals:
+
+```html
+<template>
+  <twm-app theme="ios">
+    <twm-page>
+      <twm-navbar title="My App" />
+      <twm-block>
+        <p>Here comes my app</p>
+      </twm-block>
+    </twm-page>
+  </twm-app>
+</template>
+<script>
+  import { twmApp, twmPage, twmNavbar, twmBlock } from 'tailwind-mobile/vue';
+
+  export default {
+    components: {
+      twmApp,
+      twmPage,
+      twmNavbar,
+      twmBlock,
+    },
+  };
+</script>
+```
+
+## Tailwind Mobile Provider
+
+And if you do use Tailwind Mobile with other frameworks, we still can (and should) specify Tailwind Mobile's globals (like theme). For this case we need to use [TailwindMobileProvider](/vue/tailwind-mobile-provider).
+
+We also need to add `twm-ios` or `twm-material` class to the app's root element.
+
+```html
+<template>
+  <!-- Wrap our app with TailwindMobileProvider -->
+  <twm-provider theme="ios">
+    <!-- We add extra `twm-ios` class to the app root element -->
+    <f7-app theme="ios" class="twm-ios">
+      <f7-view>
+        <f7-page>
+          <f7-navbar title="My App" />
+          <!-- Tailwind Mobile components -->
+          <twm-block>
+            <p>Here comes my app</p>
+          </twm-block>
+          <twm-block class="space-y-4">
+            <p>Here comes the button</p>
+            <twm-button>Action</twm-button>
+          </twm-block>
+        </f7-page>
+      </f7-view>
+    </f7-app>
+  </twm-provider>
+</template>
+
+<script>
+  /* App.vue */
+  // we use main App and Router components from Framework7
+  import { f7App, f7View, f7Page, f7Navbar } from 'framework7/vue';
+  // we use TailwindMobileProvider instead
+  import { twmProvider, twmBlock, twmButton } from 'tailwind-mobile/vue';
+
+  export default {
+    components: {
+      f7App,
+      f7View,
+      f7Page,
+      f7Navbar,
+      twmProvider,
+      twmBlock,
+      twmButton,
+    },
+  };
+</script>
+```

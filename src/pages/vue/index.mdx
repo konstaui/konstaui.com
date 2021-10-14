@@ -5,6 +5,38 @@ section: 'vue'
 
 # Tailwind Mobile Vue
 
-Coming soon. ETA: October 2021
+Tailwind Mobile - is a free and open source mobile UI components framework built with [Tailwind CSS](https://tailwindcss.com).
 
-<div className="min-h-screen" />
+```html
+<template>
+  <twm-app theme="ios">
+    <twm-page>
+      <twm-navbar title="My App" />
+
+      <twm-block strong>Hello world!</twm-block>
+    </twm-page>
+  </twm-app>
+</template>
+<script>
+  import { twmApp, twmPage, twmNavbar, twmBlock } from 'tailwind-mobile/vue';
+
+  export default {
+    components: {
+      twmApp,
+      twmPage,
+      twmNavbar,
+      twmBlock,
+    },
+  };
+</script>
+```
+
+It is designed to develop hybrid mobile apps, [Web Native](https://webnative.tech) apps or web apps with iOS & Android native look and feel.
+
+It is highly recommended for you to be familiar with basics of both [Tailwind CSS](https://tailwindcss.com) and [Vue.js](https://vuejs.org) before getting started.
+
+Current documentation doesn't cover the process of compilation of Tailwind Mobile app to [Cordova](https://cordova.apache.org) or [Capacitor](https://capacitorjs.com) app. It is about Tailwind Mobile and how to use all of its components. To learn more about how to compile your app to hybrid [Cordova](https://cordova.apache.org) or [Capacitor](https://capacitorjs.com) app that can be released at iOS and Google Play store refer to their official documentations.
+
+Tailwind Mobile [Kitchen Sink](/vue/kitchen-sink) is also a great place to get started, it has a lot examples for all Tailwind Mobile components and covers most of aspects.
+
+Ok, so first of all we need to learn [how to install](/vue/installation) Tailwind Mobile

@@ -6,12 +6,12 @@ import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { SidebarMenuReact } from '../components/SidebarMenuReact';
 // import { SidebarSvelte } from '@/components/SidebarSvelte';
-// import { SidebarVue } from '@/components/SidebarVue';
+import { SidebarMenuVue } from '@/components/SidebarMenuVue';
 
 const sidebars = {
   react: SidebarMenuReact,
   // svelte: SidebarSvelte,
-  // vue: SidebarVue,
+  vue: SidebarMenuVue,
 };
 
 export default function WithSidebar(props) {

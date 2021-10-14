@@ -234,8 +234,8 @@ export default function Home() {
       <Section>
         <SectionTitle>Build with the tech you love!</SectionTitle>
         <SectionText>
-          Tailwind Mobile components are currently available for React, and
-          coming soon for Vue and Svelte.
+          Tailwind Mobile components are currently available for React, Vue, and
+          coming soon for Svelte.
         </SectionText>
         <SectionLogos
           logos={[
@@ -390,6 +390,19 @@ export default function Home() {
               </span>
             </a>
           </Link>
+          <Link href="/vue">
+            <a className="flex sm:flex-col items-center text-black border-black border-opacity-10 border rounded-xl px-4 py-6 relative w-full hover:border-opacity-0 hover:shadow-lg sm:hover:shadow-2xl duration-200">
+              <img
+                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0"
+                src="/images/home/home-logos/vue.svg"
+                alt="vue"
+              />
+              <span className="sm:mb-2 font-semibold">Tailwind Mobile Vue</span>
+              <span className="hidden sm:block text-sm opacity-75">
+                Documentation
+              </span>
+            </a>
+          </Link>
           <Link href="/svelte">
             <a className="flex sm:flex-col items-center text-black border border-black border-opacity-10 rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
               <img
@@ -400,22 +413,6 @@ export default function Home() {
               <span className="sm:mb-2 font-semibold">
                 Tailwind Mobile Svelte
               </span>
-              <span className="hidden sm:block text-sm opacity-75">
-                Documentation
-              </span>
-              <span className="absolute right-2 top-px text-xs font-medium opacity-50">
-                Coming soon
-              </span>
-            </a>
-          </Link>
-          <Link href="/vue">
-            <a className="flex sm:flex-col items-center text-black border border-black border-opacity-10 rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
-              <img
-                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0 grayscale"
-                src="/images/home/home-logos/vue.svg"
-                alt="vue"
-              />
-              <span className="sm:mb-2 font-semibold">Tailwind Mobile Vue</span>
               <span className="hidden sm:block text-sm opacity-75">
                 Documentation
               </span>

@@ -1,0 +1,57 @@
+---
+title: 'useTheme | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+# useTheme
+
+Tailwind Mobile comes with handy `useTheme` hook to detect currently active theme (`ios` or `material`) set by [App component](/vue/app) or [TailwindMobileProvider](/vue/tailwind-mobile-provider).
+
+```html
+<!-- App.vue -->
+<template>
+  <!-- set theme on App component -->
+  <twm-app theme="ios">
+    <HomePage />
+  </twm-app>
+</template>
+<script>
+  import { twmApp } from 'tailwind-mobile/vue';
+  import HomePage from './path/to/HomePage.vue';
+
+  export default {
+    components: {
+      twmApp,
+      HomePage,
+    },
+  };
+</script>
+```
+
+```html
+<!-- HomePage.vue -->
+<template>
+  <twm-page>
+    <p>Theme is {{theme === 'ios' ? 'iOS' : 'Material'}}</p>
+  </twm-page>
+</template>
+<script>
+  import { useTheme, twmPage } from 'tailwind-mobile/vue';
+
+  export default {
+    components: {
+      twmPage,
+    },
+    setup() {
+      // get currently set theme
+      const theme = useTheme();
+
+      console.log(theme.value); // -> 'ios'
+
+      return {
+        theme,
+      };
+    },
+  };
+</script>
+```

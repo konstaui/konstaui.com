@@ -1,0 +1,79 @@
+---
+title: 'Hairlines | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+# Hairlines
+
+For many elements Tailwind Mobile uses so called "hairlines" instead of usual CSS borders.
+
+Hairlines are made with `:after` and `:before` pseudo elements. This method allows to have true 0.5px and 0.33px wide "borders".
+
+## Add Hairlines
+
+To add hairline we need to use `.hairline-[side]` classes:
+
+| Class         |                     |
+| ------------- | ------------------- |
+| `.hairline-t` | Add top hairline    |
+| `.hairline-r` | Add right hairline  |
+| `.hairline-b` | Add bottom hairline |
+| `.hairline-l` | Add left hairline   |
+
+<div className="important-note">
+  Note, hairlines use <code>absolute</code> positioning, so make sure element
+  with hairline has <code>absolute</code>, <code>fixed</code> or{' '}
+  <code>relative</code> position
+</div>
+
+For example:
+
+```html
+<!-- add bottom hairline to the element -->
+<div class="relative hairline-b">...</div>
+```
+
+## Remove Hairlines
+
+To remove hairline we need to use `.no-hairline-[side]` classes:
+
+| Class              |                        |
+| ------------------ | ---------------------- |
+| `.hairline-t-none` | Remove top hairline    |
+| `.hairline-r-none` | Remove right hairline  |
+| `.hairline-b-none` | Remove bottom hairline |
+| `.hairline-l-none` | Remove left hairline   |
+
+## Hairline Color
+
+Hairline color is also customizable with `.hairline-[color]` classes:
+
+| Class               |                    |
+| ------------------- | ------------------ |
+| `.hairline-[color]` | Set hairline color |
+
+For example:
+
+```html
+<!-- add bottom hairline with red-500 color to the element -->
+<div class="relative hairline-b hairline-red-500">...</div>
+```
+
+## Hairline Transition Duration
+
+To control hairline transition duration we can use `.hairline-duration-[duration]` classes:
+
+| Class                           |                                  |
+| ------------------------------- | -------------------------------- |
+| `.hairline-duration-[duration]` | Set hairline transition duration |
+
+For example:
+
+```html
+<!-- add bottom hairline with red-500 color to the element, and change its color to blue-500 on hover -->
+<div
+  class="relative hairline-b hairline-red-500 hairline-duration-300 hover:hairline-blue-500"
+>
+  ...
+</div>
+```
