@@ -2,7 +2,8 @@ const fs = require('fs-extra');
 const path = require('path');
 const { promise: exec } = require('exec-sh');
 
-const buildProps = require('./api/build-props');
+const buildReactProps = require('./api/build-react-props');
+const buildVueProps = require('./api/build-vue-props');
 
 const buildApi = async () => {
   console.log('Begin types generation');
@@ -69,7 +70,8 @@ const buildApi = async () => {
   });
 
   Object.keys(types).forEach((name) => {
-    buildProps(name, types);
+    buildReactProps(name, types);
+    buildVueProps(name, types);
   });
 
   await fs.writeFile(typesPath, `${JSON.stringify(types, null, 4)}`);

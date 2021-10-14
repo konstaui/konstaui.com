@@ -1,0 +1,50 @@
+---
+title: 'Radio Vue Component | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+import { RadioProps } from '@/components/api/vue/RadioProps';
+import { RadioEvents } from '@/components/api/vue/RadioEvents';
+import RadioExample from '@/components/examples/vue/Radio';
+
+# Radio Vue Component
+
+## Radio Components
+
+There are following components included:
+
+- `Radio`
+
+## Radio Props
+
+<RadioProps />
+
+## Radio Events
+
+<RadioEvents />
+
+## Radios List
+
+Radios List is not a separate component, but just a particular case of using [`List`](/vue/list) and [`ListItem`](/vue/list-item) components.
+
+```html
+<twm-list>
+  <!-- Additional "label" prop on ListItem -->
+  <twm-list-item label title="Books">
+    <template #media>
+      <!-- Pass Radio to list item media -->
+      <twm-radio component="div" name="my-checkbox" />
+    </template>
+  </twm-list-item>
+  <twm-list-item label title="Movies">
+    <template #media>
+      <!-- Pass Radio to list item media -->
+      <twm-radio component="div" name="my-checkbox" />
+    </template>
+  </twm-list-item>
+</twm-list>
+```
+
+## Examples
+
+<RadioExample />

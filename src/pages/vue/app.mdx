@@ -1,0 +1,44 @@
+---
+title: 'App Vue Component | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+import { AppProps } from '@/components/api/vue/AppProps';
+
+# App Vue Component
+
+App Vue component is the main app component that allows to define global theme (iOS or Material) and other useful globals.
+
+If you use Tailwind Mobile with other framework (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)), you should use [TailwindMobileProvider](/vue/tailwind-mobile-provider) instead.
+
+## App Components
+
+There are following components included:
+
+- `App`
+
+## App Props
+
+<AppProps />
+
+## Examples
+
+`App` component should be used as main wrapper for all Tailwind Mobile components, and there should be only one `App` component at a time in the app:
+
+```html
+<template>
+  <!-- App component ideally should be the main root component -->
+  <twm-app theme="ios" safe-areas>
+    <!-- rest of Tailwind Mobile components -->
+  </tmw-app>
+</template>
+<script>
+import { twmApp } from 'tailwind-mobile/vue';
+
+export default {
+  components: {
+    twmApp,
+  },
+};
+</script>
+```

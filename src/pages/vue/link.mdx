@@ -1,0 +1,69 @@
+---
+title: 'Link Vue Component | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+import { LinkProps } from '@/components/api/vue/LinkProps';
+import { LinkEvents } from '@/components/api/vue/LinkEvents';
+
+# Link Vue Component
+
+Link is main component to create links for navigation, custom actions, switching tabs, open/close modals, etc.
+
+## Link Components
+
+There are following components included:
+
+- `Link`
+
+## Link Props
+
+<LinkProps />
+
+## Link Events
+
+<LinkEvents />
+
+## Examples
+
+#### Navigation Link
+
+```html
+<twm-link href="/about">About</twm-link>
+```
+
+#### External Link
+
+```html
+<twm-link href="https://google.com" target="_blank"> Google </twm-link>
+```
+
+#### Vue Router Link
+
+<!-- prettier-ignore -->
+```html
+<twm-link :link-props="{to: '/about'}" component="router-link">
+  About
+</twm-link>
+```
+
+#### Link In Navbar
+
+<!-- prettier-ignore -->
+```html
+<twm-navbar title="My App">
+  <template #right>
+    <twm-link navbar @click="openMenu">Menu</twm-link>
+  </template>
+</twm-navbar>
+```
+
+#### Link In Toolbar
+
+<!-- prettier-ignore -->
+```html
+<twm-toolbar>
+  <twm-link toolbar @click="action1">Action 1</twm-link>
+  <twm-link toolbar @click="action2">Action 2</twm-link>
+</twm-toolbar>
+```

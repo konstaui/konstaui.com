@@ -1,0 +1,131 @@
+---
+title: 'TailwindMobileProvider | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+# TailwindMobileProvider
+
+## Usage
+
+If you use Tailwind Mobile with other frameworks (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)), we still should specify Tailwind Mobile's globals (like theme) with the help of `TailwindMobileProvider`.
+
+We also need to add `twm-ios` or `twm-material` class to the app's root element.
+
+```html
+<template>
+  <!-- Wrap our app with TailwindMobileProvider -->
+  <twm-provider theme="ios">
+    <!-- We add extra `twm-ios` class to the app root element -->
+    <f7-app theme="ios" className="twm-ios">
+      <f7-view>
+        <f7-page>
+          <f7-navbar title="My App" />
+          <!--  Tailwind Mobile components -->
+          <twm-block>
+            <p>Here comes my app</p>
+          </twm-block>
+          <twm-block className="space-y-4">
+            <p>Here comes the button</p>
+            <twm-button>Action</twm-button>
+          </twm-block>
+        </f7-page>
+      </f7-view>
+    </f7-app>
+  </twm-provider>
+</template>
+<script>
+  /* App.vue */
+
+  // we use main App and Router components from Framework7
+  import { f7App, f7View, f7Page, f7Navbar } from 'framework7/vue';
+  // we use TailwindMobileProvider instead
+  import { twmProvider, twmBlock, twmButton } from 'tailwind-mobile/vue';
+
+  export default {
+    components: {
+      f7App,
+      f7View,
+      f7Page,
+      f7Navbar,
+      twmProvider,
+      twmBlock,
+      twmButton,
+    },
+  };
+</script>
+```
+
+## TailwindMobileProvider Props
+
+<table className="props-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="#prop-dark" id="prop-dark">
+          <span>dark</span>
+        </a>
+      </td>
+      <td>
+        <span>boolean</span>
+      </td>
+      <td>
+        <span>false</span>
+      </td>
+      <td>
+        <p>
+          Include <code>dark:</code> variants (if dark theme is in use)
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#prop-theme" id="prop-theme">
+          <span>theme</span>
+        </a>
+      </td>
+      <td>
+        <span>
+          'ios'{' | '}'material'{' | '}'parent'
+        </span>
+      </td>
+      <td>
+        <span>'material'</span>
+      </td>
+      <td>
+        <p>
+          App theme. If set to <code>'parent'</code> it will look for{' '}
+          <code>ios</code> or <code>md</code> class on root{' '}
+          <code>&#x3C;html></code> element, useful to use with parent framework
+          like Framework7 or Ionic
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#prop-touchRipple" id="prop-touchRipple">
+          <span>touchRipple</span>
+        </a>
+      </td>
+      <td>
+        <span>boolean</span>
+      </td>
+      <td>
+        <span>true</span>
+      </td>
+      <td>
+        <p>
+          Enables touch ripple effect in Material theme. Allows to globally
+          disable touch ripple for all components
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,55 @@
+---
+title: 'Navbar Vue Component | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+import { NavbarProps } from '@/components/api/vue/NavbarProps';
+import { NavbarSlots } from '@/components/api/vue/NavbarSlots';
+import { NavbarBackLinkProps } from '@/components/api/vue/NavbarBackLinkProps';
+import { NavbarBackLinkSlots } from '@/components/api/vue/NavbarBackLinkSlots';
+import NavbarExample from '@/components/examples/vue/Navbar';
+import SubnavbarExample from '@/components/examples/vue/Subnavbar';
+
+# Navbar Vue Component
+
+Navbar is a fixed area at the top of a screen that contains Page title and navigation elements.
+
+## Navbar Components
+
+There are following components included:
+
+- `Navbar`
+- `NavbarBackLink`
+
+## Navbar Props
+
+<NavbarProps />
+
+## Navbar Slots
+
+<NavbarSlots />
+
+## NavbarBackLink Props
+
+`NavbarBackLink` should be placed in Navbar's "left" area:
+
+<!-- prettier-ignore -->
+```html
+<twm-navbar title="My App">
+  <template #left>
+    <twm-navbar-back-link text="Back" @click="() => history.back()" />
+  </template>
+</twm-navbar>
+```
+
+<NavbarBackLinkProps />
+
+## NavbarBackLink Slots
+
+<NavbarBackLinkSlots />
+
+## Examples
+
+<NavbarExample />
+
+<SubnavbarExample />

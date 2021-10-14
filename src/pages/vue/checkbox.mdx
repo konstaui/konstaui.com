@@ -1,0 +1,56 @@
+---
+title: 'Checkbox Vue Component | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+import { CheckboxProps } from '@/components/api/vue/CheckboxProps';
+import { CheckboxEvents } from '@/components/api/vue/CheckboxEvents';
+import CheckboxExample from '@/components/examples/vue/Checkbox';
+
+# Checkbox Vue Component
+
+## Checkbox Components
+
+There are following components included:
+
+- `Checkbox`
+
+## Checkbox Props
+
+<CheckboxProps />
+
+## Checkbox Events
+
+<CheckboxEvents />
+
+## Checkboxes List
+
+Checkboxes List is not a separate component, but just a particular case of using [`List`](/vue/list) and [`ListItem`](/vue/list-item) components.
+
+```html
+<twm-list>
+  <!-- Additional "label" prop on ListItem -->
+  <twm-list-item
+    label
+    title="Books"
+  >
+    <template #media>
+      <!-- Pass Checkbox to list item media -->
+      <twm-checkbox component="div" name="my-checkbox" />
+    </template>
+  </twm-list-item>
+  <twm-list-item
+    label
+    title="Movies"
+  >
+    <template #media>
+      <!-- Pass Checkbox to list item media -->
+      <twm-checkbox component="div" name="my-checkbox" />
+    </template>
+  </twm-list-item>
+</List>
+```
+
+## Examples
+
+<CheckboxExample />

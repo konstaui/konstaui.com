@@ -1,0 +1,32 @@
+---
+title: 'Menu List Vue Component | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+import { MenuListItemProps } from '@/components/api/vue/MenuListItemProps';
+import MenuListExample from '@/components/examples/vue/MenuList';
+
+# Menu List Vue Component
+
+Menu List is an extension of [List View](/vue/list). Menu List unlike usual links list is designed to indicate currently active screen (or section) of your app. Think about it like a [Tabbar](/vue/tabbar) but in a form of a list.
+
+## Menu List Components
+
+There are following components included:
+
+- `MenuList` - menu list component
+- `MenuListItem` - menu list item element
+
+## MenuList Props
+
+`MenuList` component doesn't have specific props, but as it extends [`List` component](/vue/list), it supports all [`List` props](/vue/list#list-props)
+
+## MenuListItem Props
+
+`MenuListItem` component extends [`ListItem` component](/vue/list-item), it supports all [`ListItem` props](/vue/list-item#listitem-props), [`ListItem` slots](/vue/list-item#listitem-slots) and the following additional props:
+
+<MenuListItemProps />
+
+## Examples
+
+<MenuListExample />

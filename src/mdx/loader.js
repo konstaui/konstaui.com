@@ -8,6 +8,7 @@ const layouts = {
   '/pages/react': ['@/layouts/withSidebar', 'withSidebarLayout'],
   '/pages/vue': ['@/layouts/withSidebar', 'withSidebarLayout'],
   '/pages/svelte': ['@/layouts/withSidebar', 'withSidebarLayout'],
+  '/components/api': ['@/layouts/empty', 'emptyLayout'],
 };
 
 const getLayout = (resourcePath) => {

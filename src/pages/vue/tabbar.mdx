@@ -1,0 +1,40 @@
+---
+title: 'Tabbar Vue Component | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+import { TabbarProps } from '@/components/api/vue/TabbarProps';
+import { TabbarLinkProps } from '@/components/api/vue/TabbarLinkProps';
+import { TabbarLinkSlots } from '@/components/api/vue/TabbarLinkSlots';
+import TabbarExample from '@/components/examples/vue/Tabbar';
+
+# Tabbar Vue Component
+
+Tabbar is a particular case of [Toolbar](/vue/toolbar), but it contains icons (or icons with labels) instead of plain links and inteded to be used to switch Tabs
+
+## Tabbar Components
+
+There are following components included:
+
+- `Tabbar`
+- `TabbarLink`
+
+## Tabbar Props
+
+`Tabbar` component extends [`Toolbar` component](/vue/toolbar), it supports all [`Toolbar` props](/vue/toolbar#toolbar-props) and the following additional props:
+
+<TabbarProps />
+
+## TabbarLink Props
+
+`TabbarLink` component extends [`Link` component](/vue/link), it supports all [`Link` props](/vue/link#link-props) and the following additional props:
+
+<TabbarLinkProps />
+
+## TabbarLink Slots
+
+<TabbarLinkSlots />
+
+## Examples
+
+<TabbarExample />

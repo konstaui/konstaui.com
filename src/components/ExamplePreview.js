@@ -18,12 +18,13 @@ const Button = (props) => {
 };
 
 export const ExamplePreview = (props) => {
-  const { source: Source, react, fileName = '' } = props;
+  const { source: Source, react, vue, fileName = '' } = props;
   let url = props.url;
   const [theme, setTheme] = useState('ios');
   const [mode, setMode] = useState('light');
   const iframeEl = useRef(null);
   if (react) url = `/kitchen-sink/react/dist/index.html${url}`;
+  if (vue) url = `/kitchen-sink/vue/dist/index.html${url}`;
   useEffect(() => {
     if (
       iframeEl.current &&

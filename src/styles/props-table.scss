@@ -1,4 +1,6 @@
-.props-table {
+.props-table,
+.events-table,
+.slots-table {
   @apply table-fixed;
   tbody tr {
     @apply border-t;
@@ -12,30 +14,7 @@
       font-size: 0.875em;
     }
   }
-  tbody td:nth-child(2) {
-    @apply w-1/6 text-green-700 font-mono;
-    span {
-      font-size: 0.875em;
-    }
-  }
-  tbody td:nth-child(3) {
-    @apply w-1/6 text-blue-900 font-mono;
-    span {
-      font-size: 0.875em;
-    }
-  }
-  tbody td:nth-child(4) {
-    @apply w-3/6 space-y-2;
-    p,
-    ul {
-      &:first-child {
-        margin-top: 0;
-      }
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
+
   @media (max-width: 639px) {
     &,
     tbody,
@@ -55,6 +34,44 @@
       display: block;
       width: 100% !important;
       padding: 4px 0px !important;
+    }
+  }
+}
+.props-table tbody td:nth-child(2),
+.events-table tbody td:nth-child(2) {
+  @apply w-1/6 text-green-700 font-mono;
+  span {
+    font-size: 0.875em;
+  }
+}
+
+.slots-table tbody td:nth-child(2),
+.events-table tbody td:nth-child(3),
+.props-table tbody td:nth-child(4) {
+  p,
+  ul {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.slots-table tbody td:nth-child(2) {
+  @apply w-5/6 space-y-2;
+}
+.events-table tbody td:nth-child(3) {
+  @apply w-4/6 space-y-2;
+}
+.props-table tbody td:nth-child(4) {
+  @apply w-3/6 space-y-2;
+}
+.props-table {
+  tbody td:nth-child(3) {
+    @apply w-1/6 text-blue-900 font-mono;
+    span {
+      font-size: 0.875em;
     }
   }
 }
