@@ -1,0 +1,231 @@
+---
+title: 'Tailwind Mobile & Ionic | Tailwind Mobile Vue'
+section: 'vue'
+---
+
+# Tailwind Mobile & Ionic
+
+Let's see how to use Tailwind Mobile Vue components with [Ionic](https://ionicframework.com/vue) Vue.
+
+## Create Ionic Project
+
+First, create an [Ionic Vue project](https://ionicframework.com/vue#start).
+
+## Install Tailwind CSS
+
+If Ionic Vue project was generated with Ionic CLI, it actually creates a [Vue CLI](https://cli.vuejs.org) project.
+
+So to install Tailwind CSS, we can follow official [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation#installing-tailwind-css-as-a-post-css-plugin)
+
+## Tailwind CSS Styles
+
+Create a `src/App.css` file with the following content to include Tailwind CSS:
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## Install Tailwind Mobile
+
+Now, we can install Tailwind Mobile:
+
+```
+npm i tailwind-mobile
+```
+
+And in your `tailwind.config.js` file we should extend config with Tailwind Mobile's config:
+
+```js
+const tailwindMobile = require('tailwind-mobile/config');
+
+module.exports = tailwindMobile({
+  mode: 'jit',
+  purge: ['./src/**/*.vue', './src/*.vue'],
+});
+```
+
+## TailwindMobileProvider
+
+Now we need to setup [TailwindMobileProvider](/vue/tailwind-mobile-provider) so we can set some global parameters (like `theme`).
+
+We need to wrap main Ionic's `IonApp` component with `TailwindMobileProvider` in the `src/App.tsx`:
+
+```html
+<template>
+  <!-- Wrap IonApp with TailwindMobileProvider with theme="parent" -->
+  <twm-provider theme="parent">
+    <ion-app>
+      <ion-router-outlet />
+    </ion-app>
+  </twm-provider>
+</template>
+
+<script lang="ts">
+  import { twmProvider } from 'tailwind-mobile/vue';
+  import { IonApp, IonRouterOutlet } from '@ionic/vue';
+  import { defineComponent } from 'vue';
+  import './App.css';
+
+  export default defineComponent({
+    name: 'App',
+    components: {
+      IonApp,
+      IonRouterOutlet,
+      twmProvider,
+    },
+  });
+</script>
+```
+
+## Usage
+
+To keep Ionic router work correctly we need to use Router-related components from Ionic: `IonApp`, `IonReactRouter`, `IonPage`, `IonHeader`, `IonFooter`, `IonToolbar`.
+
+The rest of components (if there is a Tailwind Mobile alternative) can be taken from Tailwind Mobile (`tailwind-mobile/vue`)
+
+## Example Page
+
+Now when everything is set up, we can use Tailwind Mobile React components in Ionic page components.
+
+For example, let's open `src/pages/Home.tsx` and change it to the following:
+
+```html
+<template>
+  <!-- Use IonPage, IonHeader, IonFooter & IonToolbar from Ionic -->
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>My App</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-footer>
+      <ion-toolbar>
+        <twm-link slot="start" toolbar>
+          Link 1
+        </twm-link>
+        <twm-link slot="end" toolbar>
+          Link 2
+        </twm-link>
+      </ion-toolbar>
+    </ion-footer>
+
+    <ion-content fullscreen>
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">My App</IonTitle>
+        </ion-toolbar>
+      </ion-header>
+
+      <!-- In page content we can use Tailwind Mobile components -->
+      <twm-block strong>
+        <p>
+          Here is your Ionic & Tailwind Mobile app. Let's see what we have
+          here.
+        </p>
+      </twm-block>
+      <twm-block-title>Navigation</twm-block-title>
+      <twm-list>
+        <twm-list-item href="/about/" title="About" />
+        <twm-list-item href="/form/" title="Form" />
+      </twm-list>
+
+      <twm-block strong className="flex space-x-4">
+        <twm-button>Button 1</twm-button>
+        <twm-button>Button 2</twm-button>
+      </twm-block>
+    </ion-content>
+  </ion-page>
+</template>
+<script>
+import {
+  IonContent,
+  IonHeader,
+  IonFooter,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/vue';
+import {
+  twmBlock,
+  twmButton,
+  twmList,
+  twmListItem,
+  twmBlockTitle,
+  twmLink,
+} from 'tailwind-mobile/vue';
+
+export default {
+  components: {
+    IonContent,
+    IonHeader,
+    IonFooter,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+    twmBlock,
+    twmButton,
+    twmList,
+    twmListItem,
+    twmBlockTitle,
+    twmLink,
+  }
+}
+
+</script>
+```
+
+As a result we should see the following page:
+
+<img
+  className="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
+  src="/images/docs/twm-ionic.png"
+  alt="tailwind-mobile-ionic"
+/>
+
+## Color Theme
+
+Ionic and Tailwind Mobile use different sources for main theme color. While Ionic's theme color is configured via CSS custom properties, Tailwind Mobile theme should be set in `tailwind.config.js`.
+
+| Color         | Ionic CSS Var               | Tailwind Mobile Prop |
+| ------------- | --------------------------- | -------------------- |
+| primary       | `--ion-color-primary`       | `primary`            |
+| primary dark  | `--ion-color-primary-shade` | `primary-dark`       |
+| primary light | `--ion-color-primary-tint`  | `primary-light`      |
+
+Let's say our theme color is <span className="inline-block h-[1em] w-[1em] bg-[#ff6b22] align-middle" /> `#ff6b22`, we need to set the following:
+
+In `App.css` (to configure Ionic theme color):
+
+```css
+:root {
+  --ion-color-primary: #ff6b22;
+  --ion-color-primary-rgb: 255, 107, 34;
+  --ion-color-primary-shade: #f85200;
+  --ion-color-primary-tint: #ff864b;
+}
+```
+
+And in `tailwind.config.js` (to configure Tailwind Mobile theme color):
+
+```js
+const tailwindMobile = require('tailwind-mobile/config');
+
+module.exports = tailwindMobile({
+  mode: 'jit',
+  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
+  // extend primary color
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          light: '#ff864b',
+          DEFAULT: '#ff6b22',
+          dark: '#f85200',
+        },
+      },
+    },
+  },
+});
+```

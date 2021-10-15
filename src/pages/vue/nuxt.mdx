@@ -1,0 +1,154 @@
+---
+title: 'Tailwind Mobile & Nuxt | Tailwind Mobile React'
+section: 'vue'
+---
+
+# Tailwind Mobile & Nuxt
+
+Let's see how to use Tailwind Mobile Vue components with [Nuxt](https://v3.nuxtjs.org).
+
+<div className="important-note">
+  Because Tailwind Mobile comes with components only for Vue.js v3, it
+  compatible only with Nuxt 3 as well.
+</div>
+
+## Create Nuxt Project
+
+First, [create a Nuxt project](https://v3.nuxtjs.org/getting-started/installation)
+
+## Install Tailwind CSS
+
+We can follow official [Tailwind CSS installation Guide](https://tailwindcss.com/docs/installation#installing-tailwind-css-as-a-post-css-plugin)
+
+## Tailwind CSS Styles
+
+Create a `assets/globals.css` file with the following content to include Tailwind CSS:
+
+```
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## Install Tailwind Mobile
+
+Now in created Nuxt project, we need to install Tailwind Mobile:
+
+```
+npm i tailwind-mobile
+```
+
+And in your `tailwind.config.js` file we should extend config with Tailwind Mobile's config:
+
+```js
+// import tailwindMobile config
+const tailwindMobile = require('tailwind-mobile/config');
+
+// wrap config with tailwindMobile config
+module.exports = tailwindMobile({
+  purge: [
+    './components/*.{js,ts,jsx,vue}',
+    './pages/*.{js,ts,jsx,vue}',
+    './*.{js,ts,jsx,vue}',
+  ],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+});
+```
+
+## App Component
+
+Now we need to setup main [App](/vue/app) component so we can set some global parameters (like `theme`).
+
+We need to wrap whole app with `App` in the `./app.vue`:
+
+```html
+<template>
+  <!-- Wrap our app with App component -->
+  <twm-app theme="ios">
+    <NuxtPage />
+  </twm-app>
+</template>
+
+<script>
+  import { twmApp } from 'tailwind-mobile/vue';
+  import './assets/main.scss';
+
+  export default {
+    components: {
+      twmApp,
+    },
+  };
+</script>
+```
+
+## Example Page
+
+Now when everything is set up, we can use Tailwind Mobile React components in our Nuxt pages.
+
+For example, let's open `pages/index.vue` and change it to the following:
+
+```html
+<template>
+  <twm-page>
+    <twm-navbar title="My App" />
+
+    <twm-block strong>
+      <p>
+        Here is your Next.js & Tailwind Mobile app. Let's see what we have here.
+      </p>
+    </twm-block>
+    <twm-block-title>Navigation</twm-block-title>
+    <twm-list>
+      <twm-list-item href="/about/" title="About" />
+      <twm-list-item href="/form/" title="Form" />
+    </twm-list>
+
+    <twm-block strong className="flex space-x-4">
+      <twm-button>Button 1</twm-button>
+      <twm-button>Button 2</twm-button>
+    </twm-block>
+  </twm-page>
+</template>
+<script>
+  // Tailwind Mobile components
+  import {
+    twmPage,
+    twmNavbar,
+    twmBlock,
+    twmButton,
+    twmList,
+    twmListItem,
+    twmLink,
+    twmBlockTitle,
+  } from 'tailwind-mobile/vue';
+
+  export default {
+    components: {
+      twmPage,
+      twmNavbar,
+      twmBlock,
+      twmButton,
+      twmList,
+      twmListItem,
+      twmLink,
+      twmBlockTitle,
+    },
+  };
+</script>
+```
+
+As a result we should see the following page:
+
+<img
+  className="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
+  src="/images/docs/twm-next.png"
+  alt="tailwind-mobile-next"
+/>

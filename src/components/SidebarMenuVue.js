@@ -10,7 +10,7 @@ const links = [
       'Usage',
       { title: 'Usage with Framework7', href: '/vue/framework7' },
       { title: 'Usage with Ionic', href: '/vue/ionic' },
-      { title: 'Usage with Nuxt.js', href: '/vue/nuxt-js' },
+      { title: 'Usage with Nuxt', href: '/vue/nuxt' },
     ],
   },
   {
