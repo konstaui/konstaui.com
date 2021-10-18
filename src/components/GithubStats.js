@@ -4,7 +4,6 @@ import { GithubIcon } from './GithubIcon';
 function getLocalStats() {
   return {
     stars: localStorage.getItem('twm-git-stats-stars'),
-    forks: localStorage.getItem('twm-git-stats-forks'),
   };
 }
 
@@ -15,20 +14,14 @@ async function fetchGitStats(local) {
   const res = await fetch(
     'https://api.github.com/repos/tailwind-mobile/tailwind-mobile'
   );
-  const { stargazers_count, forks } = await res.json();
-  if (stargazers_count || forks) {
+  const { stargazers_count } = await res.json();
+  if (stargazers_count) {
     localStorage.setItem('twm-git-stats-date', new Date().getTime());
   }
   if (stargazers_count) {
     localStorage.setItem(
       'twm-git-stats-stars',
       stargazers_count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-    );
-  }
-  if (forks || forks === 0) {
-    localStorage.setItem(
-      'twm-git-stats-forks',
-      forks.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
     );
   }
   return getLocalStats();
@@ -60,15 +53,10 @@ export function GithubStats(props) {
         )}
         <GithubIcon className="inline-block" height="24" />
         <div className={inNavbar ? `hidden sm:flex` : ''}>
-          {[
-            [data.stars, 'stars'],
-            [data.forks, 'forks'],
-          ].map(([value, label]) => (
-            <span className="ml-2 text-xs" key={label}>
-              <span className="text-base font-medium">{value}</span>{' '}
-              <span>{label}</span>
-            </span>
-          ))}
+          <span className="ml-2 text-xs">
+            <span className="text-base font-medium">{data.stars}</span>{' '}
+            <span>stars</span>
+          </span>
         </div>
       </a>
     </div>
