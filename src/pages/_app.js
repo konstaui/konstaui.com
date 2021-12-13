@@ -32,8 +32,8 @@ function MyApp({ Component, pageProps, router }) {
         />
         <meta property="og:site_name" content="Konsta UI" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@nolimits4web" />
-        <meta name="twitter:creator" content="@nolimits4web" />
+        <meta name="twitter:site" content="@konstaui" />
+        <meta name="twitter:creator" content="@konstaui" />
         <meta name="twitter:title" content={title} />
         <meta
           name="twitter:description"
