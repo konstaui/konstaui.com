@@ -26,18 +26,12 @@ const tailwindMobileConfig = require('tailwind-mobile/config');
 
 // wrap your config with tailwindMobileConfig
 module.exports = tailwindMobileConfig({
-  // JIT mode should be enabled
-  mode: 'jit',
   // rest of your usual Tailwind CSS config here
   ...
 });
 ```
 
 `tailwindMobileConfig` will extend default (or your custom one) Tailwind CSS config with some extra variants and helper utilities required for Tailwind Mobile.
-
-## JIT Mode
-
-As Tailwind Mobile comes with a bunch of extra utilities, it is intended to be uses with [JIT (just-in-time)](https://tailwindcss.com/docs/just-in-time-mode) mode enabled
 
 ## Roboto Font
 

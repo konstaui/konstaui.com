@@ -41,8 +41,7 @@ And in your `tailwind.config.js` file we should extend config with Tailwind Mobi
 const tailwindMobile = require('tailwind-mobile/config');
 
 module.exports = tailwindMobile({
-  mode: 'jit',
-  purge: ['./src/**/*.vue', './src/*.vue'],
+  content: ['./src/**/*.vue', './src/*.vue'],
 });
 ```
 
@@ -213,8 +212,7 @@ And in `tailwind.config.js` (to configure Tailwind Mobile theme color):
 const tailwindMobile = require('tailwind-mobile/config');
 
 module.exports = tailwindMobile({
-  mode: 'jit',
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   // extend primary color
   theme: {
     extend: {
