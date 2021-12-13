@@ -16,7 +16,7 @@ export const Footer = (props) => {
           <div className="">
             Code licensed under{' '}
             <a
-              href="https://github.com/kosntaui/konsta/blob/main/LICENSE"
+              href="https://github.com/konstaui/konsta/blob/main/LICENSE"
               target="_blank"
               className="text-primary hover:underline"
             >
