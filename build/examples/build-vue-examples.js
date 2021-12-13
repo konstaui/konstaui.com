@@ -34,13 +34,13 @@ const buildExamples = async () => {
       .replace(`    setup() {\n      return {\n      };\n    },`, '')
       .replace(
 `<template v-if="!isPreview" #left>
-        <twm-navbar-back-link @click="() => history.back()" />
+        <k-navbar-back-link @click="() => history.back()" />
       </template>`,
         ''
       )
       .replace(
-        / {4}<twm-navbar title="([a-zA-Z0-9 \(\)\/]*)">\n {6}\n {4}<\/twm-navbar>/, // eslint-disable-line
-        '    <twm-navbar title="$1" />'
+        / {4}<k-navbar title="([a-zA-Z0-9 \(\)\/]*)">\n {6}\n {4}<\/k-navbar>/, // eslint-disable-line
+        '    <k-navbar title="$1" />'
       )
 
     content = content.trim();

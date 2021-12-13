@@ -21,7 +21,7 @@
     "jsx": "preserve"
   },
   "typedocOptions": {
-    "name": "TailwindMobile",
+    "name": "KonstaUI",
     "entryPoints": [],
     "excludeExternals": false,
     "includeVersion": true,
@@ -29,7 +29,7 @@
   },
   "include": [
     "node_modules/@types/react",
-    "node_modules/tailwind-mobile/react/*.d.ts",
-    "node_modules/tailwind-mobile/react/**/*.d.ts"
+    "node_modules/konsta/react/*.d.ts",
+    "node_modules/konsta/react/**/*.d.ts"
   ]
 }
