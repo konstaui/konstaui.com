@@ -1,15 +1,15 @@
 ---
-title: 'Tailwind Mobile & Nuxt | Tailwind Mobile React'
+title: 'Konsta UI & Nuxt | Konsta UI React'
 section: 'vue'
 ---
 
-# Tailwind Mobile & Nuxt
+# Konsta UI & Nuxt
 
-Let's see how to use Tailwind Mobile Vue components with [Nuxt](https://v3.nuxtjs.org).
+Let's see how to use Konsta UI Vue components with [Nuxt](https://v3.nuxtjs.org).
 
 <div className="important-note">
-  Because Tailwind Mobile comes with components only for Vue.js v3, it
-  compatible only with Nuxt 3 as well.
+  Because Konsta UI comes with components only for Vue.js v3, it compatible only
+  with Nuxt 3 as well.
 </div>
 
 ## Create Nuxt Project
@@ -31,22 +31,22 @@ Create a `assets/globals.css` file with the following content to include Tailwin
 @tailwind utilities;
 ```
 
-## Install Tailwind Mobile
+## Install Konsta UI
 
-Now in created Nuxt project, we need to install Tailwind Mobile:
+Now in created Nuxt project, we need to install Konsta UI:
 
 ```
-npm i tailwind-mobile
+npm i konsta
 ```
 
-And in your `tailwind.config.js` file we should extend config with Tailwind Mobile's config:
+And in your `tailwind.config.js` file we should extend config with Konsta UI's config:
 
 ```js
-// import tailwindMobile config
-const tailwindMobile = require('tailwind-mobile/config');
+// import konstaConfig config
+const konstaConfig = require('konsta/config');
 
-// wrap config with tailwindMobile config
-module.exports = tailwindMobile({
+// wrap config with konstaConfig config
+module.exports = konstaConfig({
   content: [
     './components/*.{js,ts,jsx,vue}',
     './pages/*.{js,ts,jsx,vue}',
@@ -72,18 +72,18 @@ We need to wrap whole app with `App` in the `./app.vue`:
 ```html
 <template>
   <!-- Wrap our app with App component -->
-  <twm-app theme="ios">
+  <k-app theme="ios">
     <NuxtPage />
-  </twm-app>
+  </k-app>
 </template>
 
 <script>
-  import { twmApp } from 'tailwind-mobile/vue';
+  import { kApp } from 'konsta/vue';
   import './assets/main.scss';
 
   export default {
     components: {
-      twmApp,
+      kApp,
     },
   };
 </script>
@@ -91,55 +91,53 @@ We need to wrap whole app with `App` in the `./app.vue`:
 
 ## Example Page
 
-Now when everything is set up, we can use Tailwind Mobile React components in our Nuxt pages.
+Now when everything is set up, we can use Konsta UI React components in our Nuxt pages.
 
 For example, let's open `pages/index.vue` and change it to the following:
 
 ```html
 <template>
-  <twm-page>
-    <twm-navbar title="My App" />
+  <k-page>
+    <k-navbar title="My App" />
 
-    <twm-block strong>
-      <p>
-        Here is your Next.js & Tailwind Mobile app. Let's see what we have here.
-      </p>
-    </twm-block>
-    <twm-block-title>Navigation</twm-block-title>
-    <twm-list>
-      <twm-list-item href="/about/" title="About" />
-      <twm-list-item href="/form/" title="Form" />
-    </twm-list>
+    <k-block strong>
+      <p>Here is your Next.js & Konsta UI app. Let's see what we have here.</p>
+    </k-block>
+    <k-block-title>Navigation</k-block-title>
+    <k-list>
+      <k-list-item href="/about/" title="About" />
+      <k-list-item href="/form/" title="Form" />
+    </k-list>
 
-    <twm-block strong className="flex space-x-4">
-      <twm-button>Button 1</twm-button>
-      <twm-button>Button 2</twm-button>
-    </twm-block>
-  </twm-page>
+    <k-block strong className="flex space-x-4">
+      <k-button>Button 1</k-button>
+      <k-button>Button 2</k-button>
+    </k-block>
+  </k-page>
 </template>
 <script>
-  // Tailwind Mobile components
+  // Konsta UI components
   import {
-    twmPage,
-    twmNavbar,
-    twmBlock,
-    twmButton,
-    twmList,
-    twmListItem,
-    twmLink,
-    twmBlockTitle,
-  } from 'tailwind-mobile/vue';
+    kPage,
+    kNavbar,
+    kBlock,
+    kButton,
+    kList,
+    kListItem,
+    kLink,
+    kBlockTitle,
+  } from 'konsta/vue';
 
   export default {
     components: {
-      twmPage,
-      twmNavbar,
-      twmBlock,
-      twmButton,
-      twmList,
-      twmListItem,
-      twmLink,
-      twmBlockTitle,
+      kPage,
+      kNavbar,
+      kBlock,
+      kButton,
+      kList,
+      kListItem,
+      kLink,
+      kBlockTitle,
     },
   };
 </script>
@@ -149,6 +147,6 @@ As a result we should see the following page:
 
 <img
   className="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
-  src="/images/docs/twm-next.png"
-  alt="tailwind-mobile-next"
+  src="/images/docs/k-next.png"
+  alt="konsta-next"
 />

@@ -1,5 +1,5 @@
 ---
-title: 'App React Component | Tailwind Mobile React'
+title: 'App React Component | Konsta UI React'
 section: 'react'
 ---
 
@@ -9,7 +9,7 @@ import { AppProps } from '@/components/api/react/AppProps';
 
 App React component is the main app component that allows to define global theme (iOS or Material) and other useful globals.
 
-If you use Tailwind Mobile with other framework (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)), you should use [TailwindMobileProvider](/react/tailwind-mobile-provider) instead.
+If you use Konsta UI with other framework (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)), you should use [KonstaProvider](/react/konsta-provider) instead.
 
 ## App Components
 
@@ -23,18 +23,18 @@ There are following components included:
 
 ## Examples
 
-`App` component should be used as main wrapper for all Tailwind Mobile components, and there should be only one `App` component at a time in the app:
+`App` component should be used as main wrapper for all Konsta UI components, and there should be only one `App` component at a time in the app:
 
 ```jsx
 import React from 'react';
-import { App } from 'tailwind-mobile/react';
+import { App } from 'konsta/react';
 
 export default function MyApp() {
   return (
     <>
       {/* App component ideally should be the main root component */}
       <App theme="ios" safeAreas>
-        {/* rest of Tailwind Mobile components */}
+        {/* rest of Konsta UI components */}
       </App>
     </>
   );

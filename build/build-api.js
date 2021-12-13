@@ -12,10 +12,10 @@ const buildApi = async () => {
   );
 
   const typesFiles = fs.readdirSync(
-    path.resolve(__dirname, '../node_modules/tailwind-mobile/react/types')
+    path.resolve(__dirname, '../node_modules/konsta/react/types')
   );
   config.typedocOptions.entryPoints = typesFiles.map(
-    (f) => `node_modules/tailwind-mobile/react/types/${f}`
+    (f) => `node_modules/konsta/react/types/${f}`
   );
   fs.writeFileSync('./tsconfig.json', JSON.stringify(config, '', 2));
 

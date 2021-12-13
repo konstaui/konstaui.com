@@ -1,15 +1,15 @@
 ---
-title: 'useTheme | Tailwind Mobile React'
+title: 'useTheme | Konsta UI React'
 section: 'react'
 ---
 
 # useTheme
 
-Tailwind Mobile comes with handy `useTheme` hook to detect currently active theme (`ios` or `material`) set by [App component](/react/app) or [TailwindMobileProvider](/react/tailwind-mobile-provider).
+Konsta UI comes with handy `useTheme` hook to detect currently active theme (`ios` or `material`) set by [App component](/react/app) or [KonstaProvider](/react/konsta-provider).
 
 ```jsx
 /* App.jsx */
-import { App } from 'tailwind-mobile/react';
+import { App } from 'konsta/react';
 import { HomePage } from './path/to/HomePage.jsx';
 
 export default function MyApp() {
@@ -26,7 +26,7 @@ export default function MyApp() {
 
 ```jsx
 /* HomePage.jsx */
-import { useTheme, Page } from 'tailwind-mobile/react';
+import { useTheme, Page } from 'konsta/react';
 
 export default function MyApp() {
   // get currently set theme

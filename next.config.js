@@ -1,4 +1,4 @@
-const pkg = require('tailwind-mobile/package.json');
+const pkg = require('konsta/package.json');
 const mdxLoader = require('./src/mdx/loader');
 
 module.exports = {
@@ -6,8 +6,8 @@ module.exports = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   experimental: { esmExternals: true },
   env: {
-    tailwindMobileVersion: pkg.version,
-    tailwindMobileReleaseDate: pkg.releaseDate,
+    konstaVersion: pkg.version,
+    konstaReleaseDate: pkg.releaseDate,
   },
   ...mdxLoader,
 };

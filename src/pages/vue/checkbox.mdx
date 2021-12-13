@@ -1,5 +1,5 @@
 ---
-title: 'Checkbox Vue Component | Tailwind Mobile Vue'
+title: 'Checkbox Vue Component | Konsta UI Vue'
 section: 'vue'
 ---
 
@@ -28,26 +28,26 @@ There are following components included:
 Checkboxes List is not a separate component, but just a particular case of using [`List`](/vue/list) and [`ListItem`](/vue/list-item) components.
 
 ```html
-<twm-list>
+<k-list>
   <!-- Additional "label" prop on ListItem -->
-  <twm-list-item
+  <k-list-item
     label
     title="Books"
   >
     <template #media>
       <!-- Pass Checkbox to list item media -->
-      <twm-checkbox component="div" name="my-checkbox" />
+      <k-checkbox component="div" name="my-checkbox" />
     </template>
-  </twm-list-item>
-  <twm-list-item
+  </k-list-item>
+  <k-list-item
     label
     title="Movies"
   >
     <template #media>
       <!-- Pass Checkbox to list item media -->
-      <twm-checkbox component="div" name="my-checkbox" />
+      <k-checkbox component="div" name="my-checkbox" />
     </template>
-  </twm-list-item>
+  </k-list-item>
 </List>
 ```
 

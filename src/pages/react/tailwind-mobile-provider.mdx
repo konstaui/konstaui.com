@@ -1,37 +1,37 @@
 ---
-title: 'TailwindMobileProvider | Tailwind Mobile React'
+title: 'KonstaProvider | Konsta UI React'
 section: 'react'
 ---
 
 import { AppProps } from '@/components/api/react/AppProps';
 
-# TailwindMobileProvider
+# KonstaProvider
 
 ## Usage
 
-If you use Tailwind Mobile with other frameworks (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)), we still should specify Tailwind Mobile's globals (like theme) with the help of `TailwindMobileProvider`.
+If you use Konsta UI with other frameworks (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)), we still should specify Konsta UI's globals (like theme) with the help of `KonstaProvider`.
 
-We also need to add `twm-ios` or `twm-material` class to the app's root element.
+We also need to add `k-ios` or `k-material` class to the app's root element.
 
 ```jsx
 /* App.jsx */
 import React from 'react';
 // we use main App and Router components from Framework7
 import { App, View, Page, Navbar } from 'framework7/react';
-// we use TailwindMobileProvider instead
-import { TailwindMobileProvider, Block, Button } from 'tailwind-mobile/react';
+// we use KonstaProvider instead
+import { KonstaProvider, Block, Button } from 'konsta/react';
 
 export default function MyApp() {
   return (
     <>
-      {/* Wrap our app with TailwindMobileProvider */}
-      <TailwindMobileProvider theme="ios">
-        {/* We add extra `twm-ios` class to the app root element */}
-        <App theme="ios" className="twm-ios">
+      {/* Wrap our app with KonstaProvider */}
+      <KonstaProvider theme="ios">
+        {/* We add extra `k-ios` class to the app root element */}
+        <App theme="ios" className="k-ios">
           <View>
             <Page>
               <Navbar title="My App" />
-              {/*  Tailwind Mobile components */}
+              {/*  Konsta UI components */}
               <Block>
                 <p>Here comes my app</p>
               </Block>
@@ -42,13 +42,13 @@ export default function MyApp() {
             </Page>
           </View>
         </App>
-      </TailwindMobileProvider>
+      </KonstaProvider>
     </>
   );
 }
 ```
 
-## TailwindMobileProvider Props
+## KonstaProvider Props
 
 <table className="props-table">
   <thead>

@@ -1,5 +1,5 @@
 ---
-title: 'Safe Areas | Tailwind Mobile React'
+title: 'Safe Areas | Konsta UI React'
 section: 'react'
 ---
 
@@ -33,7 +33,7 @@ If your app targets full screen mobile devices, make sure you have `viewport-fit
 
 ## Safe Areas
 
-To tell our components that our app is a full screen app and we need to consider safe areas, we need to add `safe-areas` class to Tailwind Mobile components parent element, preferably to the root app element.
+To tell our components that our app is a full screen app and we need to consider safe areas, we need to add `safe-areas` class to Konsta UI components parent element, preferably to the root app element.
 
 ```jsx
 /* App.jsx */
@@ -51,12 +51,12 @@ export default function MyApp() {
 }
 ```
 
-If you use Tailwind Mobile's [App component](/react/app), then it can be enabled with `safeAreas` prop:
+If you use Konsta UI's [App component](/react/app), then it can be enabled with `safeAreas` prop:
 
 ```jsx
 /* App.jsx */
 import React from 'react';
-import { App, ... } from 'tailwind-mobile/react';
+import { App, ... } from 'konsta/react';
 
 export default function MyApp() {
   return (
@@ -74,18 +74,18 @@ This is how `safe-areas` class defined in CSS:
 
 ```css
 :root: {
-  --twm-safe-area-left: 0px;
-  --twm-safe-area-right: 0px;
-  --twm-safe-area-top: 0px;
-  --twm-safe-area-bottom: 0px;
+  --k-safe-area-left: 0px;
+  --k-safe-area-right: 0px;
+  --k-safe-area-top: 0px;
+  --k-safe-area-bottom: 0px;
 }
 
 @supports (left: env(safe-area-inset-left)):  {
   .safe-areas: {
-    --twm-safe-area-left: env(safe-area-inset-left);
-    --twm-safe-area-right: env(safe-area-inset-right);
-    --twm-safe-area-top: env(safe-area-inset-top);
-    --twm-safe-area-bottom: env(safe-area-inset-bottom);
+    --k-safe-area-left: env(safe-area-inset-left);
+    --k-safe-area-right: env(safe-area-inset-right);
+    --k-safe-area-top: env(safe-area-inset-top);
+    --k-safe-area-bottom: env(safe-area-inset-bottom);
   }
 }
 
@@ -110,22 +110,22 @@ This is how `no-safe-areas` classes defined in CSS:
 ```css
 @supports (left: env(safe-area-inset-left)):  {
   .no-safe-areas: {
-    --twm-safe-area-left: 0px;
-    --twm-safe-area-right: 0px;
-    --twm-safe-area-top: 0px;
-    --twm-safe-area-bottom: 0px;
+    --k-safe-area-left: 0px;
+    --k-safe-area-right: 0px;
+    --k-safe-area-top: 0px;
+    --k-safe-area-bottom: 0px;
   }
   .no-safe-areas-top: {
-    --twm-safe-area-top: 0px;
+    --k-safe-area-top: 0px;
   }
   .no-safe-areas-right: {
-    --twm-safe-area-right: 0px;
+    --k-safe-area-right: 0px;
   }
   .no-safe-areas-bottom: {
-    --twm-safe-area-bottom: 0px;
+    --k-safe-area-bottom: 0px;
   }
   .no-safe-areas-left: {
-    --twm-safe-area-left: 0px;
+    --k-safe-area-left: 0px;
   }
 }
 
@@ -135,40 +135,40 @@ This is how `no-safe-areas` classes defined in CSS:
 
 We can also consider safe areas when placing elements:
 
-| Class                  | CSS                                                   |
-| ---------------------- | ----------------------------------------------------- |
-| `.top-safe`            | `top: var(--twm-safe-area-top)`                       |
-| `.top-[value]-safe`    | `top: calc([value] + var(--twm-safe-area-top))`       |
-| `.right-safe`          | `right: var(--twm-safe-area-right)`                   |
-| `.right-[value]-safe`  | `right: calc([value] + var(--twm-safe-area-right))`   |
-| `.bottom-safe`         | `bottom: var(--twm-safe-area-bottom)`                 |
-| `.bottom-[value]-safe` | `bottom: calc([value] + var(--twm-safe-area-bottom))` |
-| `.left-safe`           | `left: var(--twm-safe-area-left)`                     |
-| `.left-[value]-safe`   | `left: calc([value] + var(--twm-safe-area-left))`     |
+| Class                  | CSS                                                 |
+| ---------------------- | --------------------------------------------------- |
+| `.top-safe`            | `top: var(--k-safe-area-top)`                       |
+| `.top-[value]-safe`    | `top: calc([value] + var(--k-safe-area-top))`       |
+| `.right-safe`          | `right: var(--k-safe-area-right)`                   |
+| `.right-[value]-safe`  | `right: calc([value] + var(--k-safe-area-right))`   |
+| `.bottom-safe`         | `bottom: var(--k-safe-area-bottom)`                 |
+| `.bottom-[value]-safe` | `bottom: calc([value] + var(--k-safe-area-bottom))` |
+| `.left-safe`           | `left: var(--k-safe-area-left)`                     |
+| `.left-[value]-safe`   | `left: calc([value] + var(--k-safe-area-left))`     |
 
 And same with margin and padding:
 
-| Class              | CSS                                                           |
-| ------------------ | ------------------------------------------------------------- |
-| `.pt-safe`         | `padding-top: var(--twm-safe-area-top)`                       |
-| `.pt-[value]-safe` | `padding-top: calc([value] + var(--twm-safe-area-top))`       |
-| `.pr-safe`         | `padding-right: var(--twm-safe-area-right)`                   |
-| `.pr-[value]-safe` | `padding-right: calc([value] + var(--twm-safe-area-right))`   |
-| `.pb-safe`         | `padding-bottom: var(--twm-safe-area-bottom)`                 |
-| `.pb-[value]-safe` | `padding-bottom: calc([value] + var(--twm-safe-area-bottom))` |
-| `.pl-safe`         | `padding-left: var(--twm-safe-area-left)`                     |
-| `.pl-[value]-safe` | `padding-left: calc([value] + var(--twm-safe-area-left))`     |
+| Class              | CSS                                                         |
+| ------------------ | ----------------------------------------------------------- |
+| `.pt-safe`         | `padding-top: var(--k-safe-area-top)`                       |
+| `.pt-[value]-safe` | `padding-top: calc([value] + var(--k-safe-area-top))`       |
+| `.pr-safe`         | `padding-right: var(--k-safe-area-right)`                   |
+| `.pr-[value]-safe` | `padding-right: calc([value] + var(--k-safe-area-right))`   |
+| `.pb-safe`         | `padding-bottom: var(--k-safe-area-bottom)`                 |
+| `.pb-[value]-safe` | `padding-bottom: calc([value] + var(--k-safe-area-bottom))` |
+| `.pl-safe`         | `padding-left: var(--k-safe-area-left)`                     |
+| `.pl-[value]-safe` | `padding-left: calc([value] + var(--k-safe-area-left))`     |
 
-| Class              | CSS                                                          |
-| ------------------ | ------------------------------------------------------------ |
-| `.mt-safe`         | `margin-top: var(--twm-safe-area-top)`                       |
-| `.mt-[value]-safe` | `margin-top: calc([value] + var(--twm-safe-area-top))`       |
-| `.mr-safe`         | `margin-right: var(--twm-safe-area-right)`                   |
-| `.mr-[value]-safe` | `margin-right: calc([value] + var(--twm-safe-area-right))`   |
-| `.mb-safe`         | `margin-bottom: var(--twm-safe-area-bottom)`                 |
-| `.mb-[value]-safe` | `margin-bottom: calc([value] + var(--twm-safe-area-bottom))` |
-| `.ml-safe`         | `margin-left: var(--twm-safe-area-left)`                     |
-| `.ml-[value]-safe` | `margin-left: calc([value] + var(--twm-safe-area-left))`     |
+| Class              | CSS                                                        |
+| ------------------ | ---------------------------------------------------------- |
+| `.mt-safe`         | `margin-top: var(--k-safe-area-top)`                       |
+| `.mt-[value]-safe` | `margin-top: calc([value] + var(--k-safe-area-top))`       |
+| `.mr-safe`         | `margin-right: var(--k-safe-area-right)`                   |
+| `.mr-[value]-safe` | `margin-right: calc([value] + var(--k-safe-area-right))`   |
+| `.mb-safe`         | `margin-bottom: var(--k-safe-area-bottom)`                 |
+| `.mb-[value]-safe` | `margin-bottom: calc([value] + var(--k-safe-area-bottom))` |
+| `.ml-safe`         | `margin-left: var(--k-safe-area-left)`                     |
+| `.ml-[value]-safe` | `margin-left: calc([value] + var(--k-safe-area-left))`     |
 
 For example:
 
@@ -177,10 +177,10 @@ For example:
 {
 /*
 "left-safe" class will set:
-  left: var(--twm-safe-area-top);
+  left: var(--k-safe-area-top);
 
 "bottom-4-safe" class will set:
-  bottom: calc(1rem + var(--twm-safe-area-bottom));
+  bottom: calc(1rem + var(--k-safe-area-bottom));
 */
 }
 <div className="left-safe bottom-4-safe">...</div>;

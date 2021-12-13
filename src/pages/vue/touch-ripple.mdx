@@ -1,36 +1,36 @@
 ---
-title: 'Touch Ripple | Tailwind Mobile Vue'
+title: 'Touch Ripple | Konsta UI Vue'
 section: 'vue'
 ---
 
 # Touch Ripple
 
-Tailwind Mobile's Material Theme comes with implementation of Material Design Touch Ripple effect.
+Konsta UI's Material Theme comes with implementation of Material Design Touch Ripple effect.
 
 It is enabled by default for Material theme.
 
 With these extra utility classes we can control touch ripple "wave" color:
 
-| Class                   | CSS                                                   |                                                              |
-| ----------------------- | ----------------------------------------------------- | ------------------------------------------------------------ |
-| `.touch-ripple-current` | `--twm-touch-ripple-color: rgba(0, 0, 0, 0.1)`        | Inherits touch ripple color from parent element's text color |
-| `.touch-ripple-black`   | `--twm-touch-ripple-color: rgba(255, 255, 255, 0.15)` | Makes touch ripple black                                     |
-| `.touch-ripple-white`   | `--twm-touch-ripple-color: currentColor`              | Makes touch ripple white                                     |
-| `.touch-ripple-[color]` | `--twm-touch-ripple-color: rgba([color], 0.25)`       | Makes touch ripple of specified color                        |
+| Class                   | CSS                                                 |                                                              |
+| ----------------------- | --------------------------------------------------- | ------------------------------------------------------------ |
+| `.touch-ripple-current` | `--k-touch-ripple-color: rgba(0, 0, 0, 0.1)`        | Inherits touch ripple color from parent element's text color |
+| `.touch-ripple-black`   | `--k-touch-ripple-color: rgba(255, 255, 255, 0.15)` | Makes touch ripple black                                     |
+| `.touch-ripple-white`   | `--k-touch-ripple-color: currentColor`              | Makes touch ripple white                                     |
+| `.touch-ripple-[color]` | `--k-touch-ripple-color: rgba([color], 0.25)`       | Makes touch ripple of specified color                        |
 
 For example:
 
 ```html
 <template>
   <!-- Makes button with red touch ripple -->
-  <twm-button class="touch-ripple-red-500">Click me</twm-button>
+  <k-button class="touch-ripple-red-500">Click me</k-button>
 </template>
 <script>
-  import { twmButton } from 'tailwind-mobile/vue';
+  import { kButton } from 'konsta/vue';
 
   export default {
     components: {
-      twmButton,
+      kButton,
     },
   };
 </script>

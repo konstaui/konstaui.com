@@ -1,45 +1,45 @@
 ---
-title: 'TailwindMobileProvider | Tailwind Mobile Vue'
+title: 'KonstaProvider | Konsta UI Vue'
 section: 'vue'
 ---
 
-# TailwindMobileProvider
+# KonstaProvider
 
 ## Usage
 
-If you use Tailwind Mobile with other frameworks (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)), we still should specify Tailwind Mobile's globals (like theme) with the help of `TailwindMobileProvider`.
+If you use Konsta UI with other frameworks (like [Framework7](https://framework7.io) or [Ionic](https://ionicframework.com)), we still should specify Konsta UI's globals (like theme) with the help of `KonstaProvider`.
 
-We also need to add `twm-ios` or `twm-material` class to the app's root element.
+We also need to add `k-ios` or `k-material` class to the app's root element.
 
 ```html
 <template>
-  <!-- Wrap our app with TailwindMobileProvider -->
-  <twm-provider theme="ios">
-    <!-- We add extra `twm-ios` class to the app root element -->
-    <f7-app theme="ios" className="twm-ios">
+  <!-- Wrap our app with KonstaProvider -->
+  <k-provider theme="ios">
+    <!-- We add extra `k-ios` class to the app root element -->
+    <f7-app theme="ios" className="k-ios">
       <f7-view>
         <f7-page>
           <f7-navbar title="My App" />
-          <!--  Tailwind Mobile components -->
-          <twm-block>
+          <!--  Konsta UI components -->
+          <k-block>
             <p>Here comes my app</p>
-          </twm-block>
-          <twm-block className="space-y-4">
+          </k-block>
+          <k-block className="space-y-4">
             <p>Here comes the button</p>
-            <twm-button>Action</twm-button>
-          </twm-block>
+            <k-button>Action</k-button>
+          </k-block>
         </f7-page>
       </f7-view>
     </f7-app>
-  </twm-provider>
+  </k-provider>
 </template>
 <script>
   /* App.vue */
 
   // we use main App and Router components from Framework7
   import { f7App, f7View, f7Page, f7Navbar } from 'framework7/vue';
-  // we use TailwindMobileProvider instead
-  import { twmProvider, twmBlock, twmButton } from 'tailwind-mobile/vue';
+  // we use KonstaProvider instead
+  import { konstaProvider, kBlock, kButton } from 'konsta/vue';
 
   export default {
     components: {
@@ -47,15 +47,15 @@ We also need to add `twm-ios` or `twm-material` class to the app's root element.
       f7View,
       f7Page,
       f7Navbar,
-      twmProvider,
-      twmBlock,
-      twmButton,
+      konstaProvider,
+      kBlock,
+      kButton,
     },
   };
 </script>
 ```
 
-## TailwindMobileProvider Props
+## KonstaProvider Props
 
 <table className="props-table">
   <thead>

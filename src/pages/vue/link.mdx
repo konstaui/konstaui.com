@@ -1,5 +1,5 @@
 ---
-title: 'Link Vue Component | Tailwind Mobile Vue'
+title: 'Link Vue Component | Konsta UI Vue'
 section: 'vue'
 ---
 
@@ -29,41 +29,41 @@ There are following components included:
 #### Navigation Link
 
 ```html
-<twm-link href="/about">About</twm-link>
+<k-link href="/about">About</k-link>
 ```
 
 #### External Link
 
 ```html
-<twm-link href="https://google.com" target="_blank"> Google </twm-link>
+<k-link href="https://google.com" target="_blank"> Google </k-link>
 ```
 
 #### Vue Router Link
 
 <!-- prettier-ignore -->
 ```html
-<twm-link :link-props="{to: '/about'}" component="router-link">
+<k-link :link-props="{to: '/about'}" component="router-link">
   About
-</twm-link>
+</k-link>
 ```
 
 #### Link In Navbar
 
 <!-- prettier-ignore -->
 ```html
-<twm-navbar title="My App">
+<k-navbar title="My App">
   <template #right>
-    <twm-link navbar @click="openMenu">Menu</twm-link>
+    <k-link navbar @click="openMenu">Menu</k-link>
   </template>
-</twm-navbar>
+</k-navbar>
 ```
 
 #### Link In Toolbar
 
 <!-- prettier-ignore -->
 ```html
-<twm-toolbar>
-  <twm-link toolbar @click="action1">Action 1</twm-link>
-  <twm-link toolbar @click="action2">Action 2</twm-link>
-</twm-toolbar>
+<k-toolbar>
+  <k-link toolbar @click="action1">Action 1</k-link>
+  <k-link toolbar @click="action2">Action 2</k-link>
+</k-toolbar>
 ```

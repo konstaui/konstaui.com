@@ -16,7 +16,7 @@ export const Footer = (props) => {
           <div className="">
             Code licensed under{' '}
             <a
-              href="https://github.com/tailwind-mobile/tailwind-mobile/blob/main/LICENSE"
+              href="https://github.com/kosntaui/konsta/blob/main/LICENSE"
               target="_blank"
               className="text-primary hover:underline"
             >
@@ -25,7 +25,7 @@ export const Footer = (props) => {
             .
           </div>
           <div>
-            2021 © Tailwind Mobile by{' '}
+            2021 © Konsta UI by{' '}
             <a href="https://nolimits4web.com" target="_blank">
               <img
                 className="w-12 h-12 inline-block"

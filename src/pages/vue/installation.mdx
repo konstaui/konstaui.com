@@ -1,5 +1,5 @@
 ---
-title: 'Installation | Tailwind Mobile Vue'
+title: 'Installation | Konsta UI Vue'
 section: 'vue'
 ---
 
@@ -7,35 +7,35 @@ section: 'vue'
 
 We assume you already have a configured project with [Vue and Tailwind CSS](https://tailwindcss.com/docs/installation) .
 
-## Install Tailwind Mobile
+## Install Konsta UI
 
-At first, we need to install the Tailwind Mobile library:
+At first, we need to install the Konsta UI library:
 
 ```
-npm i tailwind-mobile
+npm i konsta
 ```
 
 ## Add Config
 
-Then, we need to extend our Tailwind CSS config with Tailwind Mobile config.
+Then, we need to extend our Tailwind CSS config with Konsta UI config.
 
 In your `tailwind.config.js` file:
 
 ```js
-const tailwindMobileConfig = require('tailwind-mobile/config');
+const konstaConfig = require('konsta/config');
 
-// wrap your config with tailwindMobileConfig
-module.exports = tailwindMobileConfig({
+// wrap your config with konstaConfig
+module.exports = konstaConfig({
   // rest of your usual Tailwind CSS config here
   ...
 });
 ```
 
-`tailwindMobileConfig` will extend default (or your custom one) Tailwind CSS config with some extra variants and helper utilities required for Tailwind Mobile.
+`konstaConfig` will extend default (or your custom one) Tailwind CSS config with some extra variants and helper utilities required for Konsta UI.
 
 ## Roboto Font
 
-Tailwind Mobile uses system font for iOS theme and [Roboto font](https://fonts.google.com/specimen/Roboto) for Material Design theme.
+Konsta UI uses system font for iOS theme and [Roboto font](https://fonts.google.com/specimen/Roboto) for Material Design theme.
 
 If you develop a web app, you need to [Roboto font](https://fonts.google.com/specimen/Roboto) to your app to display it correctly.
 
@@ -60,4 +60,4 @@ Or in CSS:
 
 ## Usage
 
-After installation process is done let's check [how to use Tailwind Mobile components](/vue/usage) in our Vue application.
+After installation process is done let's check [how to use Konsta UI components](/vue/usage) in our Vue application.

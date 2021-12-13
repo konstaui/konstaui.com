@@ -30,8 +30,8 @@ const links = [
     title: 'Components',
     links: [
       {
-        title: 'TailwindMobileProvider',
-        href: '/vue/tailwind-mobile-provider',
+        title: 'KonstaProvider',
+        href: '/vue/konsta-provider',
       },
       'App',
       'Badge',

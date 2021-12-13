@@ -11,7 +11,7 @@ import copyToClipboard from '../shared/copy-to-clipboard';
 export default function Home() {
   const copyInstallCommand = (e) => {
     e.preventDefault();
-    copyToClipboard('npm i tailwind-mobile');
+    copyToClipboard('npm i konsta');
   };
 
   const CopyIcon = ({ className }) => (
@@ -103,7 +103,7 @@ export default function Home() {
           {/* Content */}
           <div className="flex-shrink w-full lg:text-right">
             <div className="text-primary text-4xl sm:text-6xl font-bold leading-none mt-12">
-              Tailwind Mobile
+              Konsta UI
             </div>
             <div className="text-black text-3xl sm:text-4xl font-bold sm:leading-snug my-8">
               Pixel perfect mobile UI components built with Tailwind CSS
@@ -118,7 +118,7 @@ export default function Home() {
               </Button>
               <div className="bg-primary bg-opacity-10 font-mono text-black text-lg h-12 border border-primary rounded-xl items-center px-4 hidden sm:flex">
                 <span className="select-none opacity-50 mr-4">$</span>
-                <span>npm i tailwind-mobile</span>
+                <span>npm i konsta</span>
                 <span
                   className="ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 hover:text-primary transform-gpu"
                   onClick={copyInstallCommand}
@@ -128,8 +128,8 @@ export default function Home() {
               </div>
             </div>
             <div className="my-4">
-              MIT Licensed, v{process.env.tailwindMobileVersion} released on{' '}
-              {process.env.tailwindMobileReleaseDate}
+              MIT Licensed, v{process.env.konstaVersion} released on{' '}
+              {process.env.konstaReleaseDate}
             </div>
             <div className="mt-4">
               <GithubStats />
@@ -174,8 +174,8 @@ export default function Home() {
       <Section>
         <SectionTitle>iOS & Material Design themes</SectionTitle>
         <SectionText>
-          All Tailwind Mobile components come with pixel perfect native-like iOS
-          and Material Design themes created using official design guidelines.
+          All Konsta UI components come with pixel perfect native-like iOS and
+          Material Design themes created using official design guidelines.
           Everything you need for your iOS and Android apps!
         </SectionText>
         <SectionLogos
@@ -195,7 +195,7 @@ export default function Home() {
       <Section>
         <SectionTitle>Awesome set of UI components</SectionTitle>
         <SectionText>
-          Tailwind Mobile comes with an awesome set of ready to use UI elements:
+          Konsta UI comes with an awesome set of ready to use UI elements:
         </SectionText>
         <div className="flex flex-wrap items-center content-center justify-center">
           <img
@@ -234,7 +234,7 @@ export default function Home() {
       <Section>
         <SectionTitle>Build with the tech you love!</SectionTitle>
         <SectionText>
-          Tailwind Mobile components are currently available for React, Vue, and
+          Konsta UI components are currently available for React, Vue, and
           coming soon for Svelte.
         </SectionText>
         <SectionLogos
@@ -262,8 +262,7 @@ export default function Home() {
       <Section>
         <SectionTitle>Perfect fit for Ionic & Framework7</SectionTitle>
         <SectionText>
-          Tailwind Mobile mostly designed to be used with "parent" frameworks
-          like{' '}
+          Konsta UI mostly designed to be used with "parent" frameworks like{' '}
           <a
             className="text-primary hover:underline"
             href="https://ionicframework.com"
@@ -280,7 +279,7 @@ export default function Home() {
             Framework7
           </a>
           . In this case you use "parent" framework as your app shell (routing,
-          navigation, state management, native APIs, etc.) and Tailwind Mobile
+          navigation, state management, native APIs, etc.) and Konsta UI
           components for inner pages/views UIs.
         </SectionText>
         <SectionLogos
@@ -366,7 +365,7 @@ export default function Home() {
           <span className="hidden sm:block select-none opacity-50 mr-4 pointer-events-none">
             $
           </span>
-          <span>npm i tailwind-mobile</span>
+          <span>npm i konsta</span>
           <span
             className="ml-2 sm:ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 hover:text-primary transform-gpu"
             onClick={copyInstallCommand}
@@ -382,9 +381,7 @@ export default function Home() {
                 src="/images/home/home-logos/react.svg"
                 alt="react"
               />
-              <span className="sm:mb-2 font-semibold">
-                Tailwind Mobile React
-              </span>
+              <span className="sm:mb-2 font-semibold">Konsta UI React</span>
               <span className="hidden sm:block text-sm opacity-75">
                 Documentation
               </span>
@@ -397,7 +394,7 @@ export default function Home() {
                 src="/images/home/home-logos/vue.svg"
                 alt="vue"
               />
-              <span className="sm:mb-2 font-semibold">Tailwind Mobile Vue</span>
+              <span className="sm:mb-2 font-semibold">Konsta UI Vue</span>
               <span className="hidden sm:block text-sm opacity-75">
                 Documentation
               </span>
@@ -410,9 +407,7 @@ export default function Home() {
                 src="/images/home/home-logos/svelte.svg"
                 alt="svelte"
               />
-              <span className="sm:mb-2 font-semibold">
-                Tailwind Mobile Svelte
-              </span>
+              <span className="sm:mb-2 font-semibold">Konsta UI Svelte</span>
               <span className="hidden sm:block text-sm opacity-75">
                 Documentation
               </span>

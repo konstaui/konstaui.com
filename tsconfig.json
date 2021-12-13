@@ -1,0 +1,78 @@
+{
+  "compilerOptions": {
+    "target": "ESNEXT",
+    "module": "ESNEXT",
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "noEmit": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "typedocOptions": {
+    "name": "TailwindMobile",
+    "entryPoints": [
+      "node_modules/konsta/react/types/App.d.ts",
+      "node_modules/konsta/react/types/Badge.d.ts",
+      "node_modules/konsta/react/types/Block.d.ts",
+      "node_modules/konsta/react/types/BlockFooter.d.ts",
+      "node_modules/konsta/react/types/BlockHeader.d.ts",
+      "node_modules/konsta/react/types/BlockTitle.d.ts",
+      "node_modules/konsta/react/types/Button.d.ts",
+      "node_modules/konsta/react/types/Card.d.ts",
+      "node_modules/konsta/react/types/Checkbox.d.ts",
+      "node_modules/konsta/react/types/Chip.d.ts",
+      "node_modules/konsta/react/types/Fab.d.ts",
+      "node_modules/konsta/react/types/Icon.d.ts",
+      "node_modules/konsta/react/types/Link.d.ts",
+      "node_modules/konsta/react/types/List.d.ts",
+      "node_modules/konsta/react/types/ListButton.d.ts",
+      "node_modules/konsta/react/types/ListGroup.d.ts",
+      "node_modules/konsta/react/types/ListInput.d.ts",
+      "node_modules/konsta/react/types/ListItem.d.ts",
+      "node_modules/konsta/react/types/MenuList.d.ts",
+      "node_modules/konsta/react/types/MenuListItem.d.ts",
+      "node_modules/konsta/react/types/Navbar.d.ts",
+      "node_modules/konsta/react/types/NavbarBackLink.d.ts",
+      "node_modules/konsta/react/types/Page.d.ts",
+      "node_modules/konsta/react/types/Panel.d.ts",
+      "node_modules/konsta/react/types/Popover.d.ts",
+      "node_modules/konsta/react/types/Popup.d.ts",
+      "node_modules/konsta/react/types/Preloader.d.ts",
+      "node_modules/konsta/react/types/Progressbar.d.ts",
+      "node_modules/konsta/react/types/Radio.d.ts",
+      "node_modules/konsta/react/types/Range.d.ts",
+      "node_modules/konsta/react/types/Segmented.d.ts",
+      "node_modules/konsta/react/types/SegmentedButton.d.ts",
+      "node_modules/konsta/react/types/Sheet.d.ts",
+      "node_modules/konsta/react/types/Stepper.d.ts",
+      "node_modules/konsta/react/types/Tabbar.d.ts",
+      "node_modules/konsta/react/types/TabbarLink.d.ts",
+      "node_modules/konsta/react/types/Toast.d.ts",
+      "node_modules/konsta/react/types/Toggle.d.ts",
+      "node_modules/konsta/react/types/Toolbar.d.ts"
+    ],
+    "excludeExternals": false,
+    "includeVersion": true,
+    "out": "./public/types"
+  },
+  "include": [
+    "node_modules/@types/react",
+    "node_modules/tailwind-mobile/react/*.d.ts",
+    "node_modules/tailwind-mobile/react/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

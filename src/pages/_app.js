@@ -7,8 +7,7 @@ function MyApp({ Component, pageProps, router }) {
   useGA(router);
   const meta = Component.layoutProps?.meta || {};
   const title =
-    meta.title ||
-    'Tailwind Mobile - Mobile UI components built with Tailwind CSS';
+    meta.title || 'Konsta UI - Mobile UI components built with Tailwind CSS';
 
   return (
     <>
@@ -29,9 +28,9 @@ function MyApp({ Component, pageProps, router }) {
         />
         <meta
           property="og:image"
-          content="https://tailwind-mobile.com/images/share-banner.png"
+          content="https://konstaui.com/images/share-banner.png"
         />
-        <meta property="og:site_name" content="Tailwind Mobile" />
+        <meta property="og:site_name" content="Konsta UI" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@nolimits4web" />
         <meta name="twitter:creator" content="@nolimits4web" />
@@ -42,7 +41,7 @@ function MyApp({ Component, pageProps, router }) {
         />
         <meta
           name="twitter:image"
-          content="https://tailwind-mobile.com/images/share-banner.png"
+          content="https://konstaui.com/images/share-banner.png"
         />
       </Head>
       <Component {...pageProps} />

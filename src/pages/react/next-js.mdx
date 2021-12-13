@@ -1,11 +1,11 @@
 ---
-title: 'Tailwind Mobile & Next.js | Tailwind Mobile React'
+title: 'Konsta UI & Next.js | Konsta UI React'
 section: 'react'
 ---
 
-# Tailwind Mobile & Next.js
+# Konsta UI & Next.js
 
-Let's see how to use Tailwind Mobile React components with [Next.js](https://nextjs.org).
+Let's see how to use Konsta UI React components with [Next.js](https://nextjs.org).
 
 ## Create Next.js Project
 
@@ -15,22 +15,22 @@ First, create a Next.js project using [`create-next-app`](https://nextjs.org/doc
 
 We can follow official [Tailwind CSS with Next.js Guide](https://tailwindcss.com/docs/guides/nextjs#setting-up-tailwind-css)
 
-## Install Tailwind Mobile
+## Install Konsta UI
 
-Now in created Next.js project, we need to install Tailwind Mobile:
+Now in created Next.js project, we need to install Konsta UI:
 
 ```
-npm i tailwind-mobile
+npm i konsta
 ```
 
-And in your `tailwind.config.js` file we should extend config with Tailwind Mobile's config:
+And in your `tailwind.config.js` file we should extend config with Konsta UI's config:
 
 ```js
-// import tailwindMobile config
-const tailwindMobile = require('tailwind-mobile/config');
+// import konstaConfig config
+const konstaConfig = require('konsta/config');
 
-// wrap config with tailwindMobile config
-module.exports = tailwindMobile({
+// wrap config with konstaConfig config
+module.exports = konstaConfig({
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -53,7 +53,7 @@ Now we need to setup main [App](/react/app) component so we can set some global 
 We need to wrap whole app with `App` in the `pages/_app.js`:
 
 ```jsx
-import { App } from 'tailwind-mobile/react';
+import { App } from 'konsta/react';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
@@ -70,12 +70,12 @@ export default MyApp;
 
 ## Example Page
 
-Now when everything is set up, we can use Tailwind Mobile React components in our Next.js pages.
+Now when everything is set up, we can use Konsta UI React components in our Next.js pages.
 
 For example, let's open `pages/index.js` and change it to the following:
 
 ```jsx
-// Tailwind Mobile components
+// Konsta UI components
 import {
   Page,
   Navbar,
@@ -85,7 +85,7 @@ import {
   ListItem,
   Link,
   BlockTitle,
-} from 'tailwind-mobile/react';
+} from 'konsta/react';
 
 export default function Home() {
   return (
@@ -94,8 +94,7 @@ export default function Home() {
 
       <Block strong>
         <p>
-          Here is your Next.js & Tailwind Mobile app. Let's see what we have
-          here.
+          Here is your Next.js & Konsta UI app. Let's see what we have here.
         </p>
       </Block>
       <BlockTitle>Navigation</BlockTitle>
@@ -117,6 +116,6 @@ As a result we should see the following page:
 
 <img
   className="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
-  src="/images/docs/twm-next.png"
-  alt="tailwind-mobile-next"
+  src="/images/docs/k-next.png"
+  alt="konsta-next"
 />

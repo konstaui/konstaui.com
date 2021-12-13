@@ -1,5 +1,5 @@
 ---
-title: 'Colors | Tailwind Mobile Vue'
+title: 'Colors | Konsta UI Vue'
 section: 'vue'
 ---
 
@@ -10,7 +10,7 @@ import { ColorsGenerator } from '@/components/ColorsGenerator';
 
 ## Extended Colors
 
-Tailwind Mobile extends Tailwind config with the following colors:
+Konsta UI extends Tailwind config with the following colors:
 
 | Name                  | Value                                       |
 | --------------------- | ------------------------------------------- |
@@ -37,10 +37,10 @@ Tailwind Mobile extends Tailwind config with the following colors:
 Most of these colors are configurable on per component basis. And to overwrite them globally with custom ones, you need to extend them in `tailwind.config.js`:
 
 ```js
-const tailwindMobileConfig = require('tailwind-mobile/config');
+const konstaConfig = require('konsta/config');
 
-module.exports = tailwindMobileConfig({
-  // extend Tailwind Mobile colors in config's `theme.extend.colors`
+module.exports = konstaConfig({
+  // extend Kosnta UI colors in config's `theme.extend.colors`
   theme: {
     extend: {
       colors: {

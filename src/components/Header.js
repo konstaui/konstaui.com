@@ -5,17 +5,17 @@ import { GithubStats } from './GithubStats';
 import { Logo } from './Logo';
 
 const docsLinks = [
-  { title: 'Tailwind Mobile React', href: '/react' },
-  { title: 'Tailwind Mobile Svelte', href: '/svelte' },
-  { title: 'Tailwind Mobile Vue', href: '/vue' },
+  { title: 'Konsta UI React', href: '/react' },
+  { title: 'Konsta UI Svelte', href: '/svelte' },
+  { title: 'Konsta UI Vue', href: '/vue' },
 ];
 
 const resourcesLinks = [
   {
     title: 'Discussions',
-    href: 'https://github.com/tailwind-mobile/tailwind-mobile/discussions',
+    href: 'https://github.com/konstaui/konsta/discussions',
   },
-  { title: 'GitHub', href: 'https://github.com/tailwind-mobile' },
+  { title: 'GitHub', href: 'https://github.com/konstaui' },
   { title: 'Release Notes', href: '/release-notes' },
 ];
 

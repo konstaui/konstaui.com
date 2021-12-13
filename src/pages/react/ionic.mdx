@@ -1,11 +1,11 @@
 ---
-title: 'Tailwind Mobile & Ionic | Tailwind Mobile React'
+title: 'Konsta UI & Ionic | Konsta UI React'
 section: 'react'
 ---
 
-# Tailwind Mobile & Ionic
+# Konsta UI & Ionic
 
-Let's see how to use Tailwind Mobile React components with [Ionic](https://ionicframework.com/react) React.
+Let's see how to use Konsta UI React components with [Ionic](https://ionicframework.com/react) React.
 
 ## Create Ionic Project
 
@@ -27,38 +27,38 @@ Create a `src/App.css` file with the following content to include Tailwind CSS:
 @tailwind utilities;
 ```
 
-## Install Tailwind Mobile
+## Install Konsta UI
 
-Now, we can install Tailwind Mobile:
+Now, we can install Konsta UI:
 
 ```
-npm i tailwind-mobile
+npm i konsta
 ```
 
-And in your `tailwind.config.js` file we should extend config with Tailwind Mobile's config:
+And in your `tailwind.config.js` file we should extend config with Konsta UI's config:
 
 ```js
-const tailwindMobile = require('tailwind-mobile/config');
+const konstaConfig = require('konsta/config');
 
-module.exports = tailwindMobile({
+module.exports = konstaConfig({
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
 });
 ```
 
-## TailwindMobileProvider
+## KonstaProvider
 
-Now we need to setup [TailwindMobileProvider](/react/tailwind-mobile-provider) so we can set some global parameters (like `theme`).
+Now we need to setup [KonstaProvider](/react/konsta-provider) so we can set some global parameters (like `theme`).
 
-We need to wrap main Ionic's `IonApp` component with `TailwindMobileProvider` in the `src/App.tsx`:
+We need to wrap main Ionic's `IonApp` component with `KonstaProvider` in the `src/App.tsx`:
 
 ```jsx
 import React from 'react';
-import { TailwindMobileProvider } from 'tailwind-mobile/react';
+import { KonstaProvider } from 'konsta/react';
 import { IonApp /* ... */ } from '@ionic/react';
 
 const App: React.FC = () => (
-  // Wrap IonApp with TailwindMobileProvider with theme="parent"
-  <TailwindMobileProvider theme="parent">
+  // Wrap IonApp with KonstaProvider with theme="parent"
+  <KonstaProvider theme="parent">
     <IonApp>
       <IonReactRouter>
         <IonRouterOutlet>
@@ -71,7 +71,7 @@ const App: React.FC = () => (
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
-  </TailwindMobileProvider>
+  </KonstaProvider>
 );
 ```
 
@@ -79,11 +79,11 @@ const App: React.FC = () => (
 
 To keep Ionic router work correctly we need to use Router-related components from Ionic: `IonApp`, `IonReactRouter`, `IonPage`, `IonHeader`, `IonFooter`, `IonToolbar`.
 
-The rest of components (if there is a Tailwind Mobile alternative) can be taken from Tailwind Mobile (`tailwind-mobile/react`)
+The rest of components (if there is a Konsta UI alternative) can be taken from Konsta UI (`konsta/react`)
 
 ## Example Page
 
-Now when everything is set up, we can use Tailwind Mobile React components in Ionic page components.
+Now when everything is set up, we can use Konsta UI React components in Ionic page components.
 
 For example, let's open `src/pages/Home.tsx` and change it to the following:
 
@@ -96,14 +96,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import {
-  Block,
-  Button,
-  List,
-  ListItem,
-  BlockTitle,
-  Link,
-} from 'tailwind-mobile/react';
+import { Block, Button, List, ListItem, BlockTitle, Link } from 'konsta/react';
 
 const Home: React.FC = () => {
   return (
@@ -132,11 +125,10 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
 
-        {/* In page content we can use Tailwind Mobile components  */}
+        {/* In page content we can use Konsta UI components  */}
         <Block strong>
           <p>
-            Here is your Ionic & Tailwind Mobile app. Let's see what we have
-            here.
+            Here is your Ionic & Konsta UI app. Let's see what we have here.
           </p>
         </Block>
         <BlockTitle>Navigation</BlockTitle>
@@ -161,19 +153,19 @@ As a result we should see the following page:
 
 <img
   className="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
-  src="/images/docs/twm-ionic.png"
-  alt="tailwind-mobile-ionic"
+  src="/images/docs/k-ionic.png"
+  alt="konstaConfig-ionic"
 />
 
 ## Color Theme
 
-Ionic and Tailwind Mobile use different sources for main theme color. While Ionic's theme color is configured via CSS custom properties, Tailwind Mobile theme should be set in `tailwind.config.js`.
+Ionic and Konsta UI use different sources for main theme color. While Ionic's theme color is configured via CSS custom properties, Konsta UI theme should be set in `tailwind.config.js`.
 
-| Color         | Ionic CSS Var               | Tailwind Mobile Prop |
-| ------------- | --------------------------- | -------------------- |
-| primary       | `--ion-color-primary`       | `primary`            |
-| primary dark  | `--ion-color-primary-shade` | `primary-dark`       |
-| primary light | `--ion-color-primary-tint`  | `primary-light`      |
+| Color         | Ionic CSS Var               | Konsta UI Prop  |
+| ------------- | --------------------------- | --------------- |
+| primary       | `--ion-color-primary`       | `primary`       |
+| primary dark  | `--ion-color-primary-shade` | `primary-dark`  |
+| primary light | `--ion-color-primary-tint`  | `primary-light` |
 
 Let's say our theme color is <span className="inline-block h-[1em] w-[1em] bg-[#ff6b22] align-middle" /> `#ff6b22`, we need to set the following:
 
@@ -188,12 +180,12 @@ In `App.css` (to configure Ionic theme color):
 }
 ```
 
-And in `tailwind.config.js` (to configure Tailwind Mobile theme color):
+And in `tailwind.config.js` (to configure Konsta UI theme color):
 
 ```js
-const tailwindMobile = require('tailwind-mobile/config');
+const konstaConfig = require('konsta/config');
 
-module.exports = tailwindMobile({
+module.exports = konstaConfig({
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   // extend primary color
   theme: {
