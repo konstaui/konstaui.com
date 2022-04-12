@@ -17,6 +17,7 @@ const resourcesLinks = [
   },
   { title: 'GitHub', href: 'https://github.com/konstaui' },
   { title: 'Release Notes', href: '/release-notes' },
+  { title: 'Konsta UI on Twitter', href: 'https://twitter.com/konstaui' },
 ];
 
 const Dropdown = (props) => {
