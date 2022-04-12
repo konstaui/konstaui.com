@@ -138,7 +138,7 @@ export default function Home() {
         </div>
         {/* Phone */}
         <Device
-          url="/kitchen-sink/react/dist/index.html"
+          url="/kitchen-sink/react/dist/index.html?safe-areas=true"
           className="hidden ml-16 lg:block "
         />
       </Container>
@@ -166,7 +166,7 @@ export default function Home() {
           </Button>
         </div>
         <Device
-          url="/kitchen-sink/react/dist/index.html"
+          url="/kitchen-sink/react/dist/index.html?safe-areas=true"
           className="hidden md:block my-16 mx-auto"
         />
       </Section>
