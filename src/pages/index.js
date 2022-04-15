@@ -99,11 +99,11 @@ export default function Home() {
       <Container className="mt-4 mb-16 flex flex-col items-center text-center lg:flex-row lg:text-left">
         <div className="max-w-2xl">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Logo className="home-logo-animated mx-auto h-32 w-32 md:h-48 md:w-48 lg:ml-auto lg:mr-0" />
           </div>
           {/* Content */}
-          <div className="w-full flex-shrink lg:text-right">
+          <div className="w-full shrink lg:text-right">
             <div className="mt-12 text-4xl font-bold leading-none text-primary sm:text-6xl">
               Konsta UI
             </div>
@@ -298,7 +298,7 @@ export default function Home() {
           ]}
         />
         <div className="mx-auto mt-16 hidden max-w-screen-lg items-stretch justify-between md:flex">
-          <div className="mr-8 ml-20 w-full flex-shrink rounded-l-2xl border-8 border-r-0 border-[#3880FF] lg:ml-24">
+          <div className="mr-8 ml-20 w-full shrink rounded-l-2xl border-8 border-r-0 border-[#3880FF] lg:ml-24">
             <div className="relative h-full rounded-l-lg border-8 border-r-0 border-[#EE350F]">
               <div className="absolute top-1/2 -ml-2 flex w-52 -translate-x-1/2 -translate-y-1/2 transform space-x-4">
                 <img
@@ -318,7 +318,7 @@ export default function Home() {
             </div>
           </div>
           <img
-            className="home-app-shadow w-[375px] flex-shrink-0"
+            className="home-app-shadow w-[375px] shrink-0"
             src="/images/home/home-appstore-app.png"
             alt="mobile app"
           />

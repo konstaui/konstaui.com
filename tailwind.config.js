@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [
+  content: [
     './src/layouts/**/*.{js,ts,jsx,tsx,mdx}',
     './src/layouts/*.{js,ts,jsx,tsx,mdx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,8 +7,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: false, // or 'media' or 'class'
-  mode: process.env.TAILWIND_JIT ? 'jit' : undefined,
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
       sans:

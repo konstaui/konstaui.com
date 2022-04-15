@@ -74,7 +74,7 @@ export default function WithSidebar(props) {
         <div
           className={`${
             opened ? '' : 'hidden'
-          } fixed left-0 top-0 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:mr-8 lg:block lg:bg-transparent lg:shadow-none xl:mr-10`}
+          } fixed left-0 top-16 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:bg-transparent lg:shadow-none xl:mr-10`}
         >
           <div
             className="sticky top-16 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain py-10 px-4 lg:px-0"

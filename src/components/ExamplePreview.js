@@ -5,10 +5,10 @@ const Button = (props) => {
   return (
     <button
       type="button"
-      className={`w-20 font-medium text-sm h-8 duration-300 text-white ${
+      className={`h-8 w-20 text-sm font-medium text-white duration-300 ${
         active
           ? 'bg-primary'
-          : 'border border-opacity-25 bg-white bg-opacity-10 text-opacity-50 hover:bg-opacity-20'
+          : 'border border-white border-opacity-25 bg-white bg-opacity-10 text-opacity-50 hover:bg-opacity-20'
       } ${left ? 'rounded-l' : 'rounded-r'}`}
       {...rest}
     >
@@ -54,17 +54,17 @@ export const ExamplePreview = (props) => {
 
   return (
     <div className="example-preview my-8">
-      <div className="flex bg-black rounded-t-lg py-2 px-4 items-center justify-between">
+      <div className="flex items-center justify-between rounded-t-lg bg-black py-2 px-4">
         <div className="text-white text-opacity-75">{fileName || ''}</div>
         <div className="flex">
           <div>
             <a
               href={iframeUrl.current}
               target="_blank"
-              className="bg-white bg-opacity-10 border border-opacity-25 !text-white w-8 h-8 flex justify-center items-center rounded hover:bg-opacity-20 duration-300"
+              className="flex h-8 w-8 items-center justify-center rounded border border-white border-opacity-25 bg-white bg-opacity-10 !text-white duration-300 hover:bg-opacity-20"
             >
               <svg
-                className="w-4 h-4 relative -top-px opacity-50"
+                className="relative -top-px h-4 w-4 opacity-50"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -108,17 +108,17 @@ export const ExamplePreview = (props) => {
           </div>
         </div>
       </div>
-      <div className="flex sm:border-r-4 sm:border-b-4 sm:border-l-4 border-black">
-        <div className="flex-shrink md:h-[734px] w-full min-w-0 md:border-r-4 border-black">
+      <div className="flex border-black sm:border-r-4 sm:border-b-4 sm:border-l-4">
+        <div className="w-full min-w-0 shrink border-black md:h-[734px] md:border-r-4">
           <Source />
         </div>
-        <div className="hidden md:block flex-shrink-0 w-[320px] xl:w-[375px]">
+        <div className="hidden w-[320px] shrink-0 md:block xl:w-[375px]">
           <iframe
             ref={iframeEl}
             title="demo"
             src={iframeUrl.current}
             loading="lazy"
-            className="w-full h-full overflow-hidden"
+            className="h-full w-full overflow-hidden"
           />
         </div>
       </div>
