@@ -5,6 +5,14 @@ const lowerCaseNames = require('./lowercase-names');
 
 const ignoreSlots = ['chevronIcon'];
 
+// eslint-disable-next-line
+const defaultValue = (item) => {
+  return (item.default_value || '').replace(
+    /[{}]/g,
+    (bracket) => `{'${bracket}'}`
+  );
+};
+
 const isSlotOnly = (item) => {
   const names = ['media', 'icon', 'input', 'button'];
 
@@ -16,10 +24,8 @@ const isSlotOnly = (item) => {
 
 const type = (item = {}) => {
   const typeObj = item.type || {};
-  const t = (value) =>
-    value.replace('React.ReactNode', 'string').replace('ReactNode', 'string');
   if (typeObj.type === 'array' && typeObj.elementType) {
-    return t(`${typeObj.elementType.name}[]`);
+    return `${typeObj.elementType.name}[]`;
   }
   if (typeObj.type === 'union') {
     const types = [];
@@ -29,7 +35,7 @@ const type = (item = {}) => {
       else if (subType === 'array' && elementType)
         types.push(`${elementType.name}[]`);
     });
-    return t(types.join(`{' | '}`));
+    return types.join(`{' | '}`);
   }
   if (typeObj.type === 'reflection') {
     if (typeObj && typeObj.declaration && typeObj.declaration.signatures) {
@@ -46,15 +52,7 @@ const type = (item = {}) => {
       .join(', ');
     return `function(${args || ''})`;
   }
-  return t(typeObj.name || '');
-};
-
-// eslint-disable-next-line
-const defaultValue = (item) => {
-  return (item.default_value || '').replace(
-    /[{}]/g,
-    (bracket) => `{'${bracket}'}`
-  );
+  return typeObj.name || '';
 };
 
 const buildPropsTable = (componentName, items) => {
@@ -64,88 +62,47 @@ const buildPropsTable = (componentName, items) => {
       : name;
     return n.replace('ClassName', 'Class');
   };
-  const content = `
-  export const ${componentName}Props = () => {
-    return (
-      <table className="props-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Default</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${items
-            .map(
-              (item) => `
-            <tr>
-              <td>
-                <a href="#prop-${propName(item.name)}" id="prop-${propName(
-                item.name
-              )}"><span>${propName(item.name)}</span></a>
-              </td>
-              <td>
-                <span>${type(item)}</span>
-              </td>
-              <td>
-                <span>${defaultValue(item)}</span>
-              </td>
-              <td>${description(item)}</td>
-            </tr>
-          `
-            )
-            .join('')}
-        </tbody>
-      </table>
-    )
-  }
-  `;
 
+  const content = `
+export const ${componentName}Props = () => {
+  return (
+    <table className="props-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${items
+          .map(
+            (item) => `
+          <tr>
+            <td>
+              <a href="#prop-${propName(item.name)}" id="prop-${propName(
+              item.name
+            )}"><span>${propName(item.name)}</span></a>
+            </td>
+            <td>
+              <span>${type(item)}</span>
+            </td>
+            <td>
+              <span>${defaultValue(item)}</span>
+            </td>
+            <td>${description(item)}</td>
+          </tr>
+        `
+          )
+          .join('')}
+      </tbody>
+    </table>
+  )
+}
+`;
   return content;
 };
-
-const buildEventsTable = (componentName, items) => {
-  const eventName = (name) => name.slice(2).toLowerCase();
-  const content = `
-  export const ${componentName}Events = () => {
-    return (
-      <table className="events-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${items
-            .map(
-              (item) => `
-            <tr>
-              <td>
-                <a href="#event-${eventName(item.name)}" id="event-${eventName(
-                item.name
-              )}"><span>${eventName(item.name)}</span></a>
-              </td>
-              <td>
-                <span>${type(item)}</span>
-              </td>
-              <td>${description(item)}</td>
-            </tr>
-          `
-            )
-            .join('')}
-        </tbody>
-      </table>
-    )
-  }
-  `;
-
-  return content;
-};
-
 const buildSlotsTable = (componentName, items) => {
   const slotName = (name) => name.toLowerCase().replace('children', '');
   const content = `
@@ -190,43 +147,32 @@ const buildProps = async (componentName, typesData) => {
         : true
     )
     .filter((item) => {
-      if (item.name === 'defaultValue') return false;
+      if (item.name === 'defaultValue' || item.name === 'defaultChecked')
+        return false;
       return true;
     });
 
   const props = items.filter(
-    (item) =>
-      item.name.indexOf('on') !== 0 &&
-      !item.name.includes('Children') &&
-      !isSlotOnly(item)
+    (item) => !item.name.includes('Children') && !isSlotOnly(item)
   );
-  const events = items.filter((item) => item.name.indexOf('on') === 0);
   const slots = items
     .filter((item) => JSON.stringify(item.type || {}).includes('ReactNode'))
     .filter((item) => !ignoreSlots.includes(item.name));
 
   const propsTable = buildPropsTable(componentName, props);
-  const eventsTable = buildEventsTable(componentName, events);
   const slotsTable = buildSlotsTable(componentName, slots);
 
   fs.writeFileSync(
     path.join(
       __dirname,
-      `../../src/components/api/vue/${componentName}Props.js`
+      `../../src/components/api/svelte/${componentName}Props.js`
     ),
     propsTable
   );
   fs.writeFileSync(
     path.join(
       __dirname,
-      `../../src/components/api/vue/${componentName}Events.js`
-    ),
-    eventsTable
-  );
-  fs.writeFileSync(
-    path.join(
-      __dirname,
-      `../../src/components/api/vue/${componentName}Slots.js`
+      `../../src/components/api/svelte/${componentName}Slots.js`
     ),
     slotsTable
   );

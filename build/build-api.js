@@ -4,6 +4,7 @@ const { promise: exec } = require('exec-sh');
 
 const buildReactProps = require('./api/build-react-props');
 const buildVueProps = require('./api/build-vue-props');
+const buildSvelteProps = require('./api/build-svelte-props');
 
 const buildApi = async () => {
   console.log('Begin types generation');
@@ -72,6 +73,7 @@ const buildApi = async () => {
   Object.keys(types).forEach((name) => {
     buildReactProps(name, types);
     buildVueProps(name, types);
+    buildSvelteProps(name, types);
   });
 
   await fs.writeFile(typesPath, `${JSON.stringify(types, null, 4)}`);
