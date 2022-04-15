@@ -22,7 +22,7 @@
     "exec-sh": "^0.4.0",
     "front-matter": "^4.0.2",
     "fs-extra": "^10.0.1",
-    "konsta": "^0.8.0-beta.3",
+    "konsta": "^0.8.0",
     "next": "12.1.5",
     "postcss": "^8.4.12",
     "prism-react-renderer": "^1.2.1",
