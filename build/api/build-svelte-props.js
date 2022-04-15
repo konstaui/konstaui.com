@@ -5,6 +5,17 @@ const lowerCaseNames = require('./lowercase-names');
 
 const ignoreSlots = ['chevronIcon'];
 
+const componentsWithComponent = [
+  'Button',
+  'Checkbox',
+  'ListInput',
+  'ListItem',
+  'NavbarBackLink',
+  'Page',
+  'Radio',
+  'Stepper',
+];
+
 // eslint-disable-next-line
 const defaultValue = (item) => {
   return (item.default_value || '').replace(
@@ -63,6 +74,12 @@ const buildPropsTable = (componentName, items) => {
     return n.replace('ClassName', 'Class');
   };
 
+  const typeFormatted = (typeValue) => {
+    if (typeValue.includes('ReactNode'))
+      return typeValue.replace('ReactNode', 'string');
+    return typeValue;
+  };
+
   const content = `
 export const ${componentName}Props = () => {
   return (
@@ -86,7 +103,7 @@ export const ${componentName}Props = () => {
             )}"><span>${propName(item.name)}</span></a>
             </td>
             <td>
-              <span>${type(item)}</span>
+              <span>${typeFormatted(type(item))}</span>
             </td>
             <td>
               <span>${defaultValue(item)}</span>
@@ -152,9 +169,17 @@ const buildProps = async (componentName, typesData) => {
       return true;
     });
 
-  const props = items.filter(
-    (item) => !item.name.includes('Children') && !isSlotOnly(item)
-  );
+  const props = items
+    .filter((item) => !item.name.includes('Children') && !isSlotOnly(item))
+    .filter((item) => {
+      if (
+        item.name === 'component' &&
+        !componentsWithComponent.includes(componentName)
+      ) {
+        return false;
+      }
+      return true;
+    });
   const slots = items
     .filter((item) => JSON.stringify(item.type || {}).includes('ReactNode'))
     .filter((item) => !ignoreSlots.includes(item.name));

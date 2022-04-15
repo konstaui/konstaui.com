@@ -16,7 +16,7 @@ We also need to add `k-ios` or `k-material` class to the app's root element.
   <!-- Wrap our app with KonstaProvider -->
   <k-provider theme="ios">
     <!-- We add extra `k-ios` class to the app root element -->
-    <f7-app theme="ios" className="k-ios">
+    <f7-app theme="ios" class="k-ios">
       <f7-view>
         <f7-page>
           <f7-navbar title="My App" />
@@ -24,7 +24,7 @@ We also need to add `k-ios` or `k-material` class to the app's root element.
           <k-block>
             <p>Here comes my app</p>
           </k-block>
-          <k-block className="space-y-4">
+          <k-block class="space-y-4">
             <p>Here comes the button</p>
             <k-button>Action</k-button>
           </k-block>
@@ -37,7 +37,7 @@ We also need to add `k-ios` or `k-material` class to the app's root element.
   /* App.vue */
 
   // we use main App and Router components from Framework7
-  import { f7App, f7View, f7Page, f7Navbar } from 'framework7/vue';
+  import { f7App, f7View, f7Page, f7Navbar } from 'framework7-vue';
   // we use KonstaProvider instead
   import { konstaProvider, kBlock, kButton } from 'konsta/vue';
 
@@ -57,7 +57,7 @@ We also need to add `k-ios` or `k-material` class to the app's root element.
 
 ## KonstaProvider Props
 
-<table className="props-table">
+<table class="props-table">
   <thead>
     <tr>
       <th>Name</th>

@@ -1,0 +1,53 @@
+---
+title: 'Navbar Svelte Component | Konsta UI Svelte'
+section: 'svelte'
+---
+
+import { NavbarProps } from '@/components/api/svelte/NavbarProps';
+import { NavbarSlots } from '@/components/api/svelte/NavbarSlots';
+import { NavbarBackLinkProps } from '@/components/api/svelte/NavbarBackLinkProps';
+import { NavbarBackLinkSlots } from '@/components/api/svelte/NavbarBackLinkSlots';
+import NavbarExample from '@/components/examples/svelte/Navbar';
+import SubnavbarExample from '@/components/examples/svelte/Subnavbar';
+
+# Navbar Svelte Component
+
+Navbar is a fixed area at the top of a screen that contains Page title and navigation elements.
+
+## Navbar Components
+
+There are following components included:
+
+- `Navbar`
+- `NavbarBackLink`
+
+## Navbar Props
+
+<NavbarProps />
+
+## Navbar Slots
+
+<NavbarSlots />
+
+## NavbarBackLink Props
+
+`NavbarBackLink` should be placed in Navbar's "left" area:
+
+<!-- prettier-ignore -->
+```jsx
+<Navbar title="My App">
+  <NavbarBackLink slot="left" text="Back" onClick={() => history.back()} />
+</Navbar>
+```
+
+<NavbarBackLinkProps />
+
+## NavbarBackLink Slots
+
+<NavbarBackLinkSlots />
+
+## Examples
+
+<NavbarExample />
+
+<SubnavbarExample />

@@ -1,0 +1,40 @@
+---
+title: 'Tabbar Svelte Component | Konsta UI Svelte'
+section: 'svelte'
+---
+
+import { TabbarProps } from '@/components/api/svelte/TabbarProps';
+import { TabbarLinkProps } from '@/components/api/svelte/TabbarLinkProps';
+import { TabbarLinkSlots } from '@/components/api/svelte/TabbarLinkSlots';
+import TabbarExample from '@/components/examples/svelte/Tabbar';
+
+# Tabbar Svelte Component
+
+Tabbar is a particular case of [Toolbar](/svelte/toolbar), but it contains icons (or icons with labels) instead of plain links and inteded to be used to switch Tabs
+
+## Tabbar Components
+
+There are following components included:
+
+- `Tabbar`
+- `TabbarLink`
+
+## Tabbar Props
+
+`Tabbar` component extends [`Toolbar` component](/svelte/toolbar), it supports all [`Toolbar` props](/svelte/toolbar#toolbar-props) and the following additional props:
+
+<TabbarProps />
+
+## TabbarLink Props
+
+`TabbarLink` component extends [`Link` component](/svelte/link), it supports all [`Link` props](/svelte/link#link-props) and the following additional props:
+
+<TabbarLinkProps />
+
+## TabbarLink Slots
+
+<TabbarLinkSlots />
+
+## Examples
+
+<TabbarExample />

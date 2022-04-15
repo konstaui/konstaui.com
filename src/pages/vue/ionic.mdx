@@ -86,7 +86,7 @@ The rest of components (if there is a Konsta UI alternative) can be taken from K
 
 ## Example Page
 
-Now when everything is set up, we can use Konsta UI React components in Ionic page components.
+Now when everything is set up, we can use Konsta UI Vue components in Ionic page components.
 
 For example, let's open `src/pages/Home.tsx` and change it to the following:
 
@@ -130,7 +130,7 @@ For example, let's open `src/pages/Home.tsx` and change it to the following:
         <k-list-item href="/form/" title="Form" />
       </k-list>
 
-      <k-block strong className="flex space-x-4">
+      <k-block strong class="flex space-x-4">
         <k-button>Button 1</k-button>
         <k-button>Button 2</k-button>
       </k-block>
@@ -178,7 +178,7 @@ export default {
 As a result we should see the following page:
 
 <img
-  className="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
+  class="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
   src="/images/docs/k-ionic.png"
   alt="konsta-ionic"
 />
@@ -193,7 +193,7 @@ Ionic and Konsta UI use different sources for main theme color. While Ionic's th
 | primary dark  | `--ion-color-primary-shade` | `primary-dark`  |
 | primary light | `--ion-color-primary-tint`  | `primary-light` |
 
-Let's say our theme color is <span className="inline-block h-[1em] w-[1em] bg-[#ff6b22] align-middle" /> `#ff6b22`, we need to set the following:
+Let's say our theme color is <span class="inline-block h-[1em] w-[1em] bg-[#ff6b22] align-middle" /> `#ff6b22`, we need to set the following:
 
 In `App.css` (to configure Ionic theme color):
 

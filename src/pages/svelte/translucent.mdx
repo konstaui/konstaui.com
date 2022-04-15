@@ -1,0 +1,36 @@
+---
+title: 'Translucent | Konsta UI Svelte'
+section: 'svelte'
+---
+
+import { Pre } from '@/components/Pre.js';
+
+# Translucent
+
+Translucent utility class adds backdrop blur to element. By default it is used in iOS styles for some components.
+
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>CSS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>translucent</code>
+      </td>
+      <td>
+        <Pre lang="css" class="!my-0">{`
+          @supports (backdrop-filter: blur(20px)) {
+            .translucent {
+              --tw-bg-opacity: 0.8 !important;
+              backdrop-filter: saturate(180%) blur(20px);
+            }
+          }
+        `}</Pre>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,117 @@
+---
+title: 'KonstaProvider | Konsta UI Svelte'
+section: 'svelte'
+---
+
+# KonstaProvider
+
+## Usage
+
+If you use Konsta UI with other frameworks (like [Framework7](https://framework7.io)), we still should specify Konsta UI's globals (like theme) with the help of `KonstaProvider`.
+
+We also need to add `k-ios` or `k-material` class to the app's root element.
+
+```html
+<!-- App.svelte -->
+<script>
+  // we use main App and Router components from Framework7
+  import { App, View, Page, Navbar } from 'framework7-svelte';
+  // we use KonstaProvider instead
+  import { KonstaProvider, Block, Button } from 'konsta/svelte';
+</script>
+
+<!-- Wrap our app with KonstaProvider -->
+<KonstaProvider theme="ios">
+  <!-- We add extra `k-ios` class to the app root element -->
+  <App theme="ios" class="k-ios">
+    <View>
+      <Page>
+        <Navbar title="My App" />
+        <!--  Konsta UI components -->
+        <Block>
+          <p>Here comes my app</p>
+        </Block>
+        <Block class="space-y-4">
+          <p>Here comes the button</p>
+          <button>Action</button>
+        </Block>
+      </Page>
+    </View>
+  </App>
+</KonstaProvider>
+```
+
+## KonstaProvider Props
+
+<table class="props-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="#prop-dark" id="prop-dark">
+          <span>dark</span>
+        </a>
+      </td>
+      <td>
+        <span>boolean</span>
+      </td>
+      <td>
+        <span>false</span>
+      </td>
+      <td>
+        <p>
+          Include <code>dark:</code> variants (if dark theme is in use)
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#prop-theme" id="prop-theme">
+          <span>theme</span>
+        </a>
+      </td>
+      <td>
+        <span>
+          'ios'{' | '}'material'{' | '}'parent'
+        </span>
+      </td>
+      <td>
+        <span>'material'</span>
+      </td>
+      <td>
+        <p>
+          App theme. If set to <code>'parent'</code> it will look for{' '}
+          <code>ios</code> or <code>md</code> class on root{' '}
+          <code>&#x3C;html></code> element, useful to use with parent framework
+          like Framework7
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#prop-touchRipple" id="prop-touchRipple">
+          <span>touchRipple</span>
+        </a>
+      </td>
+      <td>
+        <span>boolean</span>
+      </td>
+      <td>
+        <span>true</span>
+      </td>
+      <td>
+        <p>
+          Enables touch ripple effect in Material theme. Allows to globally
+          disable touch ripple for all components
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>

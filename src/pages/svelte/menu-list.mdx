@@ -1,0 +1,32 @@
+---
+title: 'Menu List Svelte Component | Konsta UI Svelte'
+section: 'svelte'
+---
+
+import { MenuListItemProps } from '@/components/api/svelte/MenuListItemProps';
+import MenuListExample from '@/components/examples/svelte/MenuList';
+
+# Menu List Svelte Component
+
+Menu List is an extension of [List View](/svelte/list). Menu List unlike usual links list is designed to indicate currently active screen (or section) of your app. Think about it like a [Tabbar](/svelte/tabbar) but in a form of a list.
+
+## Menu List Components
+
+There are following components included:
+
+- `MenuList` - menu list component
+- `MenuListItem` - menu list item element
+
+## MenuList Props
+
+`MenuList` component doesn't have specific props, but as it extends [`List` component](/svelte/list), it supports all [`List` props](/svelte/list#list-props)
+
+## MenuListItem Props
+
+`MenuListItem` component extends [`ListItem` component](/svelte/list-item), it supports all [`ListItem` props](/svelte/list-item#listitem-props), [`ListItem` slots](/svelte/list-item#listitem-slots) and the following additional props:
+
+<MenuListItemProps />
+
+## Examples
+
+<MenuListExample />

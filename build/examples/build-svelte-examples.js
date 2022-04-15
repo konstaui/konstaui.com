@@ -37,7 +37,8 @@ const buildExamples = async () => {
         ''
       )
       .replace('>  </Navbar>', ' />')
-      .replace('>    <Link', '>\n    <Link');
+      .replace('>    <Link', '>\n    <Link')
+      .replace('>    <Segmented', '>\n    <Segmented');
 
     content = content.trim();
 
@@ -47,7 +48,7 @@ import { ExamplePreview } from '@/components/ExamplePreview';
 
 function ExampleContent() {
   return (
-    <Pre lang="svelte">{\`${content}\`}</Pre>
+    <Pre lang="html">{\`${content}\`}</Pre>
   )
 }
 

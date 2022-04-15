@@ -6,6 +6,7 @@ import { Container } from '../components/Container';
 import { Footer } from '../components/Footer';
 import { GithubStats } from '../components/GithubStats';
 import { Logo } from '../components/Logo';
+import { Header } from '../components/Header';
 import copyToClipboard from '../shared/copy-to-clipboard';
 
 export default function Home() {
@@ -45,7 +46,7 @@ export default function Home() {
     const { className, children, ...attrs } = props;
     return (
       <h2
-        className={`text-primary font-bold text-4xl sm:text-5xl text-center mb-8 ${
+        className={`mb-8 text-center text-4xl font-bold text-primary sm:text-5xl ${
           className || ''
         }`}
         {...attrs}
@@ -59,7 +60,7 @@ export default function Home() {
     const { className, children, ...attrs } = props;
     return (
       <p
-        className={`font-medium text-lg sm:text-xl md:text-2xl text-center md:leading-relaxed mb-8 mx-auto max-w-screen-lg ${
+        className={`mx-auto mb-8 max-w-screen-lg text-center text-lg font-medium sm:text-xl md:text-2xl md:leading-relaxed ${
           className || ''
         }`}
         {...attrs}
@@ -73,14 +74,14 @@ export default function Home() {
     const { className, logos = [], children, ...attrs } = props;
     return (
       <div
-        className={`flex flex-wrap items-center content-center justify-center ${
+        className={`flex flex-wrap content-center items-center justify-center ${
           className || ''
         }`}
         {...attrs}
       >
         {logos.map((logo) => (
           <img
-            className="w-24 h-24 md:w-32 md:h-32 mx-6 mt-6 md:mx-12 md:mt-8"
+            className="mx-6 mt-6 h-24 w-24 md:mx-12 md:mt-8 md:h-32 md:w-32"
             key={logo.src}
             src={logo.src}
             alt={logo.alt}
@@ -93,34 +94,35 @@ export default function Home() {
 
   return (
     <>
+      <Header />
       {/* Content */}
-      <Container className="flex-col flex lg:flex-row items-center text-center lg:text-left mt-16 mb-16">
+      <Container className="mt-4 mb-16 flex flex-col items-center text-center lg:flex-row lg:text-left">
         <div className="max-w-2xl">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Logo className="w-32 h-32 md:w-48 md:h-48 home-logo-animated mx-auto lg:ml-auto lg:mr-0" />
+            <Logo className="home-logo-animated mx-auto h-32 w-32 md:h-48 md:w-48 lg:ml-auto lg:mr-0" />
           </div>
           {/* Content */}
-          <div className="flex-shrink w-full lg:text-right">
-            <div className="text-primary text-4xl sm:text-6xl font-bold leading-none mt-12">
+          <div className="w-full flex-shrink lg:text-right">
+            <div className="mt-12 text-4xl font-bold leading-none text-primary sm:text-6xl">
               Konsta UI
             </div>
-            <div className="text-black text-3xl sm:text-4xl font-bold sm:leading-snug my-8">
+            <div className="my-8 text-3xl font-bold text-black sm:text-4xl sm:leading-snug">
               Pixel perfect mobile UI components built with Tailwind CSS
             </div>
-            <div className="text-xl lg:text-2xl font-semibold my-8 lg:leading-normal">
+            <div className="my-8 text-xl font-semibold lg:text-2xl lg:leading-normal">
               With iOS and Material Design components for
               <br /> React, Vue & Svelte
             </div>
-            <div className="flex flex-col sm:flex-row items-center space-x-4 my-8 justify-center lg:justify-end">
+            <div className="my-8 flex flex-col items-center justify-center space-x-4 sm:flex-row lg:justify-end">
               <Button href="#get-started" className="lg:px-6 xl:px-8">
                 Get started
               </Button>
-              <div className="bg-primary bg-opacity-10 font-mono text-black text-lg h-12 border border-primary rounded-xl items-center px-4 hidden sm:flex">
-                <span className="select-none opacity-50 mr-4">$</span>
+              <div className="hidden h-12 items-center rounded-xl border border-primary bg-primary bg-opacity-10 px-4 font-mono text-lg text-black sm:flex">
+                <span className="mr-4 select-none opacity-50">$</span>
                 <span>npm i konsta</span>
                 <span
-                  className="ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 hover:text-primary transform-gpu"
+                  className="ml-4 transform-gpu cursor-pointer select-none opacity-50 duration-200 hover:text-primary hover:opacity-100"
                   onClick={copyInstallCommand}
                 >
                   <CopyIcon />
@@ -139,7 +141,7 @@ export default function Home() {
         {/* Phone */}
         <Device
           url="/kitchen-sink/react/dist/index.html?safe-areas=true"
-          className="hidden ml-16 lg:block "
+          className="ml-16 hidden lg:block "
         />
       </Container>
 
@@ -155,7 +157,7 @@ export default function Home() {
           >
             <span>Open in new tab</span>
             <svg
-              className="w-6 h-6 ml-2 relative -top-px"
+              className="relative -top-px ml-2 h-6 w-6"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +169,7 @@ export default function Home() {
         </div>
         <Device
           url="/kitchen-sink/react/dist/index.html?safe-areas=true"
-          className="hidden md:block my-16 mx-auto"
+          className="my-16 mx-auto hidden md:block"
         />
       </Section>
 
@@ -197,7 +199,7 @@ export default function Home() {
         <SectionText>
           Konsta UI comes with an awesome set of ready to use UI elements:
         </SectionText>
-        <div className="flex flex-wrap items-center content-center justify-center">
+        <div className="flex flex-wrap content-center items-center justify-center">
           <img
             className="m-2"
             src="/images/home/home-ui/button.svg"
@@ -235,7 +237,7 @@ export default function Home() {
         <SectionTitle>Build with the tech you love!</SectionTitle>
         <SectionText>
           Konsta UI components are currently available for React, Vue, and
-          coming soon for Svelte.
+          Svelte.
         </SectionText>
         <SectionLogos
           logos={[
@@ -295,28 +297,28 @@ export default function Home() {
             },
           ]}
         />
-        <div className="hidden md:flex items-stretch justify-between mx-auto max-w-screen-lg mt-16">
-          <div className="border-8 border-r-0 border-[#3880FF] w-full flex-shrink mr-8 ml-20 lg:ml-24 rounded-l-2xl">
-            <div className="border-8 border-r-0 border-[#EE350F] h-full relative rounded-l-lg">
-              <div className="flex absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 space-x-4 -ml-2 w-52">
+        <div className="mx-auto mt-16 hidden max-w-screen-lg items-stretch justify-between md:flex">
+          <div className="mr-8 ml-20 w-full flex-shrink rounded-l-2xl border-8 border-r-0 border-[#3880FF] lg:ml-24">
+            <div className="relative h-full rounded-l-lg border-8 border-r-0 border-[#EE350F]">
+              <div className="absolute top-1/2 -ml-2 flex w-52 -translate-x-1/2 -translate-y-1/2 transform space-x-4">
                 <img
-                  className="w-24 h-24"
+                  className="h-24 w-24"
                   src="/images/home/home-logos/ionic.svg"
                   alt="ionic"
                 />
                 <img
-                  className="w-24 h-24"
+                  className="h-24 w-24"
                   src="/images/home/home-logos/framework7.svg"
                   alt="framework7"
                 />
               </div>
-              <div className="top-[4.7%] bottom-[4.7%] w-1/4 lg:w-1/2 left-3/4 lg:left-1/2 absolute border-8 border-r-0 border-primary rounded-l-lg">
-                <Logo className="w-24 h-24 absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2" />
+              <div className="absolute top-[4.7%] bottom-[4.7%] left-3/4 w-1/4 rounded-l-lg border-8 border-r-0 border-primary lg:left-1/2 lg:w-1/2">
+                <Logo className="absolute left-0 top-1/2 h-24 w-24 -translate-y-1/2 -translate-x-1/2 transform" />
               </div>
             </div>
           </div>
           <img
-            className="w-[375px] home-app-shadow flex-shrink-0"
+            className="home-app-shadow w-[375px] flex-shrink-0"
             src="/images/home/home-appstore-app.png"
             alt="mobile app"
           />
@@ -361,58 +363,55 @@ export default function Home() {
 
       <Section id="get-started">
         <SectionTitle>Get Started</SectionTitle>
-        <div className="bg-primary border-primary border bg-opacity-10 font-mono text-black sm:text-lg py-6 rounded-xl items-center px-4 sm:px-8 justify-center flex max-w-2xl mx-auto">
-          <span className="hidden sm:block select-none opacity-50 mr-4 pointer-events-none">
+        <div className="mx-auto flex max-w-2xl items-center justify-center rounded-xl border border-primary bg-primary bg-opacity-10 py-6 px-4 font-mono text-black sm:px-8 sm:text-lg">
+          <span className="pointer-events-none mr-4 hidden select-none opacity-50 sm:block">
             $
           </span>
           <span>npm i konsta</span>
           <span
-            className="ml-2 sm:ml-4 select-none cursor-pointer opacity-50 duration-200 hover:opacity-100 hover:text-primary transform-gpu"
+            className="ml-2 transform-gpu cursor-pointer select-none opacity-50 duration-200 hover:text-primary hover:opacity-100 sm:ml-4"
             onClick={copyInstallCommand}
           >
             <CopyIcon />
           </span>
         </div>
-        <div className="items-stretch justify-center space-y-4 sm:space-y-0 sm:flex sm:space-x-4 md:space-x-8 mt-8 max-w-3xl mx-auto text-center">
+        <div className="mx-auto mt-8 max-w-3xl items-stretch justify-center space-y-4 text-center sm:flex sm:space-y-0 sm:space-x-4 md:space-x-8">
           <Link href="/react">
-            <a className="flex sm:flex-col items-center text-black border-black border-opacity-10 border rounded-xl px-4 py-6 relative w-full hover:border-opacity-0 hover:shadow-lg sm:hover:shadow-2xl duration-200">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl">
               <img
-                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0"
+                className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/react.svg"
                 alt="react"
               />
-              <span className="sm:mb-2 font-semibold">Konsta UI React</span>
-              <span className="hidden sm:block text-sm opacity-75">
+              <span className="font-semibold sm:mb-2">Konsta UI React</span>
+              <span className="hidden text-sm opacity-75 sm:block">
                 Documentation
               </span>
             </a>
           </Link>
           <Link href="/vue">
-            <a className="flex sm:flex-col items-center text-black border-black border-opacity-10 border rounded-xl px-4 py-6 relative w-full hover:border-opacity-0 hover:shadow-lg sm:hover:shadow-2xl duration-200">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl">
               <img
-                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0"
+                className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/vue.svg"
                 alt="vue"
               />
-              <span className="sm:mb-2 font-semibold">Konsta UI Vue</span>
-              <span className="hidden sm:block text-sm opacity-75">
+              <span className="font-semibold sm:mb-2">Konsta UI Vue</span>
+              <span className="hidden text-sm opacity-75 sm:block">
                 Documentation
               </span>
             </a>
           </Link>
           <Link href="/svelte">
-            <a className="flex sm:flex-col items-center text-black border border-black border-opacity-10 rounded-xl px-4 py-6 relative w-full pointer-events-none select-none opacity-50">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl">
               <img
-                className="w-12 sm:w-auto sm:h-20 sm:mb-4 mr-4 sm:mr-0 grayscale"
+                className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/svelte.svg"
-                alt="svelte"
+                alt="vue"
               />
-              <span className="sm:mb-2 font-semibold">Konsta UI Svelte</span>
-              <span className="hidden sm:block text-sm opacity-75">
+              <span className="font-semibold sm:mb-2">Konsta UI Svelte</span>
+              <span className="hidden text-sm opacity-75 sm:block">
                 Documentation
-              </span>
-              <span className="absolute right-2 top-px text-xs font-medium opacity-50">
-                Coming soon
               </span>
             </a>
           </Link>
@@ -421,7 +420,7 @@ export default function Home() {
 
       <Section id="get-started">
         <SectionTitle>More Of Our Projects</SectionTitle>
-        <div className="sm:flex items-stretch max-w-3xl mx-auto space-y-4 sm:space-y-0 sm:space-x-8 sm:text-center gr">
+        <div className="gr mx-auto max-w-3xl items-stretch space-y-4 sm:flex sm:space-y-0 sm:space-x-8 sm:text-center">
           {[
             {
               url: 'https://framework7.io',
@@ -444,18 +443,18 @@ export default function Home() {
             },
           ].map((item) => (
             <a
-              className="flex sm:flex-col items-center w-full text-black border-black border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg sm:hover:shadow-2xl hover:border-opacity-0"
+              className="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl"
               href={item.url}
               target="_blank"
               key={item.title}
             >
               <img
-                className="w-12 sm:w-32 sm:h-32 mr-4 sm:mr-0"
+                className="mr-4 w-12 sm:mr-0 sm:h-32 sm:w-32"
                 src={`/images/our-projects/${item.logo}`}
                 alt={item.title}
               />
               <div>
-                <div className="font-semibold sm:mt-4 sm:mb-2 text-black">
+                <div className="font-semibold text-black sm:mt-4 sm:mb-2">
                   {item.title}
                 </div>
                 <div className="text-sm opacity-75">{item.description}</div>

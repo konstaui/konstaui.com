@@ -5,12 +5,12 @@ import { Container } from '../components/Container';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { SidebarMenuReact } from '../components/SidebarMenuReact';
-// import { SidebarSvelte } from '@/components/SidebarSvelte';
+import { SidebarMenuSvelte } from '@/components/SidebarMenuSvelte';
 import { SidebarMenuVue } from '@/components/SidebarMenuVue';
 
 const sidebars = {
   react: SidebarMenuReact,
-  // svelte: SidebarSvelte,
+  svelte: SidebarMenuSvelte,
   vue: SidebarMenuVue,
 };
 
@@ -74,31 +74,31 @@ export default function WithSidebar(props) {
         <div
           className={`${
             opened ? '' : 'hidden'
-          } fixed z-20 left-0 top-0 bg-white lg:bg-transparent lg:relative text-sm lg:block flex-none w-64 mr-4 sm:mr-6 lg:mr-8 xl:mr-10 shadow-lg lg:shadow-none`}
+          } fixed left-0 top-0 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:mr-8 lg:block lg:bg-transparent lg:shadow-none xl:mr-10`}
         >
           <div
-            className="overflow-y-auto overscroll-contain sticky top-0 py-10 max-h-screen px-4 lg:px-0"
+            className="sticky top-16 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain py-10 px-4 lg:px-0"
             ref={sidebarEl}
           >
             {Sidebar && <Sidebar />}
           </div>
         </div>
-        <div className="max-w-none prose min-w-0 flex-auto pt-10 pb-24 lg:pb-16">
+        <div className="prose min-w-0 max-w-none flex-auto pt-10 pb-24 lg:pb-16">
           {opened && (
             <div
-              className="z-10 fixed left-0 top-0 w-full h-full bg-black bg-opacity-25"
+              className="fixed left-0 top-0 z-10 h-full w-full bg-black bg-opacity-25"
               onClick={() => setOpened(false)}
             />
           )}
 
           <div
-            className="lg:hidden cursor-pointer flex items-center justify-center z-30 w-16 h-16 rounded-full bg-primary text-white shadow-md ml-2 bottom-4 fixed right-4"
+            className="fixed bottom-4 right-4 z-30 ml-2 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-md lg:hidden"
             onClick={() => setOpened(!opened)}
           >
             {opened ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 pointer-events-none"
+                className="pointer-events-none h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -113,7 +113,7 @@ export default function WithSidebar(props) {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 pointer-events-none"
+                className="pointer-events-none h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -129,7 +129,7 @@ export default function WithSidebar(props) {
           </div>
           {childrenWithTOC || children}
           {(prevLink || nextLink) && (
-            <div className="flex items-center justify-between border-t pt-8 mt-8">
+            <div className="mt-8 flex items-center justify-between border-t pt-8">
               <div>
                 {prevLink && (
                   <Link href={prevLink.href}>

@@ -1,0 +1,41 @@
+---
+title: 'Radio Svelte Component | Konsta UI Svelte'
+section: 'svelte'
+---
+
+import { RadioProps } from '@/components/api/svelte/RadioProps';
+import RadioExample from '@/components/examples/svelte/Radio';
+
+# Radio Svelte Component
+
+## Radio Components
+
+There are following components included:
+
+- `Radio`
+
+## Radio Props
+
+<RadioProps />
+
+## Radios List
+
+Radios List is not a separate component, but just a particular case of using [`List`](/svelte/list) and [`ListItem`](/svelte/list-item) components.
+
+```html
+<List>
+  <!-- Additional "label" prop on ListItem -->
+  <ListItem label title="Books">
+    <!-- Pass Radio to list item media -->
+    <Radio slot="media" component="div" name="my-checkbox" />
+  </ListItem>
+  <ListItem label title="Movies">
+    <!-- Pass Radio to list item media -->
+    <Radio slot="media" component="div" name="my-checkbox" />
+  </ListItem>
+</List>
+```
+
+## Examples
+
+<RadioExample />

@@ -1,0 +1,62 @@
+---
+title: 'Link Svelte Component | Konsta UI Svelte'
+section: 'svelte'
+---
+
+import { LinkProps } from '@/components/api/svelte/LinkProps';
+
+# Link Svelte Component
+
+Link is main component to create links for navigation, custom actions, switching tabs, open/close modals, etc.
+
+## Link Components
+
+There are following components included:
+
+- `Link`
+
+## Link Props
+
+<LinkProps />
+
+## Examples
+
+#### Navigation Link
+
+```html
+<Link href="/about">About</Link>
+```
+
+#### External Link
+
+```html
+<Link href="https://google.com" target="_blank"> Google </Link>
+```
+
+#### Svelte Router Link
+
+<!-- prettier-ignore -->
+```jsx
+<Link linkProps={{to: '/about'}} component={RouterLink}>
+  About
+</Link>
+```
+
+#### Link In Navbar
+
+<!-- prettier-ignore -->
+```jsx
+<Navbar title="My App">
+  <Link slot="right" navbar onClick={openMenu}>Menu</Link>
+</Navbar>
+```
+
+#### Link In Toolbar
+
+<!-- prettier-ignore -->
+```jsx
+<Toolbar>
+  <Link toolbar onClick={action1}>Action 1</Link>
+  <Link toolbar onClick={action2}>Action 2</Link>
+</Toolbar>
+```

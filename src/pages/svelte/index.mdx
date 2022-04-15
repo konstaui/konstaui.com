@@ -5,6 +5,27 @@ section: 'svelte'
 
 # Konsta UI Svelte
 
-Coming soon. ETA: January 2022
+Konsta UI - is a free and open source mobile UI components framework built with [Tailwind CSS](https://tailwindcss.com).
 
-<div className="min-h-screen" />
+```html
+<script>
+  import { App, Page, Navbar, Block } from 'konsta/svelte';
+</script>
+<App theme="ios">
+  <Page>
+    <Navbar title="My App" />
+
+    <Block strong>Hello world!</Block>
+  </Page>
+</App>
+```
+
+It is designed to develop hybrid mobile apps, [Web Native](https://webnative.tech) apps or web apps with iOS & Android native look and feel.
+
+It is highly recommended for you to be familiar with basics of both [Tailwind CSS](https://tailwindcss.com) and [Svelte](https://svelte.dev) before getting started.
+
+Current documentation doesn't cover the process of compilation of Konsta UI app to [Cordova](https://cordova.apache.org) or [Capacitor](https://capacitorjs.com) app. It is about Konsta UI and how to use all of its components. To learn more about how to compile your app to hybrid [Cordova](https://cordova.apache.org) or [Capacitor](https://capacitorjs.com) app that can be released at iOS and Google Play store refer to their official documentations.
+
+Konsta UI [Kitchen Sink](/svelte/kitchen-sink) is also a great place to get started, it has a lot examples for all Konsta UI components and covers most of aspects.
+
+Ok, so first of all we need to learn [how to install](/svelte/installation) Konsta UI

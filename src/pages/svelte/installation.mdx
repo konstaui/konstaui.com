@@ -1,0 +1,63 @@
+---
+title: 'Installation | Konsta UI Svelte'
+section: 'svelte'
+---
+
+# Installation
+
+We assume you already have a configured project with [Svelte and Tailwind CSS](https://tailwindcss.com/docs/installation) .
+
+## Install Konsta UI
+
+At first, we need to install the Konsta UI library:
+
+```
+npm i konsta
+```
+
+## Add Config
+
+Then, we need to extend our Tailwind CSS config with Konsta UI config.
+
+In your `tailwind.config.js` file:
+
+```js
+const konstaConfig = require('konsta/config');
+
+// wrap your config with konstaConfig
+module.exports = konstaConfig({
+  // rest of your usual Tailwind CSS config here
+  ...
+});
+```
+
+`konstaConfig` will extend default (or your custom one) Tailwind CSS config with some extra variants and helper utilities required for Konsta UI.
+
+## Roboto Font
+
+Konsta UI uses system font for iOS theme and [Roboto font](https://fonts.google.com/specimen/Roboto) for Material Design theme.
+
+If you develop a web app, you need to [Roboto font](https://fonts.google.com/specimen/Roboto) to your app to display it correctly.
+
+For example, it can be added from [Google Fonts](https://fonts.google.com/specimen/Roboto):
+
+In HTML:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+  rel="stylesheet"
+/>
+```
+
+Or in CSS:
+
+```scss
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+```
+
+## Usage
+
+After installation process is done let's check [how to use Konsta UI components](/svelte/usage) in our Svelte application.
