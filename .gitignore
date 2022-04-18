@@ -35,4 +35,5 @@ src/components/examples/**/*.js
 src/components/api/**/*.js
 src/components/api/**/*.jsx
 src/types.json
+src/shared/sponsors-list-cjs.js
 public/types

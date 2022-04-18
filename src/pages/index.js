@@ -8,6 +8,29 @@ import { GithubStats } from '../components/GithubStats';
 import { Logo } from '../components/Logo';
 import { Header } from '../components/Header';
 import copyToClipboard from '../shared/copy-to-clipboard';
+import HomeSponsors from '@/components/HeroSponsors';
+import { trackOutbound } from '@/shared/track-outbound';
+import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
+import { ReactComponent as OpenCollectiveLogo } from '@/img/opencollective-logo.svg';
+
+function SponsorButton(props) {
+  const { href, className, onClick, children, ...restProps } = props;
+  return (
+    <a
+      href={href}
+      rel="noopener"
+      target="_blank"
+      {...restProps}
+      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline dark:bg-primary/80 dark:text-white dark:hover:bg-primary sm:text-lg ${className}`}
+      onClick={(e) => {
+        onClick(e);
+        trackOutbound(href);
+      }}
+    >
+      {children}
+    </a>
+  );
+}
 
 export default function Home() {
   const copyInstallCommand = (e) => {
@@ -461,6 +484,46 @@ export default function Home() {
               </div>
             </a>
           ))}
+        </div>
+      </Section>
+
+      <Section>
+        <SectionTitle>Sponsors</SectionTitle>
+        <HomeSponsors />
+        <div className="my-4 text-center text-lg">
+          Support Konsta UI on{' '}
+          <a
+            href="https://opencollective.com/konstaui"
+            target="_blank"
+            rel="noopener"
+            className="dark:text-primaryLight text-primary hover:underline"
+            onClick={() => trackOutbound('https://opencollective.com/konstaui')}
+          >
+            Open Collective
+          </a>{' '}
+          or{' '}
+          <a
+            href="https://patreon.com/konstaui"
+            target="_blank"
+            rel="noopener"
+            className="dark:text-primaryLight text-primary hover:underline"
+            onClick={() => trackOutbound('https://patreon.com/konstaui')}
+          >
+            Patreon
+          </a>{' '}
+          and help us to make it even better!
+          <br />
+          Your support means a lot for us!
+        </div>
+        <div className="my-4 flex flex-col items-center space-y-6">
+          <SponsorButton href="https://opencollective.com/konstaui">
+            <OpenCollectiveLogo className="mr-4 h-6 w-6" />
+            <span>Become a sponsor on OpenCollective</span>
+          </SponsorButton>
+          <SponsorButton href="https://patreon.com/konstaui">
+            <PatreonLogo className="mr-4 h-6 w-6 text-[#FF424D]" />
+            <span>Support Konsta UI on Patreon</span>
+          </SponsorButton>
         </div>
       </Section>
 

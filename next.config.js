@@ -9,5 +9,25 @@ module.exports = {
     konstaVersion: pkg.version,
     konstaReleaseDate: pkg.releaseDate,
   },
-  ...mdxLoader,
+  webpack(config, options) {
+    mdxLoader(config, options);
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: { svgoConfig: { plugins: { removeViewBox: false } } },
+        },
+        {
+          loader: 'file-loader',
+          options: {
+            publicPath: '/_next',
+            name: 'static/media/[name].[hash].[ext]',
+          },
+        },
+      ],
+    });
+    return config;
+  },
+  // ...mdxLoader,
 };

@@ -17,6 +17,10 @@ const resourcesLinks = [
   },
   { title: 'GitHub', href: 'https://github.com/konstaui' },
   { title: 'Release Notes', href: '/release-notes' },
+  {
+    title: 'Sponsors',
+    href: '/sponsors',
+  },
   { title: 'Konsta UI on Twitter', href: 'https://twitter.com/konstaui' },
 ];
 
@@ -101,7 +105,7 @@ export const Header = () => {
         </div>
         <div className="group relative ml-8 mr-auto sm:hidden">
           <button
-            className="outline-none flex items-center text-black"
+            className="flex items-center text-black outline-none"
             type="button"
             ref={buttonElRef}
             onClick={showMenu}

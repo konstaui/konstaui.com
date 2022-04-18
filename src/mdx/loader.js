@@ -9,6 +9,7 @@ const layouts = {
   '/pages/vue': ['@/layouts/withSidebar', 'withSidebarLayout'],
   '/pages/svelte': ['@/layouts/withSidebar', 'withSidebarLayout'],
   '/components/api': ['@/layouts/empty', 'emptyLayout'],
+  '/pages/sponsors': ['@/layouts/default', 'defaultLayout'],
 };
 
 const getLayout = (resourcePath) => {
@@ -24,75 +25,69 @@ const getLayout = (resourcePath) => {
   return layout;
 };
 
-const mdxLoader = {
-  webpack(config, options) {
-    config.module.rules.push({
-      test: /\.mdx$/,
-      use: [
-        options.defaultLoaders.babel,
-        // eslint-disable-next-line
-        createLoader(function parseMeta(source) {
-          if (source.includes('/*START_META*/')) {
-            const [meta] = source.match(
-              /\/\*START_META\*\/(.*?)\/\*END_META\*\//s
-            );
-            return `export default ${meta}`;
-          }
-          // prettier-ignore
-          return (
+const mdxLoader = (config, options) => {
+  config.module.rules.push({
+    test: /\.mdx$/,
+    use: [
+      options.defaultLoaders.babel,
+      // eslint-disable-next-line
+      createLoader(function parseMeta(source) {
+        if (source.includes('/*START_META*/')) {
+          const [meta] = source.match(
+            /\/\*START_META\*\/(.*?)\/\*END_META\*\//s
+          );
+          return `export default ${meta}`;
+        }
+        // prettier-ignore
+        return (
             `${source.replace(/export const/gs, 'const')
             }\nMDXContent.layoutProps = layoutProps\n`
           );
-        }),
-        {
-          loader: '@mdx-js/loader',
-          options: {
-            remarkPlugins: [withTableOfContents],
-            rehypePlugins: [rehypePrism],
-          },
+      }),
+      {
+        loader: '@mdx-js/loader',
+        options: {
+          remarkPlugins: [withTableOfContents],
+          rehypePlugins: [rehypePrism],
         },
-        createLoader(function (source) {
-          const { attributes: meta, body } = frontMatter(source);
-          const extra = [];
-          const resourcePath = path.relative(__dirname, this.resourcePath);
+      },
+      createLoader(function (source) {
+        const { attributes: meta, body } = frontMatter(source);
+        const extra = [];
+        const resourcePath = path.relative(__dirname, this.resourcePath);
 
-          if (!/^\s*export\s+(var|let|const)\s+Layout\s+=/m.test(source)) {
-            const layout = getLayout(resourcePath);
-            if (layout) {
-              extra.push(
-                `import _Layout from '${layout[0]}'`,
-                'export const Layout = _Layout'
-              );
-            }
+        if (!/^\s*export\s+(var|let|const)\s+Layout\s+=/m.test(source)) {
+          const layout = getLayout(resourcePath);
+          if (layout) {
+            extra.push(
+              `import _Layout from '${layout[0]}'`,
+              'export const Layout = _Layout'
+            );
           }
+        }
 
-          if (
-            !/^\s*export\s+default\s+/m.test(
-              source.replace(/```(.*?)```/gs, '')
-            )
-          ) {
-            const layout = getLayout(resourcePath);
-            if (layout) {
-              extra.push(
-                `import _Default from '${layout[0]}'`,
-                'export default _Default'
-              );
-            }
+        if (
+          !/^\s*export\s+default\s+/m.test(source.replace(/```(.*?)```/gs, ''))
+        ) {
+          const layout = getLayout(resourcePath);
+          if (layout) {
+            extra.push(
+              `import _Default from '${layout[0]}'`,
+              'export default _Default'
+            );
           }
+        }
 
-          const result = [
-            ...extra,
-            body,
-            `export const meta = ${JSON.stringify(meta)}`,
-          ].join('\n\n');
+        const result = [
+          ...extra,
+          body,
+          `export const meta = ${JSON.stringify(meta)}`,
+        ].join('\n\n');
 
-          return result;
-        }),
-      ],
-    });
-
-    return config;
-  },
+        return result;
+      }),
+    ],
+  });
 };
 
 module.exports = mdxLoader;

@@ -11,6 +11,16 @@ module.exports = {
     'airbnb',
     'prettier',
   ],
+  settings: {
+    'import/resolver': {
+      'eslint-import-resolver-custom-alias': {
+        alias: {
+          '@': './src',
+        },
+        extensions: ['.js', '.jsx'],
+      },
+    },
+  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
