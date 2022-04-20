@@ -32,7 +32,7 @@ const konstaConfig = require('konsta/config');
 // wrap config with konstaConfig config
 module.exports = konstaConfig({
   content: ['./src/**/*.{html,js,svelte,ts}'],
-  darkMode: false, // or 'class'
+  darkMode: 'media', // or 'class'
   theme: {
     extend: {},
   },
@@ -92,8 +92,8 @@ For example, let's open `src/routes/index.svelte` and change it to the following
   </List>
 
   <Block strong class="flex space-x-4">
-    <Button>Button 1</Button>
-    <Button>Button 2</Button>
+    <button>Button 1</button>
+    <button>Button 2</button>
   </Block>
 </Page>
 ```
@@ -101,7 +101,7 @@ For example, let's open `src/routes/index.svelte` and change it to the following
 As a result we should see the following page:
 
 <img
-  class="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
+  class="w-full max-w-[375px] rounded-lg border border-black border-opacity-10"
   src="/images/docs/k-sveltekit.png"
   alt="konsta-next"
 />

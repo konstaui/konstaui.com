@@ -52,7 +52,7 @@ module.exports = konstaConfig({
     './pages/*.{js,ts,jsx,vue}',
     './*.{js,ts,jsx,vue}',
   ],
-  darkMode: false, // or 'class'
+  darkMode: 'media', // or 'class'
   theme: {
     extend: {},
   },
@@ -146,7 +146,7 @@ For example, let's open `pages/index.vue` and change it to the following:
 As a result we should see the following page:
 
 <img
-  class="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
+  class="w-full max-w-[375px] rounded-lg border border-black border-opacity-10"
   src="/images/docs/k-next.png"
   alt="konsta-next"
 />
