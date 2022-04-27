@@ -24,6 +24,7 @@ const links = [
       'Translucent',
       'Touch Action',
       { title: 'useTheme', href: '/vue/use-theme' },
+      'Fonts',
     ],
   },
   {

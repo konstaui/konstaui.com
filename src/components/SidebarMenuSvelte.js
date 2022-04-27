@@ -23,6 +23,7 @@ const links = [
       'Translucent',
       'Touch Action',
       { title: 'useTheme', href: '/svelte/use-theme' },
+      'Fonts',
     ],
   },
   {

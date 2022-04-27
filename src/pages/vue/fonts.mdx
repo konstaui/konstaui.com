@@ -1,0 +1,27 @@
+---
+title: 'Fonts | Konsta UI Vue'
+section: 'vue'
+---
+
+# Fonts
+
+By default there are following font family rules used in Konsta UI:
+
+- for iOS theme: `-apple-system, SF Pro Text, SF UI Text, system-ui, Helvetica Neue, Helvetica, Arial, sans-serif`
+- for Material theme: `Roboto, system-ui, Noto, Helvetica, Arial, sans-serif`
+
+You can override them in `tailwind.config.js` in the following way:
+
+```js
+const konstaConfig = require('konsta/config');
+
+module.exports = konstaConfig({
+  theme: {
+    fontFamily: {
+      ios: 'my-ios-font',
+      material: 'my-material-font',
+    }
+  }
+  ...
+});
+```
