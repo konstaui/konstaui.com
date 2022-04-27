@@ -5,6 +5,19 @@ const lowerCaseNames = require('./lowercase-names');
 
 const ignoreSlots = ['chevronIcon'];
 
+const addOnClick = [
+  'Badge',
+  'Button',
+  'Chip',
+  'Fab',
+  'Link',
+  'ListItem',
+  'NavbarBackLink',
+  'ListButton',
+  'NavbarBackLink',
+  'SegmentedButton',
+];
+
 const componentsWithComponent = [
   'Button',
   'Checkbox',
@@ -183,7 +196,21 @@ const buildProps = async (componentName, typesData) => {
   const slots = items
     .filter((item) => JSON.stringify(item.type || {}).includes('ReactNode'))
     .filter((item) => !ignoreSlots.includes(item.name));
-
+  if (addOnClick.includes(componentName)) {
+    props.push({
+      name: 'onClick',
+      comment: { text: '`click` event handler' },
+      signatures: [
+        {
+          parameters: [
+            {
+              name: 'e',
+            },
+          ],
+        },
+      ],
+    });
+  }
   const propsTable = buildPropsTable(componentName, props);
   const slotsTable = buildSlotsTable(componentName, slots);
 
