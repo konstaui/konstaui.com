@@ -37,6 +37,7 @@ const links = [
       'App',
       'Badge',
       'Block',
+      'Breadcrumbs',
       'Button',
       'Card',
       'Checkbox',
