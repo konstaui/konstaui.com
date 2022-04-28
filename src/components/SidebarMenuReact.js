@@ -35,6 +35,7 @@ const links = [
         href: '/react/konsta-provider',
       },
       'App',
+      'Action Sheet',
       'Badge',
       'Block',
       'Breadcrumbs',

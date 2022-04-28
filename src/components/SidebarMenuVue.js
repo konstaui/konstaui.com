@@ -35,6 +35,7 @@ const links = [
         href: '/vue/konsta-provider',
       },
       'App',
+      'Action Sheet',
       'Badge',
       'Block',
       'Breadcrumbs',

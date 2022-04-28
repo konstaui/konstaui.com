@@ -18,6 +18,7 @@ const addOnClick = [
   'SegmentedButton',
   'BreadcrumbsItem',
   'BreadcrumbsCollapsed',
+  'ActionsButton',
 ];
 
 const componentsWithComponent = [

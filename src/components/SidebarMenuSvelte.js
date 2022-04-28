@@ -34,6 +34,7 @@ const links = [
         href: '/svelte/konsta-provider',
       },
       'App',
+      'Action Sheet',
       'Badge',
       'Block',
       'Breadcrumbs',
