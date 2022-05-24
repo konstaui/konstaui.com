@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "npm run build-api && npm run build-examples && npm run build-sponsors && next dev",
-    "build": "npm run build-api && npm run build-examples && TAILWIND_JIT=true next build",
+    "build": "npm run build-api && npm run build-examples && npm run build-sponsors && TAILWIND_JIT=true next build",
     "start": "next start",
     "lint": "next lint",
     "build-api": "node build/build-api",
