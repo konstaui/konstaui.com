@@ -8,7 +8,7 @@ import { GithubStats } from '../components/GithubStats';
 import { Logo } from '../components/Logo';
 import { Header } from '../components/Header';
 import copyToClipboard from '../shared/copy-to-clipboard';
-import HomeSponsors from '@/components/HeroSponsors';
+import HeroSponsors from '@/components/HeroSponsors';
 import { trackOutbound } from '@/shared/track-outbound';
 import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
 import { ReactComponent as OpenCollectiveLogo } from '@/img/opencollective-logo.svg';
@@ -489,7 +489,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>Sponsors</SectionTitle>
-        <HomeSponsors />
+        <HeroSponsors />
         <div className="my-4 text-center text-lg">
           Support Konsta UI on{' '}
           <a

@@ -54,7 +54,7 @@ const PlanSection = (props) => {
   );
 };
 
-export default function HomeSponsors({ showPlaceholders, showTitles }) {
+export default function HeroSponsors({ showPlaceholders, showTitles }) {
   return (
     <>
       <PlanSection
