@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "createdAt": "2022-05-24T10:40:00.000Z",
+    "title": "Best Crypto Casinos | Top Bitcoin Gambling Sites (2022)",
+    "link": "https://casinoscrypto.com",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/cccc",
+    "image": "casinoscrypto.png",
+    "image_h": "",
+    "endDate": "2024-05-24T10:40:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2022-05-24T10:40:00.000Z",
+    "title": "Top FREE Crypto Sign Up Bonuses & Referral Codes",
+    "link": "https://cryptocurrencycodes.com",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/cccc",
+    "image": "cryptocurrencycodes.png",
+    "image_h": "",
+    "endDate": "2022-05-24T10:40:00.000Z",
+    "active": true
+  }
+]
