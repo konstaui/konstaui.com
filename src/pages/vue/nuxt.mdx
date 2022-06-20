@@ -18,7 +18,39 @@ First, [create a Nuxt project](https://v3.nuxtjs.org/getting-started/installatio
 
 ## Install Tailwind CSS
 
-We can follow official [Tailwind CSS installation Guide](https://tailwindcss.com/docs/installation#installing-tailwind-css-as-a-post-css-plugin)
+We can follow official [Tailwind CSS installation Guide](https://tailwindcss.com/docs/installation/using-postcss)
+
+Install all required dependencies
+
+```
+npm install -D tailwindcss postcss@latest autoprefixer@latest @nuxt/postcss8
+npx tailwindcss init
+```
+
+Create `postcss.config.js` file with the following content:
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+Enable Post CSS in your `nuxt.config.js`:
+
+```js
+import { defineNuxtConfig } from 'nuxt';
+
+export default defineNuxtConfig({
+  build: {
+    postcss: {
+      postcssOptions: require('./postcss.config.js'),
+    },
+  },
+});
+```
 
 ## Tailwind CSS Styles
 
@@ -41,6 +73,7 @@ npm i konsta
 
 And in your `tailwind.config.js` file we should extend config with Konsta UI's config:
 
+<!-- prettier-ignore -->
 ```js
 // import konstaConfig config
 const konstaConfig = require('konsta/config');
@@ -50,7 +83,6 @@ module.exports = konstaConfig({
   content: [
     './components/*.{js,ts,jsx,vue}',
     './pages/*.{js,ts,jsx,vue}',
-    './*.{js,ts,jsx,vue}',
   ],
   darkMode: 'media', // or 'class'
   theme: {
