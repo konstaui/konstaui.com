@@ -40,13 +40,14 @@ module.exports = {
 };
 ```
 
-Enable Post CSS in your `nuxt.config.js`:
+Enable Post CSS and `konsta` transpilation in your `nuxt.config.js`:
 
 ```js
 import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
   build: {
+    transpile: ['konsta'],
     postcss: {
       postcssOptions: require('./postcss.config.js'),
     },
