@@ -26,7 +26,7 @@ export default function RangeSliderPage() {
 
       <BlockTitle>Volume: {volume}</BlockTitle>
       <BlockHeader>From 0 to 100 with step 10</BlockHeader>
-      <List>
+      <List strong insetMaterial outlineIos>
         <ListItem
           innerClassName="flex space-x-4"
           innerChildren={
@@ -45,7 +45,7 @@ export default function RangeSliderPage() {
 
       <BlockTitle>Price: ${price}</BlockTitle>
       <BlockHeader>From 0 to 1000 with step 1</BlockHeader>
-      <List>
+      <List strong insetMaterial outlineIos>
         <ListItem
           innerClassName="flex space-x-4"
           innerChildren={
@@ -67,14 +67,11 @@ export default function RangeSliderPage() {
       <BlockTitle>
         Color: rgb({red}, {green}, {blue})
       </BlockTitle>
-      <List>
+      <List strong insetMaterial outlineIos>
         <ListItem
           innerChildren={
             <Range
-              colors={{
-                valueBg: 'bg-red-500',
-                thumbBgMaterial: 'range-thumb:bg-red-500',
-              }}
+              className="k-color-brand-red"
               value={red}
               step={1}
               min={0}
@@ -86,10 +83,7 @@ export default function RangeSliderPage() {
         <ListItem
           innerChildren={
             <Range
-              colors={{
-                valueBg: 'bg-green-500',
-                thumbBgMaterial: 'range-thumb:bg-green-500',
-              }}
+              className="k-color-brand-green"
               value={green}
               step={1}
               min={0}
@@ -101,10 +95,7 @@ export default function RangeSliderPage() {
         <ListItem
           innerChildren={
             <Range
-              colors={{
-                valueBg: 'bg-blue-500',
-                thumbBgMaterial: 'range-thumb:bg-blue-500',
-              }}
+              className="k-color-brand-blue"
               value={blue}
               step={1}
               min={0}

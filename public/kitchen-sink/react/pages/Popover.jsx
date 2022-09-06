@@ -36,7 +36,7 @@ export default function PopoverPage() {
           </Link>
         }
       />
-      <Block strong className="space-y-4">
+      <Block className="space-y-4">
         <p>
           <Button
             className="popover-button"
@@ -109,7 +109,7 @@ export default function PopoverPage() {
         target={popoverTargetRef.current}
         onBackdropClick={() => setPopoverOpened(false)}
       >
-        <List nested hairlines={false} colors={{ bg: 'bg-transparent' }}>
+        <List nested>
           <ListItem
             title="Item 1"
             link

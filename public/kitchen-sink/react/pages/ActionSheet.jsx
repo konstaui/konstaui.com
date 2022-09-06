@@ -23,14 +23,14 @@ export default function ActionSheetPage() {
         title="Action Sheet"
         left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}
       />
-      <Block strong className="space-y-4">
+      <Block strong inset className="space-y-4">
         <p>
           Action Sheet is a slide-up pane for presenting the user with a set of
           alternatives for how to proceed with a given task.
         </p>
       </Block>
       <BlockTitle>Open Action Sheet</BlockTitle>
-      <Block strong className="flex space-x-4">
+      <Block strong inset className="flex space-x-4">
         <Button onClick={() => setActionsOneOpened(true)}>One group</Button>
         <Button onClick={() => setActionsTwoOpened(true)}>Two groups</Button>
       </Block>
@@ -47,10 +47,7 @@ export default function ActionSheetPage() {
           <ActionsButton onClick={() => setActionsOneOpened(false)}>
             Button 2
           </ActionsButton>
-          <ActionsButton
-            onClick={() => setActionsOneOpened(false)}
-            colors={{ text: 'text-red-500' }}
-          >
+          <ActionsButton onClick={() => setActionsOneOpened(false)}>
             Cancel
           </ActionsButton>
         </ActionsGroup>
@@ -70,10 +67,7 @@ export default function ActionSheetPage() {
           </ActionsButton>
         </ActionsGroup>
         <ActionsGroup>
-          <ActionsButton
-            onClick={() => setActionsTwoOpened(false)}
-            colors={{ text: 'text-red-500' }}
-          >
+          <ActionsButton onClick={() => setActionsTwoOpened(false)}>
             Cancel
           </ActionsButton>
         </ActionsGroup>

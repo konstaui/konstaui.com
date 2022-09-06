@@ -31,15 +31,43 @@
     <ListItem title="Item 3" />
   </List>
 
+  <BlockTitle>Strong List</BlockTitle>
+  <List strong>
+    <ListItem title="Item 1" />
+    <ListItem title="Item 2" />
+    <ListItem title="Item 3" />
+  </List>
+
+  <BlockTitle>Strong Outline List</BlockTitle>
+  <List strong outline>
+    <ListItem title="Item 1" />
+    <ListItem title="Item 2" />
+    <ListItem title="Item 3" />
+  </List>
+
+  <BlockTitle>Strong Inset List</BlockTitle>
+  <List strong inset>
+    <ListItem title="Item 1" />
+    <ListItem title="Item 2" />
+    <ListItem title="Item 3" />
+  </List>
+
+  <BlockTitle>Strong Outline Inset List</BlockTitle>
+  <List strong outline inset>
+    <ListItem title="Item 1" />
+    <ListItem title="Item 2" />
+    <ListItem title="Item 3" />
+  </List>
+
   <BlockTitle>Simple Links List</BlockTitle>
-  <List>
+  <List strongIos outlineIos>
     <ListItem title="Link 1" link />
     <ListItem title="Link 2" link />
     <ListItem title="Link 3" link />
   </List>
 
   <BlockTitle>Data list, with icons</BlockTitle>
-  <List>
+  <List strongIos outlineIos>
     <ListItem title="Ivan Petrov" after="CEO">
       <DemoIcon slot="media" />
     </ListItem>
@@ -52,7 +80,7 @@
     </ListItem>
   </List>
   <BlockTitle>Links</BlockTitle>
-  <List>
+  <List strongIos outlineIos>
     <ListItem link title="Ivan Petrov" after="CEO"
       ><DemoIcon slot="media" /></ListItem
     >
@@ -62,7 +90,7 @@
     <ListItem link title="Jenna Smith"><DemoIcon slot="media" /></ListItem>
   </List>
   <BlockTitle>Links, Header, Footer</BlockTitle>
-  <List>
+  <List strongIos outlineIos>
     <ListItem link header="Name" title="John Doe" after="Edit">
       <DemoIcon slot="media" />
     </ListItem>
@@ -84,21 +112,21 @@
   </List>
 
   <BlockTitle>Links, no icons</BlockTitle>
-  <List>
+  <List strongIos outlineIos>
     <ListItem link title="Ivan Petrov" />
     <ListItem link title="John Doe" />
-    <ListItem divider title="Divider Here" />
+    <ListItem groupTitle title="Group title Here" />
     <ListItem link title="Ivan Petrov" />
     <ListItem link title="Jenna Smith" />
   </List>
 
   <BlockTitle>Grouped with sticky titles</BlockTitle>
-  <List>
+  <List strongIos outlineIos>
     <ListGroup>
       <ListItem
         title="A"
         groupTitle
-        class="ios:top-11-safe material:top-14-safe"
+        class="ios:top-11-safe material:top-16-safe sticky"
       />
       <ListItem title="Aaron " />
       <ListItem title="Abbie" />
@@ -108,7 +136,7 @@
       <ListItem
         title="B"
         groupTitle
-        class="ios:top-11-safe material:top-14-safe"
+        class="ios:top-11-safe material:top-16-safe sticky"
       />
       <ListItem title="Bailey" />
       <ListItem title="Barclay" />
@@ -118,19 +146,12 @@
       <ListItem
         title="C"
         groupTitle
-        class="ios:top-11-safe material:top-14-safe"
+        class="ios:top-11-safe material:top-16-safe sticky"
       />
       <ListItem title="Caiden" />
       <ListItem title="Calvin" />
       <ListItem title="Candy" />
     </ListGroup>
-  </List>
-
-  <BlockTitle>Inset List</BlockTitle>
-  <List inset>
-    <ListItem title="Item 1" />
-    <ListItem title="Item 2" />
-    <ListItem title="Item 3" />
   </List>
 
   <BlockTitle class="text-2xl">Media Lists</BlockTitle>
@@ -143,8 +164,9 @@
   </Block>
 
   <BlockTitle>Songs</BlockTitle>
-  <List>
+  <List strongIos outlineIos>
     <ListItem
+      chevronMaterial={false}
       link
       title="Yellow Submarine"
       after="$15"
@@ -152,6 +174,7 @@
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
     >
       <img
+        class="ios:rounded-lg material:rounded-full ios:w-20 material:w-10"
         slot="media"
         src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg"
         width="80"
@@ -159,6 +182,7 @@
       />
     </ListItem>
     <ListItem
+      chevronMaterial={false}
       link
       title="Don't Stop Me Now"
       after="$22"
@@ -166,6 +190,7 @@
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
     >
       <img
+        class="ios:rounded-lg material:rounded-full ios:w-20 material:w-10"
         slot="media"
         src="https://cdn.framework7.io/placeholder/people-160x160-2.jpg"
         width="80"
@@ -173,6 +198,7 @@
       />
     </ListItem>
     <ListItem
+      chevronMaterial={false}
       link
       title="Billie Jean"
       after="$16"
@@ -180,6 +206,7 @@
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
     >
       <img
+        class="ios:rounded-lg material:rounded-full ios:w-20 material:w-10"
         slot="media"
         src="https://cdn.framework7.io/placeholder/people-160x160-3.jpg"
         width="80"
@@ -188,8 +215,9 @@
     </ListItem>
   </List>
   <BlockTitle>Mail App</BlockTitle>
-  <List>
+  <List strongIos outlineIos>
     <ListItem
+      chevronMaterial={false}
       link
       title="Facebook"
       after="17:14"
@@ -197,6 +225,7 @@
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
     />
     <ListItem
+      chevronMaterial={false}
       link
       title="John Doe (via Twitter)"
       after="17:11"
@@ -204,6 +233,7 @@
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
     />
     <ListItem
+      chevronMaterial={false}
       link
       title="Facebook"
       after="16:48"
@@ -211,6 +241,7 @@
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
     />
     <ListItem
+      chevronMaterial={false}
       link
       title="John Doe (via Twitter)"
       after="15:32"

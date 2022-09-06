@@ -37,7 +37,7 @@
       Popover
     </Link>
   </Navbar>
-  <Block strong class="space-y-4">
+  <Block class="space-y-4">
     <p>
       <Button
         class="popover-button"
@@ -105,7 +105,7 @@
     target={popoverTargetEl}
     onBackdropClick={() => (popoverOpened = false)}
   >
-    <List nested hairlines={false} colors={{ bg: 'bg-transparent' }}>
+    <List nested>
       <ListItem title="Item 1" link onClick={() => (popoverOpened = false)} />
       <ListItem
         title="List Item 2"

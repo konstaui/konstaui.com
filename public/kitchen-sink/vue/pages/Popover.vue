@@ -14,7 +14,7 @@
         </k-link>
       </template>
     </k-navbar>
-    <k-block strong class="space-y-4">
+    <k-block class="space-y-4">
       <p>
         <k-button
           class="popover-button"
@@ -89,7 +89,7 @@
       :target="popoverTargetRef"
       @backdropclick="() => (popoverOpened = false)"
     >
-      <k-list nested :hairlines="false" :colors="{ bg: 'bg-transparent' }">
+      <k-list nested>
         <k-list-item
           title="Item 1"
           link

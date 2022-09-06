@@ -6,7 +6,7 @@
       </template>
     </k-navbar>
 
-    <k-block strong>
+    <k-block strong inset>
       <p>
         Breadcrumbs allow users to keep track and maintain awareness of their
         locations within the app or website. They should be used for large sites
@@ -15,14 +15,14 @@
     </k-block>
 
     <k-block-title>Basic</k-block-title>
-    <k-block strong>
+    <k-block strong-ios outline-ios>
       <k-breadcrumbs>
         <k-breadcrumbs-item>
-          <k-link :colors="{ text: 'text-inherit' }">Home</k-link>
+          <k-link>Home</k-link>
         </k-breadcrumbs-item>
         <k-breadcrumbs-separator />
         <k-breadcrumbs-item>
-          <k-link :colors="{ text: 'text-inherit' }">Catalog</k-link>
+          <k-link>Catalog</k-link>
         </k-breadcrumbs-item>
         <k-breadcrumbs-separator />
         <k-breadcrumbs-item active>Phones</k-breadcrumbs-item>
@@ -34,22 +34,22 @@
       >Breadcrumbs will be scrollable if they don't fit the
       screen</k-block-header
     >
-    <k-block strong>
+    <k-block strong-ios outline-ios>
       <k-breadcrumbs>
         <k-breadcrumbs-item>
-          <k-link :colors="{ text: 'text-inherit' }">Home</k-link>
+          <k-link>Home</k-link>
         </k-breadcrumbs-item>
         <k-breadcrumbs-separator />
         <k-breadcrumbs-item>
-          <k-link :colors="{ text: 'text-inherit' }">Catalog</k-link>
+          <k-link>Catalog</k-link>
         </k-breadcrumbs-item>
         <k-breadcrumbs-separator />
         <k-breadcrumbs-item>
-          <k-link :colors="{ text: 'text-inherit' }">Phones</k-link>
+          <k-link>Phones</k-link>
         </k-breadcrumbs-item>
         <k-breadcrumbs-separator />
         <k-breadcrumbs-item>
-          <k-link :colors="{ text: 'text-inherit' }">Apple</k-link>
+          <k-link>Apple</k-link>
         </k-breadcrumbs-item>
         <k-breadcrumbs-separator />
         <k-breadcrumbs-item active>iPhone 12</k-breadcrumbs-item>
@@ -57,10 +57,10 @@
     </k-block>
 
     <k-block-title>Collapsed</k-block-title>
-    <k-block strong>
+    <k-block strong-ios outline-ios>
       <k-breadcrumbs>
         <k-breadcrumbs-item>
-          <k-link :colors="{ text: 'text-inherit' }">Home</k-link>
+          <k-link>Home</k-link>
         </k-breadcrumbs-item>
         <k-breadcrumbs-separator />
         <k-breadcrumbs-collapsed
@@ -78,7 +78,7 @@
       style="width: 120px"
       @backdropclick="() => (popoverOpened = false)"
     >
-      <k-list nested :hairlines="false" :colors="{ bg: 'bg-transparent' }">
+      <k-list nested>
         <k-list-item
           link
           title="Catalog"

@@ -28,21 +28,21 @@ export default function BreadcrumbsPage() {
         left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}
       />
 
-      <Block strong>
+      <Block strong inset>
         Breadcrumbs allow users to keep track and maintain awareness of their
         locations within the app or website. They should be used for large sites
         and apps with hierarchically arranged pages.
       </Block>
 
       <BlockTitle>Basic</BlockTitle>
-      <Block strong>
+      <Block strongIos outlineIos>
         <Breadcrumbs>
           <BreadcrumbsItem>
-            <Link colors={{ text: 'text-inherit' }}>Home</Link>
+            <Link>Home</Link>
           </BreadcrumbsItem>
           <BreadcrumbsSeparator />
           <BreadcrumbsItem>
-            <Link colors={{ text: 'text-inherit' }}>Catalog</Link>
+            <Link>Catalog</Link>
           </BreadcrumbsItem>
           <BreadcrumbsSeparator />
           <BreadcrumbsItem active>Phones</BreadcrumbsItem>
@@ -53,22 +53,22 @@ export default function BreadcrumbsPage() {
       <BlockHeader>
         Breadcrumbs will be scrollable if they don't fit the screen
       </BlockHeader>
-      <Block strong>
+      <Block strongIos outlineIos>
         <Breadcrumbs>
           <BreadcrumbsItem>
-            <Link colors={{ text: 'text-inherit' }}>Home</Link>
+            <Link>Home</Link>
           </BreadcrumbsItem>
           <BreadcrumbsSeparator />
           <BreadcrumbsItem>
-            <Link colors={{ text: 'text-inherit' }}>Catalog</Link>
+            <Link>Catalog</Link>
           </BreadcrumbsItem>
           <BreadcrumbsSeparator />
           <BreadcrumbsItem>
-            <Link colors={{ text: 'text-inherit' }}>Phones</Link>
+            <Link>Phones</Link>
           </BreadcrumbsItem>
           <BreadcrumbsSeparator />
           <BreadcrumbsItem>
-            <Link colors={{ text: 'text-inherit' }}>Apple</Link>
+            <Link>Apple</Link>
           </BreadcrumbsItem>
           <BreadcrumbsSeparator />
           <BreadcrumbsItem active>iPhone 12</BreadcrumbsItem>
@@ -76,10 +76,10 @@ export default function BreadcrumbsPage() {
       </Block>
 
       <BlockTitle>Collapsed</BlockTitle>
-      <Block strong>
+      <Block strongIos outlineIos>
         <Breadcrumbs>
           <BreadcrumbsItem>
-            <Link colors={{ text: 'text-inherit' }}>Home</Link>
+            <Link>Home</Link>
           </BreadcrumbsItem>
           <BreadcrumbsSeparator />
           <BreadcrumbsCollapsed
@@ -98,7 +98,7 @@ export default function BreadcrumbsPage() {
         target={popoverTargetRef.current}
         onBackdropClick={() => setPopoverOpened(false)}
       >
-        <List nested hairlines={false} colors={{ bg: 'bg-transparent' }}>
+        <List nested>
           <ListItem
             link
             title="Catalog"

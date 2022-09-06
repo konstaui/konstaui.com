@@ -10,27 +10,19 @@ export default function ListButtonPage() {
         left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}
       />
 
-      <List>
+      <List strong outlineIos>
         <ListButton>Button 1</ListButton>
         <ListButton>Button 2</ListButton>
         <ListButton>Button 3</ListButton>
       </List>
 
-      <List inset>
+      <List inset strong>
         <ListButton>Button 1</ListButton>
         <ListButton>Button 2</ListButton>
         <ListButton>Button 3</ListButton>
       </List>
-      <List inset>
-        <ListButton
-          colors={{
-            text: 'text-red-500',
-            activeBg: 'active:bg-red-500',
-            touchRipple: 'touch-ripple-red-500',
-          }}
-        >
-          Red Button
-        </ListButton>
+      <List inset strong>
+        <ListButton className="k-color-brand-red">Red Button</ListButton>
       </List>
     </Page>
   );

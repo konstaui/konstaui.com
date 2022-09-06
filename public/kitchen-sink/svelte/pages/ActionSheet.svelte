@@ -27,14 +27,14 @@
     </svelte:fragment>
   </Navbar>
 
-  <Block strong class="space-y-4">
+  <Block strong inset class="space-y-4">
     <p>
       Action Sheet is a slide-up pane for presenting the user with a set of
       alternatives for how to proceed with a given task.
     </p>
   </Block>
   <BlockTitle>Open Action Sheet</BlockTitle>
-  <Block strong class="flex space-x-4">
+  <Block strong inset class="flex space-x-4">
     <Button onClick={() => (actionsOneOpened = true)}>One group</Button>
     <Button onClick={() => (actionsTwoOpened = true)}>Two groups</Button>
   </Block>
@@ -51,10 +51,7 @@
       <ActionsButton onClick={() => (actionsOneOpened = false)}>
         Button 2
       </ActionsButton>
-      <ActionsButton
-        onClick={() => (actionsOneOpened = false)}
-        colors={{ text: 'text-red-500' }}
-      >
+      <ActionsButton onClick={() => (actionsOneOpened = false)}>
         Cancel
       </ActionsButton>
     </ActionsGroup>
@@ -74,10 +71,7 @@
       </ActionsButton>
     </ActionsGroup>
     <ActionsGroup>
-      <ActionsButton
-        onClick={() => (actionsTwoOpened = false)}
-        colors={{ text: 'text-red-500' }}
-      >
+      <ActionsButton onClick={() => (actionsTwoOpened = false)}>
         Cancel
       </ActionsButton>
     </ActionsGroup>

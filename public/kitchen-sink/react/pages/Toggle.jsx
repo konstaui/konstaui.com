@@ -21,11 +21,13 @@ export default function TogglePage() {
         left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}
       />
 
-      <List>
+      <List strong inset>
         <ListItem
+          label
           title="Item 1"
           after={
             <Toggle
+              component="div"
               className="-my-1"
               checked={checked1}
               onChange={() => setChecked1(!checked1)}
@@ -33,33 +35,36 @@ export default function TogglePage() {
           }
         />
         <ListItem
+          label
           title="Item 2"
           after={
             <Toggle
-              className="-my-1"
-              colors={{ bg: 'bg-red-500' }}
+              component="div"
+              className="-my-1 k-color-brand-red"
               checked={checked2}
               onChange={() => setChecked2(!checked2)}
             />
           }
         />
         <ListItem
+          label
           title="Item 3"
           after={
             <Toggle
-              className="-my-1"
-              colors={{ bg: 'bg-green-500' }}
+              component="div"
+              className="-my-1 k-color-brand-green"
               checked={checked3}
               onChange={() => setChecked3(!checked3)}
             />
           }
         />
         <ListItem
+          label
           title="Item 4"
           after={
             <Toggle
-              className="-my-1"
-              colors={{ bg: 'bg-yellow-500' }}
+              component="div"
+              className="-my-1 k-color-brand-yellow"
               checked={checked4}
               onChange={() => setChecked4(!checked4)}
             />

@@ -7,7 +7,7 @@
     </k-navbar>
 
     <k-block-title>Shape and size</k-block-title>
-    <k-block strong class="text-center space-y-4">
+    <k-block strong-ios outline-ios class="text-center space-y-4">
       <div class="grid grid-cols-2 gap-4">
         <div>
           <div class="block text-xs mb-1">Default</div>
@@ -130,7 +130,7 @@
     </k-block>
 
     <k-block-title>Raised</k-block-title>
-    <k-block strong class="text-center space-y-4">
+    <k-block strong-ios outline-ios class="text-center space-y-4">
       <div class="grid grid-cols-2 gap-4">
         <div>
           <div class="block text-xs mb-1">Default</div>
@@ -273,7 +273,7 @@
       </div>
     </k-block>
     <k-block-title>With Text Input</k-block-title>
-    <k-block strong class="text-center space-y-4">
+    <k-block strong-ios outline-ios class="text-center space-y-4">
       <div>
         <k-stepper
           :value="inputValue"
@@ -297,7 +297,7 @@
       </div>
     </k-block>
     <k-block-title>Only Buttons</k-block-title>
-    <k-list>
+    <k-list strong-ios outline-ios>
       <k-list-item :title="`Value is ${value}`">
         <template #after>
           <k-stepper
@@ -334,18 +334,12 @@
     </k-list>
 
     <k-block-title>Colors</k-block-title>
-    <k-block strong class="text-center space-y-4">
+    <k-block strong-ios outline-ios class="text-center space-y-4">
       <div class="grid grid-cols-2 gap-4">
         <div>
           <k-stepper
             :value="value"
-            :colors="{
-              text: 'text-red-500',
-              border: 'border-red-500',
-              bg: 'bg-red-500',
-              activeBg: 'active:bg-red-500',
-              activeBgDark: 'active:bg-red-600',
-            }"
+            class="k-color-brand-red"
             @plus="increase"
             @minus="decrease"
           />
@@ -354,13 +348,7 @@
           <k-stepper
             :value="value"
             rounded
-            :colors="{
-              text: 'text-green-500',
-              border: 'border-green-500',
-              bg: 'bg-green-500',
-              activeBg: 'active:bg-green-500',
-              activeBgDark: 'active:bg-green-600',
-            }"
+            class="k-color-brand-green"
             @plus="increase"
             @minus="decrease"
           />
@@ -371,13 +359,7 @@
         <div>
           <k-stepper
             :value="value"
-            :colors="{
-              text: 'text-yellow-500',
-              border: 'border-yellow-500',
-              bg: 'bg-yellow-500',
-              activeBg: 'active:bg-yellow-500',
-              activeBgDark: 'active:bg-yellow-600',
-            }"
+            class="k-color-brand-yellow"
             @plus="increase"
             @minus="decrease"
           />
@@ -386,13 +368,7 @@
           <k-stepper
             :value="value"
             rounded
-            :colors="{
-              text: 'text-pink-500',
-              border: 'border-pink-500',
-              bg: 'bg-pink-500',
-              activeBg: 'active:bg-pink-500',
-              activeBgDark: 'active:bg-pink-600',
-            }"
+            class="k-color-brand-purple"
             @plus="increase"
             @minus="decrease"
           />

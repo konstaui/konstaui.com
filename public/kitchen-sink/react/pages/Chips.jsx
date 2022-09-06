@@ -18,7 +18,7 @@ export default function ChipsPage() {
       />
 
       <BlockTitle>Chips With Text</BlockTitle>
-      <Block strong>
+      <Block strongIos outlineIos>
         <Chip className="m-0.5">Example Chip</Chip>
         <Chip className="m-0.5">Another Chip</Chip>
         <Chip className="m-0.5">One More Chip</Chip>
@@ -27,7 +27,7 @@ export default function ChipsPage() {
       </Block>
 
       <BlockTitle>Outline Chips</BlockTitle>
-      <Block strong>
+      <Block strongIos outlineIos>
         <Chip outline className="m-0.5">
           Example Chip
         </Chip>
@@ -46,13 +46,13 @@ export default function ChipsPage() {
       </Block>
 
       <BlockTitle>Contact Chips</BlockTitle>
-      <Block strong>
+      <Block strongIos outlineIos>
         <Chip
           className="m-0.5"
           media={
             <img
               alt="avatar"
-              className="h-7 rounded-full"
+              className="ios:h-7 material:h-6 rounded-full"
               src="https://cdn.framework7.io/placeholder/people-100x100-9.jpg"
             />
           }
@@ -64,7 +64,7 @@ export default function ChipsPage() {
           media={
             <img
               alt="avatar"
-              className="h-7 rounded-full"
+              className="ios:h-7 material:h-6 rounded-full"
               src="https://cdn.framework7.io/placeholder/people-100x100-3.jpg"
             />
           }
@@ -76,7 +76,7 @@ export default function ChipsPage() {
           media={
             <img
               alt="avatar"
-              className="h-7 rounded-full"
+              className="ios:h-7 material:h-6 rounded-full"
               src="https://cdn.framework7.io/placeholder/people-100x100-7.jpg"
             />
           }
@@ -86,7 +86,7 @@ export default function ChipsPage() {
       </Block>
 
       <BlockTitle>Deletable Chips / Tags</BlockTitle>
-      <Block strong>
+      <Block strongIos outlineIos>
         <Chip
           className="m-0.5"
           deleteButton
@@ -101,7 +101,7 @@ export default function ChipsPage() {
           media={
             <img
               alt="avatar"
-              className="h-7 rounded-full"
+              className="ios:h-7 material:h-6 rounded-full"
               src="https://cdn.framework7.io/placeholder/people-100x100-7.jpg"
             />
           }
@@ -109,70 +109,85 @@ export default function ChipsPage() {
           Adam Smith
         </Chip>
       </Block>
-      <BlockTitle className=" bg-b bg-b">Color Chips</BlockTitle>
-      <Block strong>
+      <BlockTitle>Color Chips</BlockTitle>
+      <Block strongIos outlineIos>
         <Chip
           className="m-0.5"
-          colors={{ bg: 'bg-red-500', text: 'text-white' }}
+          colors={{ fillBg: 'bg-red-500', fillText: 'text-white' }}
         >
           Red Chip
         </Chip>
         <Chip
           className="m-0.5"
-          colors={{ bg: 'bg-green-500', text: 'text-white' }}
+          colors={{ fillBg: 'bg-green-500', fillText: 'text-white' }}
         >
           Green Chip
         </Chip>
         <Chip
           className="m-0.5"
-          colors={{ bg: 'bg-blue-500', text: 'text-white' }}
+          colors={{ fillBg: 'bg-blue-500', fillText: 'text-white' }}
         >
           Blue Chip
         </Chip>
         <Chip
           className="m-0.5"
-          colors={{ bg: 'bg-yellow-500', text: 'text-white' }}
+          colors={{ fillBg: 'bg-yellow-500', fillText: 'text-white' }}
         >
           Yellow Chip
         </Chip>
         <Chip
           className="m-0.5"
-          colors={{ bg: 'bg-pink-500', text: 'text-white' }}
+          colors={{ fillBg: 'bg-pink-500', fillText: 'text-white' }}
         >
           Pink Chip
         </Chip>
         <Chip
           className="m-0.5"
           outline
-          colors={{ border: 'border-red-500', text: 'text-red-500' }}
+          colors={{
+            outlineBorder: 'border-red-500',
+            outlineText: 'text-red-500',
+          }}
         >
           Red Chip
         </Chip>
         <Chip
           className="m-0.5"
           outline
-          colors={{ border: 'border-green-500', text: 'text-green-500' }}
+          colors={{
+            outlineBorder: 'border-green-500',
+            outlineText: 'text-green-500',
+          }}
         >
           Green Chip
         </Chip>
         <Chip
           className="m-0.5"
           outline
-          colors={{ border: 'border-blue-500', text: 'text-blue-500' }}
+          colors={{
+            outlineBorder: 'border-blue-500',
+            outlineText: 'text-blue-500',
+          }}
         >
           Blue Chip
         </Chip>
         <Chip
           className="m-0.5"
           outline
-          colors={{ border: 'border-yellow-500', text: 'text-yellow-500' }}
+          colors={{
+            outlineBorder: 'border-yellow-500',
+            outlineText: 'text-yellow-500',
+          }}
         >
           Yellow Chip
         </Chip>
         <Chip
           className="m-0.5"
           outline
-          colors={{ border: 'border-pink-500', text: 'text-pink-500' }}
+          colors={{
+            outlineBorder: 'border-pink-500',
+            outlineText: 'text-pink-500',
+          }}
         >
           Pink Chip
         </Chip>

@@ -13,15 +13,43 @@
       <k-list-item title="Item 3" />
     </k-list>
 
+    <k-block-title>Strong List</k-block-title>
+    <k-list strong>
+      <k-list-item title="Item 1" />
+      <k-list-item title="Item 2" />
+      <k-list-item title="Item 3" />
+    </k-list>
+
+    <k-block-title>Strong Outline List</k-block-title>
+    <k-list strong outline>
+      <k-list-item title="Item 1" />
+      <k-list-item title="Item 2" />
+      <k-list-item title="Item 3" />
+    </k-list>
+
+    <k-block-title>Strong Inset List</k-block-title>
+    <k-list strong inset>
+      <k-list-item title="Item 1" />
+      <k-list-item title="Item 2" />
+      <k-list-item title="Item 3" />
+    </k-list>
+
+    <k-block-title>Strong Outline Inset List</k-block-title>
+    <k-list strong outline inset>
+      <k-list-item title="Item 1" />
+      <k-list-item title="Item 2" />
+      <k-list-item title="Item 3" />
+    </k-list>
+
     <k-block-title>Simple Links List</k-block-title>
-    <k-list>
+    <k-list strong-ios outline-ios>
       <k-list-item title="Link 1" link />
       <k-list-item title="Link 2" link />
       <k-list-item title="Link 3" link />
     </k-list>
 
     <k-block-title>Data list, with icons</k-block-title>
-    <k-list>
+    <k-list strong-ios outline-ios>
       <k-list-item title="Ivan Petrov" after="CEO">
         <template #media>
           <demo-icon />
@@ -42,7 +70,7 @@
       </k-list-item>
     </k-list>
     <k-block-title>Links</k-block-title>
-    <k-list>
+    <k-list strong-ios outline-ios>
       <k-list-item link title="Ivan Petrov" after="CEO">
         <template #media>
           <demo-icon />
@@ -60,7 +88,7 @@
       </k-list-item>
     </k-list>
     <k-block-title>Links, Header, Footer</k-block-title>
-    <k-list>
+    <k-list strong-ios outline-ios>
       <k-list-item link header="Name" title="John Doe" after="Edit">
         <template #media>
           <demo-icon />
@@ -96,21 +124,21 @@
     </k-list>
 
     <k-block-title>Links, no icons</k-block-title>
-    <k-list>
+    <k-list strong-ios outline-ios>
       <k-list-item link title="Ivan Petrov" />
       <k-list-item link title="John Doe" />
-      <k-list-item divider title="Divider Here" />
+      <k-list-item group-title title="Group title Here" />
       <k-list-item link title="Ivan Petrov" />
       <k-list-item link title="Jenna Smith" />
     </k-list>
 
     <k-block-title>Grouped with sticky titles</k-block-title>
-    <k-list>
+    <k-list strong-ios outline-ios>
       <k-list-group>
         <k-list-item
           title="A"
           group-title
-          class="ios:top-11-safe material:top-14-safe"
+          class="ios:top-11-safe material:top-16-safe sticky"
         />
         <k-list-item title="Aaron " />
         <k-list-item title="Abbie" />
@@ -120,7 +148,7 @@
         <k-list-item
           title="B"
           group-title
-          class="ios:top-11-safe material:top-14-safe"
+          class="ios:top-11-safe material:top-16-safe sticky"
         />
         <k-list-item title="Bailey" />
         <k-list-item title="Barclay" />
@@ -130,19 +158,12 @@
         <k-list-item
           title="C"
           group-title
-          class="ios:top-11-safe material:top-14-safe"
+          class="ios:top-11-safe material:top-16-safe sticky"
         />
         <k-list-item title="Caiden" />
         <k-list-item title="Calvin" />
         <k-list-item title="Candy" />
       </k-list-group>
-    </k-list>
-
-    <k-block-title>Inset List</k-block-title>
-    <k-list inset>
-      <k-list-item title="Item 1" />
-      <k-list-item title="Item 2" />
-      <k-list-item title="Item 3" />
     </k-list>
 
     <k-block-title class="text-2xl">Media Lists</k-block-title>
@@ -155,8 +176,9 @@
     </k-block>
 
     <k-block-title>Songs</k-block-title>
-    <k-list>
+    <k-list strong-ios outline-ios>
       <k-list-item
+        :chevron-material="false"
         link
         title="Yellow Submarine"
         after="$15"
@@ -165,6 +187,7 @@
       >
         <template #media>
           <img
+            class="ios:rounded-lg material:rounded-full ios:w-20 material:w-10"
             src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg"
             width="80"
             alt="demo"
@@ -172,6 +195,7 @@
         </template>
       </k-list-item>
       <k-list-item
+        :chevron-material="false"
         link
         title="Don't Stop Me Now"
         after="$22"
@@ -180,6 +204,7 @@
       >
         <template #media>
           <img
+            class="ios:rounded-lg material:rounded-full ios:w-20 material:w-10"
             src="https://cdn.framework7.io/placeholder/people-160x160-2.jpg"
             width="80"
             alt="demo"
@@ -187,6 +212,7 @@
         </template>
       </k-list-item>
       <k-list-item
+        :chevron-material="false"
         link
         title="Billie Jean"
         after="$16"
@@ -195,6 +221,7 @@
       >
         <template #media>
           <img
+            class="ios:rounded-lg material:rounded-full ios:w-20 material:w-10"
             src="https://cdn.framework7.io/placeholder/people-160x160-3.jpg"
             width="80"
             alt="demo"
@@ -203,8 +230,9 @@
       </k-list-item>
     </k-list>
     <k-block-title>Mail App</k-block-title>
-    <k-list>
+    <k-list strong-ios outline-ios>
       <k-list-item
+        :chevron-material="false"
         link
         title="Facebook"
         after="17:14"
@@ -212,6 +240,7 @@
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
       />
       <k-list-item
+        :chevron-material="false"
         link
         title="John Doe (via Twitter)"
         after="17:11"
@@ -219,6 +248,7 @@
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
       />
       <k-list-item
+        :chevron-material="false"
         link
         title="Facebook"
         after="16:48"
@@ -226,6 +256,7 @@
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
       />
       <k-list-item
+        :chevron-material="false"
         link
         title="John Doe (via Twitter)"
         after="15:32"

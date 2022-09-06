@@ -21,7 +21,7 @@
   </Navbar>
 
   <BlockTitle>Chips With Text</BlockTitle>
-  <Block strong>
+  <Block strongIos outlineIos>
     <Chip class="m-0.5">Example Chip</Chip>
     <Chip class="m-0.5">Another Chip</Chip>
     <Chip class="m-0.5">One More Chip</Chip>
@@ -30,7 +30,7 @@
   </Block>
 
   <BlockTitle>Outline Chips</BlockTitle>
-  <Block strong>
+  <Block strongIos outlineIos>
     <Chip outline class="m-0.5">Example Chip</Chip>
     <Chip outline class="m-0.5">Another Chip</Chip>
     <Chip outline class="m-0.5">One More Chip</Chip>
@@ -39,12 +39,12 @@
   </Block>
 
   <BlockTitle>Contact Chips</BlockTitle>
-  <Block strong>
+  <Block strongIos outlineIos>
     <Chip class="m-0.5">
       <img
         slot="media"
         alt="avatar"
-        class="h-7 rounded-full"
+        class="ios:h-7 material:h-6 rounded-full"
         src="https://cdn.framework7.io/placeholder/people-100x100-9.jpg"
       />
       Jane Doe
@@ -53,7 +53,7 @@
       <img
         slot="media"
         alt="avatar"
-        class="h-7 rounded-full"
+        class="ios:h-7 material:h-6 rounded-full"
         src="https://cdn.framework7.io/placeholder/people-100x100-3.jpg"
       />
       John Doe
@@ -62,7 +62,7 @@
       <img
         slot="media"
         alt="avatar"
-        class="h-7 rounded-full"
+        class="ios:h-7 material:h-6 rounded-full"
         src="https://cdn.framework7.io/placeholder/people-100x100-7.jpg"
       />
       Adam Smith
@@ -70,7 +70,7 @@
   </Block>
 
   <BlockTitle>Deletable Chips / Tags</BlockTitle>
-  <Block strong>
+  <Block strongIos outlineIos>
     <Chip
       class="m-0.5"
       deleteButton
@@ -86,61 +86,88 @@
       <img
         slot="media"
         alt="avatar"
-        class="h-7 rounded-full"
+        class="ios:h-7 material:h-6 rounded-full"
         src="https://cdn.framework7.io/placeholder/people-100x100-7.jpg"
       />
       Adam Smith
     </Chip>
   </Block>
   <BlockTitle class=" bg-b bg-b">Color Chips</BlockTitle>
-  <Block strong>
-    <Chip class="m-0.5" colors={{ bg: 'bg-red-500', text: 'text-white' }}>
+  <Block strongIos outlineIos>
+    <Chip
+      class="m-0.5"
+      colors={{ fillBg: 'bg-red-500', fillText: 'text-white' }}
+    >
       Red Chip
     </Chip>
-    <Chip class="m-0.5" colors={{ bg: 'bg-green-500', text: 'text-white' }}>
+    <Chip
+      class="m-0.5"
+      colors={{ fillBg: 'bg-green-500', fillText: 'text-white' }}
+    >
       Green Chip
     </Chip>
-    <Chip class="m-0.5" colors={{ bg: 'bg-blue-500', text: 'text-white' }}>
+    <Chip
+      class="m-0.5"
+      colors={{ fillBg: 'bg-blue-500', fillText: 'text-white' }}
+    >
       Blue Chip
     </Chip>
-    <Chip class="m-0.5" colors={{ bg: 'bg-yellow-500', text: 'text-white' }}>
+    <Chip
+      class="m-0.5"
+      colors={{ fillBg: 'bg-yellow-500', fillText: 'text-white' }}
+    >
       Yellow Chip
     </Chip>
-    <Chip class="m-0.5" colors={{ bg: 'bg-pink-500', text: 'text-white' }}>
+    <Chip
+      class="m-0.5"
+      colors={{ fillBg: 'bg-pink-500', fillText: 'text-white' }}
+    >
       Pink Chip
     </Chip>
     <Chip
       class="m-0.5"
       outline
-      colors={{ border: 'border-red-500', text: 'text-red-500' }}
+      colors={{ outlineBorder: 'border-red-500', outlineText: 'text-red-500' }}
     >
       Red Chip
     </Chip>
     <Chip
       class="m-0.5"
       outline
-      colors={{ border: 'border-green-500', text: 'text-green-500' }}
+      colors={{
+        outlineBorder: 'border-green-500',
+        outlineText: 'text-green-500',
+      }}
     >
       Green Chip
     </Chip>
     <Chip
       class="m-0.5"
       outline
-      colors={{ border: 'border-blue-500', text: 'text-blue-500' }}
+      colors={{
+        outlineBorder: 'border-blue-500',
+        outlineText: 'text-blue-500',
+      }}
     >
       Blue Chip
     </Chip>
     <Chip
       class="m-0.5"
       outline
-      colors={{ border: 'border-yellow-500', text: 'text-yellow-500' }}
+      colors={{
+        outlineBorder: 'border-yellow-500',
+        outlineText: 'text-yellow-500',
+      }}
     >
       Yellow Chip
     </Chip>
     <Chip
       class="m-0.5"
       outline
-      colors={{ border: 'border-pink-500', text: 'text-pink-500' }}
+      colors={{
+        outlineBorder: 'border-pink-500',
+        outlineText: 'text-pink-500',
+      }}
     >
       Pink Chip
     </Chip>

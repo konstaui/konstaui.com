@@ -18,70 +18,49 @@ export default function ButtonsPage() {
       />
 
       <BlockTitle>Default Buttons</BlockTitle>
-      <Block strong className="space-y-2">
+      <Block strong outlineIos className="space-y-2">
         <div className="grid grid-cols-3 gap-x-4">
           <Button>Button</Button>
-          <Button
-            colors={{
-              text: 'text-red-500',
-              border: 'border-red-500',
-              bg: 'bg-red-500',
-              activeBg: 'active:bg-red-500',
-              activeBgDark: 'active:bg-red-600',
-            }}
-          >
-            Button
-          </Button>
+          <Button className="k-color-brand-red">Button</Button>
           <Button>Button</Button>
         </div>
         <div className="grid grid-cols-3 gap-x-4">
           <Button outline>Outline</Button>
-          <Button
-            colors={{
-              text: 'text-red-500',
-              border: 'border-red-500',
-              bg: 'bg-red-500',
-              activeBg: 'active:bg-red-500',
-              activeBgDark: 'active:bg-red-600',
-              touchRipple: 'touch-ripple-red-500',
-            }}
-            outline
-          >
+          <Button className="k-color-brand-red" outline>
             Outline
           </Button>
           <Button outline>Outline</Button>
         </div>
         <div className="grid grid-cols-3 gap-x-4">
           <Button clear>Clear</Button>
-          <Button
-            colors={{
-              text: 'text-red-500',
-              border: 'border-red-500',
-              bg: 'bg-red-500',
-              activeBg: 'active:bg-red-500',
-              activeBgDark: 'active:bg-red-600',
-              touchRipple: 'touch-ripple-red-500',
-            }}
-            clear
-          >
+          <Button className="k-color-brand-red" clear>
             Clear
           </Button>
           <Button clear>Clear</Button>
+        </div>
+        <div className="grid grid-cols-3 gap-x-4">
+          <Button tonal>Tonal</Button>
+          <Button className="k-color-brand-red" tonal>
+            Tonal
+          </Button>
+          <Button tonal>Tonal</Button>
         </div>
       </Block>
 
       <BlockTitle>Rounded Buttons</BlockTitle>
-      <Block strong className="space-y-2">
+      <Block strong outlineIos className="space-y-2">
         <div className="grid grid-cols-3 gap-x-4">
           <Button rounded>Button</Button>
-          <Button rounded>Button</Button>
+          <Button rounded className="k-color-brand-green">
+            Button
+          </Button>
           <Button rounded>Button</Button>
         </div>
         <div className="grid grid-cols-3 gap-x-4">
           <Button rounded outline>
             Outline
           </Button>
-          <Button rounded outline>
+          <Button rounded outline className="k-color-brand-green">
             Outline
           </Button>
           <Button rounded outline>
@@ -92,7 +71,7 @@ export default function ButtonsPage() {
           <Button rounded clear>
             Clear
           </Button>
-          <Button rounded clear>
+          <Button rounded clear className="k-color-brand-green">
             Clear
           </Button>
           <Button rounded clear>
@@ -102,10 +81,12 @@ export default function ButtonsPage() {
       </Block>
 
       <BlockTitle>Large Buttons</BlockTitle>
-      <Block strong className="space-y-2">
+      <Block strong outlineIos className="space-y-2">
         <div className="grid grid-cols-3 gap-x-4">
           <Button large>Button</Button>
-          <Button large>Button</Button>
+          <Button large className="k-color-brand-yellow">
+            Button
+          </Button>
           <Button large rounded>
             Button
           </Button>
@@ -114,7 +95,7 @@ export default function ButtonsPage() {
           <Button large outline>
             Outline
           </Button>
-          <Button large outline>
+          <Button large outline className="k-color-brand-yellow">
             Outline
           </Button>
           <Button large rounded outline>
@@ -125,7 +106,7 @@ export default function ButtonsPage() {
           <Button large clear>
             Clear
           </Button>
-          <Button large clear>
+          <Button large clear className="k-color-brand-yellow">
             Clear
           </Button>
           <Button large rounded clear>
@@ -135,7 +116,7 @@ export default function ButtonsPage() {
       </Block>
 
       <BlockTitle>Small Buttons</BlockTitle>
-      <Block strong className="space-y-2">
+      <Block strong outlineIos className="space-y-2">
         <div className="grid grid-cols-3 gap-x-4">
           <Button small>Button</Button>
           <Button small>Button</Button>
@@ -168,7 +149,7 @@ export default function ButtonsPage() {
       </Block>
 
       <BlockTitle>Raised Buttons</BlockTitle>
-      <Block strong className="space-y-2">
+      <Block strong outlineIos className="space-y-2">
         <div className="grid grid-cols-3 gap-x-4">
           <Button raised>Button</Button>
           <Button raised>Button</Button>
@@ -201,7 +182,7 @@ export default function ButtonsPage() {
       </Block>
 
       <BlockTitle>Disabled Buttons</BlockTitle>
-      <Block strong className="space-y-2">
+      <Block strong outlineIos className="space-y-2">
         <div className="grid grid-cols-3 gap-x-4">
           <Button disabled>Button</Button>
           <Button disabled outline>

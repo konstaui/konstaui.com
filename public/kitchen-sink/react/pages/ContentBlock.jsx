@@ -18,6 +18,7 @@ export default function ContentBlockPage() {
         left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}
       />
 
+      <BlockTitle>Block Title</BlockTitle>
       <Block>
         <p>
           Donec et nulla auctor massa pharetra adipiscing ut sit amet sem.
@@ -25,8 +26,34 @@ export default function ContentBlockPage() {
           mollis, vulputate turpis vel, sagittis felis.
         </p>
       </Block>
-      <BlockTitle>Block Title</BlockTitle>
+      <BlockTitle>Strong Block</BlockTitle>
       <Block strong>
+        <p>
+          Donec et nulla auctor massa pharetra adipiscing ut sit amet sem.
+          Suspendisse molestie velit vitae mattis tincidunt. Ut sit amet quam
+          mollis, vulputate turpis vel, sagittis felis.
+        </p>
+      </Block>
+      <BlockTitle>Strong Outline Block</BlockTitle>
+      <Block strong outline>
+        <p>
+          Donec et nulla auctor massa pharetra adipiscing ut sit amet sem.
+          Suspendisse molestie velit vitae mattis tincidunt. Ut sit amet quam
+          mollis, vulputate turpis vel, sagittis felis.
+        </p>
+      </Block>
+
+      <BlockTitle>Strong Inset Block</BlockTitle>
+      <Block strong inset>
+        <p>
+          Donec et nulla auctor massa pharetra adipiscing ut sit amet sem.
+          Suspendisse molestie velit vitae mattis tincidunt. Ut sit amet quam
+          mollis, vulputate turpis vel, sagittis felis.
+        </p>
+      </Block>
+
+      <BlockTitle>Strong Inset Outline Block</BlockTitle>
+      <Block strong inset outline>
         <p>
           Donec et nulla auctor massa pharetra adipiscing ut sit amet sem.
           Suspendisse molestie velit vitae mattis tincidunt. Ut sit amet quam
@@ -35,7 +62,7 @@ export default function ContentBlockPage() {
       </Block>
       <BlockTitle>With Header & Footer</BlockTitle>
       <BlockHeader>Header</BlockHeader>
-      <Block strong>
+      <Block strong outline>
         <p>
           Donec et nulla auctor massa pharetra adipiscing ut sit amet sem.
           Suspendisse molestie velit vitae mattis tincidunt. Ut sit amet quam
@@ -43,25 +70,16 @@ export default function ContentBlockPage() {
         </p>
       </Block>
       <BlockFooter>Footer</BlockFooter>
-      <BlockTitle className="text-2xl">Medium Title</BlockTitle>
-      <Block strong>
+      <BlockTitle medium>Medium Title</BlockTitle>
+      <Block strong outline>
         <p>
           Donec et nulla auctor massa pharetra adipiscing ut sit amet sem.
           Suspendisse molestie velit vitae mattis tincidunt. Ut sit amet quam
           mollis, vulputate turpis vel, sagittis felis.
         </p>
       </Block>
-      <BlockTitle className="text-3xl">Large Title</BlockTitle>
-      <Block strong>
-        <p>
-          Donec et nulla auctor massa pharetra adipiscing ut sit amet sem.
-          Suspendisse molestie velit vitae mattis tincidunt. Ut sit amet quam
-          mollis, vulputate turpis vel, sagittis felis.
-        </p>
-      </Block>
-
-      <BlockTitle>Inset Block</BlockTitle>
-      <Block strong inset>
+      <BlockTitle large>Large Title</BlockTitle>
+      <Block strong outline>
         <p>
           Donec et nulla auctor massa pharetra adipiscing ut sit amet sem.
           Suspendisse molestie velit vitae mattis tincidunt. Ut sit amet quam

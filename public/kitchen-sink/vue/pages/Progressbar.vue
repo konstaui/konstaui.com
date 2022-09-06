@@ -7,7 +7,7 @@
     </k-navbar>
 
     <k-block-title>Determinate Progress Bar</k-block-title>
-    <k-block strong>
+    <k-block strong inset-material outline-ios>
       <div class="my-4">
         <k-progressbar :progress="progress" />
       </div>
@@ -40,11 +40,11 @@
     </k-block>
 
     <k-block-title>Colors</k-block-title>
-    <k-block strong class="space-y-4">
-      <k-progressbar :colors="{ bg: 'bg-red-500' }" :progress="0.25" />
-      <k-progressbar :colors="{ bg: 'bg-green-500' }" :progress="0.5" />
-      <k-progressbar :colors="{ bg: 'bg-blue-500' }" :progress="0.75" />
-      <k-progressbar :colors="{ bg: 'bg-yellow-500' }" :progress="1" />
+    <k-block strong inset-material outline-ios class="space-y-4">
+      <k-progressbar class="k-color-brand-red" :progress="0.25" />
+      <k-progressbar class="k-color-brand-green" :progress="0.5" />
+      <k-progressbar class="k-color-brand-yellow" :progress="0.75" />
+      <k-progressbar class="k-color-brand-purple" :progress="1" />
     </k-block>
   </k-page>
 </template>
