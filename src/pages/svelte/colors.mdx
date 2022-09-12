@@ -3,63 +3,147 @@ title: 'Colors | Konsta UI Svelte'
 section: 'svelte'
 ---
 
-import { DocsColorLabel } from '@/components/DocsColorLabel';
-import { ColorsGenerator } from '@/components/ColorsGenerator';
-
 # Colors
 
-## Extended Colors
+## Primary Color
 
-Konsta UI extends Tailwind config with the following colors:
+Colors in Konsta UI are a bit tricky, because for example "Material You" design comes with whole set of different colors.
 
-| Name                  | Value                                       |
-| --------------------- | ------------------------------------------- |
-| `primary`             | <DocsColorLabel color="#007aff" />`#007aff` |
-| `primary-light`       | <DocsColorLabel color="#298fff" />`#298fff` |
-| `primary-dark`        | <DocsColorLabel color="#0066d6" />`#0066d6` |
-| `page-ios-light`      | <DocsColorLabel color="#efeff4" />`#efeff4` |
-| `page-ios-dark`       | <DocsColorLabel color="#000" />`#000`       |
-| `page-material-light` | <DocsColorLabel color="#fff" />`#fff`       |
-| `page-material-dark`  | <DocsColorLabel color="#121212" />`#121212` |
-| `block-strong-light`  | <DocsColorLabel color="#fff" />`#fff`       |
-| `block-strong-dark`   | <DocsColorLabel color="#1c1c1d" />`#1c1c1d` |
-| `list-divider-light`  | <DocsColorLabel color="#f4f4f4" />`#f4f4f4` |
-| `list-divider-dark`   | <DocsColorLabel color="#232323" />`#232323` |
-| `bars-ios-light`      | <DocsColorLabel color="#f7f7f8" />`#f7f7f8` |
-| `bars-ios-dark`       | <DocsColorLabel color="#121212" />`#121212` |
-| `bars-material-light` | <DocsColorLabel color="#fff" />`#fff`       |
-| `bars-material-dark`  | <DocsColorLabel color="#202020" />`#202020` |
-| `toast-ios`           | <DocsColorLabel color="#000000" />`#000000` |
-| `toast-material`      | <DocsColorLabel color="#323232" />`#323232` |
-| `popover-light`       | <DocsColorLabel color="#ffffff" />`#ffffff` |
-| `popover-dark`        | <DocsColorLabel color="#1c1c1d" />`#1c1c1d` |
+Konsta UI generate all required colors automatically, based on colors provided in `konsta.colors` section of tailwind config.
 
-Most of these colors are configurable on per component basis. And to overwrite them globally with custom ones, you need to extend them in `tailwind.config.js`:
+```js
+// tailwind.config.js
+
+const konstaConfig = require('konsta/config');
+
+module.exports = konstaConfig({
+  konsta: {
+    colors: {
+      // "primary" is the main app color, if not specified will be default to '#007aff'
+      primary: '#007aff'
+    }
+  },
+  /*
+   * "Usual" tailwind colors can be used for some custom elements and styling.
+   * These colors will not suite for Konsta UI components theming
+   */
+  theme: {
+    extend: {
+      colors: {
+        'my-red': '#ff0000'
+      }
+    }
+  }
+  // rest of your usual Tailwind CSS config here
+  ...
+});
+
+```
+
+Based on the given `primary` color, Konsta UI config will generate the following `theme.extend.colors` in your config:
+
+```js
+// will be added automatically to Tailwind config:
+
+theme: {
+  extend: {
+    colors: {
+      // auto generated colors
+      'primary': 'rgb(var(--k-color-primary) / <alpha-value>)',
+      'md-light-primary': 'rgb(var(--k-color-md-light-primary) / <alpha-value>)',
+      'md-light-on-primary': 'rgb(var(--k-color-md-light-on-primary) / <alpha-value>)',
+      'md-light-primary-container': 'rgb(var(--k-color-md-light-primary-container) / <alpha-value>)',
+      'md-light-on-primary-container': 'rgb(var(--k-color-md-light-on-primary-container) / <alpha-value>)',
+      'md-light-secondary': 'rgb(var(--k-color-md-light-secondary) / <alpha-value>)',
+      'md-light-on-secondary': 'rgb(var(--k-color-md-light-on-secondary) / <alpha-value>)',
+      'md-light-secondary-container': 'rgb(var(--k-color-md-light-secondary-container) / <alpha-value>)',
+      'md-light-on-secondary-container': 'rgb(var(--k-color-md-light-on-secondary-container) / <alpha-value>)',
+      'md-light-surface': 'rgb(var(--k-color-md-light-surface) / <alpha-value>)',
+      'md-light-on-surface': 'rgb(var(--k-color-md-light-on-surface) / <alpha-value>)',
+      'md-light-surface-variant': 'rgb(var(--k-color-md-light-surface-variant) / <alpha-value>)',
+      'md-light-on-surface-variant': 'rgb(var(--k-color-md-light-on-surface-variant) / <alpha-value>)',
+      'md-light-outline': 'rgb(var(--k-color-md-light-outline) / <alpha-value>)',
+      'md-light-outline-variant': 'rgb(var(--k-color-md-light-outline-variant) / <alpha-value>)',
+      'md-light-surface-1': 'rgb(var(--k-color-md-light-surface-1) / <alpha-value>)',
+      'md-light-surface-2': 'rgb(var(--k-color-md-light-surface-2) / <alpha-value>)',
+      'md-light-surface-3': 'rgb(var(--k-color-md-light-surface-3) / <alpha-value>)',
+      'md-light-surface-4': 'rgb(var(--k-color-md-light-surface-4) / <alpha-value>)',
+      'md-light-surface-5': 'rgb(var(--k-color-md-light-surface-5) / <alpha-value>)',
+      'md-dark-primary': 'rgb(var(--k-color-md-dark-primary) / <alpha-value>)',
+      'md-dark-on-primary': 'rgb(var(--k-color-md-dark-on-primary) / <alpha-value>)',
+      'md-dark-primary-container': 'rgb(var(--k-color-md-dark-primary-container) / <alpha-value>)',
+      'md-dark-on-primary-container': 'rgb(var(--k-color-md-dark-on-primary-container) / <alpha-value>)',
+      'md-dark-secondary': 'rgb(var(--k-color-md-dark-secondary) / <alpha-value>)',
+      'md-dark-on-secondary': 'rgb(var(--k-color-md-dark-on-secondary) / <alpha-value>)',
+      'md-dark-secondary-container': 'rgb(var(--k-color-md-dark-secondary-container) / <alpha-value>)',
+      'md-dark-on-secondary-container': 'rgb(var(--k-color-md-dark-on-secondary-container) / <alpha-value>)',
+      'md-dark-surface': 'rgb(var(--k-color-md-dark-surface) / <alpha-value>)',
+      'md-dark-on-surface': 'rgb(var(--k-color-md-dark-on-surface) / <alpha-value>)',
+      'md-dark-surface-variant': 'rgb(var(--k-color-md-dark-surface-variant) / <alpha-value>)',
+      'md-dark-on-surface-variant': 'rgb(var(--k-color-md-dark-on-surface-variant) / <alpha-value>)',
+      'md-dark-outline': 'rgb(var(--k-color-md-dark-outline) / <alpha-value>)',
+      'md-dark-outline-variant': 'rgb(var(--k-color-md-dark-outline-variant) / <alpha-value>)',
+      'md-dark-surface-1': 'rgb(var(--k-color-md-dark-surface-1) / <alpha-value>)',
+      'md-dark-surface-2': 'rgb(var(--k-color-md-dark-surface-2) / <alpha-value>)',
+      'md-dark-surface-3': 'rgb(var(--k-color-md-dark-surface-3) / <alpha-value>)',
+      'md-dark-surface-4': 'rgb(var(--k-color-md-dark-surface-4) / <alpha-value>)',
+      'md-dark-surface-5': 'rgb(var(--k-color-md-dark-surface-5) / <alpha-value>)',
+      'ios-primary': 'rgb(var(--k-color-ios-primary) / <alpha-value>)',
+      'ios-primary-tint': 'rgb(var(--k-color-ios-primary-tint) / <alpha-value>)',
+      'ios-primary-shade': 'rgb(var(--k-color-ios-primary-shade) / <alpha-value>)'
+      // static colors that you can override
+      'ios-light-surface': '#efeff4',
+      'ios-dark-surface': '#000',
+      'ios-light-surface-1': '#fff',
+      'ios-dark-surface-1': '#1c1c1d',
+      'ios-light-surface-2': '#f7f7f8',
+      'ios-dark-surface-2': '#121212',
+      'ios-light-surface-3': '#fff',
+      'ios-dark-surface-3': '#1c1c1d',
+      'ios-light-surface-variant': '#f4f4f4',
+      'ios-dark-surface-variant': '#232323',
+    }
+  }
+}
+```
+
+## Secondary Colors
+
+If you want some secondary colors for Konsta UI components, let's say to make some button red, you need to specify these colors in `konsta.colors` in `tailwind.config.js`:
 
 ```js
 const konstaConfig = require('konsta/config');
 
 module.exports = konstaConfig({
-  // extend Konsta UI colors in config's `theme.extend.colors`
-  theme: {
-    extend: {
-      colors: {
-        'page-ios-light': '#fff';
-        'primary': {
-          light: '#ff5676',
-          DEFAULT: '#ff2d55',
-          dark: '#ff0434',
-        }
-      }
+  konsta: {
+    colors: {
+      // "primary" is the main app color, if not specified will be default to '#007aff'
+      primary: '#007aff',
+      // custom colors used for Konsta UI components theming
+      'brand-red': '#ff0000',
+      'brand-green': '#00ff00',
     }
-  }
-})
+  },
+  // rest of your usual Tailwind CSS config here
+  ...
+});
+
 ```
 
-## Generate Theme Colors
+And to apply these colors, we need to add `k-color-[name]` class to required component, e.g.:
 
-Main theme color is defined by `primary` colors (`primary`, `primary.dark` and `primary.light`).
+```jsx
+<Button>Usual Button</Button>
+<Button class="k-color-brand-red">Red Button</Button>
+<Button class="k-color-brand-green">Green Button</Button>
+```
 
-Below you can find color generator to help you with "light" and "dark" shades:
+Such colors will be correctly inherited, so `k-color-[name]` class can be added to parent elements as well, e.g.:
 
-<ColorsGenerator />
+```jsx
+<Page class="k-color-brand-red">
+  <Button>Red Button</Button>
+  <Button>Red Button</Button>
+  <Button>Red Button</Button>
+</Page>
+```

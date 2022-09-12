@@ -43,6 +43,7 @@ const links = [
       'Card',
       'Checkbox',
       'Chip',
+      'Dialog',
       { title: 'Floating Action Button', href: '/react/fab' },
       'Icon',
       'Link',

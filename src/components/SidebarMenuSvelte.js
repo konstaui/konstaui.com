@@ -42,6 +42,7 @@ const links = [
       'Card',
       'Checkbox',
       'Chip',
+      'Dialog',
       { title: 'Floating Action Button', href: '/svelte/fab' },
       'Icon',
       'Link',
