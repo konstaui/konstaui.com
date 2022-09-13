@@ -6,10 +6,15 @@ const withTableOfContents = require('./withTableOfContents');
 
 const layouts = {
   '/pages/react': ['@/layouts/withSidebar', 'withSidebarLayout'],
+  '\\\\pages\\\\react': ['@/layouts/withSidebar', 'withSidebarLayout'],
   '/pages/vue': ['@/layouts/withSidebar', 'withSidebarLayout'],
+  '\\\\pages\\\\vue': ['@/layouts/withSidebar', 'withSidebarLayout'],
   '/pages/svelte': ['@/layouts/withSidebar', 'withSidebarLayout'],
+  '\\\\pages\\\\svelte': ['@/layouts/withSidebar', 'withSidebarLayout'],
   '/components/api': ['@/layouts/empty', 'emptyLayout'],
+  '\\\\components\\\\api': ['@/layouts/empty', 'emptyLayout'],
   '/pages/sponsors': ['@/layouts/default', 'defaultLayout'],
+  '\\\\pages\\\\sponsors': ['@/layouts/default', 'defaultLayout'],
 };
 
 const getLayout = (resourcePath) => {
