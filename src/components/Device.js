@@ -7,6 +7,10 @@ export const Device = ({ url, float, className }) => {
 
   const onLoad = () => {
     const appEl = iframeRef.current.contentDocument.querySelector('.k-app');
+    if (!appEl) {
+      requestAnimationFrame(onLoad);
+      return;
+    }
     const config = {
       attributes: true,
       childList: false,
@@ -16,6 +20,7 @@ export const Device = ({ url, float, className }) => {
       setTheme(appEl.classList.contains('k-ios') ? 'ios' : 'material');
     };
     const observer = new MutationObserver(callback);
+
     observer.observe(appEl, config);
   };
   return (
