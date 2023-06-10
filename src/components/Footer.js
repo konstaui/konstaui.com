@@ -25,7 +25,7 @@ export const Footer = (props) => {
             .
           </div>
           <div>
-            2022 © Konsta UI by{' '}
+            2023 © Konsta UI by{' '}
             <a href="https://nolimits4web.com" target="_blank">
               <img
                 className="w-12 h-12 inline-block"
