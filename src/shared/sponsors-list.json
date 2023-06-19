@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2023-06-19T16:00:00.00Z",
+    "title": "Gamblechecker.com - Online Pokies Reviews For NZ Players",
+    "link": "https://gamblechecker.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/martin-woods",
+    "image": "martin-woods.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-12-21T11:00:00.000Z",
+    "title": "VPSServer",
+    "link": "https://www.vpsserver.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/vpsservercom",
+    "image": "vpsserver-logo.svg",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-12-21T11:00:00.000Z",
     "title": "VPSServer",
     "link": "https://www.vpsserver.com/",
@@ -48,7 +68,7 @@
     "ref": "https://opencollective.com/cccc",
     "image": "cryptocurrencycodes.png",
     "image_h": "",
-    "endDate": "2022-05-24T10:40:00.000Z",
+    "endDate": "2024-05-24T10:40:00.000Z",
     "active": true
   }
 ]
