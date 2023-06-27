@@ -28,8 +28,8 @@ export const SidebarMenu = (props) => {
           <a
             className={`flex w-full items-center justify-center rounded p-1 ${
               root === 'react'
-                ? 'pointer-events-none bg-white shadow'
-                : 'opacity-50 grayscale duration-200 hover:bg-white'
+                ? 'pointer-events-none bg-white shadow dark:bg-dark-light'
+                : 'opacity-50 grayscale duration-200 hover:bg-white dark:hover:bg-dark-light'
             }`}
           >
             <img
@@ -37,15 +37,15 @@ export const SidebarMenu = (props) => {
               alt="React"
               src="/images/home/home-logos/react.svg"
             />
-            <span className="font-medium text-black">React</span>
+            <span className="font-medium text-black dark:text-white">React</span>
           </a>
         </Link>
         <Link href="/vue">
           <a
             className={`flex w-full items-center justify-center rounded p-1 ${
               root === 'vue'
-                ? 'pointer-events-none bg-white shadow'
-                : 'opacity-50 grayscale duration-200 hover:bg-white'
+                ? 'pointer-events-none bg-white shadow dark:bg-dark-light'
+                : 'opacity-50 grayscale duration-200 hover:bg-white dark:hover:bg-dark-light'
             }`}
           >
             <img
@@ -53,15 +53,15 @@ export const SidebarMenu = (props) => {
               alt="Vue"
               src="/images/home/home-logos/vue.svg"
             />
-            <span className="font-medium text-black">Vue.js</span>
+            <span className="font-medium text-black dark:text-white">Vue.js</span>
           </a>
         </Link>
         <Link href="/svelte">
           <a
             className={`flex w-full items-center justify-center rounded p-1 ${
               root === 'svelte'
-                ? 'pointer-events-none bg-white shadow'
-                : 'opacity-50 grayscale duration-200 hover:bg-white'
+                ? 'pointer-events-none bg-white shadow dark:bg-dark-light'
+                : 'opacity-50 grayscale duration-200 hover:bg-white dark:hover:bg-dark-light'
             }`}
           >
             <img
@@ -69,7 +69,7 @@ export const SidebarMenu = (props) => {
               alt="Vue"
               src="/images/home/home-logos/svelte.svg"
             />
-            <span className="font-medium text-black">Svelte</span>
+            <span className="font-medium text-black dark:text-white">Svelte</span>
           </a>
         </Link>
       </div>

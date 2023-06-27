@@ -70,7 +70,7 @@ export default function WithSidebar(props) {
   return (
     <>
       <Header />
-      <Container className="flex">
+      <Container className="flex" >
         <div
           className={`${
             opened ? '' : 'hidden'
@@ -83,7 +83,7 @@ export default function WithSidebar(props) {
             {Sidebar && <Sidebar />}
           </div>
         </div>
-        <div className="prose min-w-0 max-w-none flex-auto pt-10 pb-24 lg:pb-16">
+        <div className="prose min-w-0 max-w-none flex-auto pt-10 pb-24 lg:pb-16 dark:prose-invert">
           {opened && (
             <div
               className="fixed left-0 top-0 z-10 h-full w-full bg-black bg-opacity-25"

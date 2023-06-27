@@ -130,7 +130,7 @@ export default function Home() {
             <div className="mt-12 text-4xl font-bold leading-none text-primary sm:text-6xl">
               Konsta UI
             </div>
-            <div className="my-8 text-3xl font-bold text-black sm:text-4xl sm:leading-snug">
+            <div className="my-8 text-3xl font-bold text-black sm:text-4xl sm:leading-snug dark:text-white">
               Pixel perfect mobile UI components built with Tailwind CSS
             </div>
             <div className="my-8 text-xl font-semibold lg:text-2xl lg:leading-normal">
@@ -141,7 +141,7 @@ export default function Home() {
               <Button href="#get-started" className="lg:px-6 xl:px-8">
                 Get started
               </Button>
-              <div className="hidden h-12 items-center rounded-xl border border-primary bg-primary bg-opacity-10 px-4 font-mono text-lg text-black sm:flex">
+              <div className="hidden h-12 items-center rounded-xl border border-primary bg-primary bg-opacity-10 px-4 font-mono text-lg text-black sm:flex dark:text-white">
                 <span className="mr-4 select-none opacity-50">$</span>
                 <span>npm i konsta</span>
                 <span
@@ -386,7 +386,7 @@ export default function Home() {
 
       <Section id="get-started">
         <SectionTitle>Get Started</SectionTitle>
-        <div className="mx-auto flex max-w-2xl items-center justify-center rounded-xl border border-primary bg-primary bg-opacity-10 py-6 px-4 font-mono text-black sm:px-8 sm:text-lg">
+        <div className="mx-auto flex max-w-2xl items-center justify-center rounded-xl border border-primary bg-primary bg-opacity-10 py-6 px-4 font-mono text-black sm:px-8 sm:text-lg dark:text-white">
           <span className="pointer-events-none mr-4 hidden select-none opacity-50 sm:block">
             $
           </span>
@@ -400,7 +400,7 @@ export default function Home() {
         </div>
         <div className="mx-auto mt-8 max-w-3xl items-stretch justify-center space-y-4 text-center sm:flex sm:space-y-0 sm:space-x-4 md:space-x-8">
           <Link href="/react">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white">
               <img
                 className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/react.svg"
@@ -413,7 +413,7 @@ export default function Home() {
             </a>
           </Link>
           <Link href="/vue">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white">
               <img
                 className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/vue.svg"
@@ -426,7 +426,7 @@ export default function Home() {
             </a>
           </Link>
           <Link href="/svelte">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col dark:text-white sm:hover:shadow-2xl">
               <img
                 className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/svelte.svg"
@@ -466,7 +466,7 @@ export default function Home() {
             },
           ].map((item) => (
             <a
-              className="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl"
+              className="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white"
               href={item.url}
               target="_blank"
               key={item.title}
@@ -477,7 +477,7 @@ export default function Home() {
                 alt={item.title}
               />
               <div>
-                <div className="font-semibold text-black sm:mt-4 sm:mb-2">
+                <div className="font-semibold text-black sm:mt-4 sm:mb-2 dark:text-white">
                   {item.title}
                 </div>
                 <div className="text-sm opacity-75">{item.description}</div>

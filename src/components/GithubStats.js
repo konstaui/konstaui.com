@@ -39,7 +39,7 @@ export function GithubStats(props) {
   return (
     <div className="">
       <a
-        className="text-black hover:text-primary hover:no-underline inline-flex items-center"
+        className="text-black hover:text-primary hover:no-underline inline-flex items-center dark:text-white"
         href="https://github.com/konstaui/konsta"
         rel="noopener"
         target="_blank"

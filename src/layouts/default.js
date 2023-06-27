@@ -9,7 +9,7 @@ export default function DefaultLayout(props) {
     <>
       <Header />
       <Container className="flex">
-        <div className="prose min-w-0 max-w-none flex-auto pt-10 pb-24 lg:pb-16">
+        <div className="prose dark:prose-invert min-w-0 max-w-none flex-auto pt-10 pb-24 lg:pb-16">
           {children}
         </div>
       </Container>
