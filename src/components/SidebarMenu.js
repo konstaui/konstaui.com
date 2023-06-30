@@ -73,14 +73,14 @@ export const SidebarMenu = (props) => {
           </a>
         </Link>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-4 dark:text-white">
         {links.map((block, index) => (
           <div key={index}>
             {block.title && (
               <div className="mb-4 text-base font-semibold">{block.title}</div>
             )}
             {block.links && (
-              <ul className="space-y-1">
+              <ul className="space-y-1 ">
                 {block.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <Link href={getLinkHref(link, root)}>
@@ -88,7 +88,7 @@ export const SidebarMenu = (props) => {
                         className={` block rounded py-1 px-2 font-medium duration-100 ${
                           isActive(getLinkHref(link, root))
                             ? `bg-primary-light bg-opacity-10 text-primary`
-                            : 'text-gray-500 hover:bg-primary-light hover:bg-opacity-10 hover:text-primary'
+                            : 'text-gray-500 hover:bg-primary-light hover:bg-opacity-10 hover:text-primary dark:text-dark-lightGray'
                         }`}
                       >
                         {getLinkTitle(link)}

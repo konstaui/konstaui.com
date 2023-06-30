@@ -21,7 +21,7 @@ function SponsorButton(props) {
       rel="noopener"
       target="_blank"
       {...restProps}
-      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline dark:bg-primary/80 dark:text-white dark:hover:bg-primary sm:text-lg ${className}`}
+      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline sm:text-lg ${className}`}
       onClick={(e) => {
         onClick(e);
         trackOutbound(href);
@@ -133,7 +133,7 @@ export default function Home() {
             <div className="my-8 text-3xl font-bold text-black sm:text-4xl sm:leading-snug dark:text-white">
               Pixel perfect mobile UI components built with Tailwind CSS
             </div>
-            <div className="my-8 text-xl font-semibold lg:text-2xl lg:leading-normal">
+            <div className="my-8 text-xl font-semibold lg:text-2xl lg:leading-normal dark:text-dark-lightGray">
               With iOS and Material Design components for
               <br /> React, Vue & Svelte
             </div>
@@ -198,7 +198,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>iOS & Material Design themes</SectionTitle>
-        <SectionText>
+        <SectionText className="dark:text-dark-lightGray">
           All Konsta UI components come with pixel perfect native-like iOS and
           Material Design themes created using official design guidelines.
           Everything you need for your iOS and Android apps!
@@ -219,7 +219,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>Awesome set of UI components</SectionTitle>
-        <SectionText>
+        <SectionText className="dark:text-dark-lightGray">
           Konsta UI comes with an awesome set of ready to use UI elements:
         </SectionText>
         <div className="flex flex-wrap content-center items-center justify-center">
@@ -258,7 +258,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>Build with the tech you love!</SectionTitle>
-        <SectionText>
+        <SectionText className="dark:text-dark-lightGray">
           Konsta UI components are currently available for React, Vue, and
           Svelte.
         </SectionText>
@@ -286,7 +286,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>Perfect fit for Ionic & Framework7</SectionTitle>
-        <SectionText>
+        <SectionText className="dark:text-dark-lightGray">
           Konsta UI mostly designed to be used with "parent" frameworks like{' '}
           <a
             className="text-primary hover:underline"
@@ -350,7 +350,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>Go native</SectionTitle>
-        <SectionText>
+        <SectionText className="dark:text-dark-lightGray">
           Using it with frameworks like{' '}
           <a
             className="text-primary hover:underline"
@@ -400,7 +400,7 @@ export default function Home() {
         </div>
         <div className="mx-auto mt-8 max-w-3xl items-stretch justify-center space-y-4 text-center sm:flex sm:space-y-0 sm:space-x-4 md:space-x-8">
           <Link href="/react">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white dark:border-dark-light">
               <img
                 className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/react.svg"
@@ -413,7 +413,7 @@ export default function Home() {
             </a>
           </Link>
           <Link href="/vue">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white dark:border-dark-light">
               <img
                 className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/vue.svg"
@@ -426,7 +426,7 @@ export default function Home() {
             </a>
           </Link>
           <Link href="/svelte">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col dark:text-white sm:hover:shadow-2xl">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col dark:text-white sm:hover:shadow-2xl dark:border-dark-light">
               <img
                 className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/svelte.svg"
@@ -466,7 +466,7 @@ export default function Home() {
             },
           ].map((item) => (
             <a
-              className="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white"
+              className="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white dark:border-dark-light"
               href={item.url}
               target="_blank"
               key={item.title}
@@ -490,7 +490,7 @@ export default function Home() {
       <Section>
         <SectionTitle>Sponsors</SectionTitle>
         <HeroSponsors />
-        <div className="my-4 text-center text-lg">
+        <div className="my-4 text-center text-lg dark:text-dark-lightGray">
           Support Konsta UI on{' '}
           <a
             href="https://opencollective.com/konstaui"

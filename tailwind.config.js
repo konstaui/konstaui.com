@@ -24,8 +24,9 @@ module.exports = {
         },
         dark: {
           light: '#4e5157',
+          lightGray: '#DDDDDF',
           DEFAULT: '#040912',
-          dark: '#23272e'
+          dark: '#23272e',
         },
       },
       maxWidth: {

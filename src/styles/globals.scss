@@ -13,7 +13,7 @@ body {
 }
 
 .important-note {
-  @apply border-l-4 px-5 py-4 my-3 border-red-500 bg-red-100;
+  @apply border-l-4 px-5 py-4 my-3 border-red-500 bg-red-100 dark:bg-red-600 dark:bg-opacity-10 dark:text-dark-lightGray;
 }
 
 .after\:hash:after {

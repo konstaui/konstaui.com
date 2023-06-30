@@ -11,6 +11,12 @@
 .prose {
   @apply text-gray-500;
 }
+.prose p{
+  @apply dark:text-dark-lightGray;
+}
+.prose li::marker {
+  @apply dark:text-dark-lightGray;
+}
 .prose code:before,
 .prose code:after {
   // display: none;
@@ -33,5 +39,8 @@
   border-radius: 0.75rem;
 }
 .prose th {
-  @apply text-gray-600;
+  @apply text-gray-600 dark:text-dark-lightGray;;
+}
+.prose td {
+  @apply dark:text-dark-lightGray;
 }
