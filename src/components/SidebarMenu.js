@@ -73,7 +73,7 @@ export const SidebarMenu = (props) => {
           </a>
         </Link>
       </div>
-      <div className="space-y-4 dark:text-white">
+      <div className="space-y-4">
         {links.map((block, index) => (
           <div key={index}>
             {block.title && (

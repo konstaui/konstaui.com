@@ -133,7 +133,7 @@ export default function Home() {
             <div className="my-8 text-3xl font-bold text-black sm:text-4xl sm:leading-snug dark:text-white">
               Pixel perfect mobile UI components built with Tailwind CSS
             </div>
-            <div className="my-8 text-xl font-semibold lg:text-2xl lg:leading-normal dark:text-dark-lightGray">
+            <div className="my-8 text-xl font-semibold lg:text-2xl lg:leading-normal">
               With iOS and Material Design components for
               <br /> React, Vue & Svelte
             </div>
@@ -198,7 +198,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>iOS & Material Design themes</SectionTitle>
-        <SectionText className="dark:text-dark-lightGray">
+        <SectionText>
           All Konsta UI components come with pixel perfect native-like iOS and
           Material Design themes created using official design guidelines.
           Everything you need for your iOS and Android apps!
@@ -219,7 +219,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>Awesome set of UI components</SectionTitle>
-        <SectionText className="dark:text-dark-lightGray">
+        <SectionText>
           Konsta UI comes with an awesome set of ready to use UI elements:
         </SectionText>
         <div className="flex flex-wrap content-center items-center justify-center">
@@ -258,7 +258,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>Build with the tech you love!</SectionTitle>
-        <SectionText className="dark:text-dark-lightGray">
+        <SectionText>
           Konsta UI components are currently available for React, Vue, and
           Svelte.
         </SectionText>
@@ -286,7 +286,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>Perfect fit for Ionic & Framework7</SectionTitle>
-        <SectionText className="dark:text-dark-lightGray">
+        <SectionText>
           Konsta UI mostly designed to be used with "parent" frameworks like{' '}
           <a
             className="text-primary hover:underline"
@@ -350,7 +350,7 @@ export default function Home() {
 
       <Section>
         <SectionTitle>Go native</SectionTitle>
-        <SectionText className="dark:text-dark-lightGray">
+        <SectionText>
           Using it with frameworks like{' '}
           <a
             className="text-primary hover:underline"
@@ -490,7 +490,7 @@ export default function Home() {
       <Section>
         <SectionTitle>Sponsors</SectionTitle>
         <HeroSponsors />
-        <div className="my-4 text-center text-lg dark:text-dark-lightGray">
+        <div className="my-4 text-center text-lg">
           Support Konsta UI on{' '}
           <a
             href="https://opencollective.com/konstaui"

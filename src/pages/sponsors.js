@@ -12,7 +12,7 @@ export default function SponsorsPage() {
         Konsta UI Sponsors
       </h1>
 
-      <div className="mb-16 text-center dark:text-dark-lightGray">
+      <div className="mb-16 text-center ">
         Support Konsta UI on{' '}
         <a
           href="https://opencollective.com/konstaui"

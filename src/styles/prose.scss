@@ -9,10 +9,7 @@
   }
 }
 .prose {
-  @apply text-gray-500;
-}
-.prose p{
-  @apply dark:text-dark-lightGray;
+  @apply text-gray-500 dark:text-dark-lightGray;
 }
 .prose li::marker {
   @apply dark:text-dark-lightGray;

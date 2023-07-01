@@ -133,7 +133,7 @@ export default function WithSidebar(props) {
               <div>
                 {prevLink && (
                   <Link href={prevLink.href}>
-                    <a className="flex items-center !text-gray-500 hover:!text-primary dark:!text-dark-lightGray">
+                    <a className="flex items-center !text-gray-500 hover:!text-primary dark:!text-dark-lightGray dark:hover:!text-primary-light">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6"
@@ -156,7 +156,7 @@ export default function WithSidebar(props) {
               <div>
                 {nextLink && (
                   <Link href={nextLink.href}>
-                    <a className="flex items-center !text-gray-500 hover:!text-primary dark:!text-dark-lightGray">
+                    <a className="flex items-center !text-gray-500 hover:!text-primary dark:!text-dark-lightGray dark:hover:!text-primary-light">
                       <span>{nextLink.title}</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

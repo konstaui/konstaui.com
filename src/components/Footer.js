@@ -13,7 +13,7 @@ export const Footer = (props) => {
       <Container>
         {/* Copy */}
         <div className="text-sm space-y-4 text-center">
-          <div className="dark:text-dark-lightGray">
+          <div>
             Code licensed under{' '}
             <a
               href="https://github.com/konstaui/konsta/blob/main/LICENSE"
@@ -24,7 +24,7 @@ export const Footer = (props) => {
             </a>
             .
           </div>
-          <div className='dark:text-dark-lightGray'>
+          <div>
             2022 © Konsta UI by{' '}
             <a href="https://nolimits4web.com" target="_blank">
               <img

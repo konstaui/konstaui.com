@@ -17,7 +17,7 @@ export default function TableOfContents({ tableOfContents }) {
             <li className="ml-6 !my-1" key={subsection.slug} >
               <a
                 href={`#${subsection.slug}`}
-                className="!text-gray-500  hover:!text-primary !my-0"
+                className="!text-gray-500 dark:!text-dark-lightGray hover:!text-primary !my-0"
               >
                 {subsection.title}
               </a>
