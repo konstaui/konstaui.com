@@ -21,7 +21,7 @@ function SponsorButton(props) {
       rel="noopener"
       target="_blank"
       {...restProps}
-      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:no-underline sm:text-lg ${className}`}
+      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black/5 dark:hover:bg-white/75 hover:no-underline sm:text-lg ${className}`}
       onClick={(e) => {
         onClick(e);
         trackOutbound(href);
@@ -104,7 +104,7 @@ export default function Home() {
       >
         {logos.map((logo) => (
           <img
-            className="mx-6 mt-6 h-24 w-24 md:mx-12 md:mt-8 md:h-32 md:w-32"
+            className={`mx-6 mt-6 h-24 w-24 md:mx-12 md:mt-8 md:h-32 md:w-32 ${logo.src.includes('apple') || logo.src.includes('cordova') ? 'dark:invert' : ''}`}
             key={logo.src}
             src={logo.src}
             alt={logo.alt}
@@ -341,7 +341,7 @@ export default function Home() {
             </div>
           </div>
           <img
-            className="home-app-shadow w-[375px] shrink-0"
+            className="home-app-shadow w-[375px] shrink-0 rounded-xl"
             src="/images/home/home-appstore-app.png"
             alt="mobile app"
           />

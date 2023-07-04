@@ -1,6 +1,10 @@
 .home-app-shadow {
   box-shadow: 20px 20px 60px 0 rgba(243, 0, 255, 0.2),
     -20px -20px 60px 0 rgba(255, 99, 0, 0.2);
+  .dark & {
+    box-shadow: 20px 20px 60px 0 rgba(243, 0, 255, 0.05),
+    -20px -20px 60px 0 rgba(255, 99, 0, 0.05);
+  }
 }
 .home-logo-animated {
   path:nth-child(2) {

@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps, router }) {
           content="https://konstaui.com/images/share-banner.png"
         />
       </Head>
-      <div className="dark:bg-dark-dark">
+      <div className="dark:bg-dark">
       <Component {...pageProps}/>
       </div>
     </>

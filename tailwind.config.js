@@ -7,7 +7,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
       sans:
@@ -22,12 +22,10 @@ module.exports = {
           DEFAULT: '#FF6300',
           dark: '#d65300',
         },
-        dark: {
-          light: '#4e5157',
-          lightGray: '#DDDDDF',
-          DEFAULT: '#040912',
-          dark: '#23272e',
-        },
+        dark: '#191513',
+        'dark-text': '#DDDDDF',
+        'dark-light': '#4e3b2f',
+        'dark-code': '#2b221c',
       },
       maxWidth: {
         '8xl': '90rem',

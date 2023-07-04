@@ -9,10 +9,10 @@
   }
 }
 .prose {
-  @apply text-gray-500 dark:text-dark-lightGray;
+  @apply text-gray-500 dark:text-dark-text;
 }
 .prose li::marker {
-  @apply dark:text-dark-lightGray;
+  @apply dark:text-dark-text;
 }
 .prose code:before,
 .prose code:after {
@@ -34,10 +34,12 @@
 }
 .prose pre {
   border-radius: 0.75rem;
+  @apply dark:bg-dark-code #{!important};
+
 }
 .prose th {
-  @apply text-gray-600 dark:text-dark-lightGray;;
+  @apply text-gray-600 dark:text-dark-text;;
 }
 .prose td {
-  @apply dark:text-dark-lightGray;
+  @apply dark:text-dark-text;
 }

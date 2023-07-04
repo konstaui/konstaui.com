@@ -6,7 +6,7 @@
     @apply border-t;
   }
   tbody td:nth-child(1) {
-    @apply w-1/6 font-mono text-primary-dark;
+    @apply w-1/6 font-mono text-primary-dark dark:text-primary-light;
     a {
       color: inherit;
     }
@@ -39,7 +39,7 @@
 }
 .props-table tbody td:nth-child(2),
 .events-table tbody td:nth-child(2) {
-  @apply w-1/6 font-mono text-green-700;
+  @apply w-1/6 font-mono text-green-700 dark:text-green-300;
   span {
     font-size: 0.875em;
   }
@@ -69,7 +69,7 @@
 }
 .props-table {
   tbody td:nth-child(3) {
-    @apply w-1/6 font-mono text-blue-900;
+    @apply w-1/6 font-mono text-blue-900 dark:text-blue-300;
     span {
       font-size: 0.875em;
     }

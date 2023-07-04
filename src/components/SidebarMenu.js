@@ -29,11 +29,11 @@ export const SidebarMenu = (props) => {
             className={`flex w-full items-center justify-center rounded p-1 ${
               root === 'react'
                 ? 'pointer-events-none bg-white shadow dark:bg-dark-light'
-                : 'opacity-50 grayscale duration-200 hover:bg-white dark:hover:bg-dark-light'
+                : 'opacity-50 grayscale duration-200 hover:bg-white dark:hover:bg-dark-light dark:hover:opacity-100'
             }`}
           >
             <img
-              className="mr-1 h-6 w-6"
+              className="mr-1 h-5 w-5"
               alt="React"
               src="/images/home/home-logos/react.svg"
             />
@@ -45,11 +45,11 @@ export const SidebarMenu = (props) => {
             className={`flex w-full items-center justify-center rounded p-1 ${
               root === 'vue'
                 ? 'pointer-events-none bg-white shadow dark:bg-dark-light'
-                : 'opacity-50 grayscale duration-200 hover:bg-white dark:hover:bg-dark-light'
+                : 'opacity-50 grayscale duration-200 hover:bg-white dark:hover:bg-dark-light dark:hover:opacity-100'
             }`}
           >
             <img
-              className="mr-1 h-6 w-6"
+              className="mr-1 h-5 w-5"
               alt="Vue"
               src="/images/home/home-logos/vue.svg"
             />
@@ -61,11 +61,11 @@ export const SidebarMenu = (props) => {
             className={`flex w-full items-center justify-center rounded p-1 ${
               root === 'svelte'
                 ? 'pointer-events-none bg-white shadow dark:bg-dark-light'
-                : 'opacity-50 grayscale duration-200 hover:bg-white dark:hover:bg-dark-light'
+                : 'opacity-50 grayscale duration-200 hover:bg-white dark:hover:bg-dark-light dark:hover:opacity-100'
             }`}
           >
             <img
-              className="mr-1 h-6 w-6"
+              className="mr-1 h-5 w-5"
               alt="Vue"
               src="/images/home/home-logos/svelte.svg"
             />
@@ -88,7 +88,7 @@ export const SidebarMenu = (props) => {
                         className={` block rounded py-1 px-2 font-medium duration-100 ${
                           isActive(getLinkHref(link, root))
                             ? `bg-primary-light bg-opacity-10 text-primary`
-                            : 'text-gray-500 hover:bg-primary-light hover:bg-opacity-10 hover:text-primary dark:text-dark-lightGray'
+                            : 'text-gray-500 hover:bg-primary-light hover:bg-opacity-10 hover:text-primary dark:text-dark-text'
                         }`}
                       >
                         {getLinkTitle(link)}
