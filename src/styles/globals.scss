@@ -9,11 +9,11 @@
 }
 
 body {
-  @apply text-gray-500;
+  @apply text-gray-500 dark:text-dark-text;
 }
 
 .important-note {
-  @apply border-l-4 px-5 py-4 my-3 border-red-500 bg-red-100;
+  @apply border-l-4 px-5 py-4 my-3 border-red-500 bg-red-100 dark:bg-red-600 dark:bg-opacity-10;
 }
 
 .after\:hash:after {

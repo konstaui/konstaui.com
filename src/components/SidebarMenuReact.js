@@ -73,5 +73,5 @@ const links = [
 ];
 
 export const SidebarMenuReact = () => (
-  <SidebarMenu links={links} root="react" />
+  <SidebarMenu links={links} root="react"/>
 );

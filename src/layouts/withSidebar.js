@@ -34,7 +34,7 @@ export default function WithSidebar(props) {
       childrenWithTOC.splice(
         1,
         0,
-        <TableOfContents key="toc" tableOfContents={tableOfContents} />
+        <TableOfContents key="toc" tableOfContents={tableOfContents}/>
       );
     }
   }
@@ -70,11 +70,11 @@ export default function WithSidebar(props) {
   return (
     <>
       <Header />
-      <Container className="flex">
+      <Container className="flex" >
         <div
           className={`${
             opened ? '' : 'hidden'
-          } fixed left-0 top-16 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:bg-transparent lg:shadow-none xl:mr-10`}
+          } fixed left-0 top-16 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:bg-transparent lg:shadow-none xl:mr-10 dark:bg-dark`}
         >
           <div
             className="sticky top-16 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain py-10 px-4 lg:px-0"
@@ -83,16 +83,16 @@ export default function WithSidebar(props) {
             {Sidebar && <Sidebar />}
           </div>
         </div>
-        <div className="prose min-w-0 max-w-none flex-auto pt-10 pb-24 lg:pb-16">
+        <div className="prose min-w-0 max-w-none flex-auto pt-10 pb-24 lg:pb-16 dark:prose-invert">
           {opened && (
             <div
-              className="fixed left-0 top-0 z-10 h-full w-full bg-black bg-opacity-25"
+              className="fixed left-0 top-0 z-10 h-full w-full bg-black bg-opacity-25 "
               onClick={() => setOpened(false)}
             />
           )}
 
           <div
-            className="fixed bottom-4 right-4 z-30 ml-2 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-md lg:hidden"
+            className="fixed bottom-4 right-4 z-30 ml-2 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-md lg:hidden "
             onClick={() => setOpened(!opened)}
           >
             {opened ? (
@@ -129,11 +129,11 @@ export default function WithSidebar(props) {
           </div>
           {childrenWithTOC || children}
           {(prevLink || nextLink) && (
-            <div className="mt-8 flex items-center justify-between border-t pt-8">
+            <div className="mt-8 flex items-center justify-between border-t pt-8 dark:border-dark-light">
               <div>
                 {prevLink && (
                   <Link href={prevLink.href}>
-                    <a className="flex items-center !text-gray-500 hover:!text-primary">
+                    <a className="flex items-center !text-gray-500 hover:!text-primary dark:!text-dark-text dark:hover:!text-primary-light">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6"
@@ -156,7 +156,7 @@ export default function WithSidebar(props) {
               <div>
                 {nextLink && (
                   <Link href={nextLink.href}>
-                    <a className="flex items-center !text-gray-500 hover:!text-primary">
+                    <a className="flex items-center !text-gray-500 hover:!text-primary dark:!text-dark-text dark:hover:!text-primary-light">
                       <span>{nextLink.title}</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

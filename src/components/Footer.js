@@ -5,7 +5,7 @@ export const Footer = (props) => {
 
   return (
     <div
-      className={`border-t-[0.5px] border-black border-opacity-10 py-8 ${
+      className={`border-t-[0.5px] border-black border-opacity-10 py-8 dark:border-dark-light ${
         className || ''
       }`}
       {...attrs}
@@ -13,7 +13,7 @@ export const Footer = (props) => {
       <Container>
         {/* Copy */}
         <div className="text-sm space-y-4 text-center">
-          <div className="">
+          <div>
             Code licensed under{' '}
             <a
               href="https://github.com/konstaui/konsta/blob/main/LICENSE"

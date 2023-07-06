@@ -22,6 +22,10 @@ module.exports = {
           DEFAULT: '#FF6300',
           dark: '#d65300',
         },
+        dark: '#191513',
+        'dark-text': '#DDDDDF',
+        'dark-light': '#4e3b2f',
+        'dark-code': '#2b221c',
       },
       maxWidth: {
         '8xl': '90rem',
