@@ -35,6 +35,7 @@ export const ThemeSwitch = () => {
     }
     if (initial.current) {
       initial.current = false;
+      if (setting === 'system') updateColorTheme();
     } else {
       updateColorTheme();
     }
