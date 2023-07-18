@@ -1,5 +1,35 @@
 [
   {
+    "createdAt": "2023-06-19T16:00:00.00Z",
+    "title": "Gamblechecker.com - Online Pokies Reviews For NZ Players",
+    "link": "https://gamblechecker.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/martin-woods",
+    "image": "martin-woods.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-12-21T11:00:00.000Z",
+    "title": "VPSServer",
+    "link": "https://www.vpsserver.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/vpsservercom",
+    "image": "vpsserver-logo.svg",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2022-12-21T11:00:00.000Z",
+    "title": "VPSServer",
+    "link": "https://www.vpsserver.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/vpsservercom",
+    "image": "vpsserver-logo.svg",
+    "endDate": "",
+    "active": true
+  },
+  {
     "createdAt": "2022-08-30T11:00:00.000Z",
     "title": "🥇 Best Australian Online Pokies. Trusted Online Casino Reviews 2022",
     "link": "https://betpokies.com/",
@@ -16,16 +46,6 @@
     "plan": "Sponsor",
     "ref": "https://www.patreon.com/user/creators?u=78489969",
     "image": "noneedtostudy.png",
-    "endDate": "",
-    "active": true
-  },
-  {
-    "createdAt": "2022-07-13T14:19:58.161Z",
-    "title": "Casino utan svensk licens",
-    "link": "https://www.casinoutanlicens.io/",
-    "plan": "Sponsor",
-    "ref": "https://opencollective.com/casino-utan-svensk-licens2",
-    "image": "casinoutanlicens.png",
     "endDate": "",
     "active": true
   },
@@ -48,7 +68,7 @@
     "ref": "https://opencollective.com/cccc",
     "image": "cryptocurrencycodes.png",
     "image_h": "",
-    "endDate": "2022-05-24T10:40:00.000Z",
+    "endDate": "2024-05-24T10:40:00.000Z",
     "active": true
   }
 ]
