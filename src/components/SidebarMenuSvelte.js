@@ -60,6 +60,7 @@ const links = [
       'Progressbar',
       'Radio',
       { title: 'Range Slider', href: '/svelte/range' },
+      'Searchbar',
       { title: 'Segmented Control', href: '/svelte/segmented' },
       { title: 'Sheet Modal', href: '/svelte/sheet' },
       'Stepper',
