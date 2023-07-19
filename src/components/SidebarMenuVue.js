@@ -61,6 +61,7 @@ const links = [
       'Progressbar',
       'Radio',
       { title: 'Range Slider', href: '/vue/range' },
+      'Searchbar',
       { title: 'Segmented Control', href: '/vue/segmented' },
       { title: 'Sheet Modal', href: '/vue/sheet' },
       'Stepper',
