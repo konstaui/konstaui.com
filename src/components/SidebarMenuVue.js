@@ -52,6 +52,7 @@ const links = [
       'List Input',
       'List Item',
       'Menu List',
+      'Messagebar',
       'Navbar',
       'Page',
       { title: 'Panel / Side Panels', href: '/vue/panel' },
