@@ -53,6 +53,7 @@ const links = [
       'List Item',
       'Menu List',
       'Messagebar',
+      'Messages',
       'Navbar',
       'Page',
       { title: 'Panel / Side Panels', href: '/react/panel' },
