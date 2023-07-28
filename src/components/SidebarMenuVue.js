@@ -53,6 +53,7 @@ const links = [
       'List Item',
       'Menu List',
       'Navbar',
+      'Notification',
       'Page',
       { title: 'Panel / Side Panels', href: '/vue/panel' },
       'Popover',
