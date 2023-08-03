@@ -40,6 +40,7 @@ const links = [
       'Block',
       'Breadcrumbs',
       'Button',
+      'Contacts List',
       'Card',
       'Checkbox',
       'Chip',
