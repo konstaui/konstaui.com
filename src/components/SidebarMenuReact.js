@@ -53,6 +53,8 @@ const links = [
       'List Input',
       'List Item',
       'Menu List',
+      'Messagebar',
+      'Messages',
       'Navbar',
       'Notification',
       'Page',
