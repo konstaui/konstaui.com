@@ -65,6 +65,7 @@ const links = [
       'Progressbar',
       'Radio',
       { title: 'Range Slider', href: '/react/range' },
+      'Searchbar',
       { title: 'Segmented Control', href: '/react/segmented' },
       { title: 'Sheet Modal', href: '/react/sheet' },
       'Stepper',
