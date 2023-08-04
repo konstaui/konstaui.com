@@ -43,6 +43,7 @@ const links = [
       'Card',
       'Checkbox',
       'Chip',
+      'Contacts List',
       'Dialog',
       { title: 'Floating Action Button', href: '/vue/fab' },
       'Icon',
