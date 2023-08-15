@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useState } from 'react';
 
 import { Device } from '../components/Device';
 import { Button } from '../components/Button';
@@ -33,10 +34,21 @@ function SponsorButton(props) {
 }
 
 export default function Home() {
+  const [copied, setCopied] = useState(false);
   const copyInstallCommand = (e) => {
     e.preventDefault();
     copyToClipboard('npm i konsta');
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
   };
+
+  const CheckIcon = ({className}) => (
+    <svg className={className || ''} xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
+      <path d="M35.6464466,0.646446609 L36.3535534,1.35355339 C37.134602,2.13460197 37.134602,3.40093193 36.3535534,4.18198052 L13.4142136,27.1213203 C12.633165,27.9023689 11.366835,27.9023689 10.5857864,27.1213203 L0.646446609,17.1819805 C-0.134601974,16.4009319 -0.134601974,15.134602 0.646446609,14.3535534 L1.35355339,13.6464466 C2.13460197,12.865398 3.40093193,12.865398 4.18198052,13.6464466 L10.5857864,20.0502525 C11.366835,20.8313011 12.633165,20.8313011 13.4142136,20.0502525 L32.8180195,0.646446609 C33.5990681,-0.134601974 34.865398,-0.134601974 35.6464466,0.646446609 Z" transform="translate(10 14)"/>
+    </svg>
+  );
 
   const CopyIcon = ({ className }) => (
     <svg
@@ -145,10 +157,10 @@ export default function Home() {
                 <span className="mr-4 select-none opacity-50">$</span>
                 <span>npm i konsta</span>
                 <span
-                  className="ml-4 transform-gpu cursor-pointer select-none opacity-50 duration-200 hover:text-primary hover:opacity-100"
+                  className={`ml-4 transform-gpu cursor-pointer select-none opacity-${copied ? "100" : "50"} duration-200 hover:text-primary hover:opacity-100`}
                   onClick={copyInstallCommand}
                 >
-                  <CopyIcon />
+                  {copied? <CheckIcon className={` ${copied? 'scale-1 transition-all duration-300 fill-primary' : 'scale-0'}`} /> : <CopyIcon className={`${copied? 'scale-0' : 'scale-1 transition-all duration-300'}`} />}
                 </span>
               </div>
             </div>
@@ -392,10 +404,10 @@ export default function Home() {
           </span>
           <span>npm i konsta</span>
           <span
-            className="ml-2 transform-gpu cursor-pointer select-none opacity-50 duration-200 hover:text-primary hover:opacity-100 sm:ml-4"
+            className={`ml-2 transform-gpu cursor-pointer select-none opacity-${copied ? "100" : "50"} duration-200 hover:text-primary hover:opacity-100 sm:ml-4 transition-all`}
             onClick={copyInstallCommand}
           >
-            <CopyIcon />
+            {copied? <CheckIcon /> : <CopyIcon />}
           </span>
         </div>
         <div className="mx-auto mt-8 max-w-3xl items-stretch justify-center space-y-4 text-center sm:flex sm:space-y-0 sm:space-x-4 md:space-x-8">

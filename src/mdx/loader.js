@@ -3,6 +3,7 @@ const frontMatter = require('front-matter');
 const rehypePrism = require('@mapbox/rehype-prism');
 const { createLoader } = require('simple-functional-loader');
 const withTableOfContents = require('./withTableOfContents');
+const Component = require('./Component');
 
 const layouts = {
   '/pages/react': ['@/layouts/withSidebar', 'withSidebarLayout'],
@@ -16,6 +17,7 @@ const layouts = {
   '/pages/sponsors': ['@/layouts/default', 'defaultLayout'],
   '\\\\pages\\\\sponsors': ['@/layouts/default', 'defaultLayout'],
 };
+
 
 const getLayout = (resourcePath) => {
   let layout;
@@ -83,9 +85,17 @@ const mdxLoader = (config, options) => {
           }
         }
 
+        const modifiedBody = body.replace(/```(.*?)```/gs, (match, codeBlock) => {
+          // const customComponent = (
+          //   <Component language="javascript" code={codeBlock} />
+          // );
+          const preTag = `<pre className="flex items-center justify-between"><code>${codeBlock}</code></pre>`;
+          return preTag.replace('</code></pre>', `</code>${Component}</pre>`);
+        });
+
         const result = [
           ...extra,
-          body,
+          modifiedBody,
           `export const meta = ${JSON.stringify(meta)}`,
         ].join('\n\n');
 
