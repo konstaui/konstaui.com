@@ -43,22 +43,4 @@
 .prose td {
   @apply dark:text-dark-text;
 }
-.prose pre button.copy-icon div.copy-icon {
-  opacity: 1;
-  transition: opacity 0.3ms ease-in-out;
-}
-.prose pre button.copy-icon div.check-icon {
-  opacity: 0;
-  transition: opacity 0.3ms ease-in-out;
-}
-.prose pre button.check-icon div.check-icon {
-  opacity: 1;
-  transition: opacity 0.3ms ease-in-out;
-}
-.prose pre button.check-icon div.copy-icon {
-  opacity: 0;
-  transition: opacity 0.3ms ease-in-out;
-}
-.prose pre button {
-  overflow: hidden;
-}
+

@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import '../styles/globals.scss';
 import '../styles/prose.scss';
-import { React, useEffect} from 'react';
+import { React, useEffect } from 'react';
 import copyToClipboard from '../shared/copy-to-clipboard';
 
 
@@ -17,13 +17,13 @@ function MyApp({ Component, pageProps, router }) {
     meta.title || 'Konsta UI - Mobile UI components built with Tailwind CSS';
 
   const CheckIcon = `
-    <svg class='inline-block absolute top-0 right-0 fill-[#e5e7eb]' xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
+    <svg class='inline-block absolute top-3 right-3 fill-[#e5e7eb]' xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
       <path d="M35.6464466,0.646446609 L36.3535534,1.35355339 C37.134602,2.13460197 37.134602,3.40093193 36.3535534,4.18198052 L13.4142136,27.1213203 C12.633165,27.9023689 11.366835,27.9023689 10.5857864,27.1213203 L0.646446609,17.1819805 C-0.134601974,16.4009319 -0.134601974,15.134602 0.646446609,14.3535534 L1.35355339,13.6464466 C2.13460197,12.865398 3.40093193,12.865398 4.18198052,13.6464466 L10.5857864,20.0502525 C11.366835,20.8313011 12.633165,20.8313011 13.4142136,20.0502525 L32.8180195,0.646446609 C33.5990681,-0.134601974 34.865398,-0.134601974 35.6464466,0.646446609 Z" transform="translate(10 14)"/>
     </svg>`;
 
-  const CopyIcon =`
+  const CopyIcon = `
     <svg
-      class="inline-block absolute top-0 right-0"
+      class="inline-block absolute top-3 right-3"
       xmlns="http://www.w3.org/2000/svg"
       width="18"
       height="18"
@@ -38,39 +38,41 @@ function MyApp({ Component, pageProps, router }) {
       />
     </svg>`;
 
-    const copyInstallCommand = (e) =>  {
-      e.preventDefault();
-      const button = e.target;
-      const preElement = button.closest('pre');
-      copyToClipboard(preElement.textContent);
-      console.log('click');
-    };
+  const copyInstallCommand = (e) => {
+    e.preventDefault();
+    const button = e.target;
+    const preElement = button.closest('pre');
+    copyToClipboard(preElement.textContent);
+  };
 
   useEffect(() => {
     const preElements = document.querySelectorAll('pre');
 
-    preElements.forEach(preElement=> {
-      const copyButton = preElement.querySelector('button');
+    preElements.forEach(preElement => {
+      const copyButton = preElement.querySelector('.copy-btn');
       const button = document.createElement('button');
-
       if (!copyButton) {
-        preElement.className = 'flex justify-between';
-        button.className ='relative h-5 copy-icon';
+        preElement.className = 'relative overflow-hidden';
+        button.className = ' absolute top-0 right-0 h-5 copy-btn';
         button.innerHTML = `
-          <div class="copy-icon">${CopyIcon}</div>
-          <div class="check-icon">${CheckIcon}</div>
+          <div class='copy-icon absolute top-0 right-0 transition-opacity duration-200 ease-in-out'>${CopyIcon}</div>
+          <div class='check-icon  absolute top-0 right-0 opacity-0 transition-opacity duration-200 ease-in-out'>${CheckIcon}</div>
         `;
-        button.addEventListener('click',(e) => {
+        const copyIcon = button.querySelector('.copy-icon');
+        const checkIcon = button.querySelector('.check-icon');
+        preElement.appendChild(button);
+        button.addEventListener('click', (e) => {
           copyInstallCommand(e);
-          button.classList.add('check-icon');
+          copyIcon.classList.toggle('opacity-0');
+          checkIcon.classList.toggle('opacity-0');
           setTimeout(() => {
-            button.classList.remove('check-icon');
+            copyIcon.classList.toggle('opacity-0');
+            checkIcon.classList.toggle('opacity-0');
           }, 2000);
         })
-        preElement.appendChild(button);
       }
     })
-  },[CheckIcon, CopyIcon, copyInstallCommand]);
+  });
 
   return (
     <>
@@ -108,7 +110,7 @@ function MyApp({ Component, pageProps, router }) {
         />
       </Head>
       <div className="dark:bg-dark">
-      <Component {...pageProps}/>
+        <Component {...pageProps} />
       </div>
     </>
   );
