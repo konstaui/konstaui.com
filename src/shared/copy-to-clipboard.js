@@ -1,7 +1,7 @@
 const Clipboard = {
   el: null,
   createEl() {
-    const el = document.createElement('div');
+    const el = document.createElement('textarea');
     el.style.display = 'none';
     el.style.position = 'absolute';
     el.style.visibility = 'hidden';
@@ -67,3 +67,33 @@ export default function copyToClipboard(text, callback) {
   const result = Clipboard.copy(text);
   if (result && callback) callback();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
