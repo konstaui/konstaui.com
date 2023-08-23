@@ -8,7 +8,9 @@ const copyKitchenSink = async () => {
     try {
       await exec(`rm -rf public/kitchen-sink/${lib}/dist`);
       await exec(`rm -rf public/kitchen-sink/${lib}/pages`);
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
     fs.mkdirSync(`public/kitchen-sink/${lib}/dist`);
     fs.mkdirSync(`public/kitchen-sink/${lib}/pages`);
     await exec(

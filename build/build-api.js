@@ -12,9 +12,25 @@ const buildApi = async () => {
     fs.readFileSync('./tsconfig.json.typedoc', 'utf-8')
   );
 
-  const typesFiles = fs.readdirSync(
-    path.resolve(__dirname, '../node_modules/konsta/react/types')
-  );
+  const typesFiles = fs
+    .readdirSync(path.resolve(__dirname, '../node_modules/konsta/react/types'))
+    .filter((f) => f[0] !== '.');
+
+  typesFiles.forEach((file) => {
+    const content = fs
+      .readFileSync(
+        path.resolve(`node_modules/konsta/react/types/${file}`),
+        'utf-8'
+      )
+      .replace(
+        'export interface Props extends Omit<React.HTMLAttributes<HTMLElement>, keyof Props> {}',
+        ''
+      );
+    fs.writeFileSync(
+      path.resolve(`node_modules/konsta/react/types/${file}`),
+      content
+    );
+  });
   config.typedocOptions.entryPoints = typesFiles.map(
     (f) => `node_modules/konsta/react/types/${f}`
   );
