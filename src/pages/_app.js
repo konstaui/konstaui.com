@@ -1,14 +1,10 @@
-
 import Head from 'next/head';
 import '../styles/globals.scss';
 import '../styles/prose.scss';
 import { React, useEffect } from 'react';
 import copyToClipboard from '../shared/copy-to-clipboard';
 
-
 import { useGA } from '../shared/use-ga';
-
-
 
 function MyApp({ Component, pageProps, router }) {
   useGA(router);
@@ -17,13 +13,12 @@ function MyApp({ Component, pageProps, router }) {
     meta.title || 'Konsta UI - Mobile UI components built with Tailwind CSS';
 
   const CheckIcon = `
-    <svg class='inline-block absolute top-3 right-3 fill-[#e5e7eb]' xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
+    <svg class='fill-[#e5e7eb]' xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
       <path d="M35.6464466,0.646446609 L36.3535534,1.35355339 C37.134602,2.13460197 37.134602,3.40093193 36.3535534,4.18198052 L13.4142136,27.1213203 C12.633165,27.9023689 11.366835,27.9023689 10.5857864,27.1213203 L0.646446609,17.1819805 C-0.134601974,16.4009319 -0.134601974,15.134602 0.646446609,14.3535534 L1.35355339,13.6464466 C2.13460197,12.865398 3.40093193,12.865398 4.18198052,13.6464466 L10.5857864,20.0502525 C11.366835,20.8313011 12.633165,20.8313011 13.4142136,20.0502525 L32.8180195,0.646446609 C33.5990681,-0.134601974 34.865398,-0.134601974 35.6464466,0.646446609 Z" transform="translate(10 14)"/>
     </svg>`;
 
   const CopyIcon = `
     <svg
-      class="inline-block absolute top-3 right-3"
       xmlns="http://www.w3.org/2000/svg"
       width="18"
       height="18"
@@ -48,30 +43,31 @@ function MyApp({ Component, pageProps, router }) {
   useEffect(() => {
     const preElements = document.querySelectorAll('pre');
 
-    preElements.forEach(preElement => {
+    preElements.forEach((preElement) => {
       const copyButton = preElement.querySelector('.copy-btn');
       const button = document.createElement('button');
       if (!copyButton) {
         preElement.className = 'relative overflow-hidden';
-        button.className = ' absolute top-0 right-0 h-5 copy-btn';
+        button.className =
+          'absolute top-0 right-0 copy-btn hover:opacity-70 flex items-center justify-center w-12 h-12';
         button.innerHTML = `
-          <div class='copy-icon absolute top-0 right-0 transition-opacity duration-200 ease-in-out'>${CopyIcon}</div>
-          <div class='check-icon  absolute top-0 right-0 opacity-0 transition-opacity duration-200 ease-in-out'>${CheckIcon}</div>
+          <div class='copy-icon absolute top-0 right-0 transition-transform duration-200 ease-in-out flex items-center justify-center w-12 h-12'>${CopyIcon}</div>
+          <div class='check-icon  absolute top-0 right-0 scale-0 transition-transform duration-200 ease-in-out flex items-center justify-center w-12 h-12'>${CheckIcon}</div>
         `;
         const copyIcon = button.querySelector('.copy-icon');
         const checkIcon = button.querySelector('.check-icon');
         preElement.appendChild(button);
         button.addEventListener('click', (e) => {
           copyInstallCommand(e);
-          copyIcon.classList.toggle('opacity-0');
-          checkIcon.classList.toggle('opacity-0');
+          copyIcon.classList.toggle('scale-0');
+          checkIcon.classList.toggle('scale-0');
           setTimeout(() => {
-            copyIcon.classList.toggle('opacity-0');
-            checkIcon.classList.toggle('opacity-0');
+            copyIcon.classList.toggle('scale-0');
+            checkIcon.classList.toggle('scale-0');
           }, 2000);
-        })
+        });
       }
-    })
+    });
   });
 
   return (
@@ -117,4 +113,3 @@ function MyApp({ Component, pageProps, router }) {
 }
 
 export default MyApp;
-

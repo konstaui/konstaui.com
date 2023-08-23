@@ -21,7 +21,7 @@ function SponsorButton(props) {
       rel="noopener"
       target="_blank"
       {...restProps}
-      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black/5 dark:hover:bg-white/75 hover:no-underline sm:text-lg ${className}`}
+      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black/5 hover:no-underline dark:hover:bg-white/75 sm:text-lg ${className}`}
       onClick={(e) => {
         onClick(e);
         trackOutbound(href);
@@ -37,21 +37,20 @@ export default function Home() {
     e.preventDefault();
     copyToClipboard('npm i konsta');
     const copyIcons = document.querySelectorAll('.copy-icon');
-    copyIcons.forEach(copyIcon => {
-      copyIcon.classList.toggle('opacity-0');
+    copyIcons.forEach((copyIcon) => {
+      copyIcon.classList.toggle('scale-0');
     });
     const checkIcons = document.querySelectorAll('.check-icon');
-    checkIcons.forEach(checkIcon => {
-      checkIcon.classList.toggle('opacity-0');
+    checkIcons.forEach((checkIcon) => {
+      checkIcon.classList.toggle('scale-0');
     });
     setTimeout(() => {
-      copyIcons.forEach(copyIcon => {
-        copyIcon.classList.toggle('opacity-0');
+      copyIcons.forEach((copyIcon) => {
+        copyIcon.classList.toggle('scale-0');
       });
-      checkIcons.forEach(checkIcon => {
-        checkIcon.classList.toggle('opacity-0');
-      })
-
+      checkIcons.forEach((checkIcon) => {
+        checkIcon.classList.toggle('scale-0');
+      });
     }, 2000);
   };
 
@@ -101,8 +100,9 @@ export default function Home() {
     const { className, children, ...attrs } = props;
     return (
       <h2
-        className={`mb-8 text-center text-4xl font-bold text-primary sm:text-5xl ${className || ''
-          }`}
+        className={`mb-8 text-center text-4xl font-bold text-primary sm:text-5xl ${
+          className || ''
+        }`}
         {...attrs}
       >
         {children}
@@ -114,8 +114,9 @@ export default function Home() {
     const { className, children, ...attrs } = props;
     return (
       <p
-        className={`mx-auto mb-8 max-w-screen-lg text-center text-lg font-medium sm:text-xl md:text-2xl md:leading-relaxed ${className || ''
-          }`}
+        className={`mx-auto mb-8 max-w-screen-lg text-center text-lg font-medium sm:text-xl md:text-2xl md:leading-relaxed ${
+          className || ''
+        }`}
         {...attrs}
       >
         {children}
@@ -127,13 +128,18 @@ export default function Home() {
     const { className, logos = [], children, ...attrs } = props;
     return (
       <div
-        className={`flex flex-wrap content-center items-center justify-center ${className || ''
-          }`}
+        className={`flex flex-wrap content-center items-center justify-center ${
+          className || ''
+        }`}
         {...attrs}
       >
         {logos.map((logo) => (
           <img
-            className={`mx-6 mt-6 h-24 w-24 md:mx-12 md:mt-8 md:h-32 md:w-32 ${logo.src.includes('apple') || logo.src.includes('cordova') ? 'dark:invert' : ''}`}
+            className={`mx-6 mt-6 h-24 w-24 md:mx-12 md:mt-8 md:h-32 md:w-32 ${
+              logo.src.includes('apple') || logo.src.includes('cordova')
+                ? 'dark:invert'
+                : ''
+            }`}
             key={logo.src}
             src={logo.src}
             alt={logo.alt}
@@ -159,7 +165,7 @@ export default function Home() {
             <div className="mt-12 text-4xl font-bold leading-none text-primary sm:text-6xl">
               Konsta UI
             </div>
-            <div className="my-8 text-3xl font-bold text-black sm:text-4xl sm:leading-snug dark:text-white">
+            <div className="my-8 text-3xl font-bold text-black dark:text-white sm:text-4xl sm:leading-snug">
               Pixel perfect mobile UI components built with Tailwind CSS
             </div>
             <div className="my-8 text-xl font-semibold lg:text-2xl lg:leading-normal">
@@ -170,21 +176,16 @@ export default function Home() {
               <Button href="#get-started" className="lg:px-6 xl:px-8">
                 Get started
               </Button>
-              <div className="hidden h-12 items-center rounded-xl border border-primary bg-primary bg-opacity-10 px-4 font-mono text-lg text-black sm:flex dark:text-white">
+              <div className="hidden h-12 items-center rounded-xl border border-primary bg-primary bg-opacity-10 px-4 font-mono text-lg text-black dark:text-white sm:flex">
                 <span className="mr-4 select-none opacity-50">$</span>
                 <span>npm i konsta</span>
                 <span
-                  className="ml-4 transform-gpu cursor-pointer select-none text-[rgb(0,0,0,0.5)] hover:text-primary "
+                  className="ml-4 transform-gpu cursor-pointer select-none opacity-50 hover:text-primary hover:opacity-100"
                   onClick={copyInstallCommand}
                 >
-                  <CopyIcon className="copy-icon duration-200 transition-opacity ease-in-out " /> <CheckIcon className="check-icon opacity-0 top-0 absolute text-primary duration-200 transition-opacity ease-in-out" />
+                  <CopyIcon className="copy-icon transition-transform duration-100 ease-in-out " />{' '}
+                  <CheckIcon className="check-icon absolute top-0 scale-0 text-primary transition-transform duration-100 ease-in-out" />
                 </span>
-                {/* <span
-                  className="ml-4 transform-gpu cursor-pointer select-none duration-200 check-icon opacity-0  absolute right-4 transition-opacity ease-in-out transition-visi"
-                  onClick={copyInstallCommand}
-                >
-                  <CheckIcon />
-                </span> */}
               </div>
             </div>
             <div className="my-4">
@@ -421,21 +422,22 @@ export default function Home() {
 
       <Section id="get-started">
         <SectionTitle>Get Started</SectionTitle>
-        <div className="mx-auto flex max-w-2xl items-center justify-center rounded-xl border border-primary bg-primary bg-opacity-10 py-6 px-4 font-mono text-black sm:px-8 sm:text-lg dark:text-white">
+        <div className="mx-auto flex max-w-2xl items-center justify-center rounded-xl border border-primary bg-primary bg-opacity-10 py-6 px-4 font-mono text-black dark:text-white sm:px-8 sm:text-lg">
           <span className="pointer-events-none mr-4 hidden select-none opacity-50 sm:block">
             $
           </span>
           <span>npm i konsta</span>
           <span
-            className="ml-2 transform-gpu cursor-pointer select-none  sm:ml-4 text-[rgb(0,0,0,0.5)]  hover:text-primary"
+            className="ml-2 transform-gpu cursor-pointer select-none  text-[rgb(0,0,0,0.5)] hover:text-primary  sm:ml-4"
             onClick={copyInstallCommand}
           >
-            <CopyIcon className="copy-icon duration-200 transition-opacity ease-in-out " /> <CheckIcon className="check-icon opacity-0 top-0 absolute text-primary duration-200 transition-opacity ease-in-out" />
+            <CopyIcon className="copy-icon transition-opacity duration-200 ease-in-out " />{' '}
+            <CheckIcon className="check-icon absolute top-0 text-primary opacity-0 transition-opacity duration-200 ease-in-out" />
           </span>
         </div>
         <div className="mx-auto mt-8 max-w-3xl items-stretch justify-center space-y-4 text-center sm:flex sm:space-y-0 sm:space-x-4 md:space-x-8">
           <Link href="/react">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white dark:border-dark-light">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg dark:border-dark-light dark:text-white sm:flex-col sm:hover:shadow-2xl">
               <img
                 className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/react.svg"
@@ -448,7 +450,7 @@ export default function Home() {
             </a>
           </Link>
           <Link href="/vue">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white dark:border-dark-light">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg dark:border-dark-light dark:text-white sm:flex-col sm:hover:shadow-2xl">
               <img
                 className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/vue.svg"
@@ -461,7 +463,7 @@ export default function Home() {
             </a>
           </Link>
           <Link href="/svelte">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col dark:text-white sm:hover:shadow-2xl dark:border-dark-light">
+            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg dark:border-dark-light dark:text-white sm:flex-col sm:hover:shadow-2xl">
               <img
                 className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
                 src="/images/home/home-logos/svelte.svg"
@@ -501,7 +503,7 @@ export default function Home() {
             },
           ].map((item) => (
             <a
-              className="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white dark:border-dark-light"
+              className="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg dark:border-dark-light dark:text-white sm:flex-col sm:hover:shadow-2xl"
               href={item.url}
               target="_blank"
               key={item.title}
@@ -512,7 +514,7 @@ export default function Home() {
                 alt={item.title}
               />
               <div>
-                <div className="font-semibold text-black sm:mt-4 sm:mb-2 dark:text-white">
+                <div className="font-semibold text-black dark:text-white sm:mt-4 sm:mb-2">
                   {item.title}
                 </div>
                 <div className="text-sm opacity-75">{item.description}</div>
