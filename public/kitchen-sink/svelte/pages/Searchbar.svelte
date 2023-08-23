@@ -44,14 +44,15 @@
   }
 
   let filteredItems = [];
-
+  /* eslint-disable */
   $: {
-     filteredItems = searchQuery
+    filteredItems = searchQuery
       ? items.filter((item) =>
           item.title.toLowerCase().includes(searchQuery.toLowerCase())
         )
       : items;
   }
+  /* eslint-enable */
 </script>
 
 <Page>
