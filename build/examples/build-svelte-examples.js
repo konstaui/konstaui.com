@@ -12,13 +12,14 @@ const buildExamples = async () => {
 
   pages.forEach((page) => {
     const name = page.split('.svelte')[0];
-    const url = name
+    let url = name
       .split('')
       .map((char, index) =>
         char.match(/[A-Z]/) && index !== 0 ? `-${char}` : char
       )
       .join('')
       .toLowerCase();
+    if (url === 'side-panels') url = 'panel';
     let content = fs
       .readFileSync(path.resolve(pagesPath, page), 'utf-8')
       .replace(/\$\{/g, '\\${')
