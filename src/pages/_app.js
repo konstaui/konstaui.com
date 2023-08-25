@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps, router }) {
       const copyButton = preElement.querySelector('.copy-btn');
       const button = document.createElement('button');
       if (!copyButton) {
-        preElement.className = 'relative overflow-hidden';
+        preElement.className = 'relative';
         button.className =
           'absolute top-0 right-0 copy-btn hover:opacity-70 flex items-center justify-center w-12 h-12';
         button.innerHTML = `
