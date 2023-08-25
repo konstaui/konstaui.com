@@ -49,14 +49,14 @@ function MyApp({ Component, pageProps, router }) {
       if (!copyButton) {
         preElement.className = 'relative';
         button.className =
-          'absolute top-0 right-0 copy-btn hover:opacity-70 flex items-center justify-center w-12 h-12';
+          'sticky -top-3 float-right -mr-4 -right-4 -mt-3 -mb-12 copy-btn hover:opacity-70 flex items-center justify-center w-12 h-12';
         button.innerHTML = `
           <div class='copy-icon absolute top-0 right-0 transition-transform duration-200 ease-in-out flex items-center justify-center w-12 h-12'>${CopyIcon}</div>
           <div class='check-icon  absolute top-0 right-0 scale-0 transition-transform duration-200 ease-in-out flex items-center justify-center w-12 h-12'>${CheckIcon}</div>
         `;
         const copyIcon = button.querySelector('.copy-icon');
         const checkIcon = button.querySelector('.check-icon');
-        preElement.appendChild(button);
+        preElement.insertBefore(button, preElement.firstChild);
         button.addEventListener('click', (e) => {
           copyInstallCommand(e);
           copyIcon.classList.toggle('scale-0');
