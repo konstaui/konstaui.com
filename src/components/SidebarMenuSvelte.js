@@ -44,6 +44,7 @@ const links = [
       'Chip',
       'Contacts List',
       'Dialog',
+      'Data Table',
       { title: 'Floating Action Button', href: '/svelte/fab' },
       'Icon',
       'Link',

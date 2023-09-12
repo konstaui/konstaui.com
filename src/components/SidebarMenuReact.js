@@ -45,6 +45,7 @@ const links = [
       'Checkbox',
       'Chip',
       'Dialog',
+      'Data Table',
       { title: 'Floating Action Button', href: '/react/fab' },
       'Icon',
       'Link',
