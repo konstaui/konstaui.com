@@ -44,8 +44,8 @@ const links = [
       'Card',
       'Checkbox',
       'Chip',
-      'Dialog',
       'Data Table',
+      'Dialog',
       { title: 'Floating Action Button', href: '/react/fab' },
       'Icon',
       'Link',
@@ -79,5 +79,5 @@ const links = [
 ];
 
 export const SidebarMenuReact = () => (
-  <SidebarMenu links={links} root="react"/>
+  <SidebarMenu links={links} root="react" />
 );
