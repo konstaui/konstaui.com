@@ -4,6 +4,7 @@ import { Container } from './Container';
 import { ThemeSwitch } from './ThemeSwitch';
 import { GithubStats } from './GithubStats';
 import { Logo } from './Logo';
+import TogglesRibbon from './TogglesRibbon';
 
 const docsLinks = [
   { title: 'Konsta UI React', href: '/react' },
@@ -95,57 +96,60 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b-[0.5px] border-black border-opacity-10 bg-white bg-opacity-75 backdrop-blur-lg backdrop-saturate-200 dark:border-dark-light dark:bg-dark dark:bg-opacity-75 dark:backdrop-blur-lg dark:backdrop-saturate-200">
-      <Container className="flex h-16 items-center justify-between ">
-        <div className="flex items-center space-x-6 text-black dark:text-white">
-          <Link href="/">
-            <a>
-              <Logo className="h-12 w-12" />
-            </a>
-          </Link>
-          <Dropdown title="Documentation" links={docsLinks} />
-          <Dropdown title="Resources" links={resourcesLinks} />
-        </div>
-        <div className="group relative ml-8 mr-auto dark:bg-dark sm:hidden ">
-          <button
-            className="flex items-center text-black outline-none dark:text-white "
-            type="button"
-            ref={buttonElRef}
-            onClick={showMenu}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="pointer-events-none h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+    <>
+      <TogglesRibbon />
+      <header className="sticky top-0 z-50 border-b-[0.5px] border-black border-opacity-10 bg-white bg-opacity-75 backdrop-blur-lg backdrop-saturate-200 dark:border-dark-light dark:bg-dark dark:bg-opacity-75 dark:backdrop-blur-lg dark:backdrop-saturate-200">
+        <Container className="flex h-16 items-center justify-between ">
+          <div className="flex items-center space-x-6 text-black dark:text-white">
+            <Link href="/">
+              <a>
+                <Logo className="h-12 w-12" />
+              </a>
+            </Link>
+            <Dropdown title="Documentation" links={docsLinks} />
+            <Dropdown title="Resources" links={resourcesLinks} />
+          </div>
+          <div className="group relative ml-8 mr-auto dark:bg-dark sm:hidden ">
+            <button
+              className="flex items-center text-black outline-none dark:text-white "
+              type="button"
+              ref={buttonElRef}
+              onClick={showMenu}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="pointer-events-none h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+            <nav className="absolute left-0 top-full z-10 hidden w-48 divide-y divide-black divide-opacity-10 overflow-hidden rounded-lg border border-black border-opacity-10 bg-white shadow-lg group-focus-within:block dark:bg-dark-light">
+              <MobileNavList
+                title="Documentation"
+                links={docsLinks}
+                hideMenu={hideMenu}
               />
-            </svg>
-          </button>
-          <nav className="absolute left-0 top-full z-10 hidden w-48 divide-y divide-black divide-opacity-10 overflow-hidden rounded-lg border border-black border-opacity-10 bg-white shadow-lg group-focus-within:block dark:bg-dark-light">
-            <MobileNavList
-              title="Documentation"
-              links={docsLinks}
-              hideMenu={hideMenu}
-            />
-            <MobileNavList
-              title="Resources"
-              links={resourcesLinks}
-              hideMenu={hideMenu}
-            />
-          </nav>
-        </div>
-        <div className="flex items-center space-x-4">
-          <GithubStats showVersion inNavbar />
-          <ThemeSwitch />
-        </div>
-      </Container>
-    </header>
+              <MobileNavList
+                title="Resources"
+                links={resourcesLinks}
+                hideMenu={hideMenu}
+              />
+            </nav>
+          </div>
+          <div className="flex items-center space-x-4">
+            <GithubStats showVersion inNavbar />
+            <ThemeSwitch />
+          </div>
+        </Container>
+      </header>
+    </>
   );
 };

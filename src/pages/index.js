@@ -480,8 +480,14 @@ export default function Home() {
 
       <Section id="get-started">
         <SectionTitle>More Of Our Projects</SectionTitle>
-        <div className="gr mx-auto max-w-3xl items-stretch space-y-4 sm:flex sm:space-y-0 sm:space-x-8 sm:text-center">
+        <div className="mx-auto flex max-w-5xl flex-col items-stretch gap-4 text-left sm:grid sm:grid-cols-2 sm:gap-8 sm:text-center md:grid-cols-4">
           {[
+            {
+              url: 'https://t0ggles.com',
+              title: 't0ggles',
+              description: 'Your ultimate multiple projects management tool',
+              logo: 't0ggles.svg',
+            },
             {
               url: 'https://framework7.io',
               title: 'Framework7',
