@@ -26,6 +26,7 @@ export const ExamplePreview = (props) => {
   if (react) url = `/kitchen-sink/react/dist/index.html${url}`;
   if (vue) url = `/kitchen-sink/vue/dist/index.html${url}`;
   if (svelte) url = `/kitchen-sink/svelte/dist/index.html${url}`;
+  console.log(theme);
   useEffect(() => {
     if (
       iframeEl.current &&
@@ -59,7 +60,7 @@ export const ExamplePreview = (props) => {
         <div className="flex">
           <div>
             <a
-              href={iframeUrl.current}
+              href={getIframeUrl()}
               target="_blank"
               className="flex h-8 w-8 items-center justify-center rounded border border-white border-opacity-25 bg-white bg-opacity-10 !text-white duration-300 hover:bg-opacity-20"
             >
