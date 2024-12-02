@@ -4,7 +4,7 @@ import { Container } from './Container';
 import { ThemeSwitch } from './ThemeSwitch';
 import { GithubStats } from './GithubStats';
 import { Logo } from './Logo';
-import BlackFridayRibbon from './BlackFridayRibbon';
+import TogglesRibbon from './TogglesRibbon';
 
 const docsLinks = [
   { title: 'Konsta UI React', href: '/react' },
@@ -97,7 +97,7 @@ export const Header = () => {
 
   return (
     <>
-      <BlackFridayRibbon />
+      <TogglesRibbon />
       <header className="sticky top-0 z-50 border-b-[0.5px] border-black border-opacity-10 bg-white bg-opacity-75 backdrop-blur-lg backdrop-saturate-200 dark:border-dark-light dark:bg-dark dark:bg-opacity-75 dark:backdrop-blur-lg dark:backdrop-saturate-200">
         <Container className="flex h-16 items-center justify-between ">
           <div className="flex items-center space-x-6 text-black dark:text-white">
