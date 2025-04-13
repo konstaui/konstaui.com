@@ -483,11 +483,33 @@ export default function Home() {
         <div className="mx-auto flex max-w-5xl flex-col items-stretch gap-4 text-left sm:grid sm:grid-cols-2 sm:gap-8 sm:text-center md:grid-cols-4">
           {[
             {
+              url: 'https://paneflow.com',
+              title: 'Paneflow',
+              description:
+                'Build Stunning Slideshows Visually. No coding required.',
+              logo: 'paneflow.svg',
+            },
+            {
               url: 'https://t0ggles.com',
               title: 't0ggles',
               description: 'Your ultimate multiple projects management tool',
               logo: 't0ggles.svg',
             },
+            {
+              url: 'https://studio.swiperjs.com',
+              title: 'Studio',
+              description:
+                'Create beautiful and responsive Swipers without writing any code',
+              logo: 'swiper-studio.svg',
+            },
+            {
+              url: 'https://uiinitiative.com',
+              title: 'UI Initiative',
+              description:
+                'High-quality premium templates & plugins for Swiper and Framework7',
+              logo: 'uiinitiative.svg',
+            },
+
             {
               url: 'https://framework7.io',
               title: 'Framework7',
