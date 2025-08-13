@@ -8,7 +8,6 @@ const links = [
       'Kitchen Sink',
       'Installation',
       'Usage',
-      { title: 'Usage with Framework7', href: '/vue/framework7' },
       { title: 'Usage with Ionic', href: '/vue/ionic' },
       { title: 'Usage with Nuxt', href: '/vue/nuxt' },
     ],
@@ -72,6 +71,7 @@ const links = [
       'Toast',
       'Toggle',
       'Toolbar',
+      { title: 'Toolbar Pane', href: '/vue/toolbar-pane' },
     ],
   },
 ];

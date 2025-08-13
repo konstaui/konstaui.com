@@ -5,9 +5,9 @@ section: 'svelte'
 
 # Konsta UI & SvelteKit
 
-## Contents
-
 Let's see how to use Konsta UI Svelte components with [SvelteKit](https://kit.svelte.dev).
+
+## Contents
 
 ## Create SvelteKit Project
 
@@ -25,24 +25,11 @@ Now in created SvelteKit project, we need to install Konsta UI:
 npm i konsta
 ```
 
-And in your `tailwind.config.cjs` file we should extend config with Konsta UI's config:
+And in your `app.css` file we should import Konsta UI's theme file:
 
-```js
-// import konstaConfig config
-const konstaConfig = require('konsta/config');
-
-// wrap config with konstaConfig config
-module.exports = konstaConfig({
-  content: ['./src/**/*.{html,js,svelte,ts}'],
-  darkMode: 'media', // or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-});
+```css
+@import 'tailwindcss';
+@import 'konsta/svelte/theme.css';
 ```
 
 ## App Component

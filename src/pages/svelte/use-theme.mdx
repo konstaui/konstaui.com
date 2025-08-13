@@ -25,11 +25,7 @@ Konsta UI comes with handy `useTheme` hook to detect currently active theme (`io
 <script>
   import { useTheme, Page } from 'konsta/svelte';
 
-  let theme;
-  theme = useTheme((newValue) => {
-    // to keep it reactive, update value on theme update in parent components
-    theme = newValue;
-  });
+  const theme = $derived(useTheme());
 
   console.log(theme); // -> 'ios'
 </script>

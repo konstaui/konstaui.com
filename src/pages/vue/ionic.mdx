@@ -5,9 +5,9 @@ section: 'vue'
 
 # Konsta UI & Ionic
 
-## Contents
-
 Let's see how to use Konsta UI Vue components with [Ionic](https://ionicframework.com/vue) Vue.
+
+## Contents
 
 ## Create Ionic Project
 
@@ -19,16 +19,6 @@ If Ionic Vue project was generated with Ionic CLI, it actually creates a [Vue CL
 
 So to install Tailwind CSS, we can follow official [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation#installing-tailwind-css-as-a-post-css-plugin)
 
-## Tailwind CSS Styles
-
-Create a `src/App.css` file with the following content to include Tailwind CSS:
-
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
 ## Install Konsta UI
 
 Now, we can install Konsta UI:
@@ -37,14 +27,14 @@ Now, we can install Konsta UI:
 npm i konsta
 ```
 
-And in your `tailwind.config.js` file we should extend config with Konsta UI's config:
+## Tailwind CSS Styles
 
-```js
-const konstaConfig = require('konsta/config');
+Create a `src/App.css` file with the following content to include Tailwind CSS:
 
-module.exports = konstaConfig({
-  content: ['./src/**/*.vue', './src/*.vue'],
-});
+```css
+@import 'tailwindcss';
+/* import Konsta UI theme */
+@import 'konsta/react/theme.css';
 ```
 
 ## KonstaProvider

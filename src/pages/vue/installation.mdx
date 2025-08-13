@@ -7,9 +7,9 @@ section: 'vue'
 
 ## Contents
 
-We assume you already have a configured project with [Vue and Tailwind CSS](https://tailwindcss.com/docs/installation) .
-
 ## Install Konsta UI
+
+We assume you already have a configured project with [Vue and Tailwind CSS](https://tailwindcss.com/docs/installation) .
 
 At first, we need to install the Konsta UI library:
 
@@ -17,23 +17,15 @@ At first, we need to install the Konsta UI library:
 npm i konsta
 ```
 
-## Add Config
+## Add Konsta UI Theme
 
-Then, we need to extend our Tailwind CSS config with Konsta UI config.
+Then, we need to import Konsta UI theme file in your main CSS file:
 
-In your `tailwind.config.js` file:
-
-```js
-const konstaConfig = require('konsta/config');
-
-// wrap your config with konstaConfig
-module.exports = konstaConfig({
-  // rest of your usual Tailwind CSS config here
-  ...
-});
+```css
+@import 'tailwindcss';
+/* import Konsta UI theme */
+@import 'konsta/vue/theme.css';
 ```
-
-`konstaConfig` will extend default (or your custom one) Tailwind CSS config with some extra variants and helper utilities required for Konsta UI.
 
 ## Roboto Font
 

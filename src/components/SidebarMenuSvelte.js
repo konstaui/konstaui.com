@@ -8,7 +8,6 @@ const links = [
       'Kitchen Sink',
       'Installation',
       'Usage',
-      { title: 'Usage with Framework7', href: '/svelte/framework7' },
       { title: 'Usage with Svelte Kit', href: '/svelte/svelte-kit' },
     ],
   },
@@ -71,6 +70,7 @@ const links = [
       'Toast',
       'Toggle',
       'Toolbar',
+      { title: 'Toolbar Pane', href: '/svelte/toolbar-pane' },
     ],
   },
 ];

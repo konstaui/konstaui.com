@@ -5,9 +5,9 @@ section: 'react'
 
 # Konsta UI & Next.js
 
-## Contents
-
 Let's see how to use Konsta UI React components with [Next.js](https://nextjs.org).
+
+## Contents
 
 ## Create Next.js Project
 
@@ -25,27 +25,12 @@ Now in created Next.js project, we need to install Konsta UI:
 npm i konsta
 ```
 
-And in your `tailwind.config.js` file we should extend config with Konsta UI's config:
+And in your main CSS file we should import Konsta UI's theme file:
 
-```js
-// import konstaConfig config
-const konstaConfig = require('konsta/config');
-
-// wrap config with konstaConfig config
-module.exports = konstaConfig({
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-  ],
-  darkMode: 'media', // or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-});
+```css
+@import 'tailwindcss';
+/* import Konsta UI theme */
+@import 'konsta/react/theme.css';
 ```
 
 ## App Component

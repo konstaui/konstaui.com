@@ -8,7 +8,13 @@ body {
 }
 
 .important-note {
-  @apply my-3 border-l-4 border-red-500 bg-red-100 px-5 py-4 dark:bg-red-600/10;
+  @apply my-3 border-l-4 border-red-500 bg-red-100 p-8 dark:bg-red-600/10;
+  p:first-child {
+    @apply mt-0;
+  }
+  p:last-child {
+    @apply mb-0;
+  }
 }
 
 .after\:hash:after {

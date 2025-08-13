@@ -5,16 +5,9 @@ section: 'vue'
 
 # Konsta UI & Nuxt
 
-## Contents
-
 Let's see how to use Konsta UI Vue components with [Nuxt](https://v3.nuxtjs.org).
 
-You can start from forking this [Konsta Nuxt 3 Starter](https://github.com/konstaui/konsta-nuxt3-starter) repository or follow the guide below.
-
-<div class="important-note">
-  Because Konsta UI comes with components only for Vue.js v3, it compatible only
-  with Nuxt 3 as well.
-</div>
+## Contents
 
 ## Create Nuxt Project
 
@@ -22,51 +15,8 @@ First, [create a Nuxt project](https://v3.nuxtjs.org/getting-started/installatio
 
 ## Install Tailwind CSS
 
-We can follow official [Tailwind CSS installation Guide](https://tailwindcss.com/docs/installation/using-postcss)
-
-Install all required dependencies
-
-```
-npm install -D tailwindcss postcss@latest autoprefixer@latest sass
-npx tailwindcss init
-```
-
-Create `postcss.config.js` file with the following content:
-
-```js
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};
-```
-
-Enable Post CSS and `konsta` transpilation in your `nuxt.config.js`:
-
-```js
-import { defineNuxtConfig } from 'nuxt';
-
-export default defineNuxtConfig({
-  build: {
-    transpile: ['konsta'],
-    postcss: {
-      postcssOptions: require('./postcss.config.js'),
-    },
-  },
-});
-```
-
-## Tailwind CSS Styles
-
-Create a `assets/globals.css` file with the following content to include Tailwind CSS:
-
-```
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
+We can follow official [Install Tailwind CSS with Nuxt
+](https://tailwindcss.com/docs/installation/framework-guides/nuxt)
 
 ## Install Konsta UI
 
@@ -76,24 +26,12 @@ Now in created Nuxt project, we need to install Konsta UI:
 npm i konsta
 ```
 
-And in your `tailwind.config.js` file we should extend config with Konsta UI's config:
+And in your main CSS file we should import Konsta UI's theme file:
 
-```js
-// import konstaConfig config
-const konstaConfig = require('konsta/config');
-
-// wrap config with konstaConfig config
-module.exports = konstaConfig({
-  content: ['./components/*.{js,ts,jsx,vue}', './pages/*.{js,ts,jsx,vue}'],
-  darkMode: 'media', // or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-});
+```css
+@import 'tailwindcss';
+/* import Konsta UI theme */
+@import 'konsta/vue/theme.css';
 ```
 
 ## App Component

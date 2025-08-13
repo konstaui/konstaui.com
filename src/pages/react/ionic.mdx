@@ -5,9 +5,9 @@ section: 'react'
 
 # Konsta UI & Ionic
 
-## Contents
-
 Let's see how to use Konsta UI React components with [Ionic](https://ionicframework.com/react) React.
+
+## Contents
 
 ## Create Ionic Project
 
@@ -19,16 +19,6 @@ If Ionic React project was generated with Ionic CLI, it actually creates a [Crea
 
 So, to install Tailwind CSS, we can follow official [Tailwind CSS with Create React App Guide](https://tailwindcss.com/docs/guides/create-react-app)
 
-## Tailwind CSS Styles
-
-Create a `src/App.css` file with the following content to include Tailwind CSS:
-
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
 ## Install Konsta UI
 
 Now, we can install Konsta UI:
@@ -37,14 +27,14 @@ Now, we can install Konsta UI:
 npm i konsta
 ```
 
-And in your `tailwind.config.js` file we should extend config with Konsta UI's config:
+## Tailwind CSS Styles
 
-```js
-const konstaConfig = require('konsta/config');
+Create a `src/App.css` file with the following content to include Tailwind CSS:
 
-module.exports = konstaConfig({
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
-});
+```css
+@import 'tailwindcss';
+/* import Konsta UI theme */
+@import 'konsta/react/theme.css';
 ```
 
 ## KonstaProvider
@@ -158,48 +148,3 @@ As a result we should see the following page:
   src="/images/docs/k-ionic.png"
   alt="konstaConfig-ionic"
 />
-
-## Color Theme
-
-Ionic and Konsta UI use different sources for main theme color. While Ionic's theme color is configured via CSS custom properties, Konsta UI theme should be set in `tailwind.config.js`.
-
-| Color         | Ionic CSS Var               | Konsta UI Prop  |
-| ------------- | --------------------------- | --------------- |
-| primary       | `--ion-color-primary`       | `primary`       |
-| primary dark  | `--ion-color-primary-shade` | `primary-dark`  |
-| primary light | `--ion-color-primary-tint`  | `primary-light` |
-
-Let's say our theme color is <span className="inline-block h-[1em] w-[1em] bg-[#ff6b22] align-middle" /> `#ff6b22`, we need to set the following:
-
-In `App.css` (to configure Ionic theme color):
-
-```css
-:root {
-  --ion-color-primary: #ff6b22;
-  --ion-color-primary-rgb: 255, 107, 34;
-  --ion-color-primary-shade: #f85200;
-  --ion-color-primary-tint: #ff864b;
-}
-```
-
-And in `tailwind.config.js` (to configure Konsta UI theme color):
-
-```js
-const konstaConfig = require('konsta/config');
-
-module.exports = konstaConfig({
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  // extend primary color
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          light: '#ff864b',
-          DEFAULT: '#ff6b22',
-          dark: '#f85200',
-        },
-      },
-    },
-  },
-});
-```
