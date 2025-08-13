@@ -152,6 +152,15 @@ export default function Home() {
     <>
       <Header />
       {/* Content */}
+      <div className="mx-auto p-8">
+        <div className="border-primary text-primary mx-auto w-fit max-w-lg rounded-3xl border p-4 text-center text-lg font-bold text-balance">
+          🎉🎉🎉
+          <br />
+          All new Konsta UI v5 is here with updated{' '}
+          <br className="hidden sm:block" />
+          iOS 26 and Material Design 2025 look and feel!
+        </div>
+      </div>
       <Container className="mt-4 mb-16 flex flex-col items-center text-center lg:flex-row lg:text-left">
         <div className="max-w-2xl">
           {/* Logo */}
