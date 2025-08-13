@@ -43,45 +43,61 @@
           <div class="w-6 h-6 rounded-full bg-primary home-color-picker" />
         </template>
       </k-list-item>
+
+      <template v-if="theme === 'material'">
+        <k-list-item title="Vibrant Colors" label>
+          <template #after>
+            <k-toggle
+              component="div"
+              :checked="vibrant"
+              @change="() => setVibrant(!vibrant)"
+            />
+          </template>
+        </k-list-item>
+        <k-list-item title="Monochrome" label>
+          <template #after>
+            <k-toggle
+              component="div"
+              :checked="monochrome"
+              @change="() => setMonochrome(!monochrome)"
+            />
+          </template>
+        </k-list-item>
+      </template>
     </k-list>
     <k-popover
       :opened="colorPickerOpened"
-      size="w-36"
+      class="w-auto"
       target=".home-color-picker"
       @backdropclick="() => (colorPickerOpened = false)"
     >
-      <div class="grid grid-cols-3 py-2">
+      <div class="grid grid-cols-3 py-2 ios:px-2">
         <k-link
-          touch-ripple
-          class="overflow-hidden h-12"
+          class="overflow-hidden h-12 w-12"
           @click="() => setColorTheme('')"
         >
           <span class="bg-brand-primary w-6 h-6 rounded-full" />
         </k-link>
         <k-link
-          touch-ripple
-          class="overflow-hidden h-12"
+          class="overflow-hidden h-12 w-12"
           @click="() => setColorTheme('k-color-brand-red')"
         >
           <span class="bg-brand-red w-6 h-6 rounded-full" />
         </k-link>
         <k-link
-          touch-ripple
-          class="overflow-hidden h-12"
+          class="overflow-hidden h-12 w-12"
           @click="() => setColorTheme('k-color-brand-green')"
         >
           <span class="bg-brand-green w-6 h-6 rounded-full" />
         </k-link>
         <k-link
-          touch-ripple
-          class="overflow-hidden h-12"
+          class="overflow-hidden h-12 w-12"
           @click="() => setColorTheme('k-color-brand-yellow')"
         >
           <span class="bg-brand-yellow w-6 h-6 rounded-full" />
         </k-link>
         <k-link
-          touch-ripple
-          class="overflow-hidden h-12"
+          class="overflow-hidden h-12 w-12"
           @click="() => setColorTheme('k-color-brand-purple')"
         >
           <span class="bg-brand-purple w-6 h-6 rounded-full" />
@@ -158,6 +174,18 @@
       const setTheme = (t) => {
         AppContext.value.setTheme(t);
       };
+      const vibrant = computed(() => {
+        return AppContext.value.vibrant;
+      });
+      const setVibrant = (v) => {
+        AppContext.value.setVibrant(v);
+      };
+      const monochrome = computed(() => {
+        return AppContext.value.monochrome;
+      });
+      const setMonochrome = (m) => {
+        AppContext.value.setMonochrome(m);
+      };
       const colorTheme = computed(() => {
         return AppContext.value.colorTheme;
       });
@@ -173,6 +201,10 @@
         setColorTheme,
         theme,
         setTheme,
+        vibrant,
+        setVibrant,
+        monochrome,
+        setMonochrome,
         routes: routes.filter((r) => r.path !== '/'),
       };
     },

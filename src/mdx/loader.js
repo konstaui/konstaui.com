@@ -1,8 +1,14 @@
-const path = require('path');
-const frontMatter = require('front-matter');
-const rehypePrism = require('@mapbox/rehype-prism');
-const { createLoader } = require('simple-functional-loader');
-const withTableOfContents = require('./withTableOfContents');
+import path from 'path';
+import frontMatter from 'front-matter';
+import rehypePrism from '@mapbox/rehype-prism';
+import { createLoader } from 'simple-functional-loader';
+import { getDirname } from '../../build/get-dirname.js';
+import remarkGfm from 'remark-gfm';
+import remarkToc from 'remark-toc';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+
+const __dirname = getDirname(import.meta.url);
 
 const layouts = {
   '/pages/react': ['@/layouts/withSidebar', 'withSidebarLayout'],
@@ -43,17 +49,22 @@ const mdxLoader = (config, options) => {
           );
           return `export default ${meta}`;
         }
-        // prettier-ignore
-        return (
-            `${source.replace(/export const/gs, 'const')
-            }\nMDXContent.layoutProps = layoutProps\n`
-          );
+        let result = `${source.replace(
+          /export const/gs,
+          'const'
+        )}\nMDXContent.layoutProps = {meta}\n`;
+
+        result = result.replace(
+          `return _jsxDEV(MDXLayout, {`,
+          `return _jsxDEV(MDXLayout, {meta,`
+        );
+        return result;
       }),
       {
         loader: '@mdx-js/loader',
         options: {
-          remarkPlugins: [withTableOfContents],
-          rehypePlugins: [rehypePrism],
+          remarkPlugins: [remarkToc, remarkGfm],
+          rehypePlugins: [rehypePrism, rehypeSlug, rehypeAutolinkHeadings],
         },
       },
       createLoader(function (source) {
@@ -95,4 +106,4 @@ const mdxLoader = (config, options) => {
   });
 };
 
-module.exports = mdxLoader;
+export default mdxLoader;

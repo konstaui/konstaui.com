@@ -34,7 +34,7 @@ export default function WithSidebar(props) {
       childrenWithTOC.splice(
         1,
         0,
-        <TableOfContents key="toc" tableOfContents={tableOfContents}/>
+        <TableOfContents key="toc" tableOfContents={tableOfContents} />
       );
     }
   }
@@ -70,29 +70,29 @@ export default function WithSidebar(props) {
   return (
     <>
       <Header />
-      <Container className="flex" >
+      <Container className="flex">
         <div
           className={`${
             opened ? '' : 'hidden'
-          } fixed left-0 top-16 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:bg-transparent lg:shadow-none xl:mr-10 dark:bg-dark`}
+          } dark:bg-dark fixed top-16 left-0 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:bg-transparent lg:shadow-none xl:mr-10`}
         >
           <div
-            className="sticky top-16 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain py-10 px-4 lg:px-0"
+            className="sticky top-16 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain px-4 py-10 lg:px-0"
             ref={sidebarEl}
           >
             {Sidebar && <Sidebar />}
           </div>
         </div>
-        <div className="prose min-w-0 max-w-none flex-auto pt-10 pb-24 lg:pb-16 dark:prose-invert">
+        <div className="prose dark:prose-invert max-w-none min-w-0 flex-auto pt-10 pb-24 lg:pb-16">
           {opened && (
             <div
-              className="fixed left-0 top-0 z-10 h-full w-full bg-black bg-opacity-25 "
+              className="fixed top-0 left-0 z-10 h-full w-full bg-black/25"
               onClick={() => setOpened(false)}
             />
           )}
 
           <div
-            className="fixed bottom-4 right-4 z-30 ml-2 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-md lg:hidden "
+            className="bg-primary fixed right-4 bottom-4 z-30 ml-2 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full text-white shadow-md lg:hidden"
             onClick={() => setOpened(!opened)}
           >
             {opened ? (
@@ -129,50 +129,52 @@ export default function WithSidebar(props) {
           </div>
           {childrenWithTOC || children}
           {(prevLink || nextLink) && (
-            <div className="mt-8 flex items-center justify-between border-t pt-8 dark:border-dark-light">
+            <div className="dark:border-dark-light mt-8 flex items-center justify-between border-t pt-8">
               <div>
                 {prevLink && (
-                  <Link href={prevLink.href}>
-                    <a className="flex items-center !text-gray-500 hover:!text-primary dark:!text-dark-text dark:hover:!text-primary-light">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 19l-7-7 7-7"
-                        />
-                      </svg>
-                      <span>{prevLink.title}</span>
-                    </a>
+                  <Link
+                    href={prevLink.href}
+                    className="hover:!text-primary dark:!text-dark-text dark:hover:!text-primary-light flex items-center !text-gray-500"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                    <span>{prevLink.title}</span>
                   </Link>
                 )}
               </div>
               <div>
                 {nextLink && (
-                  <Link href={nextLink.href}>
-                    <a className="flex items-center !text-gray-500 hover:!text-primary dark:!text-dark-text dark:hover:!text-primary-light">
-                      <span>{nextLink.title}</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </a>
+                  <Link
+                    href={nextLink.href}
+                    className="hover:!text-primary dark:!text-dark-text dark:hover:!text-primary-light flex items-center !text-gray-500"
+                  >
+                    <span>{nextLink.title}</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
                   </Link>
                 )}
               </div>

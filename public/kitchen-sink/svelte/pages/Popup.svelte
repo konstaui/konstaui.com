@@ -1,4 +1,5 @@
 <script>
+  import CloseIcon from '../components/CloseIcon.svelte';
   import {
     Page,
     Navbar,
@@ -15,32 +16,34 @@
 
 <Page>
   <Navbar title="Popup">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
+    {/snippet}
   </Navbar>
 
-  <Block strong class="space-y-4">
+  <Block strong inset class="space-y-4">
     <p>
       Popup is a modal window with any HTML content that pops up over App's main
       content. Popup as all other overlays is part of so called "Temporary
       Views".
     </p>
     <p>
-      <Button onClick={() => (popupOpened = true)}>Open Popup</Button>
+      <Button rounded onclick={() => (popupOpened = true)}>Open Popup</Button>
     </p>
   </Block>
 
   <Popup opened={popupOpened} onBackdropClick={() => (popupOpened = false)}>
     <Page>
       <Navbar title="Popup">
-        <Link slot="right" navbar onClick={() => (popupOpened = false)}>
-          Close
-        </Link>
+        {#snippet right()}
+          <Link iconOnly onclick={() => (popupOpened = false)}
+            ><CloseIcon /></Link
+          >
+        {/snippet}
       </Navbar>
-      <Block class="space-y-4">
+      <Block strong inset class="space-y-4">
         <p>
           Here comes popup. You can put here anything, even independent view
           with its own navigation. Also not, that by default popup looks a bit

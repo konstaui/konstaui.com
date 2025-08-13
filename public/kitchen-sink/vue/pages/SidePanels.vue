@@ -6,24 +6,28 @@
       </template>
     </k-navbar>
 
-    <k-block strong-ios outline-ios class="space-y-4">
+    <k-block strong inset class="space-y-4">
       <p>
         Konsta UI comes with 2 panels (on left and on right), both are optional.
         You can put absolutely anything inside: data lists, forms, custom
         content, etc.
       </p>
     </k-block>
-    <k-block strong-ios outline-ios class="flex space-x-4 rtl:space-x-reverse">
-      <k-button @click="() => (leftPanelOpened = true)">Left Panel</k-button>
-      <k-button @click="() => (rightPanelOpened = true)">Right Panel</k-button>
+    <k-block strong inset class="flex space-x-4 rtl:space-x-reverse">
+      <k-button rounded @click="() => (leftPanelOpened = true)"
+        >Left Panel</k-button
+      >
+      <k-button rounded @click="() => (rightPanelOpened = true)"
+        >Right Panel</k-button
+      >
     </k-block>
 
     <k-block-title>Floating Panels</k-block-title>
-    <k-block strong-ios outline-ios class="flex space-x-4 rtl:space-x-reverse">
-      <k-button @click="() => (leftFloatingPanelOpened = true)"
+    <k-block strong inset class="flex space-x-4 rtl:space-x-reverse">
+      <k-button rounded @click="() => (leftFloatingPanelOpened = true)"
         >Left Panel</k-button
       >
-      <k-button @click="() => (rightFloatingPanelOpened = true)"
+      <k-button rounded @click="() => (rightFloatingPanelOpened = true)"
         >Right Panel</k-button
       >
     </k-block>
@@ -36,8 +40,8 @@
       <k-page>
         <k-navbar title="Left Panel">
           <template #right>
-            <k-link navbar @click="() => (leftPanelOpened = false)">
-              Close
+            <k-link icon-only @click="() => (leftPanelOpened = false)">
+              <close-icon />
             </k-link>
           </template>
         </k-navbar>
@@ -67,8 +71,8 @@
       <k-page>
         <k-navbar title="Right Panel">
           <template #right>
-            <k-link navbar @click="() => (rightPanelOpened = false)">
-              Close
+            <k-link icon-only @click="() => (rightPanelOpened = false)">
+              <close-icon />
             </k-link>
           </template>
         </k-navbar>
@@ -95,11 +99,14 @@
       :opened="leftFloatingPanelOpened"
       @backdropclick="() => (leftFloatingPanelOpened = false)"
     >
-      <k-page class="no-safe-areas-top no-safe-areas-bottom">
+      <k-page
+        :colors="{ bgIos: 'bg-transparent' }"
+        class="no-safe-areas-top no-safe-areas-bottom"
+      >
         <k-navbar title="Left Panel">
           <template #right>
-            <k-link navbar @click="() => (leftFloatingPanelOpened = false)">
-              Close
+            <k-link icon-only @click="() => (leftFloatingPanelOpened = false)">
+              <close-icon />
             </k-link>
           </template>
         </k-navbar>
@@ -127,11 +134,14 @@
       :opened="rightFloatingPanelOpened"
       @backdropclick="() => (rightFloatingPanelOpened = false)"
     >
-      <k-page class="no-safe-areas-top no-safe-areas-bottom">
+      <k-page
+        :colors="{ bgIos: 'bg-transparent' }"
+        class="no-safe-areas-top no-safe-areas-bottom"
+      >
         <k-navbar title="Right Panel">
           <template #right>
-            <k-link navbar @click="() => (rightFloatingPanelOpened = false)">
-              Close
+            <k-link icon-only @click="() => (rightFloatingPanelOpened = false)">
+              <close-icon />
             </k-link>
           </template>
         </k-navbar>
@@ -165,7 +175,7 @@
     kLink,
     kButton,
   } from 'konsta/vue';
-
+  import CloseIcon from '../components/CloseIcon.vue';
   export default {
     name: 'SidePanelsPage',
     title: 'Panel / Side Panels',
@@ -178,6 +188,7 @@
       kBlockTitle,
       kLink,
       kButton,
+      CloseIcon,
     },
     setup() {
       const leftPanelOpened = ref(false);

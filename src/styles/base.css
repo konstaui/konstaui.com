@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @apply dark:text-dark-text text-gray-500;
+}
+
+.important-note {
+  @apply my-3 border-l-4 border-red-500 bg-red-100 px-5 py-4 dark:bg-red-600/10;
+}
+
+.after\:hash:after {
+  content: '#';
+}

@@ -10,8 +10,6 @@ import { Header } from '../components/Header';
 import copyToClipboard from '../shared/copy-to-clipboard';
 import HeroSponsors from '@/components/HeroSponsors';
 import { trackOutbound } from '@/shared/track-outbound';
-import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
-import { ReactComponent as OpenCollectiveLogo } from '@/img/opencollective-logo.svg';
 
 function SponsorButton(props) {
   const { href, className, onClick, children, ...restProps } = props;
@@ -21,7 +19,7 @@ function SponsorButton(props) {
       rel="noopener"
       target="_blank"
       {...restProps}
-      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black/5 hover:no-underline dark:hover:bg-white/75 sm:text-lg ${className}`}
+      className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black/5 hover:no-underline sm:text-lg dark:hover:bg-white/75 ${className}`}
       onClick={(e) => {
         onClick(e);
         trackOutbound(href);
@@ -100,7 +98,7 @@ export default function Home() {
     const { className, children, ...attrs } = props;
     return (
       <h2
-        className={`mb-8 text-center text-4xl font-bold text-primary sm:text-5xl ${
+        className={`text-primary mb-8 text-center text-4xl font-bold sm:text-5xl ${
           className || ''
         }`}
         {...attrs}
@@ -158,14 +156,14 @@ export default function Home() {
         <div className="max-w-2xl">
           {/* Logo */}
           <div className="shrink-0">
-            <Logo className="home-logo-animated mx-auto h-32 w-32 md:h-48 md:w-48 lg:ml-auto lg:mr-0" />
+            <Logo className="home-logo-animated mx-auto h-32 w-32 md:h-48 md:w-48 lg:mr-0 lg:ml-auto" />
           </div>
           {/* Content */}
           <div className="w-full shrink lg:text-right">
-            <div className="mt-12 text-4xl font-bold leading-none text-primary sm:text-6xl">
+            <div className="text-primary mt-12 text-4xl leading-none font-bold sm:text-6xl">
               Konsta UI
             </div>
-            <div className="my-8 text-3xl font-bold text-black dark:text-white sm:text-4xl sm:leading-snug">
+            <div className="my-8 text-3xl font-bold text-black sm:text-4xl sm:leading-snug dark:text-white">
               Pixel perfect mobile UI components built with Tailwind CSS
             </div>
             <div className="my-8 text-xl font-semibold lg:text-2xl lg:leading-normal">
@@ -176,15 +174,15 @@ export default function Home() {
               <Button href="#get-started" className="lg:px-6 xl:px-8">
                 Get started
               </Button>
-              <div className="hidden h-12 items-center rounded-xl border border-primary bg-primary bg-opacity-10 px-4 font-mono text-lg text-black dark:text-white sm:flex">
-                <span className="mr-4 select-none opacity-50">$</span>
+              <div className="border-primary bg-primary/10 hidden h-12 items-center rounded-xl border px-4 font-mono text-lg text-black sm:flex dark:text-white">
+                <span className="mr-4 opacity-50 select-none">$</span>
                 <span>npm i konsta</span>
                 <span
-                  className="ml-4 transform-gpu cursor-pointer select-none opacity-50 hover:text-primary hover:opacity-100"
+                  className="hover:text-primary ml-4 transform-gpu cursor-pointer opacity-50 select-none hover:opacity-100"
                   onClick={copyInstallCommand}
                 >
-                  <CopyIcon className="copy-icon transition-transform duration-100 ease-in-out " />{' '}
-                  <CheckIcon className="check-icon absolute top-0 scale-0 text-primary transition-transform duration-100 ease-in-out" />
+                  <CopyIcon className="copy-icon transition-transform duration-100 ease-in-out" />{' '}
+                  <CheckIcon className="check-icon text-primary absolute top-0 scale-0 transition-transform duration-100 ease-in-out" />
                 </span>
               </div>
             </div>
@@ -200,7 +198,7 @@ export default function Home() {
         {/* Phone */}
         <Device
           url="/kitchen-sink/react/dist/index.html?safe-areas=true"
-          className="ml-16 hidden lg:block "
+          className="ml-16 hidden lg:block"
         />
       </Container>
 
@@ -228,7 +226,7 @@ export default function Home() {
         </div>
         <Device
           url="/kitchen-sink/react/dist/index.html?safe-areas=true"
-          className="my-16 mx-auto hidden md:block"
+          className="mx-auto my-16 hidden md:block"
         />
       </Section>
 
@@ -371,8 +369,8 @@ export default function Home() {
                   alt="framework7"
                 />
               </div>
-              <div className="absolute top-[4.7%] bottom-[4.7%] left-3/4 w-1/4 rounded-l-lg border-8 border-r-0 border-primary lg:left-1/2 lg:w-1/2">
-                <Logo className="absolute left-0 top-1/2 h-24 w-24 -translate-y-1/2 -translate-x-1/2 transform" />
+              <div className="border-primary absolute top-[4.7%] bottom-[4.7%] left-3/4 w-1/4 rounded-l-lg border-8 border-r-0 lg:left-1/2 lg:w-1/2">
+                <Logo className="absolute top-1/2 left-0 h-24 w-24 -translate-x-1/2 -translate-y-1/2 transform" />
               </div>
             </div>
           </div>
@@ -422,58 +420,61 @@ export default function Home() {
 
       <Section id="get-started">
         <SectionTitle>Get Started</SectionTitle>
-        <div className="mx-auto flex max-w-2xl items-center justify-center rounded-xl border border-primary bg-primary bg-opacity-10 py-6 px-4 font-mono text-black dark:text-white sm:px-8 sm:text-lg">
-          <span className="pointer-events-none mr-4 hidden select-none opacity-50 sm:block">
+        <div className="border-primary bg-primary/10 mx-auto flex max-w-2xl items-center justify-center rounded-xl border px-4 py-6 font-mono text-black sm:px-8 sm:text-lg dark:text-white">
+          <span className="pointer-events-none mr-4 hidden opacity-50 select-none sm:block">
             $
           </span>
           <span>npm i konsta</span>
           <span
-            className="ml-2 transform-gpu cursor-pointer select-none  text-[rgb(0,0,0,0.5)] hover:text-primary  sm:ml-4"
+            className="hover:text-primary ml-2 transform-gpu cursor-pointer text-black/50 select-none sm:ml-4 dark:text-white/50"
             onClick={copyInstallCommand}
           >
-            <CopyIcon className="copy-icon transition-opacity duration-200 ease-in-out " />{' '}
-            <CheckIcon className="check-icon absolute top-0 text-primary opacity-0 transition-opacity duration-200 ease-in-out" />
+            <CopyIcon className="copy-icon transition-transform duration-200 ease-in-out" />{' '}
+            <CheckIcon className="check-icon text-primary absolute top-0 scale-0 transition-transform duration-200 ease-in-out" />
           </span>
         </div>
         <div className="mx-auto mt-8 max-w-3xl items-stretch justify-center space-y-4 text-center sm:flex sm:space-y-0 sm:space-x-4 md:space-x-8">
-          <Link href="/react">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg dark:border-dark-light dark:text-white sm:flex-col sm:hover:shadow-2xl">
-              <img
-                className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
-                src="/images/home/home-logos/react.svg"
-                alt="react"
-              />
-              <span className="font-semibold sm:mb-2">Konsta UI React</span>
-              <span className="hidden text-sm opacity-75 sm:block">
-                Documentation
-              </span>
-            </a>
+          <Link
+            href="/react"
+            className="dark:border-dark-light dark:hover:bg-dark-light/20 relative flex w-full items-center rounded-xl border border-black/10 px-4 py-6 text-black duration-200 hover:border-black/0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white"
+          >
+            <img
+              className="mr-4 w-12 sm:mr-0 sm:mb-4 sm:h-20 sm:w-auto"
+              src="/images/home/home-logos/react.svg"
+              alt="react"
+            />
+            <span className="font-semibold sm:mb-2">Konsta UI React</span>
+            <span className="hidden text-sm opacity-75 sm:block">
+              Documentation
+            </span>
           </Link>
-          <Link href="/vue">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg dark:border-dark-light dark:text-white sm:flex-col sm:hover:shadow-2xl">
-              <img
-                className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
-                src="/images/home/home-logos/vue.svg"
-                alt="vue"
-              />
-              <span className="font-semibold sm:mb-2">Konsta UI Vue</span>
-              <span className="hidden text-sm opacity-75 sm:block">
-                Documentation
-              </span>
-            </a>
+          <Link
+            href="/vue"
+            className="dark:border-dark-light dark:hover:bg-dark-light/20 relative flex w-full items-center rounded-xl border border-black/10 px-4 py-6 text-black duration-200 hover:border-black/0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white"
+          >
+            <img
+              className="mr-4 w-12 sm:mr-0 sm:mb-4 sm:h-20 sm:w-auto"
+              src="/images/home/home-logos/vue.svg"
+              alt="vue"
+            />
+            <span className="font-semibold sm:mb-2">Konsta UI Vue</span>
+            <span className="hidden text-sm opacity-75 sm:block">
+              Documentation
+            </span>
           </Link>
-          <Link href="/svelte">
-            <a className="relative flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg dark:border-dark-light dark:text-white sm:flex-col sm:hover:shadow-2xl">
-              <img
-                className="mr-4 w-12 sm:mb-4 sm:mr-0 sm:h-20 sm:w-auto"
-                src="/images/home/home-logos/svelte.svg"
-                alt="vue"
-              />
-              <span className="font-semibold sm:mb-2">Konsta UI Svelte</span>
-              <span className="hidden text-sm opacity-75 sm:block">
-                Documentation
-              </span>
-            </a>
+          <Link
+            href="/svelte"
+            className="dark:border-dark-light dark:hover:bg-dark-light/20 relative flex w-full items-center rounded-xl border border-black/10 px-4 py-6 text-black duration-200 hover:border-black/0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white"
+          >
+            <img
+              className="mr-4 w-12 sm:mr-0 sm:mb-4 sm:h-20 sm:w-auto"
+              src="/images/home/home-logos/svelte.svg"
+              alt="vue"
+            />
+            <span className="font-semibold sm:mb-2">Konsta UI Svelte</span>
+            <span className="hidden text-sm opacity-75 sm:block">
+              Documentation
+            </span>
           </Link>
         </div>
       </Section>
@@ -531,7 +532,7 @@ export default function Home() {
             },
           ].map((item) => (
             <a
-              className="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:shadow-lg dark:border-dark-light dark:text-white sm:flex-col sm:hover:shadow-2xl"
+              className="dark:border-dark-light dark:hover:bg-dark-light/20 flex w-full items-center rounded-xl border border-black/10 px-4 py-6 text-black duration-200 hover:border-black/0 hover:shadow-lg sm:flex-col sm:hover:shadow-2xl dark:text-white"
               href={item.url}
               target="_blank"
               key={item.title}
@@ -542,7 +543,7 @@ export default function Home() {
                 alt={item.title}
               />
               <div>
-                <div className="font-semibold text-black dark:text-white sm:mt-4 sm:mb-2">
+                <div className="font-semibold text-black sm:mt-4 sm:mb-2 dark:text-white">
                   {item.title}
                 </div>
                 <div className="text-sm opacity-75">{item.description}</div>
@@ -582,11 +583,17 @@ export default function Home() {
         </div>
         <div className="my-4 flex flex-col items-center space-y-6">
           <SponsorButton href="https://opencollective.com/konstaui">
-            <OpenCollectiveLogo className="mr-4 h-6 w-6" />
+            <img
+              src="/images/opencollective-logo.svg"
+              className="mr-4 h-6 w-6"
+            />
             <span>Become a sponsor on OpenCollective</span>
           </SponsorButton>
           <SponsorButton href="https://patreon.com/konstaui">
-            <PatreonLogo className="mr-4 h-6 w-6 text-[#FF424D]" />
+            <img
+              src="/images/patreon-logo.svg"
+              className="mr-4 h-6 w-6 text-[#FF424D]"
+            />
             <span>Support Konsta UI on Patreon</span>
           </SponsorButton>
         </div>

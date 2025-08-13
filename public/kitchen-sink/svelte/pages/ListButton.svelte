@@ -12,25 +12,25 @@
 
 <Page>
   <Navbar title="List Button">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
+    {/snippet}
   </Navbar>
 
-  <List>
+  <List strong>
     <ListButton>Button 1</ListButton>
     <ListButton>Button 2</ListButton>
     <ListButton>Button 3</ListButton>
   </List>
 
-  <List inset>
+  <List strong inset>
     <ListButton>Button 1</ListButton>
     <ListButton>Button 2</ListButton>
     <ListButton>Button 3</ListButton>
   </List>
-  <List inset>
-    <ListButton className="k-color-brand-red">Red Button</ListButton>
+  <List strong inset>
+    <ListButton class="k-color-brand-red">Red Button</ListButton>
   </List>
 </Page>

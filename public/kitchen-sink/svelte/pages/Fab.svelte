@@ -12,61 +12,73 @@
 
   const isPreview = document.location.href.includes('examplePreview');
 
-  $: theme = useTheme((newValue) => (theme = newValue));
+  const theme = $derived(useTheme());
 
-  $: PlusIcon = theme === 'ios' ? Plus : MdAdd;
+  const PlusIcon = $derived(theme === 'ios' ? Plus : MdAdd);
 </script>
 
 <Page>
   <Navbar title="FAB">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
+    {/snippet}
   </Navbar>
 
   <!-- Right Top -->
   <Fab
-    class="fixed right-4-safe ios:top-15-safe material:top-18-safe z-20 k-color-brand-red"
+    class="fixed right-safe-4 ios:top-safe-19 material:top-safe-18 z-20 k-color-brand-red"
   >
-    <svelte:component this={PlusIcon} slot="icon" />
+    {#snippet icon()}
+      <PlusIcon class="size-6" />
+    {/snippet}
   </Fab>
 
   <!-- Right Bottom -->
-  <Fab class="fixed right-4-safe bottom-4-safe z-20">
-    <svelte:component this={PlusIcon} slot="icon" />
+  <Fab class="fixed right-safe-4 bottom-safe-4 z-20">
+    {#snippet icon()}
+      <PlusIcon class="size-6" />
+    {/snippet}
   </Fab>
 
   <!-- Left Bottom -->
-  <Fab class="fixed left-4-safe bottom-4-safe z-20 k-color-brand-green">
-    <svelte:component this={PlusIcon} slot="icon" />
+  <Fab class="fixed left-safe-4 bottom-safe-4 z-20 k-color-brand-green">
+    {#snippet icon()}
+      <PlusIcon class="size-6" />
+    {/snippet}
   </Fab>
 
   <!-- Left Top -->
   <Fab
-    class="fixed left-4-safe ios:top-15-safe material:top-18-safe z-20 k-color-brand-yellow"
+    class="fixed left-safe-4 ios:top-safe-19 material:top-safe-18 z-20 k-color-brand-yellow"
   >
-    <svelte:component this={PlusIcon} slot="icon" />
+    {#snippet icon()}
+      <PlusIcon class="size-6" />
+    {/snippet}
   </Fab>
 
   <!-- Center Center -->
   <Fab
     class="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
   >
-    <svelte:component this={PlusIcon} slot="icon" />
+    {#snippet icon()}
+      <PlusIcon class="size-6" />
+    {/snippet}
   </Fab>
 
   <!-- Center Bottom -->
   <Fab
-    class="fixed left-1/2 bottom-4-safe transform -translate-x-1/2 z-20"
+    class="fixed left-1/2 bottom-safe-4 transform -translate-x-1/2 z-20"
     text="Create"
-    t
-    extPosition="after"
-    ><svelte:component this={PlusIcon} slot="icon" />
+    textPosition="after"
+  >
+    {#snippet icon()}
+      <PlusIcon class="size-6" />
+    {/snippet}
   </Fab>
 
-  <Block class="space-y-4">
+  <Block strong inset class="space-y-4">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, quo rem
       beatae, delectus eligendi est saepe molestias perferendis suscipit,
@@ -96,7 +108,7 @@
       ipsum alias.
     </p>
   </Block>
-  <Block class="space-y-4">
+  <Block strong inset class="space-y-4">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ipsa
       debitis sed nihil eaque dolore cum iste quibusdam, accusamus doloribus,

@@ -3,10 +3,10 @@
 .slots-table {
   @apply table-fixed;
   tbody tr {
-    @apply border-t;
+    @apply border-t border-black/10 dark:border-white/10;
   }
   tbody td:nth-child(1) {
-    @apply w-1/6 font-mono text-primary-dark dark:text-primary-light;
+    @apply text-primary-dark dark:text-primary-light w-1/6 font-mono;
     a {
       color: inherit;
     }

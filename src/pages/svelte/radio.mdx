@@ -8,6 +8,8 @@ import RadioExample from '@/components/examples/svelte/Radio';
 
 # Radio Svelte Component
 
+## Contents
+
 ## Radio Components
 
 There are following components included:
@@ -26,12 +28,16 @@ Radios List is not a separate component, but just a particular case of using [`L
 <List>
   <!-- Additional "label" prop on ListItem -->
   <ListItem label title="Books">
+    {#snippet media()}
     <!-- Pass Radio to list item media -->
-    <Radio slot="media" component="div" name="my-checkbox" />
+    <Radio component="div" name="my-checkbox" />
+    {/snippet}
   </ListItem>
   <ListItem label title="Movies">
+    {#snippet media()}
     <!-- Pass Radio to list item media -->
-    <Radio slot="media" component="div" name="my-checkbox" />
+    <Radio component="div" name="my-checkbox" />
+    {/snippet}
   </ListItem>
 </List>
 ```

@@ -1,8 +1,8 @@
-const unified = require('unified');
-const parse = require('remark-parse');
-const remark2rehype = require('remark-rehype');
-const rehypePrism = require('@mapbox/rehype-prism');
-const html = require('rehype-stringify');
+import { unified } from 'unified';
+import parse from 'remark-parse';
+import remark2rehype from 'remark-rehype';
+import rehypePrism from '@mapbox/rehype-prism';
+import html from 'rehype-stringify';
 
 const processDescription = (text) => {
   const result = unified()
@@ -10,7 +10,8 @@ const processDescription = (text) => {
     .use(remark2rehype)
     .use(rehypePrism)
     .use(html)
-    .processSync(text).contents;
+    .processSync(text).value;
+
   return result
     .replace(/>\{</g, `>{'{'}<`)
     .replace(/>\}</g, `>{'}'}<`)
@@ -32,30 +33,19 @@ const processDescription = (text) => {
     });
 };
 
-module.exports = (typesItem, isEvent) => {
-  const getProps = () => {
+export default (typesItem, isEvent) => {
+  const getDescription = () => {
+    let comment = {};
     if (isEvent) {
-      return typesItem.type.declaration.signatures[0].comment || {};
+      comment = typesItem.type.declaration.signatures[0].comment || {};
     }
-    return !typesItem.comment && typesItem.signatures && typesItem.signatures[0]
-      ? typesItem.signatures[0].comment || {}
-      : typesItem.comment || {};
+    comment =
+      !typesItem.comment && typesItem.signatures && typesItem.signatures[0]
+        ? typesItem.signatures[0].comment || {}
+        : typesItem.comment || {};
+    return comment?.summary?.[0]?.text;
   };
-  const { shortText, text, tags = [] } = getProps(typesItem);
+  const textContent = getDescription(typesItem);
 
-  const textContent = [shortText, text].filter((el) => !!el).join('\n\n');
-
-  // prettier-ignore
-  const tagsContent = tags
-    .filter((tag) => tag.tag === 'note' || tag.tag === 'example')
-    .map((tag) => { // eslint-disable-line
-      if (tag.tag === 'note') {
-        return `> ${tag.text}`;
-      }
-
-      if (tag.tag === 'example') return tag.text;
-    })
-    .join('\n\n');
-
-  return processDescription([textContent, tagsContent].join('\n\n'));
+  return processDescription(textContent || '');
 };

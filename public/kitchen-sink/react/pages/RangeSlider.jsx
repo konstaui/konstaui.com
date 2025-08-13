@@ -26,9 +26,9 @@ export default function RangeSliderPage() {
 
       <BlockTitle>Volume: {volume}</BlockTitle>
       <BlockHeader>From 0 to 100 with step 10</BlockHeader>
-      <List strong insetMaterial outlineIos>
+      <List strong inset>
         <ListItem
-          innerClassName="flex space-x-4 rtl:space-x-reverse"
+          innerClassName="flex gap-4 items-center"
           innerChildren={
             <>
               <span>0</span>
@@ -45,9 +45,9 @@ export default function RangeSliderPage() {
 
       <BlockTitle>Price: ${price}</BlockTitle>
       <BlockHeader>From 0 to 1000 with step 1</BlockHeader>
-      <List strong insetMaterial outlineIos>
+      <List strong inset>
         <ListItem
-          innerClassName="flex space-x-4 rtl:space-x-reverse"
+          innerClassName="flex gap-4 items-center"
           innerChildren={
             <>
               <span>$0</span>
@@ -67,7 +67,7 @@ export default function RangeSliderPage() {
       <BlockTitle>
         Color: rgb({red}, {green}, {blue})
       </BlockTitle>
-      <List strong insetMaterial outlineIos>
+      <List strong inset>
         <ListItem
           innerChildren={
             <Range

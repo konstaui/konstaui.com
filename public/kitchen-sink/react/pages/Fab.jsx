@@ -13,7 +13,12 @@ import { MdAdd } from 'react-icons/md';
 export default function FabPage() {
   const isPreview = document.location.href.includes('examplePreview');
   const theme = useTheme();
-  const PlusIcon = theme === 'ios' ? Plus : MdAdd;
+  const PlusIcon =
+    theme === 'ios' ? (
+      <Plus className="w-6 h-6" />
+    ) : (
+      <MdAdd className="w-6 h-6" />
+    );
 
   return (
     <Page>
@@ -24,43 +29,40 @@ export default function FabPage() {
 
       {/* Right Top */}
       <Fab
-        className="fixed right-4-safe ios:top-15-safe material:top-18-safe z-20 k-color-brand-red"
-        icon={<PlusIcon />}
+        className="fixed right-safe-4 ios:top-safe-19 material:top-safe-18 z-20 k-color-brand-red"
+        icon={PlusIcon}
       />
 
       {/* Right Bottom */}
-      <Fab
-        className="fixed right-4-safe bottom-4-safe z-20"
-        icon={<PlusIcon />}
-      />
+      <Fab className="fixed right-safe-4 bottom-safe-4 z-20" icon={PlusIcon} />
 
       {/* Left Bottom */}
       <Fab
-        className="fixed left-4-safe bottom-4-safe z-20 k-color-brand-green"
-        icon={<PlusIcon />}
+        className="fixed left-safe-4 bottom-safe-4 z-20 k-color-brand-green"
+        icon={PlusIcon}
       />
 
       {/* Left Top */}
       <Fab
-        className="fixed left-4-safe ios:top-15-safe material:top-18-safe z-20 k-color-brand-yellow"
-        icon={<PlusIcon />}
+        className="fixed left-safe-4 ios:top-safe-19 material:top-safe-18 z-20 k-color-brand-yellow"
+        icon={PlusIcon}
       />
 
       {/* Center Center */}
       <Fab
         className="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
-        icon={<PlusIcon />}
+        icon={PlusIcon}
       />
 
       {/* Center Bottom */}
       <Fab
-        className="fixed left-1/2 bottom-4-safe transform -translate-x-1/2 z-20"
-        icon={<PlusIcon />}
+        className="fixed left-1/2 bottom-safe-4 transform -translate-x-1/2 z-20"
+        icon={PlusIcon}
         text="Create"
         textPosition="after"
       />
 
-      <Block className="space-y-4">
+      <Block strong inset className="space-y-4">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, quo
           rem beatae, delectus eligendi est saepe molestias perferendis
@@ -92,7 +94,7 @@ export default function FabPage() {
           assumenda veniam, ipsum alias.
         </p>
       </Block>
-      <Block className="space-y-4">
+      <Block strong inset className="space-y-4">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ipsa
           debitis sed nihil eaque dolore cum iste quibusdam, accusamus

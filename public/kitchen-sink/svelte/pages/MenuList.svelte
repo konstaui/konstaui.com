@@ -16,11 +16,11 @@
 
 <Page>
   <Navbar title="Menu List">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
+    {/snippet}
   </Navbar>
 
   <Block strong>
@@ -30,38 +30,46 @@
       form of a list.
     </p>
   </Block>
-  <MenuList>
+  <MenuList strongIos outlineIos>
     <MenuListItem
       title="Home"
       active={selected === 'home'}
       onClick={() => (selected = 'home')}
     >
-      <DemoIcon slot="media" />
+      {#snippet media()}
+        <DemoIcon />
+      {/snippet}
     </MenuListItem>
     <MenuListItem
       title="Profile"
       active={selected === 'profile'}
       onClick={() => (selected = 'profile')}
     >
-      <DemoIcon slot="media" />
+      {#snippet media()}
+        <DemoIcon />
+      {/snippet}
     </MenuListItem>
     <MenuListItem
       title="Settings"
       active={selected === 'settings'}
       onClick={() => (selected = 'settings')}
     >
-      <DemoIcon slot="media" />
+      {#snippet media()}
+        <DemoIcon />
+      {/snippet}
     </MenuListItem>
   </MenuList>
 
-  <MenuList>
+  <MenuList strongIos outlineIos>
     <MenuListItem
       title="Home"
       subtitle="Home subtitle"
       active={selectedMedia === 'home'}
       onClick={() => (selectedMedia = 'home')}
     >
-      <DemoIcon slot="media" />
+      {#snippet media()}
+        <DemoIcon />
+      {/snippet}
     </MenuListItem>
     <MenuListItem
       title="Profile"
@@ -69,7 +77,9 @@
       active={selectedMedia === 'profile'}
       onClick={() => (selectedMedia = 'profile')}
     >
-      <DemoIcon slot="media" />
+      {#snippet media()}
+        <DemoIcon />
+      {/snippet}
     </MenuListItem>
     <MenuListItem
       title="Settings"
@@ -77,7 +87,9 @@
       active={selectedMedia === 'settings'}
       onClick={() => (selectedMedia = 'settings')}
     >
-      <DemoIcon slot="media" />
+      {#snippet media()}
+        <DemoIcon />
+      {/snippet}
     </MenuListItem>
   </MenuList>
 </Page>

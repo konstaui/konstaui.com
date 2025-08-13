@@ -63,7 +63,7 @@ export const ThemeSwitch = () => {
 
   return (
     <div className="group relative">
-      <div className="flex h-7 cursor-pointer items-center rounded-md px-3 text-sm font-medium  text-black hover:text-primary dark:text-white dark:hover:text-primary">
+      <div className="hover:text-primary dark:hover:text-primary flex h-7 cursor-pointer items-center rounded-md px-3 text-sm font-medium text-black dark:text-white">
         <svg
           className="h-6 w-6 dark:hidden"
           xmlns="http://www.w3.org/2000/svg"
@@ -86,12 +86,12 @@ export const ThemeSwitch = () => {
         </svg>
       </div>
 
-      <ul className="pointer-events-none absolute right-0 top-full z-50 -ml-4 w-32 overflow-hidden rounded-lg border border-black border-opacity-10 bg-white text-sm text-black opacity-0 shadow-lg group-hover:pointer-events-auto group-hover:opacity-100 dark:bg-dark-light dark:text-white">
+      <ul className="dark:bg-dark-light pointer-events-none absolute top-full right-0 z-50 -ml-4 w-32 overflow-hidden rounded-lg border border-black/10 bg-white text-sm text-black opacity-0 shadow-lg group-hover:pointer-events-auto group-hover:opacity-100 dark:text-white">
         <li>
           <button
             type="button"
             onClick={() => setSetting('light')}
-            className={`flex w-full items-center space-x-2 py-2 px-4 hover:bg-primary hover:text-white dark:hover:text-dark ${
+            className={`hover:bg-primary dark:hover:text-dark flex w-full items-center space-x-2 px-4 py-2 hover:text-white ${
               setting === 'light' ? 'text-primary' : ''
             }`}
           >
@@ -112,7 +112,7 @@ export const ThemeSwitch = () => {
           <button
             type="button"
             onClick={() => setSetting('dark')}
-            className={`flex w-full items-center space-x-2 py-2 px-4 hover:bg-primary hover:text-white dark:hover:text-dark ${
+            className={`hover:bg-primary dark:hover:text-dark flex w-full items-center space-x-2 px-4 py-2 hover:text-white ${
               setting === 'dark' ? 'text-primary' : ''
             }`}
           >
@@ -133,7 +133,7 @@ export const ThemeSwitch = () => {
           <button
             type="button"
             onClick={() => setSetting('system')}
-            className={`flex w-full items-center space-x-2 py-2 px-4 hover:bg-primary hover:text-white dark:hover:text-dark ${
+            className={`hover:bg-primary dark:hover:text-dark flex w-full items-center space-x-2 px-4 py-2 hover:text-white ${
               setting === 'system' ? 'text-primary' : ''
             }`}
           >

@@ -2,6 +2,7 @@
   import {
     Page,
     Navbar,
+    Block,
     NavbarBackLink,
     BlockTitle,
     Card,
@@ -17,14 +18,14 @@
 
 <Page>
   <Navbar title="Data Table">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
+    {/snippet}
   </Navbar>
   <BlockTitle>Plain table</BlockTitle>
-  <div class="block overflow-x-auto mt-8">
+  <Block class="overflow-x-auto !pl-safe !pr-safe">
     <Table>
       <TableHead>
         <TableRow header>
@@ -66,9 +67,9 @@
         </TableRow>
       </TableBody>
     </Table>
-  </div>
+  </Block>
   <BlockTitle>Within card</BlockTitle>
-  <Card class="block overflow-x-auto mt-8" contentWrap={false}>
+  <Card class="overflow-x-auto" contentWrap={false}>
     <Table>
       <TableHead>
         <TableRow header>

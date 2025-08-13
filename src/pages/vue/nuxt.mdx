@@ -5,6 +5,8 @@ section: 'vue'
 
 # Konsta UI & Nuxt
 
+## Contents
+
 Let's see how to use Konsta UI Vue components with [Nuxt](https://v3.nuxtjs.org).
 
 You can start from forking this [Konsta Nuxt 3 Starter](https://github.com/konstaui/konsta-nuxt3-starter) repository or follow the guide below.
@@ -76,17 +78,13 @@ npm i konsta
 
 And in your `tailwind.config.js` file we should extend config with Konsta UI's config:
 
-<!-- prettier-ignore -->
 ```js
 // import konstaConfig config
 const konstaConfig = require('konsta/config');
 
 // wrap config with konstaConfig config
 module.exports = konstaConfig({
-  content: [
-    './components/*.{js,ts,jsx,vue}',
-    './pages/*.{js,ts,jsx,vue}',
-  ],
+  content: ['./components/*.{js,ts,jsx,vue}', './pages/*.{js,ts,jsx,vue}'],
   darkMode: 'media', // or 'class'
   theme: {
     extend: {},
@@ -181,7 +179,7 @@ For example, let's open `pages/index.vue` and change it to the following:
 As a result we should see the following page:
 
 <img
-  class="w-full max-w-[375px] rounded-lg border border-black border-opacity-10"
+  class="w-full max-w-[375px] rounded-lg border border-black/10"
   src="/images/docs/k-next.png"
   alt="konsta-next"
 />

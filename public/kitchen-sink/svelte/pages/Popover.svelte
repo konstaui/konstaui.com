@@ -23,29 +23,33 @@
 
 <Page>
   <Navbar title="Popover">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
-    <Link
-      slot="right"
-      class="popover-navbar-link"
-      navbar
-      onClick={() => openPopover('.popover-navbar-link')}
-    >
-      Popover
-    </Link>
+    {/snippet}
+    {#snippet right()}
+      <Link
+        class="popover-navbar-link"
+        navbar
+        onclick={() => openPopover('.popover-navbar-link')}
+      >
+        Popover
+      </Link>
+    {/snippet}
   </Navbar>
-  <Block class="space-y-4">
+  <Block strong inset class="space-y-4">
     <p>
       <Button
+        rounded
         class="popover-button"
-        onClick={() => openPopover('.popover-button')}
+        onclick={() => openPopover('.popover-button')}
       >
         Open popover on me
       </Button>
     </p>
+  </Block>
+  <Block strong inset class="space-y-4">
     <p>
       Mauris fermentum neque et luctus venenatis. Vivamus a sem rhoncus, ornare
       tellus eu, euismod mauris. In porta turpis at semper convallis. Duis
@@ -56,7 +60,7 @@
       rutrum enim. Nam a odio facilisis, elementum tellus non,{' '}
       <Link
         class="popover-link-1"
-        onClick={() => openPopover('.popover-link-1')}
+        onclick={() => openPopover('.popover-link-1')}
       >
         popover
       </Link>{' '}
@@ -68,7 +72,7 @@
       velit massa rutrum dolor, ac porta magna magna lacinia nunc. Curabitur{' '}
       <Link
         class="popover-link-2"
-        onClick={() => openPopover('.popover-link-2')}
+        onclick={() => openPopover('.popover-link-2')}
       >
         popover!
       </Link>{' '}
@@ -88,7 +92,7 @@
       Aliquam quis convallis tortor, quis semper ligula. Morbi ullamcorper{' '}
       <Link
         class="popover-link-3"
-        onClick={() => openPopover('.popover-link-3')}
+        onclick={() => openPopover('.popover-link-3')}
       >
         one more popover
       </Link>{' '}
@@ -110,15 +114,15 @@
       <ListItem
         title="List Item 2"
         link
-        onClick={() => (popoverOpened = false)}
+        onclick={() => (popoverOpened = false)}
       />
-      <ListItem title="Item 3" link onClick={() => (popoverOpened = false)} />
+      <ListItem title="Item 3" link onclick={() => (popoverOpened = false)} />
       <ListItem
         title="List Item 4"
         link
-        onClick={() => (popoverOpened = false)}
+        onclick={() => (popoverOpened = false)}
       />
-      <ListItem title="Item 5" link onClick={() => (popoverOpened = false)} />
+      <ListItem title="Item 5" link onclick={() => (popoverOpened = false)} />
     </List>
   </Popover>
 </Page>

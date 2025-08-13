@@ -5,6 +5,8 @@ section: 'vue'
 
 # Safe Areas
 
+## Contents
+
 With the iPhone X release and further, Apple introduced so called safe areas, later implemented by Google Chrome with support in Android.
 
 On devices with safe areas (like with top screen notch), app UI must include additional top/bottom spacing (to consider top notch and bottom bar) in portrait orientation and additional left/right spacing (to consider left/right notch) in landscape orientation.
@@ -82,7 +84,6 @@ This is how `safe-areas` class defined in CSS:
     --k-safe-area-bottom: env(safe-area-inset-bottom);
   }
 }
-
 ```
 
 ## Disable Safe Areas
@@ -122,7 +123,6 @@ This is how `no-safe-areas` classes defined in CSS:
     --k-safe-area-left: 0px;
   }
 }
-
 ```
 
 ## Safe Spacing & Placement
@@ -166,7 +166,6 @@ And same with margin and padding:
 
 For example:
 
-<!-- prettier-ignore -->
 ```html
 <!--
 "left-safe" class will set:
@@ -175,5 +174,6 @@ For example:
 "bottom-4-safe" class will set:
   bottom: calc(1rem + var(--k-safe-area-bottom));
 -->
-<div class="left-safe bottom-4-safe">...</div>;
+<div class="left-safe bottom-4-safe">...</div>
+;
 ```

@@ -1,32 +1,21 @@
-const pkg = require('konsta/package.json');
-const mdxLoader = require('./src/mdx/loader');
+import mdxLoader from './src/mdx/loader.js';
+import fs from 'fs';
 
-module.exports = {
-  target: 'serverless',
+const pkg = JSON.parse(
+  fs.readFileSync('./node_modules/konsta/package.json', 'utf8')
+);
+
+export default {
+  output: 'export',
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
-  experimental: { esmExternals: true },
+  distDir: 'out',
   env: {
     konstaVersion: pkg.version,
     konstaReleaseDate: pkg.releaseDate,
   },
   webpack(config, options) {
     mdxLoader(config, options);
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: [
-        {
-          loader: '@svgr/webpack',
-          options: { svgoConfig: { plugins: { removeViewBox: false } } },
-        },
-        {
-          loader: 'file-loader',
-          options: {
-            publicPath: '/_next',
-            name: 'static/media/[name].[hash].[ext]',
-          },
-        },
-      ],
-    });
+
     return config;
   },
   // ...mdxLoader,

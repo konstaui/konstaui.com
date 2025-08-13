@@ -1,7 +1,10 @@
-const path = require('path');
-const fs = require('fs');
-const description = require('./description');
-const lowerCaseNames = require('./lowercase-names');
+import path from 'path';
+import fs from 'fs';
+import description from './description.js';
+import lowerCaseNames from './lowercase-names.js';
+import { getDirname } from '../get-dirname.js';
+
+const __dirname = getDirname(import.meta.url);
 
 const ignoreSlots = ['chevronIcon'];
 
@@ -51,10 +54,15 @@ const type = (item = {}) => {
 
 // eslint-disable-next-line
 const defaultValue = (item) => {
-  return (item.default_value || '').replace(
-    /[{}]/g,
-    (bracket) => `{'${bracket}'}`
+  const defaultTag = item.comment?.blockTags?.find(
+    (tag) => tag.tag === '@default'
   );
+  if (!defaultTag) return '';
+  const value = defaultTag.content[0].text
+    .replace('```ts\n', '')
+    .replace('\n```', '')
+    .replace(/[{}]/g, (bracket) => `{'${bracket}'}`);
+  return value;
 };
 
 const buildPropsTable = (componentName, items) => {
@@ -83,8 +91,8 @@ const buildPropsTable = (componentName, items) => {
             <tr>
               <td>
                 <a href="#prop-${propName(item.name)}" id="prop-${propName(
-                item.name
-              )}"><span>${propName(item.name)}</span></a>
+                  item.name
+                )}"><span>${propName(item.name)}</span></a>
               </td>
               <td>
                 <span>${type(item)}</span>
@@ -126,8 +134,8 @@ const buildEventsTable = (componentName, items) => {
             <tr>
               <td>
                 <a href="#event-${eventName(item.name)}" id="event-${eventName(
-                item.name
-              )}"><span>${eventName(item.name)}</span></a>
+                  item.name
+                )}"><span>${eventName(item.name)}</span></a>
               </td>
               <td>
                 <span>${type(item)}</span>
@@ -165,8 +173,8 @@ const buildSlotsTable = (componentName, items) => {
             <tr>
               <td>
                 <a href="#slot-${slotName(item.name)}" id="slot-${slotName(
-                item.name
-              )}"><span>${slotName(item.name)}</span></a>
+                  item.name
+                )}"><span>${slotName(item.name)}</span></a>
               </td>
               <td>${description(item)}</td>
             </tr>
@@ -232,4 +240,4 @@ const buildProps = async (componentName, typesData) => {
   );
 };
 
-module.exports = buildProps;
+export default buildProps;

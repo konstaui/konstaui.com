@@ -12,6 +12,8 @@ import SubnavbarExample from '@/components/examples/svelte/Subnavbar';
 
 # Navbar Svelte Component
 
+## Contents
+
 Navbar is a fixed area at the top of a screen that contains Page title and navigation elements.
 
 ## Navbar Components
@@ -25,7 +27,7 @@ There are following components included:
 
 <NavbarProps />
 
-## Navbar Slots
+## Navbar Snippets
 
 <NavbarSlots />
 
@@ -33,16 +35,17 @@ There are following components included:
 
 `NavbarBackLink` should be placed in Navbar's "left" area:
 
-<!-- prettier-ignore -->
 ```jsx
 <Navbar title="My App">
-  <NavbarBackLink slot="left" text="Back" onClick={() => history.back()} />
+  {#snippet left()}
+  <NavbarBackLink text="Back" onClick={() => history.back()} />
+  {/snippet}
 </Navbar>
 ```
 
 <NavbarBackLinkProps />
 
-## NavbarBackLink Slots
+## NavbarBackLink Snippets
 
 <NavbarBackLinkSlots />
 

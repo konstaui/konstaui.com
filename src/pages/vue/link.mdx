@@ -8,6 +8,8 @@ import { LinkEvents } from '@/components/api/vue/LinkEvents';
 
 # Link Vue Component
 
+## Contents
+
 Link is main component to create links for navigation, custom actions, switching tabs, open/close modals, etc.
 
 ## Link Components
@@ -40,16 +42,12 @@ There are following components included:
 
 #### Vue Router Link
 
-<!-- prettier-ignore -->
 ```html
-<k-link :link-props="{to: '/about'}" component="router-link">
-  About
-</k-link>
+<k-link :link-props="{to: '/about'}" component="router-link"> About </k-link>
 ```
 
 #### Link In Navbar
 
-<!-- prettier-ignore -->
 ```html
 <k-navbar title="My App">
   <template #right>
@@ -60,7 +58,6 @@ There are following components included:
 
 #### Link In Toolbar
 
-<!-- prettier-ignore -->
 ```html
 <k-toolbar>
   <k-link toolbar @click="action1">Action 1</k-link>

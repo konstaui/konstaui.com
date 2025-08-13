@@ -1,10 +1,10 @@
 export default function BlackFridayRibbon() {
   return (
-    <div className="bg-surface flex min-h-[64px]  items-center justify-center border-b border-black border-opacity-10 px-4  py-2 text-sm font-semibold dark:border-dark-light sm:px-6 lg:px-8 xl:px-10">
+    <div className="bg-surface dark:border-dark-light flex min-h-[64px] items-center justify-center border-b border-black/10 px-4 py-2 text-sm font-semibold sm:px-6 lg:px-8 xl:px-10">
       <div className="text-center">
         🔥 Black Friday Sale: Up to 40% OFF on{' '}
         <a
-          className="underline hover:no-underline "
+          className="underline hover:no-underline"
           href="https://uiinitiative.com"
           target="_blank"
         >

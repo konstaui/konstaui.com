@@ -15,15 +15,15 @@
 
 <Page>
   <Navbar title="Segmented Control">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
+    {/snippet}
   </Navbar>
 
   <BlockTitle>Default Segmented</BlockTitle>
-  <Block strongIos outlineIos class="space-y-4">
+  <Block strong inset class="space-y-4">
     <Segmented>
       <SegmentedButton
         active={activeSegmented === 1}
@@ -68,7 +68,7 @@
   </Block>
 
   <BlockTitle>Raised Segmented</BlockTitle>
-  <Block strongIos outlineIos class="space-y-4">
+  <Block strong inset class="space-y-4">
     <Segmented raised>
       <SegmentedButton
         active={activeSegmented === 1}
@@ -112,7 +112,7 @@
   </Block>
 
   <BlockTitle>Outline</BlockTitle>
-  <Block strongIos outlineIos class="space-y-4">
+  <Block strong inset class="space-y-4">
     <Segmented outline>
       <SegmentedButton
         active={activeSegmented === 1}
@@ -156,7 +156,7 @@
   </Block>
 
   <BlockTitle>Strong Segmented</BlockTitle>
-  <Block strongIos outlineIos class="space-y-4">
+  <Block strong inset class="space-y-4">
     <Segmented strong>
       <SegmentedButton
         strong

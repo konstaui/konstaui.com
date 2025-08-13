@@ -5,6 +5,8 @@ section: 'react'
 
 # Safe Areas
 
+## Contents
+
 With the iPhone X release and further, Apple introduced so called safe areas, later implemented by Google Chrome with support in Android.
 
 On devices with safe areas (like with top screen notch), app UI must include additional top/bottom spacing (to consider top notch and bottom bar) in portrait orientation and additional left/right spacing (to consider left/right notch) in landscape orientation.
@@ -88,7 +90,6 @@ This is how `safe-areas` class defined in CSS:
     --k-safe-area-bottom: env(safe-area-inset-bottom);
   }
 }
-
 ```
 
 ## Disable Safe Areas
@@ -128,7 +129,6 @@ This is how `no-safe-areas` classes defined in CSS:
     --k-safe-area-left: 0px;
   }
 }
-
 ```
 
 ## Safe Spacing & Placement
@@ -172,10 +172,9 @@ And same with margin and padding:
 
 For example:
 
-<!-- prettier-ignore -->
 ```jsx
 {
-/*
+  /*
 "left-safe" class will set:
   left: var(--k-safe-area-top);
 

@@ -7,8 +7,10 @@ import {
   Block,
   Button,
   Toolbar,
+  ToolbarPane,
   Link,
 } from 'konsta/react';
+import CloseIcon from '../components/CloseIcon';
 
 export default function SheetModalPage() {
   const isPreview = document.location.href.includes('examplePreview');
@@ -20,14 +22,16 @@ export default function SheetModalPage() {
         left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}
       />
 
-      <Block strongIos outlineIos className="space-y-4">
+      <Block strong inset className="space-y-4">
         <p>
           Sheet Modals slide up from the bottom of the screen to reveal more
           content. Such modals allow to create custom overlays with custom
           content.
         </p>
         <p>
-          <Button onClick={() => setSheetOpened(true)}>Open Sheet</Button>
+          <Button rounded onClick={() => setSheetOpened(true)}>
+            Open Sheet
+          </Button>
         </p>
       </Block>
 
@@ -36,23 +40,25 @@ export default function SheetModalPage() {
         opened={sheetOpened}
         onBackdropClick={() => setSheetOpened(false)}
       >
-        <Toolbar top>
-          <div className="left" />
-          <div className="right">
-            <Link toolbar onClick={() => setSheetOpened(false)}>
-              Done
+        <Toolbar top className="justify-end ios:pt-4">
+          <div className="ios:hidden" />
+          <ToolbarPane>
+            <Link iconOnly onClick={() => setSheetOpened(false)}>
+              <CloseIcon />
             </Link>
-          </div>
+          </ToolbarPane>
         </Toolbar>
-        <Block>
+        <Block className="ios:mt-4">
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum ad
             excepturi nesciunt nobis aliquam. Quibusdam ducimus neque
             necessitatibus, molestias cupiditate velit nihil alias incidunt,
             excepturi voluptatem dolore itaque sapiente dolores!
           </p>
-          <div className="mt-4">
-            <Button onClick={() => setSheetOpened(false)}>Action</Button>
+          <div className="mt-8">
+            <Button large rounded onClick={() => setSheetOpened(false)}>
+              Action
+            </Button>
           </div>
         </Block>
       </Sheet>

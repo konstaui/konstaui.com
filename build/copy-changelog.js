@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape */
-const fs = require('fs-extra');
+import fs from 'fs-extra';
 
 const banner = `---
 title: Release Notes | Konsta UI

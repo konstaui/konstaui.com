@@ -1,7 +1,7 @@
 export default function TogglesRibbon() {
   return (
     <a
-      className="bg-surface text-on-surface group flex min-h-[64px] items-center justify-center border-b border-black border-opacity-10 hover:no-underline dark:border-dark-light"
+      className="bg-surface text-on-surface group dark:border-dark-light flex min-h-[64px] items-center justify-center border-b border-black/10 hover:no-underline"
       href="https://t0ggles.com"
       target="_blank"
     >

@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import '../styles/globals.scss';
-import '../styles/prose.scss';
+import '../styles/globals.css';
+import '../styles/prose.css';
 import { React, useEffect } from 'react';
 import copyToClipboard from '../shared/copy-to-clipboard';
 

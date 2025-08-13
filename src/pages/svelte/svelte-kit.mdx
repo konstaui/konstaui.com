@@ -5,6 +5,8 @@ section: 'svelte'
 
 # Konsta UI & SvelteKit
 
+## Contents
+
 Let's see how to use Konsta UI Svelte components with [SvelteKit](https://kit.svelte.dev).
 
 ## Create SvelteKit Project
@@ -66,7 +68,6 @@ Now when everything is set up, we can use Konsta UI Svelte components in our Sve
 
 For example, let's open `src/routes/index.svelte` and change it to the following:
 
-<!-- prettier-ignore -->
 ```html
 <script>
   import {
@@ -93,8 +94,8 @@ For example, let's open `src/routes/index.svelte` and change it to the following
   </List>
 
   <Block strong class="flex space-x-4">
-    <Button>Button 1</Button>
-    <Button>Button 2</Button>
+    <button>Button 1</button>
+    <button>Button 2</button>
   </Block>
 </Page>
 ```
@@ -102,7 +103,7 @@ For example, let's open `src/routes/index.svelte` and change it to the following
 As a result we should see the following page:
 
 <img
-  class="w-full max-w-[375px] rounded-lg border border-black border-opacity-10"
+  class="w-full max-w-[375px] rounded-lg border border-black/10"
   src="/images/docs/k-sveltekit.png"
   alt="konsta-next"
 />

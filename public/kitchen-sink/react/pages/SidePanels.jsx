@@ -9,6 +9,7 @@ import {
   Link,
   Button,
 } from 'konsta/react';
+import CloseIcon from '../components/CloseIcon';
 
 export default function SidePanelsPage() {
   const isPreview = document.location.href.includes('examplePreview');
@@ -25,18 +26,14 @@ export default function SidePanelsPage() {
         left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}
       />
 
-      <Block strongIos outlineIos className="space-y-4">
+      <Block inset strong className="space-y-4">
         <p>
           Konsta UI comes with 2 panels (on left and on right), both are
           optional. You can put absolutely anything inside: data lists, forms,
           custom content, etc.
         </p>
       </Block>
-      <Block
-        strongIos
-        outlineIos
-        className="flex space-x-4 rtl:space-x-reverse"
-      >
+      <Block inset strong className="flex space-x-4 rtl:space-x-reverse">
         <Button rounded onClick={() => setLeftPanelOpened(true)}>
           Left Panel
         </Button>
@@ -45,11 +42,7 @@ export default function SidePanelsPage() {
         </Button>
       </Block>
       <BlockTitle>Floating Panels</BlockTitle>
-      <Block
-        strongIos
-        outlineIos
-        className="flex space-x-4 rtl:space-x-reverse"
-      >
+      <Block inset strong className="flex space-x-4 rtl:space-x-reverse">
         <Button rounded onClick={() => setLeftFloatingPanelOpened(true)}>
           Left Panel
         </Button>
@@ -67,8 +60,8 @@ export default function SidePanelsPage() {
           <Navbar
             title="Left Panel"
             right={
-              <Link navbar onClick={() => setLeftPanelOpened(false)}>
-                Close
+              <Link iconOnly onClick={() => setLeftPanelOpened(false)}>
+                <CloseIcon />
               </Link>
             }
           />
@@ -99,8 +92,8 @@ export default function SidePanelsPage() {
           <Navbar
             title="Right Panel"
             right={
-              <Link navbar onClick={() => setRightPanelOpened(false)}>
-                Close
+              <Link iconOnly onClick={() => setRightPanelOpened(false)}>
+                <CloseIcon />
               </Link>
             }
           />
@@ -128,12 +121,15 @@ export default function SidePanelsPage() {
         opened={leftFloatingPanelOpened}
         onBackdropClick={() => setLeftFloatingPanelOpened(false)}
       >
-        <Page className="no-safe-areas-top no-safe-areas-bottom">
+        <Page
+          colors={{ bgIos: 'bg-transparent' }}
+          className="no-safe-areas-top no-safe-areas-bottom"
+        >
           <Navbar
             title="Left Panel"
             right={
-              <Link navbar onClick={() => setLeftFloatingPanelOpened(false)}>
-                Close
+              <Link iconOnly onClick={() => setLeftFloatingPanelOpened(false)}>
+                <CloseIcon />
               </Link>
             }
           />
@@ -161,12 +157,15 @@ export default function SidePanelsPage() {
         opened={rightFloatingPanelOpened}
         onBackdropClick={() => setRightFloatingPanelOpened(false)}
       >
-        <Page className="no-safe-areas-top no-safe-areas-bottom">
+        <Page
+          colors={{ bgIos: 'bg-transparent' }}
+          className="no-safe-areas-top no-safe-areas-bottom"
+        >
           <Navbar
             title="Right Panel"
             right={
-              <Link navbar onClick={() => setRightFloatingPanelOpened(false)}>
-                Close
+              <Link iconOnly onClick={() => setRightFloatingPanelOpened(false)}>
+                <CloseIcon />
               </Link>
             }
           />

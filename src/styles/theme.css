@@ -1,0 +1,19 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono:
+    Menlo, Monaco, ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+
+  --color-primary-light: #ff7c29;
+  --color-primary: #ff6300;
+  --color-primary-dark: #d65300;
+  --color-dark: #191513;
+  --color-dark-text: #dddddf;
+  --color-dark-light: #4e3b2f;
+  --color-dark-code: #2b221c;
+}

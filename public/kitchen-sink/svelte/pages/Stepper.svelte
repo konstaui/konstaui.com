@@ -40,15 +40,15 @@
 
 <Page>
   <Navbar title="Stepper">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
+    {/snippet}
   </Navbar>
 
   <BlockTitle>Shape and size</BlockTitle>
-  <Block strongIos outlineIos class="text-center space-y-4">
+  <Block strong inset class="text-center space-y-4">
     <div class="grid grid-cols-2 gap-4">
       <div>
         <div class="block text-xs mb-1">Default</div>
@@ -131,7 +131,7 @@
   </Block>
 
   <BlockTitle>Raised</BlockTitle>
-  <Block strongIos outlineIos class="text-center space-y-4">
+  <Block strong inset class="text-center space-y-4">
     <div class="grid grid-cols-2 gap-4">
       <div>
         <div class="block text-xs mb-1">Default</div>
@@ -250,7 +250,7 @@
     </div>
   </Block>
   <BlockTitle>With Text Input</BlockTitle>
-  <Block strongIos outlineIos class="text-center space-y-4">
+  <Block strong inset class="text-center space-y-4">
     <div>
       <Stepper
         value={inputValue}
@@ -274,41 +274,39 @@
     </div>
   </Block>
   <BlockTitle>Only Buttons</BlockTitle>
-  <List strongIos outlineIos>
+  <List strong inset>
     <ListItem title={`Value is ${value}`}>
-      <Stepper
-        slot="after"
-        {value}
-        buttonsOnly
-        onPlus={increase}
-        onMinus={decrease}
-      />
+      {#snippet after()}
+        <Stepper {value} buttonsOnly onPlus={increase} onMinus={decrease} />
+      {/snippet}
     </ListItem>
     <ListItem title={`Value is ${value}`}>
-      <Stepper
-        slot="after"
-        {value}
-        outline
-        buttonsOnly
-        onPlus={increase}
-        onMinus={decrease}
-      />
+      {#snippet after()}
+        <Stepper
+          {value}
+          outline
+          buttonsOnly
+          onPlus={increase}
+          onMinus={decrease}
+        />
+      {/snippet}
     </ListItem>
     <ListItem title={`Value is ${value}`}>
-      <Stepper
-        slot="after"
-        {value}
-        raised
-        outline
-        buttonsOnly
-        onPlus={increase}
-        onMinus={decrease}
-      />
+      {#snippet after()}
+        <Stepper
+          {value}
+          raised
+          outline
+          buttonsOnly
+          onPlus={increase}
+          onMinus={decrease}
+        />
+      {/snippet}
     </ListItem>
   </List>
 
   <BlockTitle>Colors</BlockTitle>
-  <Block strongIos outlineIos class="text-center space-y-4">
+  <Block strong inset class="text-center space-y-4">
     <div class="grid grid-cols-2 gap-4">
       <div>
         <Stepper

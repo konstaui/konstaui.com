@@ -8,6 +8,7 @@ import {
   Link,
   Button,
 } from 'konsta/react';
+import CloseIcon from '../components/CloseIcon';
 
 export default function PopupPage() {
   const isPreview = document.location.href.includes('examplePreview');
@@ -19,14 +20,16 @@ export default function PopupPage() {
         left={!isPreview && <NavbarBackLink onClick={() => history.back()} />}
       />
 
-      <Block strong className="space-y-4">
+      <Block strong inset className="space-y-4">
         <p>
           Popup is a modal window with any HTML content that pops up over App's
           main content. Popup as all other overlays is part of so called
           "Temporary Views".
         </p>
         <p>
-          <Button onClick={() => setPopupOpened(true)}>Open Popup</Button>
+          <Button rounded onClick={() => setPopupOpened(true)}>
+            Open Popup
+          </Button>
         </p>
       </Block>
 
@@ -35,12 +38,12 @@ export default function PopupPage() {
           <Navbar
             title="Popup"
             right={
-              <Link navbar onClick={() => setPopupOpened(false)}>
-                Close
+              <Link iconOnly onClick={() => setPopupOpened(false)}>
+                <CloseIcon />
               </Link>
             }
           />
-          <Block className="space-y-4">
+          <Block strong inset className="space-y-4">
             <p>
               Here comes popup. You can put here anything, even independent view
               with its own navigation. Also not, that by default popup looks a

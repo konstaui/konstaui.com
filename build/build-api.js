@@ -1,10 +1,14 @@
-const fs = require('fs-extra');
-const path = require('path');
-const { promise: exec } = require('exec-sh');
+import fs from 'fs-extra';
+import path from 'path';
+import execSh from 'exec-sh';
+import { getDirname } from './get-dirname.js';
 
-const buildReactProps = require('./api/build-react-props');
-const buildVueProps = require('./api/build-vue-props');
-const buildSvelteProps = require('./api/build-svelte-props');
+import buildReactProps from './api/build-react-props.js';
+import buildVueProps from './api/build-vue-props.js';
+import buildSvelteProps from './api/build-svelte-props.js';
+
+const { promise: exec } = execSh;
+const __dirname = getDirname(import.meta.url);
 
 const buildApi = async () => {
   console.log('Begin types generation');
@@ -22,10 +26,16 @@ const buildApi = async () => {
         path.resolve(`node_modules/konsta/react/types/${file}`),
         'utf-8'
       )
-      .replace(
-        'export interface Props extends Omit<React.HTMLAttributes<HTMLElement>, keyof Props> {}',
-        ''
-      );
+      .split('\n')
+      .filter((line) => {
+        if (line.startsWith('declare const ')) return false;
+        if (line.startsWith('export default ')) return false;
+        if (line.includes('ref?: ')) return false;
+        return true;
+      })
+
+      .join('\n')
+      .replace(/React.ComponentProps<'([a-z]*)'>/, '{}');
     fs.writeFileSync(
       path.resolve(`node_modules/konsta/react/types/${file}`),
       content
@@ -37,6 +47,7 @@ const buildApi = async () => {
   fs.writeFileSync('./tsconfig.json', JSON.stringify(config, '', 2));
 
   await exec(`npx typedoc --json ./src/types.json`);
+
   const typesPath = path.join(__dirname, '../src/types.json');
   const { children } = await fs.readJSON(typesPath);
   const types = {};
@@ -69,7 +80,7 @@ const buildApi = async () => {
   };
 
   // eslint-disable-next-line
-  children.forEach(async ({ name, children }) => {
+  children.forEach(({ name, children }) => {
     const propsEl = children.filter((child) => child.name === 'Props')[0];
     types[name] = (propsEl.children || []).map((prop) => getProp(prop));
   });
@@ -77,7 +88,9 @@ const buildApi = async () => {
     const props = types[name];
     props.forEach((prop, index) => {
       if (prop.type && prop.type.type === 'reflection') {
-        const newChildren = prop.type.declaration.children.map((subProp) => ({
+        const { children } = prop.type.declaration;
+        if (!children) return;
+        const newChildren = children.map((subProp) => ({
           ...getProp(subProp),
           name: `${prop.name}.${subProp.name}`,
         }));
@@ -86,13 +99,14 @@ const buildApi = async () => {
     });
   });
 
+  await fs.writeFile(typesPath, `${JSON.stringify(types, null, 2)}`);
+
   Object.keys(types).forEach((name) => {
     buildReactProps(name, types);
     buildVueProps(name, types);
     buildSvelteProps(name, types);
   });
 
-  await fs.writeFile(typesPath, `${JSON.stringify(types, null, 4)}`);
   console.log('Types generation finished');
   fs.unlinkSync('./tsconfig.json');
 };

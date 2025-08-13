@@ -18,12 +18,12 @@ export default function PreloaderPage() {
       />
 
       <BlockTitle>Default</BlockTitle>
-      <Block strong insetMaterial outlineIos className="text-center">
+      <Block strong inset className="text-center">
         <Preloader />
       </Block>
 
       <BlockTitle>Colors</BlockTitle>
-      <Block strong insetMaterial outlineIos className="grid grid-cols-4">
+      <Block strong inset className="grid grid-cols-4">
         <div className="text-center">
           <Preloader className="k-color-brand-red" />
         </div>
@@ -39,23 +39,18 @@ export default function PreloaderPage() {
       </Block>
 
       <BlockTitle>Sizes</BlockTitle>
-      <Block
-        strong
-        insetMaterial
-        outlineIos
-        className="grid grid-cols-4 items-center"
-      >
+      <Block strong inset className="grid grid-cols-4 items-center">
         <div className="text-center">
-          <Preloader size="w-4 h-4" />
+          <Preloader className="w-4 h-4" />
         </div>
         <div className="text-center">
-          <Preloader size="w-8 h-8" />
+          <Preloader className="w-8 h-8" />
         </div>
         <div className="text-center">
-          <Preloader size="w-12 h-12" />
+          <Preloader className="w-12 h-12" />
         </div>
         <div className="text-center">
-          <Preloader size="w-16 h-16" />
+          <Preloader className="w-16 h-16" />
         </div>
       </Block>
     </Page>

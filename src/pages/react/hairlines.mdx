@@ -5,6 +5,8 @@ section: 'react'
 
 # Hairlines
 
+## Contents
+
 For many elements Konsta UI uses so called "hairlines" instead of usual CSS borders.
 
 Hairlines are made with `:after` and `:before` pseudo elements. This method allows to have true 0.5px and 0.33px wide "borders".
@@ -30,7 +32,7 @@ For example:
 
 ```jsx
 // add bottom hairline to the element
-<div className="relative hairline-b">...</div>
+<div className="hairline-b relative">...</div>
 ```
 
 ## Remove Hairlines
@@ -56,7 +58,7 @@ For example:
 
 ```jsx
 // add bottom hairline with red-500 color to the element
-<div className="relative hairline-b hairline-red-500">...</div>
+<div className="hairline-b hairline-red-500 relative">...</div>
 ```
 
 ## Hairline Transition Duration
@@ -71,7 +73,7 @@ For example:
 
 ```jsx
 // add bottom hairline with red-500 color to the element, and change its color to blue-500 on hover
-<div className="relative hairline-b hairline-red-500 hairline-duration-300 hover:hairline-blue-500">
+<div className="hairline-b hairline-red-500 hairline-duration-300 hover:hairline-blue-500 relative">
   ...
 </div>
 ```

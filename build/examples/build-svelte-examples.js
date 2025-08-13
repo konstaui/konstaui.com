@@ -1,5 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { getDirname } from '../get-dirname.js';
+
+const __dirname = getDirname(import.meta.url);
 
 const buildExamples = async () => {
   const pagesPath = path.resolve(
@@ -77,4 +80,4 @@ export default function Example() {
   });
 };
 
-module.exports = buildExamples;
+export default buildExamples;

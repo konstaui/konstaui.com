@@ -7,6 +7,8 @@ import { LinkProps } from '@/components/api/svelte/LinkProps';
 
 # Link Svelte Component
 
+## Contents
+
 Link is main component to create links for navigation, custom actions, switching tabs, open/close modals, etc.
 
 ## Link Components
@@ -35,28 +37,33 @@ There are following components included:
 
 #### Svelte Router Link
 
-<!-- prettier-ignore -->
 ```jsx
-<Link linkProps={{to: '/about'}} component={RouterLink}>
+<Link linkProps={{ to: '/about' }} component={RouterLink}>
   About
 </Link>
 ```
 
 #### Link In Navbar
 
-<!-- prettier-ignore -->
 ```jsx
 <Navbar title="My App">
-  <Link slot="right" navbar onClick={openMenu}>Menu</Link>
+  {#snippet right()}
+  <Link navbar onClick={openMenu}>
+    Menu
+  </Link>
+  {/snippet}
 </Navbar>
 ```
 
 #### Link In Toolbar
 
-<!-- prettier-ignore -->
 ```jsx
 <Toolbar>
-  <Link toolbar onClick={action1}>Action 1</Link>
-  <Link toolbar onClick={action2}>Action 2</Link>
+  <Link toolbar onClick={action1}>
+    Action 1
+  </Link>
+  <Link toolbar onClick={action2}>
+    Action 2
+  </Link>
 </Toolbar>
 ```

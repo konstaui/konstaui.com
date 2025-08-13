@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@import './theme.css';
+@import './base.css';
+@import './home.css';
+@import './prose.css';
+@import './docs.css';
+@import './prism.css';
+@import './props-table.css';
+@import './example-preview.css';

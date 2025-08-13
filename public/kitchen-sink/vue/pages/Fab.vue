@@ -8,33 +8,33 @@
 
     <!-- Right Top -->
     <k-fab
-      class="fixed right-4-safe ios:top-15-safe material:top-18-safe z-20 k-color-brand-red"
+      class="fixed right-safe-4 ios:top-safe-19 material:top-safe-18 z-20 k-color-brand-red"
     >
       <template #icon>
-        <component :is="PlusIcon" />
+        <component class="size-6" :is="PlusIcon" />
       </template>
     </k-fab>
 
     <!-- Right Bottom -->
-    <k-fab class="fixed right-4-safe bottom-4-safe z-20">
+    <k-fab class="fixed right-safe-4 bottom-safe-4 z-20">
       <template #icon>
-        <component :is="PlusIcon" />
+        <component class="size-6" :is="PlusIcon" />
       </template>
     </k-fab>
 
     <!-- Left Bottom -->
-    <k-fab class="fixed left-4-safe bottom-4-safe z-20 k-color-brand-green">
+    <k-fab class="fixed left-safe-4 bottom-safe-4 z-20 k-color-brand-green">
       <template #icon>
-        <component :is="PlusIcon" />
+        <component class="size-6" :is="PlusIcon" />
       </template>
     </k-fab>
 
     <!-- Left Top -->
     <k-fab
-      class="fixed left-4-safe ios:top-15-safe material:top-18-safe z-20 k-color-brand-yellow"
+      class="fixed left-safe-4 ios:top-safe-19 material:top-safe-18 z-20 k-color-brand-yellow"
     >
       <template #icon>
-        <component :is="PlusIcon" />
+        <component class="size-6" :is="PlusIcon" />
       </template>
     </k-fab>
 
@@ -43,21 +43,21 @@
       class="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
     >
       <template #icon>
-        <component :is="PlusIcon" />
+        <component class="size-6" :is="PlusIcon" />
       </template>
     </k-fab>
 
     <!-- Center Bottom -->
     <k-fab
-      class="fixed left-1/2 bottom-4-safe transform -translate-x-1/2 z-20"
+      class="fixed left-1/2 bottom-safe-4 transform -translate-x-1/2 z-20"
       text="Create"
       text-position="after"
       ><template #icon>
-        <component :is="PlusIcon" />
+        <component class="size-6" :is="PlusIcon" />
       </template>
     </k-fab>
 
-    <k-block class="space-y-4">
+    <k-block strong inset class="space-y-4">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, quo rem
         beatae, delectus eligendi est saepe molestias perferendis suscipit,
@@ -88,7 +88,7 @@
         assumenda veniam, ipsum alias.
       </p>
     </k-block>
-    <k-block class="space-y-4">
+    <k-block strong inset class="space-y-4">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ipsa
         debitis sed nihil eaque dolore cum iste quibusdam, accusamus doloribus,
@@ -135,14 +135,7 @@
 </template>
 <script>
   import { computed } from 'vue';
-  import {
-    kPage,
-    kNavbar,
-    kNavbarBackLink,
-    kBlock,
-    kFab,
-    useTheme,
-  } from 'konsta/vue';
+  import { kPage, kNavbar, kNavbarBackLink, kBlock, kFab } from 'konsta/vue';
   import { Plus } from 'framework7-icons/vue';
   import MdAdd from '../components/MdAdd.vue';
 
@@ -157,11 +150,9 @@
       kFab,
     },
     setup() {
-      const theme = useTheme();
       const PlusIcon = computed(() => (theme.value === 'ios' ? Plus : MdAdd));
 
       return {
-        theme,
         PlusIcon,
         isPreview: document.location.href.includes('examplePreview'),
         history: window.history,

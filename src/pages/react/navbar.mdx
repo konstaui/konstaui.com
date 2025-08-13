@@ -10,6 +10,8 @@ import SubnavbarExample from '@/components/examples/react/Subnavbar';
 
 # Navbar React Component
 
+## Contents
+
 Navbar is a fixed area at the top of a screen that contains Page title and navigation elements.
 
 ## Navbar Components
@@ -27,12 +29,9 @@ There are following components included:
 
 `NavbarBackLink` should be placed in Navbar's "left" area:
 
-<!-- prettier-ignore -->
 ```jsx
 <Navbar
-  left={
-    <NavbarBackLink text="Back" onClick={() => history.back()} />
-  }
+  left={<NavbarBackLink text="Back" onClick={() => history.back()} />}
   title="My App"
 />
 ```

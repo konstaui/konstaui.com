@@ -1,18 +1,16 @@
 import React from 'react';
 import { trackOutbound } from '../shared/track-outbound';
-import { ReactComponent as PatreonLogo } from '@/img/patreon-logo.svg';
-import { ReactComponent as OpenCollectiveLogo } from '@/img/opencollective-logo.svg';
 import HeroSponsors from '@/components/HeroSponsors';
 import DefaultLayout from '@/layouts/default';
 
 export default function SponsorsPage() {
   return (
     <DefaultLayout>
-      <h1 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl">
+      <h1 className="mb-12 text-center text-4xl font-extrabold text-gray-900 sm:text-5xl dark:text-gray-200">
         Konsta UI Sponsors
       </h1>
 
-      <div className="mb-16 text-center ">
+      <div className="mb-16 text-center">
         Support Konsta UI on{' '}
         <a
           href="https://opencollective.com/konstaui"
@@ -41,20 +39,26 @@ export default function SponsorsPage() {
             href="https://opencollective.com/konstaui"
             rel="noopener"
             target="_blank"
-            className="inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium !text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:!no-underline dark:hover:bg-white dark:hover:bg-opacity-75 sm:text-lg"
+            className="inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium !text-black shadow-lg duration-200 hover:bg-black/5 hover:!no-underline sm:text-lg dark:hover:bg-white/75"
             onClick={() => trackOutbound('https://opencollective.com/konstaui')}
           >
-            <OpenCollectiveLogo className="mr-4 h-6 w-6" />
+            <img
+              src="/images/opencollective-logo.svg"
+              className="mr-4 h-6 w-6"
+            />
             <span>Become a sponsor on OpenCollective</span>
           </a>
           <a
             href="https://patreon.com/konstaui"
             rel="noopener"
             target="_blank"
-            className="inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium !text-black shadow-lg duration-200 hover:bg-black hover:bg-opacity-5 hover:!no-underline dark:hover:bg-white dark:hover:bg-opacity-75 sm:text-lg"
+            className="inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium !text-black shadow-lg duration-200 hover:bg-black/5 hover:!no-underline sm:text-lg dark:hover:bg-white/75"
             onClick={() => trackOutbound('https://patreon.com/konstaui')}
           >
-            <PatreonLogo className="mr-4 h-6 w-6 text-[#FF424D]" />
+            <img
+              src="/images/patreon-logo.svg"
+              className="mr-4 h-6 w-6 text-[#FF424D]"
+            />
             <span>Support Konsta UI on Patreon</span>
           </a>
         </div>

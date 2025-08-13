@@ -1,4 +1,5 @@
 <script>
+  import CloseIcon from '../components/CloseIcon.svelte';
   import {
     Page,
     Navbar,
@@ -19,29 +20,33 @@
 
 <Page>
   <Navbar title="Panel / Side Panel">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
+    {/snippet}
   </Navbar>
 
-  <Block strongIos outlineIos class="space-y-4">
+  <Block strong inset class="space-y-4">
     <p>
       Konsta UI comes with 2 panels (on left and on right), both are optional.
       You can put absolutely anything inside: data lists, forms, custom content,
       etc.
     </p>
   </Block>
-  <Block strongIos outlineIos class="flex space-x-4 rtl:space-x-reverse">
-    <Button onClick={() => (leftPanelOpened = true)}>Left Panel</Button>
-    <Button onClick={() => (rightPanelOpened = true)}>Right Panel</Button>
+  <Block strong inset class="flex space-x-4 rtl:space-x-reverse">
+    <Button rounded onClick={() => (leftPanelOpened = true)}>Left Panel</Button>
+    <Button rounded onClick={() => (rightPanelOpened = true)}
+      >Right Panel</Button
+    >
   </Block>
 
   <BlockTitle>Floating Panels</BlockTitle>
-  <Block strongIos outlineIos class="flex space-x-4 rtl:space-x-reverse">
-    <Button onClick={() => (leftFloatingPanelOpened = true)}>Left Panel</Button>
-    <Button onClick={() => (rightFloatingPanelOpened = true)}
+  <Block strong inset class="flex space-x-4 rtl:space-x-reverse">
+    <Button rounded onClick={() => (leftFloatingPanelOpened = true)}
+      >Left Panel</Button
+    >
+    <Button rounded onClick={() => (rightFloatingPanelOpened = true)}
       >Right Panel</Button
     >
   </Block>
@@ -53,9 +58,11 @@
   >
     <Page>
       <Navbar title="Left Panel">
-        <Link slot="right" navbar onClick={() => (leftPanelOpened = false)}>
-          Close
-        </Link>
+        {#snippet right()}
+          <Link iconOnly onClick={() => (leftPanelOpened = false)}
+            ><CloseIcon /></Link
+          >
+        {/snippet}
       </Navbar>
       <Block class="space-y-4">
         <p>Here comes left panel.</p>
@@ -82,9 +89,11 @@
   >
     <Page>
       <Navbar title="Right Panel">
-        <Link slot="right" navbar onClick={() => (rightPanelOpened = false)}>
-          Close
-        </Link>
+        {#snippet right()}
+          <Link iconOnly onClick={() => (rightPanelOpened = false)}
+            ><CloseIcon /></Link
+          >
+        {/snippet}
       </Navbar>
       <Block class="space-y-4">
         <p>Here comes right panel.</p>
@@ -109,15 +118,16 @@
     opened={leftFloatingPanelOpened}
     onBackdropClick={() => (leftFloatingPanelOpened = false)}
   >
-    <Page class="no-safe-areas-top no-safe-areas-bottom">
+    <Page
+      colors={{ bgIos: 'bg-transparent' }}
+      class="no-safe-areas-top no-safe-areas-bottom"
+    >
       <Navbar title="Left Panel">
-        <Link
-          slot="right"
-          navbar
-          onClick={() => (leftFloatingPanelOpened = false)}
-        >
-          Close
-        </Link>
+        {#snippet right()}
+          <Link iconOnly onClick={() => (leftFloatingPanelOpened = false)}
+            ><CloseIcon /></Link
+          >
+        {/snippet}
       </Navbar>
       <Block class="space-y-4">
         <p>Here comes left panel.</p>
@@ -143,15 +153,16 @@
     opened={rightFloatingPanelOpened}
     onBackdropClick={() => (rightFloatingPanelOpened = false)}
   >
-    <Page className="no-safe-areas-top no-safe-areas-bottom">
+    <Page
+      colors={{ bgIos: 'bg-transparent' }}
+      class="no-safe-areas-top no-safe-areas-bottom"
+    >
       <Navbar title="Right Panel">
-        <Link
-          slot="right"
-          navbar
-          onClick={() => (rightFloatingPanelOpened = false)}
-        >
-          Close
-        </Link>
+        {#snippet right()}
+          <Link iconOnly onClick={() => (rightFloatingPanelOpened = false)}
+            ><CloseIcon /></Link
+          >
+        {/snippet}
       </Navbar>
       <Block class="space-y-4">
         <p>Here comes right panel.</p>

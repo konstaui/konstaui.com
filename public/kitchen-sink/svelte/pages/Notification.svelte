@@ -13,11 +13,11 @@
 
   const isPreview = document.location.href.includes('examplePreview');
 
-  let notificationFull = false;
-  let notificationWithButton = false;
-  let notificationCloseOnClick = false;
-  let notificationCallbackOnClose = false;
-  let alertOpened = false;
+  let notificationFull = $state(false);
+  let notificationWithButton = $state(false);
+  let notificationCloseOnClick = $state(false);
+  let notificationCallbackOnClose = $state(false);
+  let alertOpened = $state(false);
 
   const openNotification = (setter) => {
     notificationFull = false;
@@ -36,11 +36,11 @@
 
 <Page>
   <Navbar title="Notification">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
+    {/snippet}
   </Navbar>
 
   <Notification
@@ -50,7 +50,9 @@
     subtitle="This is a subtitle"
     text="This is a simple notification message"
   >
-    <DemoIcon slot="icon" />
+    {#snippet icon()}
+      <DemoIcon />
+    {/snippet}
   </Notification>
 
   <Notification
@@ -61,7 +63,9 @@
     button
     onClose={() => (notificationWithButton = false)}
   >
-    <DemoIcon slot="icon" />
+    {#snippet icon()}
+      <DemoIcon />
+    {/snippet}
   </Notification>
 
   <Notification
@@ -70,9 +74,11 @@
     titleRightText="now"
     subtitle="Notification with close on click"
     text="Click me to close"
-    onClick={() => (notificationCloseOnClick = false)}
+    onclick={() => (notificationCloseOnClick = false)}
   >
-    <DemoIcon slot="icon" />
+    {#snippet icon()}
+      <DemoIcon />
+    {/snippet}
   </Notification>
 
   <Notification
@@ -81,41 +87,50 @@
     titleRightText="now"
     subtitle="Notification with close on click"
     text="Click me to close"
-    onClick={() => {
+    onclick={() => {
       notificationCallbackOnClose = false;
       alertOpened = true;
     }}
   >
-    <DemoIcon slot="icon" />
+    {#snippet icon()}
+      <DemoIcon />
+    {/snippet}
   </Notification>
   <Dialog opened={alertOpened} onBackdropClick={() => (alertOpened = false)}>
-    <svelte:fragment slot="title">Konsta UI</svelte:fragment>
+    {#snippet title()}
+      Konsta UI
+    {/snippet}
     Notification closed
 
-    <svelte:fragment slot="buttons">
-      <DialogButton onClick={() => (alertOpened = false)}>Ок</DialogButton>
-    </svelte:fragment>
+    {#snippet buttons()}
+      <DialogButton onclick={() => (alertOpened = false)}>Ок</DialogButton>
+    {/snippet}
   </Dialog>
-  <Block strongIos outlineIos class="space-y-4">
+  <Block strong inset class="space-y-4">
     <p>
       Konsta UI comes with simple Notifications component that allows you to
       show some useful messages to user and request basic actions.
     </p>
     <p>
-      <Button onClick={() => openNotification(() => (notificationFull = true))}>
+      <Button
+        rounded
+        onclick={() => openNotification(() => (notificationFull = true))}
+      >
         Full layout notification
       </Button>
     </p>
     <p>
       <Button
-        onClick={() => openNotification(() => (notificationWithButton = true))}
+        rounded
+        onclick={() => openNotification(() => (notificationWithButton = true))}
       >
         With Close Button
       </Button>
     </p>
     <p>
       <Button
-        onClick={() =>
+        rounded
+        onclick={() =>
           openNotification(() => (notificationCloseOnClick = true))}
       >
         Click to Close
@@ -123,7 +138,8 @@
     </p>
     <p>
       <Button
-        onClick={() =>
+        rounded
+        onclick={() =>
           openNotification(() => (notificationCallbackOnClose = true))}
       >
         Callback on Close

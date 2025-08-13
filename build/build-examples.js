@@ -1,6 +1,6 @@
-const buildVueExamples = require('./examples/build-vue-examples');
-const buildReactExamples = require('./examples/build-react-examples');
-const buildSvelteExamples = require('./examples/build-svelte-examples');
+import buildVueExamples from './examples/build-vue-examples.js';
+import buildReactExamples from './examples/build-react-examples.js';
+import buildSvelteExamples from './examples/build-svelte-examples.js';
 
 const buildExamples = async () => {
   buildVueExamples();

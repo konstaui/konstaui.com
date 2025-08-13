@@ -5,14 +5,14 @@ export const Footer = (props) => {
 
   return (
     <div
-      className={`border-t-[0.5px] border-black border-opacity-10 py-8 dark:border-dark-light ${
+      className={`dark:border-dark-light border-t-[0.5px] border-black/10 py-8 ${
         className || ''
       }`}
       {...attrs}
     >
       <Container>
         {/* Copy */}
-        <div className="text-sm space-y-4 text-center">
+        <div className="space-y-4 text-center text-sm">
           <div>
             Code licensed under{' '}
             <a
@@ -28,7 +28,7 @@ export const Footer = (props) => {
             2022 © Konsta UI by{' '}
             <a href="https://nolimits4web.com" target="_blank">
               <img
-                className="w-12 h-12 inline-block"
+                className="inline-block h-12 w-12"
                 src="/images/n4w-logo.svg"
                 alt="nolimits4web"
               />

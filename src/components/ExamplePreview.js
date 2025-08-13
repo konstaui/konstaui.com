@@ -8,8 +8,8 @@ const Button = (props) => {
       className={`h-8 w-20 text-sm font-medium text-white duration-300 ${
         active
           ? 'bg-primary'
-          : 'border border-white border-opacity-25 bg-white bg-opacity-10 text-opacity-50 hover:bg-opacity-20'
-      } ${left ? 'rounded-l' : 'rounded-r'}`}
+          : 'text-opacity-50 border border-white/20 bg-white/10 hover:bg-white/20'
+      } ${left ? 'rounded-l-lg' : 'rounded-r-lg'}`}
       {...rest}
     >
       {children}
@@ -55,14 +55,14 @@ export const ExamplePreview = (props) => {
 
   return (
     <div className="example-preview my-8">
-      <div className="flex items-center justify-between rounded-t-lg bg-black py-2 px-4">
-        <div className="text-white text-opacity-75">{fileName || ''}</div>
+      <div className="flex items-center justify-between rounded-t-lg bg-black px-4 py-2">
+        <div className="text-opacity-75 text-white">{fileName || ''}</div>
         <div className="flex">
           <div>
             <a
               href={getIframeUrl()}
               target="_blank"
-              className="flex h-8 w-8 items-center justify-center rounded border border-white border-opacity-25 bg-white bg-opacity-10 !text-white duration-300 hover:bg-opacity-20"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/20 bg-white/10 !text-white duration-300 hover:bg-white/20"
             >
               <svg
                 className="relative -top-px h-4 w-4 opacity-50"

@@ -21,8 +21,6 @@ const links = [
       'Hairlines',
       'Safe Areas',
       'Touch Ripple',
-      'Translucent',
-      'Touch Action',
       { title: 'useTheme', href: '/react/use-theme' },
       'Fonts',
     ],

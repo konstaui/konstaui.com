@@ -13,15 +13,15 @@
 
 <Page>
   <Navbar title="Chips">
-    <svelte:fragment slot="left">
+    {#snippet left()}
       {#if !isPreview}
-        <NavbarBackLink onClick={() => history.back()} />
+        <NavbarBackLink onclick={() => history.back()} />
       {/if}
-    </svelte:fragment>
+    {/snippet}
   </Navbar>
 
   <BlockTitle>Chips With Text</BlockTitle>
-  <Block strongIos outlineIos>
+  <Block strong inset>
     <Chip class="m-0.5">Example Chip</Chip>
     <Chip class="m-0.5">Another Chip</Chip>
     <Chip class="m-0.5">One More Chip</Chip>
@@ -30,7 +30,7 @@
   </Block>
 
   <BlockTitle>Outline Chips</BlockTitle>
-  <Block strongIos outlineIos>
+  <Block strong inset>
     <Chip outline class="m-0.5">Example Chip</Chip>
     <Chip outline class="m-0.5">Another Chip</Chip>
     <Chip outline class="m-0.5">One More Chip</Chip>
@@ -39,38 +39,41 @@
   </Block>
 
   <BlockTitle>Contact Chips</BlockTitle>
-  <Block strongIos outlineIos>
+  <Block strong inset>
     <Chip class="m-0.5">
-      <img
-        slot="media"
-        alt="avatar"
-        class="ios:h-7 material:h-6 rounded-full"
-        src="https://cdn.framework7.io/placeholder/people-100x100-9.jpg"
-      />
+      {#snippet media()}
+        <img
+          alt="avatar"
+          class="ios:h-7 material:h-6 rounded-full"
+          src="https://cdn.framework7.io/placeholder/people-100x100-9.jpg"
+        />
+      {/snippet}
       Jane Doe
     </Chip>
     <Chip class="m-0.5">
-      <img
-        slot="media"
-        alt="avatar"
-        class="ios:h-7 material:h-6 rounded-full"
-        src="https://cdn.framework7.io/placeholder/people-100x100-3.jpg"
-      />
+      {#snippet media()}
+        <img
+          alt="avatar"
+          class="ios:h-7 material:h-6 rounded-full"
+          src="https://cdn.framework7.io/placeholder/people-100x100-3.jpg"
+        />
+      {/snippet}
       John Doe
     </Chip>
     <Chip class="m-0.5">
-      <img
-        slot="media"
-        alt="avatar"
-        class="ios:h-7 material:h-6 rounded-full"
-        src="https://cdn.framework7.io/placeholder/people-100x100-7.jpg"
-      />
+      {#snippet media()}
+        <img
+          alt="avatar"
+          class="ios:h-7 material:h-6 rounded-full"
+          src="https://cdn.framework7.io/placeholder/people-100x100-7.jpg"
+        />
+      {/snippet}
       Adam Smith
     </Chip>
   </Block>
 
   <BlockTitle>Deletable Chips / Tags</BlockTitle>
-  <Block strongIos outlineIos>
+  <Block strong inset>
     <Chip
       class="m-0.5"
       deleteButton
@@ -83,17 +86,18 @@
       deleteButton
       onDelete={() => console.log('Delete Chip')}
     >
-      <img
-        slot="media"
-        alt="avatar"
-        class="ios:h-7 material:h-6 rounded-full"
-        src="https://cdn.framework7.io/placeholder/people-100x100-7.jpg"
-      />
+      {#snippet media()}
+        <img
+          alt="avatar"
+          class="ios:h-7 material:h-6 rounded-full"
+          src="https://cdn.framework7.io/placeholder/people-100x100-7.jpg"
+        />
+      {/snippet}
       Adam Smith
     </Chip>
   </Block>
   <BlockTitle class=" bg-b bg-b">Color Chips</BlockTitle>
-  <Block strongIos outlineIos>
+  <Block strong inset>
     <Chip
       class="m-0.5"
       colors={{ fillBg: 'bg-red-500', fillText: 'text-white' }}

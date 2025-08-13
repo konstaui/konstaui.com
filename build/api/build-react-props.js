@@ -1,6 +1,9 @@
-const path = require('path');
-const fs = require('fs');
-const description = require('./description');
+import path from 'path';
+import fs from 'fs';
+import description from './description.js';
+import { getDirname } from '../get-dirname.js';
+
+const __dirname = getDirname(import.meta.url);
 
 const buildProps = async (componentName, typesData) => {
   const items = (typesData[componentName] || []).filter((item) =>
@@ -42,12 +45,16 @@ const buildProps = async (componentName, typesData) => {
     return typeObj.name || '';
   };
 
-  // eslint-disable-next-line
   const defaultValue = (item) => {
-    return (item.default_value || '').replace(
-      /[{}]/g,
-      (bracket) => `{'${bracket}'}`
+    const defaultTag = item.comment?.blockTags?.find(
+      (tag) => tag.tag === '@default'
     );
+    if (!defaultTag) return '';
+    const value = defaultTag.content[0].text
+      .replace('```ts\n', '')
+      .replace('\n```', '')
+      .replace(/[{}]/g, (bracket) => `{'${bracket}'}`);
+    return value;
   };
 
   const content = `
@@ -69,8 +76,8 @@ export const ${componentName}Props = () => {
           <tr>
             <td>
               <a href="#prop-${item.name}" id="prop-${item.name}"><span>${
-              item.name
-            }</span></a>
+                item.name
+              }</span></a>
             </td>
             <td>
               <span>${type(item)}</span>
@@ -97,4 +104,4 @@ export const ${componentName}Props = () => {
   );
 };
 
-module.exports = buildProps;
+export default buildProps;

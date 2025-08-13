@@ -7,6 +7,8 @@ import { LinkProps } from '@/components/api/react/LinkProps';
 
 # Link React Component
 
+## Contents
+
 Link is main component to create links for navigation, custom actions, switching tabs, open/close modals, etc.
 
 ## Link Components
@@ -37,7 +39,6 @@ There are following components included:
 
 #### React Router Link
 
-<!-- prettier-ignore -->
 ```jsx
 import { Link } from 'konsta/react';
 import { Link as RouterLink } from 'react-router-dom';
@@ -46,27 +47,31 @@ import { Link as RouterLink } from 'react-router-dom';
 
 <Link href="/about" component={RouterLink}>
   About
-</Link>
+</Link>;
 ```
 
 #### Link In Navbar
 
-<!-- prettier-ignore -->
 ```jsx
 <Navbar
   title="My App"
   right={
-    <Link navbar onClick={openMenu}>Menu</Link>
+    <Link navbar onClick={openMenu}>
+      Menu
+    </Link>
   }
 />
 ```
 
 #### Link In Toolbar
 
-<!-- prettier-ignore -->
 ```jsx
 <Toolbar>
-  <Link toolbar onClick={action1}>Action 1</Link>
-  <Link toolbar onClick={action2}>Action 2</Link>
+  <Link toolbar onClick={action1}>
+    Action 1
+  </Link>
+  <Link toolbar onClick={action2}>
+    Action 2
+  </Link>
 </Toolbar>
 ```

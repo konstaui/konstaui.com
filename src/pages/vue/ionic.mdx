@@ -5,6 +5,8 @@ section: 'vue'
 
 # Konsta UI & Ionic
 
+## Contents
+
 Let's see how to use Konsta UI Vue components with [Ionic](https://ionicframework.com/vue) Vue.
 
 ## Create Ionic Project
@@ -101,12 +103,8 @@ For example, let's open `src/pages/Home.tsx` and change it to the following:
     </ion-header>
     <ion-footer>
       <ion-toolbar>
-        <k-link slot="start" toolbar>
-          Link 1
-        </k-link>
-        <k-link slot="end" toolbar>
-          Link 2
-        </k-link>
+        <k-link slot="start" toolbar> Link 1 </k-link>
+        <k-link slot="end" toolbar> Link 2 </k-link>
       </ion-toolbar>
     </ion-footer>
 
@@ -119,10 +117,7 @@ For example, let's open `src/pages/Home.tsx` and change it to the following:
 
       <!-- In page content we can use Konsta UI components -->
       <k-block strong>
-        <p>
-          Here is your Ionic & Konsta UI app. Let's see what we have
-          here.
-        </p>
+        <p>Here is your Ionic & Konsta UI app. Let's see what we have here.</p>
       </k-block>
       <k-block-title>Navigation</k-block-title>
       <k-list>
@@ -138,47 +133,46 @@ For example, let's open `src/pages/Home.tsx` and change it to the following:
   </ion-page>
 </template>
 <script>
-import {
-  IonContent,
-  IonHeader,
-  IonFooter,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/vue';
-import {
-  kBlock,
-  kButton,
-  kList,
-  kListItem,
-  kBlockTitle,
-  kLink,
-} from 'konsta/vue';
-
-export default {
-  components: {
+  import {
     IonContent,
     IonHeader,
     IonFooter,
     IonPage,
     IonTitle,
     IonToolbar,
+  } from '@ionic/vue';
+  import {
     kBlock,
     kButton,
     kList,
     kListItem,
     kBlockTitle,
     kLink,
-  }
-}
+  } from 'konsta/vue';
 
+  export default {
+    components: {
+      IonContent,
+      IonHeader,
+      IonFooter,
+      IonPage,
+      IonTitle,
+      IonToolbar,
+      kBlock,
+      kButton,
+      kList,
+      kListItem,
+      kBlockTitle,
+      kLink,
+    },
+  };
 </script>
 ```
 
 As a result we should see the following page:
 
 <img
-  class="max-w-[375px] w-full border border-black border-opacity-10 rounded-lg"
+  class="w-full max-w-[375px] rounded-lg border border-black/10"
   src="/images/docs/k-ionic.png"
   alt="konsta-ionic"
 />

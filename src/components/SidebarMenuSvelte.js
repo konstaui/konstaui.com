@@ -20,8 +20,6 @@ const links = [
       'Hairlines',
       'Safe Areas',
       'Touch Ripple',
-      'Translucent',
-      'Touch Action',
       { title: 'useTheme', href: '/svelte/use-theme' },
       'Fonts',
     ],

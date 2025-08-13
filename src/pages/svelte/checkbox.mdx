@@ -8,6 +8,8 @@ import CheckboxExample from '@/components/examples/svelte/Checkbox';
 
 # Checkbox Svelte Component
 
+## Contents
+
 ## Checkbox Components
 
 There are following components included:
@@ -26,12 +28,16 @@ Checkboxes List is not a separate component, but just a particular case of using
 <List>
   <!-- Additional "label" prop on ListItem -->
   <ListItem label title="Books">
+    {#snippet media()}
     <!-- Pass Checkbox to list item media -->
-    <Checkbox slot="media" component="div" name="my-checkbox" />
+    <Checkbox component="div" name="my-checkbox" />
+    {/snippet}
   </ListItem>
   <ListItem label title="Movies">
+    {#snippet media()}
     <!-- Pass Checkbox to list item media -->
-    <Checkbox slot="media" component="div" name="my-checkbox" />
+    <Checkbox component="div" name="my-checkbox" />
+    {/snippet}
   </ListItem>
 </List>
 ```

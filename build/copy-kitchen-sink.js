@@ -1,5 +1,7 @@
-const { promise: exec } = require('exec-sh');
-const fs = require('fs');
+import execSh from 'exec-sh';
+import fs from 'fs';
+
+const { promise: exec } = execSh;
 
 const copyKitchenSink = async () => {
   // eslint-disable-next-line

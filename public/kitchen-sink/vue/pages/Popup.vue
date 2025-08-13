@@ -6,14 +6,16 @@
       </template>
     </k-navbar>
 
-    <k-block strong class="space-y-4">
+    <k-block strong inset class="space-y-4">
       <p>
         Popup is a modal window with any HTML content that pops up over App's
         main content. Popup as all other overlays is part of so called
         "Temporary Views".
       </p>
       <p>
-        <k-button @click="() => (popupOpened = true)">Open Popup</k-button>
+        <k-button rounded @click="() => (popupOpened = true)">
+          Open Popup
+        </k-button>
       </p>
     </k-block>
 
@@ -21,10 +23,12 @@
       <k-page>
         <k-navbar title="Popup">
           <template #right>
-            <k-link navbar @click="() => (popupOpened = false)"> Close </k-link>
+            <k-link icon-only @click="() => (popupOpened = false)">
+              <close-icon />
+            </k-link>
           </template>
         </k-navbar>
-        <k-block class="space-y-4">
+        <k-block strong inset class="space-y-4">
           <p>
             Here comes popup. You can put here anything, even independent view
             with its own navigation. Also not, that by default popup looks a bit
@@ -69,7 +73,7 @@
     kLink,
     kButton,
   } from 'konsta/vue';
-
+  import CloseIcon from '../components/CloseIcon.vue';
   export default {
     name: 'PopupPage',
     components: {
@@ -80,6 +84,7 @@
       kBlock,
       kLink,
       kButton,
+      CloseIcon,
     },
     setup() {
       const popupOpened = ref(false);
