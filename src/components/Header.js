@@ -1,9 +1,11 @@
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { Container } from './Container';
 import { ThemeSwitch } from './ThemeSwitch';
 import { GithubStats } from './GithubStats';
 import { Logo } from './Logo';
+import PaneFlowBanner from './PaneFlowBanner';
+import TogglesBanner from './TogglesBanner';
 
 const docsLinks = [
   { title: 'Konsta UI React', href: '/react' },
@@ -92,8 +94,17 @@ export const Header = () => {
     buttonElRef.current.focus();
   };
 
+  const [showBanner, setShowBanner] = useState(null);
+
+  useLayoutEffect(() => {
+    const banner = Math.random() < 0.5 ? 'paneflow' : 't0ggles';
+    setShowBanner(banner);
+  }, []);
+
   return (
     <>
+      <PaneFlowBanner className={showBanner === 'paneflow' ? '' : 'hidden'} />
+      <TogglesBanner className={showBanner === 't0ggles' ? '' : 'hidden'} />
       <header className="dark:border-dark-light dark:bg-dark/75 sticky top-0 z-50 border-b-[0.5px] border-black/10 bg-white/75 backdrop-blur-lg backdrop-saturate-200 dark:backdrop-blur-lg dark:backdrop-saturate-200">
         <Container className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-6 text-black dark:text-white">
@@ -103,7 +114,7 @@ export const Header = () => {
             <Dropdown title="Documentation" links={docsLinks} />
             <Dropdown title="Resources" links={resourcesLinks} />
           </div>
-          <div className="group dark:bg-dark relative mr-auto ml-8 sm:hidden">
+          <div className="group dark:bg-dark relative mr-auto sm:hidden">
             <button
               className="flex items-center text-black outline-none dark:text-white"
               type="button"
