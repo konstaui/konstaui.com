@@ -26,7 +26,6 @@ export const ExamplePreview = (props) => {
   if (react) url = `/kitchen-sink/react/dist/index.html${url}`;
   if (vue) url = `/kitchen-sink/vue/dist/index.html${url}`;
   if (svelte) url = `/kitchen-sink/svelte/dist/index.html${url}`;
-  console.log(theme);
   useEffect(() => {
     if (
       iframeEl.current &&

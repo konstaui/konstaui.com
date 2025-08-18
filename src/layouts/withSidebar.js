@@ -15,7 +15,7 @@ const sidebars = {
 };
 
 export default function WithSidebar(props) {
-  const { meta, children, tableOfContents } = props;
+  const { meta = {}, children, tableOfContents } = props;
   const [opened, setOpened] = useState(false);
   const sidebarEl = useRef(null);
   const [prevLink, setPrevLink] = useState(null);
@@ -74,10 +74,10 @@ export default function WithSidebar(props) {
         <div
           className={`${
             opened ? '' : 'hidden'
-          } dark:bg-dark fixed top-16 left-0 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:bg-transparent lg:shadow-none xl:mr-10`}
+          } dark:bg-dark fixed top-16 left-0 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:shadow-none xl:mr-10`}
         >
           <div
-            className="sticky top-16 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain px-4 py-10 lg:px-0"
+            className="sticky top-0 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain px-4 py-10 pt-26 lg:px-0 lg:pt-10"
             ref={sidebarEl}
           >
             {Sidebar && <Sidebar />}
@@ -86,7 +86,7 @@ export default function WithSidebar(props) {
         <div className="prose dark:prose-invert max-w-none min-w-0 flex-auto pt-10 pb-24 lg:pb-16">
           {opened && (
             <div
-              className="fixed top-0 left-0 z-10 h-full w-full bg-black/25"
+              className="fixed top-0 left-0 z-10 h-full w-full bg-black/25 lg:hidden"
               onClick={() => setOpened(false)}
             />
           )}

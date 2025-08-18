@@ -70,6 +70,11 @@ function MyApp({ Component, pageProps, router }) {
     });
   });
 
+  const allPageProps = {
+    ...pageProps,
+    meta,
+  };
+
   return (
     <>
       <Head>
@@ -106,7 +111,7 @@ function MyApp({ Component, pageProps, router }) {
         />
       </Head>
       <div className="dark:bg-dark">
-        <Component {...pageProps} />
+        <Component {...allPageProps} />
       </div>
     </>
   );
