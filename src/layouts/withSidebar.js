@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import TableOfContents from '../components/TableOfContents';
 import { Container } from '../components/Container';
 import { Footer } from '../components/Footer';
@@ -20,6 +21,8 @@ export default function WithSidebar(props) {
   const sidebarEl = useRef(null);
   const [prevLink, setPrevLink] = useState(null);
   const [nextLink, setNextLink] = useState(null);
+  const [isScrollRestored, setIsScrollRestored] = useState(false);
+  const router = useRouter();
   const Sidebar =
     meta.section && sidebars[meta.section] ? sidebars[meta.section] : null;
   let childrenWithTOC;
@@ -63,18 +66,81 @@ export default function WithSidebar(props) {
     }
   };
 
+  const saveSidebarScrollPosition = () => {
+    if (sidebarEl.current && meta.section) {
+      const scrollTop = sidebarEl.current.scrollTop;
+      sessionStorage.setItem(`sidebar-scroll-${meta.section}`, scrollTop.toString());
+    }
+  };
+
+  const restoreSidebarScrollPosition = () => {
+    if (sidebarEl.current && meta.section && !isScrollRestored) {
+      const savedScrollTop = sessionStorage.getItem(`sidebar-scroll-${meta.section}`);
+      if (savedScrollTop) {
+        const scrollValue = parseInt(savedScrollTop, 10);
+        sidebarEl.current.style.scrollBehavior = 'auto';
+        sidebarEl.current.scrollTop = scrollValue;
+        setIsScrollRestored(true);
+        requestAnimationFrame(() => {
+          if (sidebarEl.current) {
+            sidebarEl.current.style.scrollBehavior = '';
+          }
+        });
+      } else {
+        setIsScrollRestored(true);
+      }
+    }
+  };
+
   useEffect(() => {
     setPrevNextLinks();
   }, []);
+
+  useEffect(() => {
+    setIsScrollRestored(false);
+  }, [meta.section]);
+
+  useLayoutEffect(() => {
+    if (sidebarEl.current && meta.section) {
+      restoreSidebarScrollPosition();
+    }
+  }, [meta.section, isScrollRestored]);
+
+  useEffect(() => {
+    const sidebarElement = sidebarEl.current;
+    if (!sidebarElement) return;
+
+    const handleScroll = () => {
+      saveSidebarScrollPosition();
+    };
+
+    const handleBeforeUnload = () => {
+      saveSidebarScrollPosition();
+    };
+
+    sidebarElement.addEventListener('scroll', handleScroll);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    const handleRouteChangeStart = () => {
+      saveSidebarScrollPosition();
+    };
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+
+    return () => {
+      sidebarElement.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+    };
+  }, [router.events, meta.section]);
 
   return (
     <>
       <Header />
       <Container className="flex">
         <div
-          className={`${
-            opened ? '' : 'hidden'
-          } dark:bg-dark fixed top-16 left-0 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:shadow-none xl:mr-10`}
+          className={`${opened ? '' : 'hidden'
+            } dark:bg-dark fixed top-16 left-0 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:shadow-none xl:mr-10`}
         >
           <div
             className="sticky top-0 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain px-4 py-10 pt-26 lg:px-0 lg:pt-10"
