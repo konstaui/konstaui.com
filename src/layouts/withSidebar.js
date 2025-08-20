@@ -67,15 +67,15 @@ export default function WithSidebar(props) {
   };
 
   const saveSidebarScrollPosition = () => {
-    if (sidebarEl.current && meta.section) {
+    if (sidebarEl.current) {
       const scrollTop = sidebarEl.current.scrollTop;
-      sessionStorage.setItem(`sidebar-scroll-${meta.section}`, scrollTop.toString());
+      sessionStorage.setItem('sidebar-scroll', scrollTop.toString());
     }
   };
 
   const restoreSidebarScrollPosition = () => {
-    if (sidebarEl.current && meta.section && !isScrollRestored) {
-      const savedScrollTop = sessionStorage.getItem(`sidebar-scroll-${meta.section}`);
+    if (sidebarEl.current && !isScrollRestored) {
+      const savedScrollTop = sessionStorage.getItem('sidebar-scroll');
       if (savedScrollTop) {
         const scrollValue = parseInt(savedScrollTop, 10);
         sidebarEl.current.style.scrollBehavior = 'auto';
@@ -93,18 +93,39 @@ export default function WithSidebar(props) {
   };
 
   useEffect(() => {
+    const getSectionFromPath = (path) => {
+      const cleanPath = path.split('#')[0].split('?')[0];
+      const segments = cleanPath.split('/').filter(Boolean);
+      return segments[0] || '';
+    };
+
+    const currentSection = getSectionFromPath(router.asPath);
+    const previousSection = sessionStorage.getItem('current-doc-section');
+
+    if (previousSection && previousSection !== currentSection) {
+      sessionStorage.setItem('sidebar-scroll', '0');
+      setIsScrollRestored(false);
+      if (sidebarEl.current) {
+        sidebarEl.current.style.scrollBehavior = 'auto';
+        sidebarEl.current.scrollTop = 0;
+        requestAnimationFrame(() => {
+          if (sidebarEl.current) sidebarEl.current.style.scrollBehavior = '';
+        });
+      }
+    }
+
+    sessionStorage.setItem('current-doc-section', currentSection);
+  }, [router.asPath]);
+
+  useEffect(() => {
     setPrevNextLinks();
   }, []);
 
-  useEffect(() => {
-    setIsScrollRestored(false);
-  }, [meta.section]);
-
   useLayoutEffect(() => {
-    if (sidebarEl.current && meta.section) {
+    if (sidebarEl.current) {
       restoreSidebarScrollPosition();
     }
-  }, [meta.section, isScrollRestored]);
+  }, [isScrollRestored]);
 
   useEffect(() => {
     const sidebarElement = sidebarEl.current;
@@ -132,7 +153,7 @@ export default function WithSidebar(props) {
       window.removeEventListener('beforeunload', handleBeforeUnload);
       router.events.off('routeChangeStart', handleRouteChangeStart);
     };
-  }, [router.events, meta.section]);
+  }, [router.events]);
 
   return (
     <>
