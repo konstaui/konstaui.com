@@ -519,6 +519,12 @@ export default function Home() {
                 'High-quality premium templates & plugins for Swiper and Framework7',
               logo: 'uiinitiative.svg',
             },
+            {
+              url: 'https://startpagehq.com',
+              title: 'Start Page HQ',
+              description: 'Coming soon',
+              logo: 'startpagehq.svg',
+            },
 
             {
               url: 'https://framework7.io',
