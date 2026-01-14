@@ -6,7 +6,7 @@ import { GithubStats } from './GithubStats';
 import { Logo } from './Logo';
 import PaneFlowBanner from './PaneFlowBanner';
 import TogglesBanner from './TogglesBanner';
-import NewYearBanner from './NewYearBanner';
+// import NewYearBanner from './NewYearBanner';
 
 const docsLinks = [
   { title: 'Konsta UI React', href: '/react' },
@@ -104,9 +104,9 @@ export const Header = () => {
 
   return (
     <>
-      {/* <PaneFlowBanner className={showBanner === 'paneflow' ? '' : 'hidden'} />
-      <TogglesBanner className={showBanner === 't0ggles' ? '' : 'hidden'} /> */}
-      <NewYearBanner />
+      <PaneFlowBanner className={showBanner === 'paneflow' ? '' : 'hidden'} />
+      <TogglesBanner className={showBanner === 't0ggles' ? '' : 'hidden'} />
+      {/* <NewYearBanner /> */}
       <header className="dark:border-dark-light dark:bg-dark/75 sticky top-0 z-50 border-b-[0.5px] border-black/10 bg-white/75 backdrop-blur-lg backdrop-saturate-200 dark:backdrop-blur-lg dark:backdrop-saturate-200">
         <Container className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-6 text-black dark:text-white">
