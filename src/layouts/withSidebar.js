@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import TableOfContents from '../components/TableOfContents';
 import { Container } from '../components/Container';
 import { Footer } from '../components/Footer';
@@ -20,6 +21,8 @@ export default function WithSidebar(props) {
   const sidebarEl = useRef(null);
   const [prevLink, setPrevLink] = useState(null);
   const [nextLink, setNextLink] = useState(null);
+  const [isScrollRestored, setIsScrollRestored] = useState(false);
+  const router = useRouter();
   const Sidebar =
     meta.section && sidebars[meta.section] ? sidebars[meta.section] : null;
   let childrenWithTOC;
@@ -63,18 +66,102 @@ export default function WithSidebar(props) {
     }
   };
 
+  const saveSidebarScrollPosition = () => {
+    if (sidebarEl.current) {
+      const scrollTop = sidebarEl.current.scrollTop;
+      sessionStorage.setItem('sidebar-scroll', scrollTop.toString());
+    }
+  };
+
+  const restoreSidebarScrollPosition = () => {
+    if (sidebarEl.current && !isScrollRestored) {
+      const savedScrollTop = sessionStorage.getItem('sidebar-scroll');
+      if (savedScrollTop) {
+        const scrollValue = parseInt(savedScrollTop, 10);
+        sidebarEl.current.style.scrollBehavior = 'auto';
+        sidebarEl.current.scrollTop = scrollValue;
+        setIsScrollRestored(true);
+        requestAnimationFrame(() => {
+          if (sidebarEl.current) {
+            sidebarEl.current.style.scrollBehavior = '';
+          }
+        });
+      } else {
+        setIsScrollRestored(true);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const getSectionFromPath = (path) => {
+      const cleanPath = path.split('#')[0].split('?')[0];
+      const segments = cleanPath.split('/').filter(Boolean);
+      return segments[0] || '';
+    };
+
+    const currentSection = getSectionFromPath(router.asPath);
+    const previousSection = sessionStorage.getItem('current-doc-section');
+
+    if (previousSection && previousSection !== currentSection) {
+      sessionStorage.setItem('sidebar-scroll', '0');
+      setIsScrollRestored(false);
+      if (sidebarEl.current) {
+        sidebarEl.current.style.scrollBehavior = 'auto';
+        sidebarEl.current.scrollTop = 0;
+        requestAnimationFrame(() => {
+          if (sidebarEl.current) sidebarEl.current.style.scrollBehavior = '';
+        });
+      }
+    }
+
+    sessionStorage.setItem('current-doc-section', currentSection);
+  }, [router.asPath]);
+
   useEffect(() => {
     setPrevNextLinks();
   }, []);
+
+  useLayoutEffect(() => {
+    if (sidebarEl.current) {
+      restoreSidebarScrollPosition();
+    }
+  }, [isScrollRestored]);
+
+  useEffect(() => {
+    const sidebarElement = sidebarEl.current;
+    if (!sidebarElement) return;
+
+    const handleScroll = () => {
+      saveSidebarScrollPosition();
+    };
+
+    const handleBeforeUnload = () => {
+      saveSidebarScrollPosition();
+    };
+
+    sidebarElement.addEventListener('scroll', handleScroll);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    const handleRouteChangeStart = () => {
+      saveSidebarScrollPosition();
+    };
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+
+    return () => {
+      sidebarElement.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+    };
+  }, [router.events]);
 
   return (
     <>
       <Header />
       <Container className="flex">
         <div
-          className={`${
-            opened ? '' : 'hidden'
-          } dark:bg-dark fixed top-16 left-0 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:shadow-none xl:mr-10`}
+          className={`${opened ? '' : 'hidden'
+            } dark:bg-dark fixed top-16 left-0 z-20 mr-4 w-64 flex-none bg-white text-sm shadow-lg sm:mr-6 lg:relative lg:top-0 lg:mr-8 lg:block lg:shadow-none xl:mr-10`}
         >
           <div
             className="sticky top-0 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain px-4 py-10 pt-26 lg:px-0 lg:pt-10"
