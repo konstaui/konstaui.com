@@ -35,6 +35,80 @@ export const Footer = (props) => {
             </a>
             .
           </div>
+          <div className="flex items-center justify-center gap-2">
+            <a
+              title="PaneFlow - Create Stunning Slideshows Visually. No Code Required"
+              href="https://paneflow.com"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="/images/our-projects/paneflow.svg"
+                alt="PaneFlow - Create Stunning Slideshows Visually. No Code Required"
+                className="inline-block size-6"
+              />
+            </a>
+            <a
+              title="t0ggles - Your ultimate multiple projects management tool"
+              href="https://t0ggles.com"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="/images/our-projects/t0ggles.svg"
+                alt="t0ggles - Your ultimate multiple projects management tool"
+                className="inline-block size-6"
+              />
+            </a>
+            <a
+              title="Swiper Studio - Create Beautiful And Responsive Sliders Without Writing Any Code"
+              href="https://studio.swiperjs.com"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="/images/our-projects/swiper-studio.svg"
+                alt="Swiper Studio - Create Beautiful And Responsive Sliders Without Writing Any Code"
+                className="inline-block size-6"
+              />
+            </a>
+            <a
+              title="UI Initiative - Premium templates & plugins for Swiper and Framework7"
+              href="https://uiinitiative.com"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="/images/our-projects/uiinitiative.svg"
+                alt="UI Initiative - Premium templates & plugins for Swiper and Framework7"
+                className="inline-block size-6"
+              />
+            </a>
+            <a
+              title="Start Page HQ - Your browser new tab as a personal dashboard with 50+ widgets"
+              href="https://startpagehq.com"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="/images/our-projects/startpagehq.svg"
+                alt="Start Page HQ"
+                className="inline-block size-6"
+              />
+            </a>
+            <a
+              title="Fisper - Local AI Voice Dictation for macOS"
+              href="https://fisper.app"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="/images/our-projects/fisper.png"
+                alt="Fisper - Local AI Voice Dictation for macOS"
+                className="inline-block size-6"
+              />
+            </a>
+          </div>
         </div>
         {children}
       </Container>

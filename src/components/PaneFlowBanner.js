@@ -6,14 +6,14 @@ export default function PaneFlowBanner({ className = '' } = {}) {
       target="_blank"
     >
       <div className="mx-auto max-w-[90rem] px-2 py-2 text-center text-sm font-semibold group-hover:opacity-70">
-        Meet Our New Project:{' '}
+        <span className="opacity-70">Meet Our New Project: </span>
         <div className="sm:contents">
           <img
             src="/images/our-projects/paneflow.svg"
             alt="PaneFlow"
             className="inline size-7"
           />
-          <span className="ml-1 text-[#C27FFF]">
+          <span className="ml-1">
             PaneFlow - Create Stunning Slideshows Visually
           </span>
         </div>

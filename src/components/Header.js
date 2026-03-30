@@ -6,6 +6,7 @@ import { GithubStats } from './GithubStats';
 import { Logo } from './Logo';
 import PaneFlowBanner from './PaneFlowBanner';
 import TogglesBanner from './TogglesBanner';
+import SPHQBanner from './SPHQBanner';
 // import NewYearBanner from './NewYearBanner';
 
 const docsLinks = [
@@ -98,7 +99,8 @@ export const Header = () => {
   const [showBanner, setShowBanner] = useState(null);
 
   useLayoutEffect(() => {
-    const banner = Math.random() < 0.5 ? 'paneflow' : 't0ggles';
+    const rand = Math.random();
+    const banner = rand < 0.33 ? 'paneflow' : rand < 0.66 ? 'sphq' : 't0ggles';
     setShowBanner(banner);
   }, []);
 
@@ -106,6 +108,7 @@ export const Header = () => {
     <>
       <PaneFlowBanner className={showBanner === 'paneflow' ? '' : 'hidden'} />
       <TogglesBanner className={showBanner === 't0ggles' ? '' : 'hidden'} />
+      <SPHQBanner className={showBanner === 'sphq' ? '' : 'hidden'} />
       {/* <NewYearBanner /> */}
       <header className="dark:border-dark-light dark:bg-dark/75 sticky top-0 z-50 border-b-[0.5px] border-black/10 bg-white/75 backdrop-blur-lg backdrop-saturate-200 dark:backdrop-blur-lg dark:backdrop-saturate-200">
         <Container className="flex h-16 items-center justify-between">

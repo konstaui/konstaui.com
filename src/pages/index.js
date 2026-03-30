@@ -507,7 +507,7 @@ export default function Home() {
             },
             {
               url: 'https://studio.swiperjs.com',
-              title: 'Studio',
+              title: 'Swiper Studio',
               description:
                 'Create beautiful and responsive Swipers without writing any code',
               logo: 'swiper-studio.svg',
@@ -522,7 +522,8 @@ export default function Home() {
             {
               url: 'https://startpagehq.com',
               title: 'Start Page HQ',
-              description: 'Coming soon',
+              description:
+                'Your browser new tab as a personal dashboard with 50+ widgets',
               logo: 'startpagehq.svg',
             },
 
