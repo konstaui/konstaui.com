@@ -16,7 +16,7 @@ const PlanSection = (props) => {
   return (
     <div className="mb-20">
       {showTitle && (
-        <h2 className="mb-4 text-center text-2xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-3xl">
+        <h2 className="mb-4 text-center text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-gray-200">
           {props.plan}s
         </h2>
       )}
@@ -41,8 +41,8 @@ const PlanSection = (props) => {
         {showPlaceholder && (
           <a
             className={`m-4 flex items-center justify-center bg-gray-100 p-3 text-center text-sm font-semibold duration-300 hover:bg-gray-200 hover:no-underline ${sizes}`}
-            href="https://opencollective.com/konstaui"
-            onClick={() => trackOutbound('https://opencollective.com/konstaui')}
+            href="https://sponsors.nolimits4web.com"
+            onClick={() => trackOutbound('https://sponsors.nolimits4web.com')}
             rel="noopener"
             target="_blank"
           >
@@ -57,16 +57,6 @@ const PlanSection = (props) => {
 export default function HeroSponsors({ showPlaceholders, showTitles }) {
   return (
     <>
-      <PlanSection
-        showPlaceholder={showPlaceholders}
-        showTitle={showTitles}
-        plan="Platinum Sponsor"
-      />
-      <PlanSection
-        showPlaceholder={showPlaceholders}
-        showTitle={showTitles}
-        plan="Gold Sponsor"
-      />
       <PlanSection
         showPlaceholder={showPlaceholders}
         showTitle={showTitles}

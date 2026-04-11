@@ -573,44 +573,33 @@ export default function Home() {
         <SectionTitle>Sponsors</SectionTitle>
         <HeroSponsors />
         <div className="my-4 text-center text-lg">
-          Support Konsta UI on{' '}
           <a
-            href="https://opencollective.com/konstaui"
+            href="https://sponsors.nolimits4web.com/"
             target="_blank"
             rel="noopener"
             className="dark:text-primaryLight text-primary hover:underline"
-            onClick={() => trackOutbound('https://opencollective.com/konstaui')}
+            onClick={() => trackOutbound('https://sponsors.nolimits4web.com/')}
           >
-            Open Collective
+            Sponsor Konsta UI
           </a>{' '}
-          or{' '}
+          and get your logo and link featured on the website, or support the
+          developer on{' '}
           <a
-            href="https://patreon.com/konstaui"
+            href="https://github.com/sponsors/nolimits4web"
             target="_blank"
             rel="noopener"
             className="dark:text-primaryLight text-primary hover:underline"
-            onClick={() => trackOutbound('https://patreon.com/konstaui')}
+            onClick={() =>
+              trackOutbound('https://github.com/sponsors/nolimits4web')
+            }
           >
-            Patreon
-          </a>{' '}
-          and help us to make it even better!
-          <br />
-          Your support means a lot for us!
+            GitHub Sponsors
+          </a>
+          . Your support helps keep Konsta UI growing!
         </div>
         <div className="my-4 flex flex-col items-center space-y-6">
-          <SponsorButton href="https://opencollective.com/konstaui">
-            <img
-              src="/images/opencollective-logo.svg"
-              className="mr-4 h-6 w-6"
-            />
-            <span>Become a sponsor on OpenCollective</span>
-          </SponsorButton>
-          <SponsorButton href="https://patreon.com/konstaui">
-            <img
-              src="/images/patreon-logo.svg"
-              className="mr-4 h-6 w-6 text-[#FF424D]"
-            />
-            <span>Support Konsta UI on Patreon</span>
+          <SponsorButton href="https://sponsors.nolimits4web.com/">
+            <span>Become a Sponsor</span>
           </SponsorButton>
         </div>
       </Section>

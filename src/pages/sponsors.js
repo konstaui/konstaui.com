@@ -11,55 +11,38 @@ export default function SponsorsPage() {
       </h1>
 
       <div className="mb-16 text-center">
-        Support Konsta UI on{' '}
         <a
-          href="https://opencollective.com/konstaui"
+          href="https://sponsors.nolimits4web.com/"
           target="_blank"
           rel="noopener"
           className="dark:text-primaryLight"
-          onClick={() => trackOutbound('https://opencollective.com/konstaui')}
+          onClick={() => trackOutbound('https://sponsors.nolimits4web.com/')}
         >
-          Open Collective
+          Sponsor Konsta UI
         </a>{' '}
-        or{' '}
+        and get your logo and link featured on the website, or support the
+        developer on{' '}
         <a
-          href="https://patreon.com/konstaui"
+          href="https://github.com/sponsors/nolimits4web"
           target="_blank"
           rel="noopener"
           className="dark:text-primaryLight"
-          onClick={() => trackOutbound('https://patreon.com/konstaui')}
+          onClick={() =>
+            trackOutbound('https://github.com/sponsors/nolimits4web')
+          }
         >
-          Patreon
-        </a>{' '}
-        and help us to make it even better!
-        <br />
-        Your support means a lot for us!
+          GitHub Sponsors
+        </a>
+        . Your support helps keep Konsta UI growing!
         <div className="my-4 flex flex-col items-center space-y-6">
           <a
-            href="https://opencollective.com/konstaui"
+            href="https://sponsors.nolimits4web.com/"
             rel="noopener"
             target="_blank"
             className="inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium !text-black shadow-lg duration-200 hover:bg-black/5 hover:!no-underline sm:text-lg dark:hover:bg-white/75"
-            onClick={() => trackOutbound('https://opencollective.com/konstaui')}
+            onClick={() => trackOutbound('https://sponsors.nolimits4web.com/')}
           >
-            <img
-              src="/images/opencollective-logo.svg"
-              className="mr-4 h-6 w-6"
-            />
-            <span>Become a sponsor on OpenCollective</span>
-          </a>
-          <a
-            href="https://patreon.com/konstaui"
-            rel="noopener"
-            target="_blank"
-            className="inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium !text-black shadow-lg duration-200 hover:bg-black/5 hover:!no-underline sm:text-lg dark:hover:bg-white/75"
-            onClick={() => trackOutbound('https://patreon.com/konstaui')}
-          >
-            <img
-              src="/images/patreon-logo.svg"
-              className="mr-4 h-6 w-6 text-[#FF424D]"
-            />
-            <span>Support Konsta UI on Patreon</span>
+            <span>Become a Sponsor</span>
           </a>
         </div>
       </div>
