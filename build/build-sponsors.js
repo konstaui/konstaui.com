@@ -9,13 +9,22 @@ const n4Path = path.resolve(__dirname, '../src/shared/n4-sponsors.json');
 const baseListPath = path.resolve(__dirname, '../src/shared/sponsors-list.json');
 const publicListPath = path.resolve(__dirname, '../public/sponsors-list.json');
 
+const PLAN_MAP = {
+  'Gold Sponsor': 'Silver Sponsor',
+};
+
+const mapPlan = (sponsor) => ({
+  ...sponsor,
+  plan: PLAN_MAP[sponsor.plan] ?? sponsor.plan,
+});
+
 async function fetchN4Sponsors() {
   try {
     const res = await fetch(N4_API);
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
     const data = await res.json();
     if (!Array.isArray(data)) throw new Error('Response is not an array');
-    return data;
+    return data.map(mapPlan);
   } catch (err) {
     console.warn(`[build-sponsors] Could not fetch n4 sponsors: ${err.message}`);
     return null;
