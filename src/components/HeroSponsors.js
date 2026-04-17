@@ -1,5 +1,11 @@
 import { trackOutbound } from '../shared/track-outbound';
-import sponsors from '../shared/sponsors-list';
+import baseSponsors from '../shared/sponsors-list.json';
+import n4Sponsors from '../shared/n4-sponsors.json';
+
+const sponsors = [...n4Sponsors, ...baseSponsors];
+
+const resolveImage = (image) =>
+  /^https?:\/\//.test(image) ? image : `/images/sponsors/${image}`;
 
 const PlanSection = (props) => {
   const { showPlaceholder, showTitle } = props;
@@ -33,7 +39,7 @@ const PlanSection = (props) => {
           >
             <img
               className="h-auto max-h-full w-auto max-w-full"
-              src={`/images/sponsors/${image}`}
+              src={resolveImage(image)}
               alt={title}
             />
           </a>

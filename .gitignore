@@ -36,4 +36,5 @@ src/components/api/**/*.js
 src/components/api/**/*.jsx
 src/types.json
 src/shared/sponsors-list-cjs.js
+src/shared/n4-sponsors.json
 public/types
