@@ -38,3 +38,4 @@ src/types.json
 src/shared/sponsors-list-cjs.js
 src/shared/n4-sponsors.json
 public/types
+public/sitemap.xml

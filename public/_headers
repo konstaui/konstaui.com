@@ -1,0 +1,5 @@
+/
+  Link: </sitemap.xml>; rel="sitemap"
+  Link: </react>; rel="service-doc"; title="React documentation"
+  Link: </vue>; rel="service-doc"; title="Vue documentation"
+  Link: </svelte>; rel="service-doc"; title="Svelte documentation"

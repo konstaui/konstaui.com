@@ -2,13 +2,14 @@
   "name": "konstaui.com",
   "private": true,
   "scripts": {
-    "dev": "npm run build-api && npm run build-examples && npm run build-sponsors && next dev",
-    "build": "npm run build-api && npm run build-examples && npm run build-sponsors && next build",
+    "dev": "npm run build-api && npm run build-examples && npm run build-sponsors && npm run build-sitemap && next dev",
+    "build": "npm run build-api && npm run build-examples && npm run build-sponsors && npm run build-sitemap && next build",
     "start": "next start",
     "lint": "next lint",
     "build-api": "node build/build-api",
     "build-examples": "node build/build-examples",
     "build-sponsors": "node build/build-sponsors.js",
+    "build-sitemap": "node build/build-sitemap.js",
     "copy-ks": "node build/copy-kitchen-sink",
     "copy-changelog": "node build/copy-changelog.js",
     "release": "npm run copy-ks && npm run copy-changelog"
