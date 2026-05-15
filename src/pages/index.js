@@ -526,7 +526,12 @@ export default function Home() {
                 'Your browser new tab as a personal dashboard with 50+ widgets',
               logo: 'startpagehq.svg',
             },
-
+            {
+              url: 'https://cladd.io',
+              title: 'Cladd',
+              description: 'A React UI kit for building actual apps',
+              logo: 'cladd.svg',
+            },
             {
               url: 'https://framework7.io',
               title: 'Framework7',

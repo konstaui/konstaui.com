@@ -25,17 +25,16 @@ export const Footer = (props) => {
             .
           </div>
           <div>
-            2025 © Konsta UI by{' '}
+            2026 © Konsta UI by{' '}
             <a href="https://nolimits4web.com" target="_blank">
               <img
-                className="inline-block h-12 w-12"
+                className="inline-block size-8"
                 src="/images/n4w-logo.svg"
                 alt="nolimits4web"
               />
             </a>
-            .
           </div>
-          <div className="flex items-center justify-center gap-2">
+          <div className="mt-2 flex items-center justify-center gap-2">
             <a
               title="PaneFlow - Create Stunning Slideshows Visually. No Code Required"
               href="https://paneflow.com"
@@ -93,6 +92,18 @@ export const Footer = (props) => {
                 loading="lazy"
                 src="/images/our-projects/startpagehq.svg"
                 alt="Start Page HQ"
+                className="inline-block size-6"
+              />
+            </a>
+            <a
+              title="Cladd - A React UI kit for building actual apps"
+              href="https://cladd.io"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="/images/our-projects/cladd.svg"
+                alt="Cladd - A React UI kit for building actual apps"
                 className="inline-block size-6"
               />
             </a>
