@@ -493,6 +493,13 @@ export default function Home() {
         <div className="mx-auto flex max-w-5xl flex-col items-stretch gap-4 text-left sm:grid sm:grid-cols-2 sm:gap-8 sm:text-center md:grid-cols-4">
           {[
             {
+              url: 'https://startpagehq.com',
+              title: 'Start Page HQ',
+              description:
+                'Your browser new tab as a personal dashboard with 50+ widgets',
+              logo: 'startpagehq.svg',
+            },
+            {
               url: 'https://paneflow.com',
               title: 'Paneflow',
               description:
@@ -519,13 +526,7 @@ export default function Home() {
                 'High-quality premium templates & plugins for Swiper and Framework7',
               logo: 'uiinitiative.svg',
             },
-            {
-              url: 'https://startpagehq.com',
-              title: 'Start Page HQ',
-              description:
-                'Your browser new tab as a personal dashboard with 50+ widgets',
-              logo: 'startpagehq.svg',
-            },
+
             {
               url: 'https://cladd.io',
               title: 'Cladd',
