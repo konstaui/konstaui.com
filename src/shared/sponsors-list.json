@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2026-06-08T20:00:00.000Z",
+    "title": "TopKasynoOnline PL",
+    "link": "https://pl.topkasynoonline.com/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/topkasynoonline-pl",
+    "image": "topkasynoonline-pl.png",
+    "endDate": "",
+    "active": true
+  },
+  {
+    "createdAt": "2026-06-08T20:00:00.000Z",
+    "title": "Fun88",
+    "link": "https://global.fun88.com/",
+    "plan": "Silver Sponsor",
+    "ref": "https://opencollective.com/fun88-official",
+    "image": "fun88-official.png",
+    "endDate": "2027-06-08T20:00:00.000Z",
+    "active": true
+  },
+  {
     "createdAt": "2026-05-14T20:00:00.000Z",
     "title": "καλύτερα online casino στην ελλάδα",
     "link": "https://www.jazzonline.gr/",
