@@ -8,6 +8,8 @@ import PaneFlowBanner from './PaneFlowBanner';
 import TogglesBanner from './TogglesBanner';
 import SPHQBanner from './SPHQBanner';
 import CladdBanner from './CladdBanner';
+import UserExperiencedModal from './UserExperiencedModal';
+import UserExperiencedPopover from './UserExperiencedPopover';
 
 const docsLinks = [
   { title: 'Konsta UI React', href: '/react' },
@@ -97,6 +99,7 @@ export const Header = () => {
   };
 
   const [showBanner, setShowBanner] = useState(null);
+  const [uxdOpen, setUxdOpen] = useState(false);
 
   useLayoutEffect(() => {
     const rand = Math.random();
@@ -155,11 +158,39 @@ export const Header = () => {
             </nav>
           </div>
           <div className="flex items-center space-x-4">
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => {
+                  setUxdOpen(true);
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'uxd_modal_open', {
+                      event_category: 'newsletter',
+                      event_label: 'nav_button',
+                    });
+                  }
+                }}
+                aria-label="Open User Experienced newsletter"
+                title="User Experienced - weekly design picks"
+                className="dark:border-dark-light flex size-7 cursor-pointer items-center justify-center overflow-hidden rounded-md border border-black/10 duration-200 hover:opacity-90 active:opacity-50"
+              >
+                <img
+                  src="/images/our-projects/uxd-logo-red.png"
+                  alt="User Experienced"
+                  className="size-full"
+                />
+              </button>
+              <span className="bg-primary pointer-events-none absolute -top-2 -right-3 rounded-full px-1 py-0.5 text-[9px] leading-none font-bold text-white">
+                NEW
+              </span>
+            </div>
             <GithubStats showVersion inNavbar />
             <ThemeSwitch />
           </div>
         </Container>
       </header>
+      <UserExperiencedModal open={uxdOpen} onClose={() => setUxdOpen(false)} />
+      <UserExperiencedPopover />
     </>
   );
 };
