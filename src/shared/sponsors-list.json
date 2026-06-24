@@ -1,5 +1,25 @@
 [
   {
+    "createdAt": "2026-06-24T20:00:00.000Z",
+    "title": "JBO",
+    "link": "https://www.jbo88b.com/vn/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/jbo-vietnam",
+    "image": "jbo-vietnam.png",
+    "endDate": "2027-06-24T20:00:00.000Z",
+    "active": true
+  },
+  {
+    "createdAt": "2026-06-24T20:00:00.000Z",
+    "title": "Fun88",
+    "link": "https://www.fun88thf.com/th/",
+    "plan": "Sponsor",
+    "ref": "https://opencollective.com/fun88-thailand",
+    "image": "fun88-thailand.png",
+    "endDate": "2027-06-24T20:00:00.000Z",
+    "active": true
+  },
+  {
     "createdAt": "2026-06-22T20:00:00.000Z",
     "title": "online greek casino",
     "link": "https://www.kaliteraonlinecasino.eu.com/",
