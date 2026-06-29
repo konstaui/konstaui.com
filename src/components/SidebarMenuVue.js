@@ -44,6 +44,7 @@ const links = [
       'Data Table',
       'Dialog',
       { title: 'Floating Action Button', href: '/vue/fab' },
+      'Glass',
       'Icon',
       'Link',
       'List',

@@ -43,6 +43,7 @@ const links = [
       'Data Table',
       'Dialog',
       { title: 'Floating Action Button', href: '/svelte/fab' },
+      'Glass',
       'Icon',
       'Link',
       'List',

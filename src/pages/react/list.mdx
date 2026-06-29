@@ -31,6 +31,15 @@ There are following components included:
 
 <ListProps />
 
+## Dividers
+
+By default Konsta UI renders dividers (hairlines) between list items in the iOS theme (`dividersIos` is `true`), but not in the Material theme (`dividersMaterial` is `false`). Use the `dividers`, `dividersIos` and `dividersMaterial` props to control this per theme.
+
+When enabled, dividers follow each theme's guidelines:
+
+- in the **iOS** theme dividers are inset and aligned with the item content;
+- in the **Material** theme dividers are full-bleed (edge-to-edge) for plain items, and inset for items with a media element (icon/avatar), as recommended by Material Design.
+
 ## Examples
 
 <ListExample />

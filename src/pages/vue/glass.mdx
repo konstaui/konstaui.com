@@ -1,0 +1,36 @@
+---
+title: 'Glass Vue Component | Konsta UI Vue'
+section: 'vue'
+---
+
+import { GlassProps } from '@/components/api/vue/GlassProps';
+
+# Glass Vue Component
+
+Glass renders the iOS "liquid glass" material - a translucent, frosted surface with a backdrop blur and subtle inner highlights. It is the same background used under the hood by components like Navbar, Toolbar, Tabbar and Popover, and is now exported so you can build your own glass-styled surfaces.
+
+Any content placed inside `k-glass` is rendered inside the glass surface. By default it renders a `<div>`, which can be changed with the `component` prop:
+
+```html
+<k-glass class="rounded-2xl p-4">Liquid Glass</k-glass>
+```
+
+<div className="important-note">
+  <p>
+    The glass effect is only rendered in the <strong>iOS</strong> theme. In the
+    Material theme <code>Glass</code> renders as a plain element without any
+    extra styling.
+  </p>
+</div>
+
+## Contents
+
+## Glass Components
+
+There are following components included:
+
+- `Glass`
+
+## Glass Props
+
+<GlassProps />

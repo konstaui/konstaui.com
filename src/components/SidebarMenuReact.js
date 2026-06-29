@@ -44,6 +44,7 @@ const links = [
       'Data Table',
       'Dialog',
       { title: 'Floating Action Button', href: '/react/fab' },
+      'Glass',
       'Icon',
       'Link',
       'List',

@@ -1,0 +1,38 @@
+---
+title: 'Glass React Component | Konsta UI React'
+section: 'react'
+---
+
+import { GlassProps } from '@/components/api/react/GlassProps';
+
+# Glass React Component
+
+Glass renders the iOS "liquid glass" material - a translucent, frosted surface with a backdrop blur and subtle inner highlights. It is the same background used under the hood by components like Navbar, Toolbar, Tabbar and Popover, and is now exported so you can build your own glass-styled surfaces.
+
+Any content passed to `Glass` is rendered inside the glass surface. By default it renders a `<div>`, which can be changed with the `component` prop:
+
+```jsx
+import { Glass } from 'konsta/react';
+
+<Glass className="rounded-2xl p-4">Liquid Glass</Glass>;
+```
+
+<div className="important-note">
+  <p>
+    The glass effect is only rendered in the <strong>iOS</strong> theme. In the
+    Material theme <code>Glass</code> renders as a plain element without any
+    extra styling.
+  </p>
+</div>
+
+## Contents
+
+## Glass Components
+
+There are following components included:
+
+- `Glass`
+
+## Glass Props
+
+<GlassProps />
