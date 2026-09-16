@@ -8,8 +8,13 @@ import PaneFlowBanner from './PaneFlowBanner';
 import TogglesBanner from './TogglesBanner';
 import SPHQBanner from './SPHQBanner';
 import CladdBanner from './CladdBanner';
+import SwiperStudioBanner from './SwiperStudioBanner';
 import UserExperiencedModal from './UserExperiencedModal';
 import UserExperiencedPopover from './UserExperiencedPopover';
+
+const banners = ['cladd', 'paneflow', 'swiperstudio', 'toggles', 'sphq'];
+// keep the same banner across client-side navigations within one page load
+let bannerCached = null;
 
 const docsLinks = [
   { title: 'Konsta UI React', href: '/react' },
@@ -102,15 +107,21 @@ export const Header = () => {
   const [uxdOpen, setUxdOpen] = useState(false);
 
   useLayoutEffect(() => {
-    const rand = Math.random();
-    const banner = rand < 0.33 ? 'paneflow' : rand < 0.66 ? 'sphq' : 'cladd';
-    setShowBanner(banner);
+    if (!bannerCached) {
+      bannerCached =
+        banners[Math.floor(Math.random() * banners.length)] || banners[0];
+    }
+    setShowBanner(bannerCached);
   }, []);
 
   return (
     <>
-      <PaneFlowBanner className={showBanner === 'paneflow' ? '' : 'hidden'} />
       <CladdBanner className={showBanner === 'cladd' ? '' : 'hidden'} />
+      <PaneFlowBanner className={showBanner === 'paneflow' ? '' : 'hidden'} />
+      <SwiperStudioBanner
+        className={showBanner === 'swiperstudio' ? '' : 'hidden'}
+      />
+      <TogglesBanner className={showBanner === 'toggles' ? '' : 'hidden'} />
       <SPHQBanner className={showBanner === 'sphq' ? '' : 'hidden'} />
       {/* <NewYearBanner /> */}
       <header className="dark:border-dark-light dark:bg-dark/75 sticky top-0 z-50 border-b-[0.5px] border-black/10 bg-white/75 backdrop-blur-lg backdrop-saturate-200 dark:backdrop-blur-lg dark:backdrop-saturate-200">
