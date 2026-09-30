@@ -9,8 +9,6 @@ import TogglesBanner from './TogglesBanner';
 import SPHQBanner from './SPHQBanner';
 import CladdBanner from './CladdBanner';
 import SwiperStudioBanner from './SwiperStudioBanner';
-import UserExperiencedModal from './UserExperiencedModal';
-import UserExperiencedPopover from './UserExperiencedPopover';
 
 const banners = ['cladd', 'paneflow', 'swiperstudio', 'toggles', 'sphq'];
 // keep the same banner across client-side navigations within one page load
@@ -104,7 +102,6 @@ export const Header = () => {
   };
 
   const [showBanner, setShowBanner] = useState(null);
-  const [uxdOpen, setUxdOpen] = useState(false);
 
   useLayoutEffect(() => {
     if (!bannerCached) {
@@ -169,13 +166,11 @@ export const Header = () => {
             </nav>
           </div>
           <div className="flex items-center space-x-4">
-
             <GithubStats showVersion inNavbar />
             <ThemeSwitch />
           </div>
         </Container>
       </header>
-      <UserExperiencedPopover />
     </>
   );
 };
