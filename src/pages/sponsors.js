@@ -12,16 +12,25 @@ export default function SponsorsPage() {
 
       <div className="mb-16 text-center">
         <a
+          href="https://opencollective.com/konstaui"
+          target="_blank"
+          rel="noopener"
+          className="dark:text-primaryLight"
+          onClick={() => trackOutbound('https://opencollective.com/konstaui')}
+        >
+          Sponsor Konsta UI on Open Collective
+        </a>{' '}
+        and get your logo and link featured on the website. You can also{' '}
+        <a
           href="https://sponsors.nolimits4web.com/"
           target="_blank"
           rel="noopener"
           className="dark:text-primaryLight"
           onClick={() => trackOutbound('https://sponsors.nolimits4web.com/')}
         >
-          Sponsor Konsta UI
+          sponsor directly
         </a>{' '}
-        and get your logo and link featured on the website, or support the
-        developer on{' '}
+        or support the developer on{' '}
         <a
           href="https://github.com/sponsors/nolimits4web"
           target="_blank"
@@ -36,11 +45,11 @@ export default function SponsorsPage() {
         . Your support helps keep Konsta UI growing!
         <div className="my-4 flex flex-col items-center space-y-6">
           <a
-            href="https://sponsors.nolimits4web.com/"
+            href="https://opencollective.com/konstaui"
             rel="noopener"
             target="_blank"
             className="inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium !text-black shadow-lg duration-200 hover:bg-black/5 hover:!no-underline sm:text-lg dark:hover:bg-white/75"
-            onClick={() => trackOutbound('https://sponsors.nolimits4web.com/')}
+            onClick={() => trackOutbound('https://opencollective.com/konstaui')}
           >
             <span>Become a Sponsor</span>
           </a>

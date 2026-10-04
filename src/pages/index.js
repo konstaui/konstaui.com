@@ -21,7 +21,7 @@ function SponsorButton(props) {
       {...restProps}
       className={`inline-flex max-w-full items-center rounded-full bg-white px-6 py-4 text-sm font-medium text-black shadow-lg duration-200 hover:bg-black/5 hover:no-underline sm:text-lg dark:hover:bg-white/75 ${className}`}
       onClick={(e) => {
-        onClick(e);
+        onClick?.(e);
         trackOutbound(href);
       }}
     >
@@ -580,16 +580,25 @@ export default function Home() {
         <HeroSponsors />
         <div className="my-4 text-center text-lg">
           <a
+            href="https://opencollective.com/konstaui"
+            target="_blank"
+            rel="noopener"
+            className="dark:text-primaryLight text-primary hover:underline"
+            onClick={() => trackOutbound('https://opencollective.com/konstaui')}
+          >
+            Sponsor Konsta UI on Open Collective
+          </a>{' '}
+          and get your logo and link featured on the website. You can also{' '}
+          <a
             href="https://sponsors.nolimits4web.com/"
             target="_blank"
             rel="noopener"
             className="dark:text-primaryLight text-primary hover:underline"
             onClick={() => trackOutbound('https://sponsors.nolimits4web.com/')}
           >
-            Sponsor Konsta UI
+            sponsor directly
           </a>{' '}
-          and get your logo and link featured on the website, or support the
-          developer on{' '}
+          or support the developer on{' '}
           <a
             href="https://github.com/sponsors/nolimits4web"
             target="_blank"
@@ -604,7 +613,7 @@ export default function Home() {
           . Your support helps keep Konsta UI growing!
         </div>
         <div className="my-4 flex flex-col items-center space-y-6">
-          <SponsorButton href="https://sponsors.nolimits4web.com/">
+          <SponsorButton href="https://opencollective.com/konstaui">
             <span>Become a Sponsor</span>
           </SponsorButton>
         </div>

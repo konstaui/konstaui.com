@@ -47,8 +47,8 @@ const PlanSection = (props) => {
         {showPlaceholder && (
           <a
             className={`m-4 flex items-center justify-center bg-gray-100 p-3 text-center text-sm font-semibold duration-300 hover:bg-gray-200 hover:no-underline ${sizes}`}
-            href="https://sponsors.nolimits4web.com"
-            onClick={() => trackOutbound('https://sponsors.nolimits4web.com')}
+            href="https://opencollective.com/konstaui"
+            onClick={() => trackOutbound('https://opencollective.com/konstaui')}
             rel="noopener"
             target="_blank"
           >
